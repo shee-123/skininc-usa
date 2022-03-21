@@ -1,0 +1,24 @@
+{%- form 'product', product, class: 'ProductForm' -%}
+{%- assign selected_variant = product.selected_or_first_available_variant -%}
+
+  <input type="hidden" name="id" data-sku="{{ selected_variant.sku }}" value="{{ selected_variant.id }}">
+  <input type="hidden" name="quantity" value="1"/>
+  {%- comment -%}
+  --------------------------------------------------------------------------------------------------------------------
+  ADD TO CART BUTTON
+  --------------------------------------------------------------------------------------------------------------------
+  {%- endcomment -%}
+
+  <button type="submit" class="ProductForm__AddToCart Button {% if selected_variant.available %}Button--primary{% else %}Button--secondary{% endif %} Button--full" {% if selected_variant.available %}data-task="add-to-cart"{% else %}disabled="disabled"{% endif %}>
+    {%- if selected_variant.available -%}
+      <span>{% if product.template_suffix == 'pre-order' %}{{ 'product.form.pre_order' | t }}{% else %}{{ 'product.form.add_to_cart' | t }}{% endif %} {% if new_price %} &#8226; {{new_price}}{% endif %}</span>
+
+      {%- if section.settings.show_price_in_button -%}
+        <span class="Button__SeparatorDot"></span>
+        <span data-money-convertible>{{ selected_variant.price | money_without_trailing_zeros }}</span>
+      {%- endif -%}
+    {%- else -%}
+      {{- 'product.form.sold_out' | t -}}
+    {%- endif -%}
+  </button>
+{%- endform -%}

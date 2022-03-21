@@ -1,0 +1,228 @@
+{%- if template.name == 'blog' or template == 'customers/account' or template == 'customers/order' or template == 'customers/addresses' -%}
+{%- assign add_top_margin = true -%}
+{%- else -%}
+{%- assign add_top_margin = false -%}
+{%- endif -%}
+
+<footer id="section-{{ section.id }}" class="Footer {% if section.blocks.size <= 2 %}Footer--center{% endif %} {% if add_top_margin %}Footer--withMargin{% endif %}" role="contentinfo">
+  <div class="container">
+    {%- if section.blocks.size > 0 -%}
+    <div class="row">
+      {%- for block in section.blocks -%}
+      <div class="col-md-{% if block.type == 'text' %}5{% elsif block.type == 'links'%}4{% elsif block.type == 'newsletter'%}3{%endif%} col-12 {{ block.type }}">
+        {%- case block.type -%}
+        {%- when 'text' -%}
+        <div class="Collapsible Collapsible--autoExpand">
+          {%- if block.settings.title != blank -%}
+          <h2 class="Collapsible__Button heading active Footer__Title Heading u-h6" data-action="toggle-collapsible" aria-expanded="true">
+            {{ block.settings.title | escape }}
+            <span class="Collapsible__Plus"></span>
+          </h2>
+          {%- endif -%}
+          {%- if block.settings.content != blank -%}
+          <div class="Collapsible__Inner" style="height: auto;">
+            <div class="Collapsible__Content">
+              <div class="Footer__Content Rte">
+                {{ block.settings.content }}
+                {%- if block.settings.show_social_media -%}
+                {% include 'social-media', class: 'Footer__Social', spacing: 'loose' %}
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+          {%- endif -%}
+        </div>
+
+        {%- when 'links' -%}
+        {%- assign linklist = linklists[block.settings.menu] -%}
+
+        {%- if linklist != empty -%}
+        <div class="row footer-menu-wrapper">
+          {%- for link in linklist.links -%}
+          <div class="col-12 col-sm-6">
+            <div class="Collapsible Collapsible--autoExpand footer-menu">
+              <h2 class="heading Collapsible__Button Heading Footer__Title Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+                {{ link.title | escape }}
+                <span class="Collapsible__Plus"></span>
+              </h2>
+              <div class="Collapsible__Inner">
+                <div class="Collapsible__Content">
+                  <ul class="Footer__Content menu">
+                    {%- for sublink in link.links -%}
+                    <li>
+                      <a href="{{ sublink.url }}" class="Link Link--primary">{{ sublink.title | escape }}</a>
+                    </li>
+                    {%- endfor -%}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          {%- endfor -%}
+        </div>
+        {%- endif -%}
+
+        {%- when 'newsletter' -%}
+        {%- if block.settings.title != blank -%}
+        <h2 class="Footer__Title Heading u-h6">{{ block.settings.title | escape }}</h2>
+        {%- endif -%}
+
+        {%- if block.settings.content != blank -%}
+        <div class="Footer__Content Rte">
+          {{ block.settings.content }}
+        </div>
+        {%- endif -%}
+
+       
+        {%- form 'customer', id: 'footer-newsletter', class: 'Footer__Newsletter Form' -%}
+        {%- if form.posted_successfully? -%}
+        <p class="Form__Alert Alert Alert--success">{{ 'footer.newsletter.success' | t }}</p>
+        {%- else -%}
+        {%- if form.errors -%}
+        <p class="Form__Alert Alert Alert--error">{{ form.errors.messages['email'] }}</p>
+        {%- endif -%}
+         
+
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <input type="email" name="contact[email]" class="Form__Input" aria-label="{{ 'footer.newsletter.input' | t }}" placeholder="{{ 'footer.newsletter.input' | t }}" required>
+        <button type="submit" class="Form__Submit Button Button--primary Button--full">{{ 'footer.newsletter.submit' | t }}</button>
+        {%- endif -%}
+        {%- endform -%}
+        {%- endcase -%}
+      </div>
+      {%- endfor -%}
+    </div>
+    {%- endif -%}
+  </div>
+  <div class="copy">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-sm-6 align-self-start">
+          <a href="{{ shop.url }}" class="Link Link--primary">© {{ shop.name }} - {{ 'now' | date: "%Y" }}</a>
+        </div>
+        <div class="col-12 col-sm-6 align-self-end d-none d-sm-block">
+          {%- if section.settings.show_payment_methods -%}
+          {%- capture payment_methods -%}
+          {%- for type in shop.enabled_payment_types -%}
+          <li>{{ type | payment_type_svg_tag }}</li>
+          {%- endfor -%}
+          {%- endcapture -%}
+
+          {%- if payment_methods != blank -%}
+          <ul>
+            {{ payment_methods }}
+          </ul>
+          {%- endif -%}
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="skinid-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div id="skinid-canvas"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="isMobile" class="d-block d-sm-none"></div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "shopify-section--footer",
+  "settings": [
+  {
+    "type": "checkbox",
+    "id": "show_payment_methods",
+    "label": "Show payment methods",
+    "info": "Payment method icons are automatically displayed based on your Shopify payment methods.",
+    "default": true
+  }
+  ],
+  "blocks": [
+  {
+    "type": "text",
+    "name": "Text",
+    "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "About the shop"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Text",
+      "default": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme settings.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_media",
+      "label": "Show social media",
+      "info": "Make sure to have properly configured your social media in the theme settings.",
+      "default": true
+    }
+    ]
+  },
+  {
+    "type": "links",
+    "name": "Links",
+    "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "info": "This menu won't show dropdown items."
+    }
+    ]
+  },
+  {
+    "type": "newsletter",
+    "name": "Newsletter",
+    "limit": 1,
+    "settings": [
+    {
+      "type": "paragraph",
+      "content": "Customers who subscribe will have their email address added to the \"accepts marketing\" [customer list](/admin/customers?query=&accepts_marketing=1)."
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Newsletter"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Text",
+      "default": "<p>A short sentence describing what someone will receive by subscribing</p>"
+    }
+    ]
+  }
+  ],
+  "default": {
+    "blocks": [
+    {
+      "type": "text",
+      "settings": {}
+    },
+    {
+      "type": "links",
+      "settings": {
+        "menu": "footer"
+      }
+    },
+    {
+      "type": "newsletter",
+      "settings": {}
+    }
+    ]
+  }
+}
+{% endschema %}

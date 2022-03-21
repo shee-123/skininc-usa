@@ -1,0 +1,70 @@
+{% unless customer %}
+<div class="banner_reward">
+  <h2>{{ section.settings.title }}</h2>
+  <p>{{ section.settings.banner_text}}</p>
+  <div class="login_div">
+    <a href="/pages/my-account#signup_myaccount">Sign up now</a>
+    <p>or</p>
+    <a href="/pages/my-account#login_myaccount">Log In</a>
+  </div>
+</div>
+{% endunless %}
+
+<div class="how_it_works">
+  <h2>Skin Inc Loyalty Program</h2>
+  <div class="works_inner">
+    {% for block in section.blocks %}
+    <div class="iocn-sec">
+      <img src="{{ block.settings.image | img_url: 'master' }}"> 
+      <h4>{{ block.settings.heading }}</h4>
+      <p>{{ block.settings.icon-text }}</p> 
+    </div>
+    {% endfor %}        
+  </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "banner_reward",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "banner_text",
+        "label": "Banner text"
+      }
+	
+    ],
+	"blocks": [
+      {
+        "type": "icon_txt",
+        "name": "Icon with Text",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+      	  {
+            "type": "text",
+            "id": "heading",
+            "label": "heading" 
+          },
+      	  {
+            "type": "text",
+            "id": "icon-text",
+            "label": "text" 
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+

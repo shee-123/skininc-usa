@@ -1,0 +1,65 @@
+<section class="section banner" id="{{ section.id }}">
+  <div class="container">
+    <div class="row no-g">
+      {%- if section.blocks.size > 1 -%}
+      {% assign className = "col-sm-6" %}
+      {%- else -%}
+      {% assign className = "col" %}
+      {%- endif -%}
+      {%- for block in section.blocks -%}
+      <div class="{{ className }}">
+        {%- if block.settings.link != blank -%}
+         <a href="{{ block.settings.link }}">
+        {%- endif -%}
+
+        <div class="FeatureText__ImageWrapper">
+          {%- include 'image-size', sizes: '400,600,700,800,900,1000,1200', image: section.settings.image -%}
+
+          <div class="AspectRatio" style="max-width: {{ block.settings.image.width }}px; --aspect-ratio: {{ block.settings.image.aspect_ratio }}">
+            {%- assign image_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <img class="Image--lazyLoad Image--slide{{ block.settings.image_position | capitalize }}" data-src="{{ image_url }}" data-expand="-200" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ block.settings.image.alt | escape }}">
+
+            <noscript>
+              <img src="{{ block.settings.image | img_url: 'original' }}" alt="{{ block.settings.image.alt | escape }}">
+            </noscript>
+          </div>
+        </div>
+
+
+        {%- if block.settings.link != blank -%}
+          </a>
+        {%- endif -%}
+
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Banner",
+  "max_blocks": 2,
+  "blocks": [
+  {
+    "type": "banner",
+    "name": "banner",
+    "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    }
+    ]
+  }
+  ],
+  "presets": [{
+    "name": "Banner",
+    "category": "Text"
+  }]
+}
+{% endschema %}

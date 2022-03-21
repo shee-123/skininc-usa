@@ -1,0 +1,103 @@
+<section id="section-{{ section.id }}">
+    <div class="FlexboxIeFix">
+        <div class="ImageHero" style="background: url({{ section.settings.image | img_url: '1x1' }})">
+            <div class="ImageHero__ImageWrapper">
+                <div class="ImageHero__Image Image--lazyLoad Image--zoomOut"
+                     data-optimumx="1.4"
+                     data-expand="-150"
+                     {% if section.settings.image %}data-bgset="{{ section.settings.image | img_url: mobile_size, crop: 'center' }} 750w, {{ section.settings.image | img_url: '1000x' }} 1000w, {{ section.settings.image | img_url: '1500x' }} 1500w"{% endif %}>
+                </div>
+
+                <noscript>
+                    <div class="ImageHero__Image"
+                         style="background-image: url({{ section.settings.image | img_url: '1000x' }})"></div>
+                </noscript>
+
+                {%- unless section.settings.image != blank -%}
+                    <div class="PlaceholderBackground PlaceholderBackground--Dark">
+                        {{ 'lifestyle-1' | placeholder_svg_tag: 'PlaceholderBackground__Svg' }}
+                    </div>
+                {%- endunless -%}
+            </div>
+            <div class="container">
+                <div class="ImageHero__content">
+                    {% unless customer %}
+                        {% if section.settings.title_first_row != blank or section.settings.title_second_row != blank %}
+                            <h1 class="ImageHero__title">
+                                {{ section.settings.title_first_row }}<br>
+                                {{ section.settings.title_second_row }}
+                            </h1>
+                        {% endif %}
+                    {% endunless %}
+                    {% if customer and section.settings.greeting_title != blank %}
+                        <h1 class="ImageHero__title">
+                            {{ section.settings.greeting_title }} {{ customer.name }}!<br>
+                            You have <br>
+                            <span class="ImageHero__subtitle"> <span data-lion-points></span> points</span>
+                        </h1>
+                    {% endif %}
+                    {% unless customer %}
+                        <div class="ImageHero__buttons">
+        <span class="ImageHero__button">
+            {{ section.settings.login_title | customer_login_link }}
+        </span>
+                            <span class="ImageHero__button">
+            {{ section.settings.register_title | customer_register_link }}
+        </span>
+                        </div>
+                    {% endunless %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% schema %}
+    {
+    "name": "Loyalty top banner",
+    "settings":
+        [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image",
+                "info": "1500 x 800px jpg recommended"
+            },
+            {
+                "type": "text",
+                "id": "title_first_row",
+                "label": "Title"
+            },
+            {
+                "type": "text",
+                "id": "title_second_row",
+                "label": "Title"
+            },
+            {
+                "type": "color",
+                "id": "text_color",
+                "label": "Text",
+                "default": "#ffffff"
+            },
+            {
+                "type": "text",
+                "id": "login_title",
+                "label": "Login button text",
+                "default": "Login"
+            },
+            {
+                "type": "text",
+                "id": "register_title",
+                "label": "Register button text",
+                "default": "Join Now"
+            },
+            {
+                "type": "text",
+                "id": "greeting_title",
+                "label": "Greeting for customer"
+            }
+        ]
+    }
+{% endschema %}

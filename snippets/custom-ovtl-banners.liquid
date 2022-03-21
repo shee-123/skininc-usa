@@ -1,0 +1,2080 @@
+<div class="pmr-group" id="gr-root">
+    <div class="pmr-group" id="gr-top-banner">
+      {% if section.settings.tab_title %}
+      <div class="section-heading">
+        <h2>{{ section.settings.tab_title }}</h2>
+      </div>
+      {% endif %}
+      
+      {% if section.settings.tab_desc %}
+      <div class="section_desc">
+        <p>{{ section.settings.tab_desc }}</p>
+      </div>
+      {% endif %}
+    </div>
+	<div class="pmr-group" id="gr-1">
+		<div class="pmr-group" id="gr-1-1">
+			<div class="pmr-group" id="gr-1-1-1">
+				<div class="pmr-group" id="gr-1-1-1-1">
+					<div class="pmr-group" id="gr-1-1-1-1-1">
+                      	{% if section.settings.banner1_title %}
+						<div class="pmr-label" id="la-1-1-1-1-1-2">
+							<em>{{ section.settings.banner1_title }}</em>
+						</div>
+                      	{% endif %}
+
+						{% if section.settings.banner1_desc %}	
+                      	<div class="pmr-label" id="la-1-1-1-1-1-3">{{ section.settings.banner1_desc }}</div>
+                      	{% endif %}
+					</div>
+
+					{% if section.settings.banner1_btn_label != empty %}
+                  	<div class="pmr-group" id="gr-1-1-1-1-2">
+						<a class="pmr-button custom-add-to-cart-button" id="bu-1-1-1-1-2-1">{{ section.settings.banner1_btn_label }}</a>
+					</div>
+                  	{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="pmr-group" id="gr-2">
+      	{% if section.settings.banner2_title %}
+		<div class="pmr-label" id="la-2-1">{{ section.settings.banner2_title }}</div>
+      	{% endif %}
+      	
+      	{% if section.settings.brand_image1 %}
+		<div class="pmr-group" id="gr-2-2">
+			<div class="pmr-group" id="gr-2-2-1">
+				<div class="pmr-group" id="gr-2-2-1-1">
+                  	{% if section.settings.brand_image1 %}
+					<img alt="{{ section.settings.brand_image1.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.brand_image1 | img_url: 'master' }}" data-sizes="auto" id="im-2-2-1-1-1">
+                  	{% endif %}
+                  	
+                  	{% if section.settings.brand_image2 %}
+					<img alt="{{ section.settings.brand_image2.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.brand_image2 | img_url: 'master' }}" data-sizes="auto" id="im-2-2-1-1-2">
+                  	{% endif %}
+                  	
+                  	{% if section.settings.brand_image3 %}
+					<img alt="{{ section.settings.brand_image3.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.brand_image3 | img_url: 'master' }}" data-sizes="auto" id="im-2-2-1-1-3">
+                  	{% endif %}
+				</div>
+              	
+				<div class="pmr-group" id="gr-2-2-1-2">
+                  	{% if section.settings.brand_image4 %}
+					<img alt="{{ section.settings.brand_image4.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.brand_image4 | img_url: 'master' }}" data-sizes="auto" id="im-2-2-1-2-1">
+                  	{% endif %}
+                  	
+                  	{% if section.settings.brand_image5 %}
+					<img alt="{{ section.settings.brand_image5.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.brand_image5 | img_url: 'master' }}" data-sizes="auto" id="im-2-2-1-2-2">
+                  	{% endif %}
+                  	
+                  	{% if section.settings.brand_image6 %}
+					<img alt="{{ section.settings.brand_image6.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.brand_image6 | img_url: 'master' }}" data-sizes="auto" id="im-2-2-1-2-3">
+                  	{% endif %}
+				</div>
+			</div>
+		</div>
+		<div class="pmr-group" id="gr-2-3"></div>
+      	{% endif %}
+	</div>
+
+	<div class="pmr-group" id="gr-3">
+		<div class="pmr-group" id="gr-3-1">
+          	{% if section.settings.banner3_title %}
+			<div class="pmr-label" id="la-3-1-1">
+				<em>{{ section.settings.banner3_title }}</em>
+			</div>
+          	{% endif %}
+          	
+          	{% if section.settings.banner3_desc %}
+			<div class="pmr-label" id="la-3-1-2">{{ section.settings.banner3_desc }}</div>
+          	{% endif %}
+		</div>
+
+		<div class="pmr-group" id="gr-3-2">
+          	{% if section.settings.banner3_mobile_image %}
+			<img alt="{{ section.settings.banner3_mobile_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner3_mobile_image | img_url: 'master' }}" data-sizes="auto" id="im-3-2-1">
+          	{% endif %}
+          
+          	{% if section.settings.banner3_btn_label %}
+			<a class="pmr-button" href="https://www.iloveskininc.com.sg/cart/add?id={{ product.selected_or_first_available_variant.id }}&quantity=1&" target="_blank" rel="noopener noreferrer" id="bu-3-2-2">{{ section.settings.banner3_btn_label }}</a>
+          	{% endif %}
+		</div>
+
+		<div class="pmr-group" id="gr-3-3">
+          	{% if section.settings.banner3_desktop_image %}
+			<img alt="{{ section.settings.banner3_desktop_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner3_desktop_image | img_url: 'master' }}" data-sizes="auto" id="im-3-3-1">
+          	{% endif %}
+          
+         	{% if section.settings.banner3_btn_label != empty %}
+			<a class="pmr-button custom-add-to-cart-button" id="bu-3-3-2">{{ section.settings.banner3_btn_label }}</a>
+          	{% endif %}
+		</div>
+	</div>
+
+	<div class="pmr-group" id="gr-4">
+		<div class="pmr-group" id="gr-4-1">
+			<div class="pmr-group" id="gr-4-1-1">
+              	{% if section.settings.banner4_icon %}
+				<img alt="{{ section.settings.banner4_icon.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner4_icon | img_url: 'master' }}" data-sizes="auto" id="im-4-1-1-1">
+              	{% endif %}
+				
+              	{% if section.settings.banner4_title %}
+				<div class="pmr-label" id="la-4-1-1-2">
+					<em>{{ section.settings.banner4_title }}</em>
+				</div>
+              	{% endif %}
+				
+              	{% if section.settings.banner4_desc_1 %}
+				<div class="pmr-label" id="la-4-1-1-3">{{ section.settings.banner4_desc_1 }}</div>
+              	{% endif %}
+
+				<div class="pmr-group" id="gr-4-1-1-4">
+					<div class="pmr-group" id="gr-4-1-1-4-1">
+                      	{% if section.settings.banner4_details_1 %}
+						<img class="pmr-image Image--lazyLoad" data-src="{{ 'checkmark.png' | asset_img_url: 'master' }}" data-sizes="auto" id="im-4-1-1-4-1-1">
+						<div class="pmr-group" id="gr-4-1-1-4-1-2">
+							<div class="pmr-label" id="la-4-1-1-4-1-2-1">{{ section.settings.banner4_details_1 }} </div>
+						</div>
+                      	{% endif %}
+					</div>
+
+					<div class="pmr-group" id="gr-4-1-1-4-2">
+                      	{% if section.settings.banner4_details_2 %}
+						<img class="pmr-image Image--lazyLoad" data-src="{{ 'checkmark.png' | asset_img_url: 'master' }}" data-sizes="auto" id="im-4-1-1-4-2-1">
+						<div class="pmr-group" id="gr-4-1-1-4-2-2">
+							<div class="pmr-label" id="la-4-1-1-4-2-2-1">{{ section.settings.banner4_details_2 }}</div>
+						</div>
+                      	{% endif %}
+					</div>
+
+					<div class="pmr-group" id="gr-4-1-1-4-3">
+                      	{% if section.settings.banner4_details_3 %}
+						<img class="pmr-image Image--lazyLoad" data-src="{{ 'checkmark.png' | asset_img_url: 'master' }}" data-sizes="auto" id="im-4-1-1-4-3-1">
+						<div class="pmr-group" id="gr-4-1-1-4-3-2">
+							<div class="pmr-label" id="la-4-1-1-4-3-2-1">{{ section.settings.banner4_details_3 }}</div>
+						</div>
+                      	{% endif %}
+					</div>
+
+					<div class="pmr-group" id="gr-4-1-1-4-4">
+                      	{% if section.settings.banner4_details_4 %}
+						<img class="pmr-image Image--lazyLoad" data-src="{{ 'checkmark.png' | asset_img_url: 'master' }}" data-sizes="auto" id="im-4-1-1-4-4-1">
+						<div class="pmr-group" id="gr-4-1-1-4-4-2">
+							<div class="pmr-label" id="la-4-1-1-4-4-2-1">{{ section.settings.banner4_details_4 }}</div>
+						</div>
+                      	{% endif %}
+					</div>
+				</div>
+
+				{% if section.settings.banner4_desc_2 %}
+              	<div class="pmr-label" id="la-4-1-1-5">{{ section.settings.banner4_desc_2 }}</div>
+              	{% endif %}
+
+				{% if section.settings.banner4_btn_label != empty %}
+              	<div class="pmr-group" id="gr-4-1-1-6">
+					<a class="pmr-button custom-add-to-cart-button" id="bu-4-1-1-6-1">{{ section.settings.banner4_btn_label }}</a>
+				</div>
+              	{% endif %}
+			</div>
+
+			{% if section.settings.banner4_image %}
+          	<div class="pmr-group" id="gr-4-1-2">
+				<img alt="{{ section.settings.banner4_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner4_image | img_url: 'master' }}" data-sizes="auto" id="im-4-1-2-1">
+			</div>
+          	{% endif %}
+		</div>
+	</div>
+
+	<div class="pmr-group" id="gr-5">
+		<div class="pmr-group" id="gr-5-1">
+			<div class="pmr-group" id="gr-5-1-1">
+              	{% if section.settings.banner5_image %}
+				<img alt="{{ section.settings.banner5_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner5_image | img_url: 'master' }}" data-sizes="auto" id="im-5-1-1-1">
+              	{% endif %}
+			</div>
+
+			<div class="pmr-group" id="gr-5-1-2">
+              	{% if section.settings.banner5_icon %}
+				<img alt="{{ section.settings.banner5_icon.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner5_icon | img_url: 'master' }}" data-sizes="auto" id="im-5-1-2-1">
+              	{% endif %}
+
+				{% if section.settings.banner5_title %}
+              	<div class="pmr-label" id="la-5-1-2-2">
+					<em>{{ section.settings.banner5_title }}</em>
+				</div>
+              	{% endif %}
+
+				{% if section.settings.banner5_desc_1 %}
+              	<div class="pmr-label" id="la-5-1-2-3">{{ section.settings.banner5_desc_1 }}</div>
+              	{% endif %}
+
+				<div class="pmr-group" id="gr-5-1-2-4">
+					<div class="pmr-group" id="gr-5-1-2-4-1">
+                      	{% if section.settings.banner5_details_1 %}
+						<img class="pmr-image Image--lazyLoad" data-src="{{ 'checkmark.png' | asset_img_url: 'master' }}" data-sizes="auto" id="im-5-1-2-4-1-1">
+						<div class="pmr-group" id="gr-5-1-2-4-1-2">
+							<div class="pmr-label" id="la-5-1-2-4-1-2-1">{{ section.settings.banner5_details_1 }}</div>
+						</div>
+                      	{% endif %}
+					</div>
+
+					<div class="pmr-group" id="gr-5-1-2-4-2">
+                      	{% if section.settings.banner5_details_2 %}
+						<img class="pmr-image Image--lazyLoad" data-src="{{ 'checkmark.png' | asset_img_url: 'master' }}" data-sizes="auto" id="im-5-1-2-4-2-1">
+						<div class="pmr-group" id="gr-5-1-2-4-2-2">
+							<div class="pmr-label" id="la-5-1-2-4-2-2-1">{{ section.settings.banner5_details_2 }}</div>
+						</div>
+                      	{% endif %}
+					</div>
+
+					<div class="pmr-group" id="gr-5-1-2-4-3">
+                      	{% if section.settings.banner5_details_3 %}
+						<img class="pmr-image Image--lazyLoad" data-src="{{ 'checkmark.png' | asset_img_url: 'master' }}" data-sizes="auto" id="im-5-1-2-4-3-1">
+						<div class="pmr-group" id="gr-5-1-2-4-3-2">
+							<div class="pmr-label" id="la-5-1-2-4-3-2-1">{{ section.settings.banner5_details_3 }}</div>
+						</div>
+                      	{% endif %}
+					</div>
+				</div>
+
+				{% if section.settings.banner5_btn_label != empty %}
+              	<div class="pmr-group" id="gr-5-1-2-5">
+					<a class="pmr-button custom-add-to-cart-button" id="bu-5-1-2-5-1">{{ section.settings.banner5_btn_label }}</a>
+				</div>
+              	{% endif %}
+			</div>
+		</div>
+	</div>
+
+	<div class="pmr-group" id="gr-6">
+		<div class="pmr-group" id="gr-6-1">
+          	{% if section.settings.banner6_icon %}
+			<img alt="{{ section.settings.banner6_icon.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner6_icon | img_url: 'master' }}" data-sizes="auto" id="im-6-1-1">
+          	{% endif %}
+
+			{% if section.settings.banner6_title %}
+          	<div class="pmr-label" id="la-6-1-2">
+				<em>{{ section.settings.banner6_title }}</em>
+			</div>
+          	{% endif %}
+
+			{% if section.settings.banner6_subheading %}
+          	<div class="pmr-label" id="la-6-1-3">{{ section.settings.banner6_subheading }}</div>
+          	{% endif %}
+
+			{% if section.settings.banner6_desc %}
+          	<div class="pmr-label" id="la-6-1-4">{{ section.settings.banner6_desc }}</div>
+          	{% endif %}
+
+			<div class="pmr-group" id="gr-6-1-5">
+				<div class="pmr-group" id="gr-6-1-5-1">
+                  	{% if section.settings.banner6_red_product_image %}
+					<img alt="{{ section.settings.banner6_red_product_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner6_red_product_image | img_url: 'master' }}" data-sizes="auto" id="im-6-1-5-1-1">
+                  	{% endif %}
+                  	
+                  	{% if section.settings.banner6_red_product_label %}
+					<div class="pmr-label" id="la-6-1-5-1-2">{{ section.settings.banner6_red_product_label }}</div>
+                  	{% endif %}
+                  	
+                  	{% if section.settings.banner6_red_product_sub_label %}
+					<div class="pmr-label" id="la-6-1-5-1-3">{{ section.settings.banner6_red_product_sub_label }}</div>
+                  	{% endif %}
+                  	
+                  	{% if section.settings.banner6_red_product_desc %}
+					<div class="pmr-label" id="la-6-1-5-1-4">{{ section.settings.banner6_red_product_desc }}</div>
+                  	{% endif %}
+				</div>
+
+				<div class="pmr-group" id="gr-6-1-5-2">
+                  	{% if section.settings.banner6_yellow_product_image %}
+					<img alt="{{ section.settings.banner6_yellow_product_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner6_yellow_product_image | img_url: 'master' }}" data-sizes="auto" id="im-6-1-5-2-1">
+                  	{% endif %}
+                  	
+					{% if section.settings.banner6_yellow_product_label %}
+                  	<div class="pmr-label" id="la-6-1-5-2-2">{{ section.settings.banner6_yellow_product_label }}</div>
+                  	{% endif %}
+                  	
+                  	{% if section.settings.banner6_yellow_product_sub_label %}
+					<div class="pmr-label" id="la-6-1-5-2-3">{{ section.settings.banner6_yellow_product_sub_label }}</div>
+                  	{% endif %}
+                  
+                  	{% if section.settings.banner6_yellow_product_desc %}
+					<div class="pmr-label" id="la-6-1-5-2-4">{{ section.settings.banner6_yellow_product_desc }}</div>
+                  	{% endif %}
+				</div>
+
+				<div class="pmr-group" id="gr-6-1-5-3">
+                  	{% if section.settings.banner6_blue_product_image %}
+					<img alt="{{ section.settings.banner6_blue_product_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner6_blue_product_image | img_url: 'master' }}" data-sizes="auto" id="im-6-1-5-3-1">
+                  	{% endif %}
+                  	
+                  	{% if section.settings.banner6_blue_product_label %}
+					<div class="pmr-label" id="la-6-1-5-3-2">{{ section.settings.banner6_blue_product_label }}</div>
+                  	{% endif %}
+                  	
+                  	{% if section.settings.banner6_blue_product_sub_label %}
+					<div class="pmr-label" id="la-6-1-5-3-3">{{ section.settings.banner6_blue_product_sub_label }}</div>
+                  	{% endif %}
+                  
+                  	{% if section.settings.banner6_blue_product_desc %}
+					<div class="pmr-label" id="la-6-1-5-3-4">{{ section.settings.banner6_blue_product_desc }}</div>
+                  	{% endif %}
+				</div>
+			</div>
+
+			<div class="pmr-group" id="gr-6-1-6">
+				<div class="pmr-group" id="gr-6-1-6-1">
+                  	{% if section.settings.banner6_orange_product_image %}
+					<img alt="{{ section.settings.banner6_orange_product_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner6_orange_product_image | img_url: 'master' }}" data-sizes="auto" id="im-6-1-6-1-1">
+                  	{% endif %}
+                  	
+                  	{% if section.settings.banner6_orange_product_label %}
+					<div class="pmr-label" id="la-6-1-6-1-2">{{ section.settings.banner6_orange_product_label }}</div>
+                  	{% endif %}
+                  	
+                  	{% if section.settings.banner6_orange_product_sub_label %}
+					<div class="pmr-label" id="la-6-1-6-1-3">{{ section.settings.banner6_orange_product_sub_label }}</div>
+                  	{% endif %}
+                  
+                  	{% if section.settings.banner6_orange_product_desc %}
+					<div class="pmr-label" id="la-6-1-6-1-4">{{ section.settings.banner6_orange_product_desc }}</div>
+                  	{% endif %}
+				</div>
+
+				<div class="pmr-group" id="gr-6-1-6-2">
+                  	{% if section.settings.banner6_purple_product_image %}
+					<img alt="{{ section.settings.banner6_purple_product_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner6_purple_product_image | img_url: 'master' }}" data-sizes="auto" id="im-6-1-6-2-1">
+                  	{% endif %}
+                  
+                  	{% if section.settings.banner6_purple_product_label %}
+					<div class="pmr-label" id="la-6-1-6-2-2">{{ section.settings.banner6_purple_product_label }}</div>
+                  	{% endif %}
+                  
+                  	{% if section.settings.banner6_purple_product_sub_label %}
+					<div class="pmr-label" id="la-6-1-6-2-3">{{ section.settings.banner6_purple_product_sub_label }}</div>
+                  	{% endif %}
+                  	
+                  	{% if section.settings.banner6_purple_product_desc %}
+					<div class="pmr-label" id="la-6-1-6-2-4">{{ section.settings.banner6_purple_product_desc }}</div>
+                  	{% endif %}
+				</div>
+			</div>
+
+			{% if section.settings.banner6_btn_label != empty %}
+          	<a class="pmr-button custom-add-to-cart-button" id="bu-6-1-7">{{ section.settings.banner6_btn_label }}</a>
+          	{% endif %}
+		</div>
+	</div>
+
+	<div class="pmr-group" id="choose"></div>
+
+ 	{% if section.settings.banner7_title != empty %}
+	<div class="pmr-group" id="gr-8">
+		<div class="pmr-label" id="la-8-1">
+			<em>{{ section.settings.banner7_title }}</em>
+		</div>
+
+		{% if section.settings.banner7_desc %}
+      	<div class="pmr-label" id="la-8-2">{{ section.settings.banner7_desc }}</div>
+      	{% endif %}
+
+		<div class="pmr-group" id="gr-8-3">
+			<div class="pmr-group" id="gr-8-3-1">
+				<div class="pmr-group" id="gr-8-3-1-1">
+                  	{% if section.settings.banner7_image %}
+					<img alt="{{ section.settings.banner7_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner7_image | img_url: 'master' }}" data-sizes="auto" id="im-8-3-1-1-1">
+                  	{% endif %}
+				</div>
+
+				<div class="pmr-group" id="gr-8-3-1-2">
+                  	{% if section.settings.banner7_product_title %}
+					<div class="pmr-label" id="la-8-3-1-2-1">{{ section.settings.banner7_product_title }}</div>
+                  	{% endif %}
+					
+                  	{% if section.settings.banner7_btn_label != empty %}
+					<a class="pmr-button custom-add-to-cart-button" id="bu-8-3-1-2-3">{{ section.settings.banner7_btn_label }}</a>
+                  	{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+  	{% endif %}
+
+	<div class="pmr-group" id="gr-9">
+      	{% if section.settings.banner8_mark_image %}
+		<img alt="{{ section.settings.banner8_mark_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner8_mark_image | img_url: 'master' }}" data-sizes="auto" id="im-9-1">
+      	{% endif %}
+
+		<div class="pmr-group" id="gr-9-2">
+          	{% if section.settings.banner8_title %}
+			<div class="pmr-label" id="la-9-2-1">
+				<em>{{ section.settings.banner8_title }}</em>
+			</div>
+          	{% endif %}
+		</div>
+
+		<div class="pmr-group" id="gr-9-3">
+          	{% if section.settings.banner8_reviews_mobile_image %}
+			<img alt="{{ section.settings.banner8_reviews_mobile_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner8_reviews_mobile_image | img_url: 'master' }}" data-sizes="auto" id="im-9-3-1">
+          	{% endif %}
+          
+          	{% if section.settings.banner8_btn_label != empty %}
+			<a class="pmr-button custom-add-to-cart-button" id="bu-9-3-2">{{ section.settings.banner8_btn_label }}</a>
+          	{% endif %}
+		</div>
+
+		<div class="pmr-group" id="gr-9-4">
+          	{% if section.settings.banner8_reviews_desktop_image %}
+			<img alt="{{ section.settings.banner8_reviews_desktop_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner8_reviews_desktop_image | img_url: 'master' }}" data-sizes="auto" id="im-9-4-1">
+          	{% endif %}
+          	
+          	{% if section.settings.banner8_btn_label != empty %}
+			<a class="pmr-button custom-add-to-cart-button" id="bu-9-4-2">{{ section.settings.banner8_btn_label }}</a>
+          	{% endif %}
+		</div>
+	</div>
+</div>
+
+<style>
+#gr-top-banner{
+    padding: 80px 30px;
+    justify-content: center;
+    background-color: rgba(240, 229, 185, 0.20);
+}
+#gr-top-banner .section-heading h2{
+    text-align: center;
+    font-size: 38px;
+    font-weight: 600;
+    color: #636669;
+    line-height: 1.3em;
+}
+#gr-top-banner .section_desc{
+    margin-top: 20px;
+}
+#gr-top-banner .section_desc p{
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 17px;
+  	line-height: 29px;
+  	text-align: center;
+}
+.pmr-button, .pmr-checkbox>label, .pmr-dropdown>select, .pmr-input, .pmr-label, .pmr-radio>label {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--default-font-family, system-ui, '-apple-system', 'Roboto', 'Droid Sans', 'HelveticaNeue', sans-serif);
+}
+.pmr-button {
+    width: 100%;
+    padding: 0px;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    opacity: 1;
+}
+.pmr-group {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pmr-group:focus {
+    outline: none;
+}
+.pmr-group-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+.pmr-image {
+    width: auto;
+}
+.pmr-label {
+    width: 100%;
+    text-align: center;
+    line-height: 1.428571429;
+}
+.pmr-label a {
+    color: inherit;
+    text-decoration: underline;
+}
+.pmr-label a:hover {
+    opacity: 0.5;
+}
+#gr-root {
+    overflow: hidden;
+}
+#gr-1 {
+    flex-direction: column;
+    justify-content: flex-start;
+  	background-image: url({{ section.settings.banner1_mobile_image | img_url: 'master' }});
+    background-position: center;
+    background-size: cover;
+    padding: 0px;
+    min-height: calc(1060px);
+    width: calc(100%);
+}
+#gr-1-1 {
+    justify-content: space-evenly;
+    margin: 0px 0 0 0;
+    padding: 0px 0;
+}
+#gr-1-1-1 {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px;
+    width: calc(100%);
+}
+#gr-1-1-1-1,  #gr-3-1,  #gr-6-1,  #gr-9-2{
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    width: calc(90%);
+}
+#gr-1-1-1-1-1 {
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    background-image: none;
+    margin: 10px 0 15px 0;
+    padding: 0px;
+    display: flex;
+}
+#gr-1-1-1-1-2,  #gr-4-1-1-6,  #gr-5-1-2-5,  #choose,  #gr-8-3 {
+    justify-content: space-evenly;
+}
+#im-1-1-1-1-1-1-1 {
+    margin: 30px 0;
+    height: calc(62px);
+}
+#la-1-1-1-1-1-2 {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #636669;
+    line-height: 45px;
+    background-image: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/hero-text-mobile.png);
+    background-position: center;
+    background-size: cover;
+    margin: 0px;
+  	margin-top: 80px;
+    width: calc(345px);
+}
+#la-1-1-1-1-1-3,  #la-4-1-1-3,  #la-5-1-2-3 {
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #636669;
+    line-height: 26px;
+    margin: 15px 0 0px 0;
+    width: calc(97%);
+}
+#bu-1-1-1-1-2-1 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    line-height: calc(50px - (0px * 2));
+    background-color: #d7b4b5;
+    border-radius: 40px;
+    border: 0px solid;
+    margin: 0 0 0px 0;
+    padding: 0 10px 0 10px;
+    height: calc(50px);
+    width: calc(240px);
+  	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#bu-1-1-1-1-2-1:hover,  #bu-3-2-2:hover,  #bu-3-3-2:hover,  #bu-4-1-1-6-1:hover,  #bu-5-1-2-5-1:hover,  #bu-6-1-7:hover,  #bu-8-3-1-2-3:hover,  #bu-9-3-2:hover,  #bu-9-4-2:hover {
+    font-size: 16px;
+    color: #636669;
+    background-color: #d7b4b5;
+}
+#gr-2 {
+    justify-content: space-evenly;
+    background-color: #fff;
+    padding: 0px 0 40px 0;
+}
+#la-2-1 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 27px;
+    background-color: #d7b4b5;
+    margin: 0px 0 40px 0;
+    padding: 12px 0 6px 0;
+    width: calc(100%);
+}
+#gr-2-2 {
+    justify-content: space-evenly;
+    padding: 0px 0;
+    width: calc(85%);
+}
+#gr-2-2-1 {
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0 0 0;
+}
+#gr-2-2-1-1 {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 0px 0 0px;
+}
+#im-2-2-1-1-1,  #im-2-2-1-1-2,  #im-2-2-1-1-3,  #im-2-2-1-2-1,  #im-2-2-1-2-2,  #im-2-2-1-2-3 {
+    border-radius: 0px;
+    margin: 0 0 20px 0;
+    width: calc(28%);
+}
+#gr-2-2-1-2 {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px 0 0px;
+}
+#gr-2-3 {
+    justify-content: space-evenly;
+    background-color: #a1a3a5;
+    margin: 20px 0 0 0;
+    min-height: calc(1px);
+    width: calc(100%);
+}
+#gr-3 {
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #fff;
+    padding: 0px 0px 60px 0px;
+    width: calc(100%);
+}
+#la-3-1-1 {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #636669;
+    line-height: 45px;
+    background-image: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/selfcare-text-mobile.png);
+    background-position: center;
+    background-size: cover;
+    margin: 0px 0;
+    width: calc(320px);
+}
+#la-3-1-2 {
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #636669;
+    line-height: 26px;
+    margin: 20px 0 0px 0;
+    width: calc(100%);
+}
+#gr-3-2 {
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 30px 0 0px 0;
+}
+#im-3-2-1,  #im-9-3-1 {
+    width: calc(85%);
+}
+#bu-3-2-2,  #bu-3-3-2 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    line-height: calc(50px - (0px * 2));
+    background-color: #d7b4b5;
+    border-radius: 40px;
+    border: 0px solid;
+    margin: 45px 0 0px 0;
+    padding: 0px 10px 0 10px;
+    height: calc(50px);
+    width: calc(240px);
+  	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#gr-3-3,  #gr-9-4 {
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin: 20px 0;
+    display: none;
+}
+#im-3-3-1,  #im-9-4-1 {
+    width: calc(100%);
+}
+#gr-4 {
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #fff;
+    padding: 0px;
+    width: calc(100%);
+}
+#gr-4-1 {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0px;
+    width: calc(85%);
+}
+#gr-4-1-1,  #gr-5-1-2 {
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    background-image: none;
+    margin: 0px 0 30px 0;
+    padding: 0px;
+    display: flex;
+}
+#im-4-1-1-1 {
+    margin: 0 0 10px 0;
+    width: calc(35px);
+}
+#la-4-1-1-2 {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #636669;
+    line-height: 45px;
+    margin: 0px 0;
+    width: calc(95%);
+}
+#gr-4-1-1-4 {
+    justify-content: space-evenly;
+    margin: 15px 0 0 0;
+    width: calc(85%);
+}
+#gr-4-1-1-4-1,  #gr-4-1-1-4-2,  #gr-4-1-1-4-3,  #gr-4-1-1-4-4,  #gr-5-1-2-4-1,  #gr-5-1-2-4-2,  #gr-5-1-2-4-3 {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0 0 20px 0;
+}
+#im-4-1-1-4-1-1,  #im-4-1-1-4-2-1,  #im-4-1-1-4-3-1,  #im-4-1-1-4-4-1,  #im-5-1-2-4-1-1,  #im-5-1-2-4-2-1,  #im-5-1-2-4-3-1 {
+    margin: 7px 0 0 0;
+    width: calc(15px );
+}
+#gr-4-1-1-4-1-2,  #gr-4-1-1-4-2-2,  #gr-4-1-1-4-3-2,  #gr-4-1-1-4-4-2,  #gr-5-1-2-4-1-2,  #gr-5-1-2-4-2-2,  #gr-5-1-2-4-3-2 {
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+#la-4-1-1-4-1-2-1,  #la-4-1-1-4-2-2-1,  #la-4-1-1-4-3-2-1,  #la-4-1-1-4-4-2-1,  #la-5-1-2-4-1-2-1,  #la-5-1-2-4-2-2-1,  #la-5-1-2-4-3-2-1 {
+    text-align: left;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #636669;
+    line-height: 26px;
+    margin: 0px 0 0px 10px;
+    width: calc(100%);
+}
+#la-4-1-1-5 {
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #636669;
+    line-height: 26px;
+    margin: 0px 0;
+    width: calc(90%);
+}
+#bu-4-1-1-6-1, #bu-5-1-2-5-1 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    line-height: calc(50px - (0px * 2));
+    background-color: #d7b4b5;
+    border-radius: 40px;
+    border: 0px solid;
+    margin: 40px 0 0px 0;
+    padding: 0px 10px 0 10px;
+    height: calc(50px);
+    width: calc(240px);
+  	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#bu-5-1-2-5-1 {
+    margin-top: 20px;
+}
+#gr-4-1-2,  #gr-5-1-1 {
+    justify-content: space-evenly;
+    margin: 0px 0;
+}
+#im-4-1-2-1,  #im-5-1-1-1 {
+    border-radius: 0px;
+    margin: 40px 0 0 0;
+    width: calc(95%);
+}
+#gr-5 {
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #fff;
+    padding: 60px 0px;
+    width: calc(100%);
+}
+#gr-5-1 {
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0px;
+    width: calc(85%);
+}
+#im-5-1-2-1 {
+    margin: 0 0 10px 0;
+    width: calc(55px);
+}
+#la-5-1-2-2 {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #636669;
+    line-height: 45px;
+    margin: 0px 0;
+    width: calc(100%);
+}
+#gr-5-1-2-4 {
+    justify-content: space-evenly;
+    margin: 15px 0 0 -10px;
+    width: calc(85%);
+}
+#gr-6 {
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: rgba(244, 217, 188, 0.20);
+    padding: 50px 0px 150px 0px;
+    width: calc(100%);
+}
+#im-6-1-1 {
+    margin: 0 0 5px 0;
+    width: calc(45px);
+}
+#la-6-1-2 {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #636669;
+    line-height: 45px;
+    background-color: transparent;
+    background-image: none;
+    margin: 0px 0;
+    width: calc(100%);
+}
+#la-6-1-3 {
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #636669;
+    line-height: 27px;
+    margin: 20px 0 5px 0;
+    width: calc(70%);
+}
+#la-6-1-4 {
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #636669;
+    line-height: 26px;
+    margin: 0px 0;
+    width: calc(100%);
+}
+#gr-6-1-5 {
+    justify-content: space-evenly;
+    padding: 0px;
+  	margin-top: 30px;
+}
+#gr-6-1-5-1,  #gr-6-1-5-2,  #gr-6-1-5-3,  #gr-6-1-6-1,  #gr-6-1-6-2 {
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 22px 0px 25px 0px;
+}
+#im-6-1-5-1-1,  #im-6-1-5-2-1,  #im-6-1-5-3-1,  #im-6-1-6-1-1,  #im-6-1-6-2-1 {
+    border-radius: 0px;
+    margin: 0px 0;
+    width: calc(50%);
+}
+#la-6-1-5-1-2 {
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #cc1030;
+    line-height: 20px;
+    margin: 22px 0 0px 0;
+}
+#la-6-1-5-1-3,  #la-6-1-5-2-3,  #la-6-1-5-3-3,  #la-6-1-6-1-3,  #la-6-1-6-2-3 {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #636669;
+    line-height: 26px;
+    margin: 0px 0;
+    width: calc(97%);
+}
+#la-6-1-5-1-4,  #la-6-1-5-3-4,  #la-6-1-6-1-4 {
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #636669;
+    line-height: 26px;
+    margin: 10px 0 0px 0;
+    width: calc(85%);
+  	max-width: 400px;
+}
+#la-6-1-5-2-2 {
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ebc005;
+    line-height: 20px;
+    margin: 22px 0 0px 0;
+}
+#la-6-1-5-2-4,  #la-6-1-6-2-4 {
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #636669;
+    line-height: 26px;
+    margin: 10px 0 0px 0;
+    width: calc(89%);
+  	max-width: 400px;
+}
+#la-6-1-5-3-2 {
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0183ff;
+    line-height: 20px;
+    margin: 22px 0 0px 0;
+}
+#gr-6-1-6 {
+    justify-content: space-evenly;
+    padding: 0px 0px 15px 0px;
+}
+#la-6-1-6-1-2 {
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #f57e02;
+    line-height: 20px;
+    margin: 22px 0 0px 0;
+}
+#la-6-1-6-2-2 {
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #a73cd1;
+    line-height: 20px;
+    margin: 22px 0 0px 0;
+}
+#bu-6-1-7 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    line-height: calc(50px - (0px * 2));
+    background-color: #d7b4b5;
+    border-radius: 40px;
+    border: 0px solid;
+    margin: 0px 0;
+    padding: 0px 10px 0 10px;
+    height: calc(50px);
+    width: calc(240px);
+  	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#gr-8 {
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #fff;
+    padding: 60px 0px 90px 0px;
+    width: calc(100%);
+}
+#la-8-1 {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #636669;
+    line-height: 45px;
+    background-image: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/selfcare-text-mobile.png);
+    background-position: center;
+    background-size: cover;
+    margin: 0px 0;
+    width: calc(280px);
+}
+#la-8-2 {
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #636669;
+    line-height: 26px;
+    margin: 5px 0 0px 0;
+    width: calc(80%);
+}
+#gr-8-3-1 {
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    padding: 30px 0px 0px 0px;
+}
+#gr-8-3-1-1 {
+    justify-content: space-evenly;
+    margin: 0px 0 0 0;
+    padding: 0px;
+    width: calc(90%);
+}
+#im-8-3-1-1-1 {
+    border-radius: 0px;
+    margin: 0px 0px 0px 10px;
+    width: calc(100%);
+}
+#gr-8-3-1-2 {
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#la-8-3-1-2-1 {
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #636669;
+    line-height: 27px;
+    margin: 20px 0 0px 0;
+    width: calc(100%);
+}
+#la-8-3-1-2-2-2 {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #636669;
+    line-height: 24px;
+    margin: 0px 0 10px 0;
+    width: calc(100%);
+}
+#la-8-3-1-2-2-3 {
+    text-align: right;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #636669;
+    line-height: 14px;
+    margin: 0px 0;
+    width: calc(160px);
+}
+#im-8-3-1-2-2-4 {
+    border-radius: 0px;
+    margin: 0 0 4px 5px;
+    width: calc(50px);
+}
+#bu-8-3-1-2-3 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    line-height: calc(50px - (0px * 2));
+    background-color: #d7b4b5;
+    border-radius: 40px;
+    border: 0px solid;
+    margin: 30px 0 60px 0;
+    padding: 0px 10px 0 10px;
+    height: calc(50px);
+    width: calc(240px);
+  	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#gr-9 {
+    flex-direction: column;
+    justify-content: space-evenly;
+  	background-image: url({{ section.settings.banner8_mobile_bg_image | img_url: 'master' }});
+    background-position: center;
+    background-size: cover;
+    padding: 80px 0px;
+    width: calc(100%);
+}
+#im-9-1 {
+    margin: -180px 0 15px 0;
+    width: calc(205px);
+}
+#la-9-2-1 {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #636669;
+    line-height: 45px;
+    background-color: transparent;
+    background-image: none;
+    margin: 0px 0;
+    width: calc(90%);
+}
+#gr-9-3 {
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 20px 0 0px 0;
+}
+#bu-9-3-2 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    line-height: calc(50px - (0px * 2));
+    background-color: #d7b4b5;
+    border-radius: 40px;
+    border: 0px solid;
+    margin: 35px 0 0px 0;
+    padding: 0px 10px 0 10px;
+    height: calc(50px);
+    width: calc(240px);
+  	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#bu-9-4-2 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    line-height: calc(50px - (0px * 2));
+    background-color: #d7b4b5;
+    border-radius: 40px;
+    border: 0px solid;
+    margin: 35px 0 50px 0;
+    padding: 0px 10px 0 10px;
+    height: calc(50px);
+    width: calc(240px);
+  	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media only screen and (min-width: 1200px) {
+    #gr-top-banner{
+      	padding: 80px;
+        justify-content: center;
+        background-color: rgba(240, 229, 185, 0.20);
+    }
+    #gr-top-banner .section-heading h2{
+      	text-align: center;
+      	font-size: 52px;
+        font-weight: 600;
+        color: #636669;
+        line-height: 1.3em;
+    }
+  	#gr-top-banner .section_desc{
+      	margin-top: 20px;
+    }
+    #gr-top-banner .section_desc p{
+      	font-family: 'Helvetica Neue', sans-serif;
+    	font-size: 18px;
+      	line-height: 1.4em;
+  		text-align: center;
+    }
+	#gr-1 {
+	    justify-content: flex-start;
+	    background-image: url({{ section.settings.banner1_desktop_image | img_url: 'master' }});
+	    background-position: center;
+	    background-size: cover;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    padding-top: 0px;
+	    padding-right: 0px;
+	    padding-bottom: 0px;
+	    padding-left: 0px;
+	    min-height: calc(700px);
+	    width: calc(100%);
+	}
+	#gr-1-1 {
+	    flex-direction: column;
+	    align-items: center;
+	    justify-content: space-evenly;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    padding-top: 50px;
+	    padding-right: 0px;
+	    padding-bottom: 0px;
+	    padding-left: 0px;
+	    width: calc(100%);
+	}
+	#gr-1-1-1 {
+	    flex-direction: row;
+	    align-items: flex-start;
+	    justify-content: flex-start;
+	    background-color: transparent;
+	    background-image: none;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    padding-top: 0px;
+	    padding-right: 0px;
+	    padding-bottom: 130px;
+	}
+	#gr-1-1-1-1 {
+	    align-items: center;
+	    justify-content: center;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    padding-left: 0px;
+	    width: calc(60%);
+	}
+	#gr-1-1-1-1-1 {
+	    align-items: center;
+	    justify-content: center;
+	    background-color: transparent;
+	    background-image: none;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    padding-top: 0px;
+	    padding-bottom: 0px;
+	    min-height: calc(0);
+	    display: flex;
+	}
+  	#im-1-1-1-1-1-1-1 {
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    margin-left: 40px;
+	    height: calc(90px);
+	}
+	#la-1-1-1-1-1-2 {
+	    text-align: center;
+	    font-family: 'Cormorant Garamond', serif;
+	    font-size: 58px;
+	    font-weight: 600;
+	    color: #636669;
+	    line-height: 1.3em;
+	    background-image: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/hero-text-desktop.png);
+	    background-position: center;
+	    background-size: cover;
+	    margin-top: 80px;
+	    margin-bottom: 0px;
+	    width: calc(545px);
+	}
+	#la-1-1-1-1-1-3 {
+	    text-align: center;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 18px;
+	    font-weight: 500;
+	    color: #636669;
+	    line-height: 28px;
+	    margin-top: 25px;
+	    margin-bottom: 5px;
+	    width: calc(45%);
+	}
+	#gr-1-1-1-1-2 {
+	    align-items: center;
+	}
+	#bu-1-1-1-1-2-1,  #bu-3-2-2 {
+	    text-align: center;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 17px;
+	    font-weight: 500;
+	    color: #fff;
+	    line-height: calc(55px - (0px * 2));
+	    background-color: #d7b4b5;
+	    border-radius: 40px;
+	    border-width: 0px;
+	    border-style: solid;
+	    margin-top: 20px;
+	    margin-bottom: 30px;
+	    height: calc(55px);
+	    width: calc(265px);
+	}
+	#bu-1-1-1-1-2-1:hover,  #bu-3-2-2:hover,  #bu-3-3-2:hover,  #bu-4-1-1-6-1:hover,  #bu-5-1-2-5-1:hover,  #bu-6-1-7:hover,  #bu-8-3-1-2-3:hover,  #bu-9-3-2:hover,  #bu-9-4-2:hover {
+	    font-size: 17px;
+	    color: #636669;
+	    background-color: #d7b4b5;
+	    border-width: 0px;
+	    border-style: solid;
+	}
+	#gr-2 {
+	    flex-wrap: wrap;
+	    background-color: #fff;
+	    padding-top: 0px;
+	    padding-right: 0px;
+	    padding-bottom: 40px;
+	    padding-left: 0px;
+	}
+	#la-2-1 {
+	    text-align: center;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 22px;
+	    font-weight: 500;
+	    color: #fff;
+	    line-height: 28px;
+	    background-color: #d7b4b5;
+	    margin-top: 0px;
+	    margin-bottom: 20px;
+	    padding-top: 18px;
+	    padding-bottom: 11px;
+	    width: calc(100%);
+	}
+	#gr-2-2 {
+	    flex-direction: column;
+	    padding-top: 0px;
+	    padding-right: 0px;
+	    padding-bottom: 0px;
+	    padding-left: 0px;
+	    width: calc(90%);
+	}
+	#gr-2-2-1 {
+	    flex-direction: row;
+	    align-items: center;
+	    padding-top: 35px;
+	    padding-right: 0px;
+	    padding-left: 0px;
+	    width: calc(85%);
+	    display: flex;
+	}
+	#gr-2-2-1-1 {
+	    flex-direction: row;
+	    padding-top: 0px;
+	    padding-right: 25px;
+	    padding-left: 0px;
+	    width: calc(50%);
+	    display: flex;
+	}
+	#im-2-2-1-1-1,  #im-2-2-1-1-2,  #im-2-2-1-1-3,  #im-2-2-1-2-1,  #im-2-2-1-2-2,  #im-2-2-1-2-3 {
+	    margin-bottom: 0px;
+	    width: calc(28%);
+	}
+	#gr-2-2-1-2 {
+	    flex-direction: row;
+	    padding-top: 0px;
+	    padding-right: 0px;
+	    padding-left: 25px;
+	    width: calc(50%);
+	    display: flex;
+	}
+	#gr-2-3 {
+	    margin-top: 55px;
+	    width: calc(100%);
+	}
+	#gr-3 {
+	    justify-content: center;
+	    background-color: #fff;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    padding-top: 0px;
+	    padding-right: 0px;
+	    padding-bottom: 80px;
+	    padding-left: 0px;
+	    width: calc(100%);
+	}
+	#gr-3-1 {
+	    align-items: center;
+	    justify-content: center;
+	    margin-top: 55px;
+	    margin-bottom: 0px;
+	    padding-left: 0px;
+	    width: calc(90%);
+	}
+	#la-3-1-1 {
+	    text-align: center;
+	    font-family: 'Cormorant Garamond', serif;
+	    font-size: 58px;
+	    font-weight: 600;
+	    color: #636669;
+	    line-height: 1.3em;
+	    background-image: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/selfcare-text-desktop.png);
+	    background-position: center;
+	    background-size: cover;
+	    margin-bottom: 20px;
+	    width: calc(450px);
+	}
+	#la-3-1-2 {
+	    text-align: center;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 18px;
+	    font-weight: 500;
+	    color: #636669;
+	    line-height: 28px;
+	    margin-top: 20px;
+	    margin-bottom: 40px;
+	    width: calc(100%);
+	}
+	#gr-3-2,  #gr-9-3 {
+	    flex-direction: row;
+	    margin-bottom: 0px;
+	    display: none;
+	}
+	#gr-3-3,  #gr-9-4 {
+	    flex-direction: column;
+	    align-items: center;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    display: flex;
+	}
+	#im-3-3-1 {
+	    margin-bottom: 20px;
+	    width: calc(80%);
+	}
+	#bu-3-3-2 {
+	    text-align: center;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 17px;
+	    font-weight: 500;
+	    color: #fff;
+	    line-height: calc(55px - (0px * 2));
+	    background-color: #d7b4b5;
+	    border-radius: 40px;
+	    border-width: 0px;
+	    border-style: solid;
+	    margin-top: 30px;
+	    margin-bottom: 30px;
+	    height: calc(55px);
+	    width: calc(265px);      
+	}
+	#gr-4 {
+	    justify-content: flex-start;
+	    background-color: #fff;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    padding-top: 0px;
+	    padding-right: 0px;
+	    padding-bottom: 0px;
+	    padding-left: 0px;
+	    width: calc(100%);
+	}
+	#gr-4-1,  #gr-5-1 {
+	    flex-direction: row;
+	    flex-wrap: nowrap;
+	    align-items: center;
+	    justify-content: flex-start;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    padding-left: 0px;
+	    width: calc(80%);
+	}
+	#gr-4-1-1 {
+	    align-items: flex-start;
+	    background-color: transparent;
+	    background-image: none;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    padding-top: 0px;
+	    padding-right: 50px;
+	    padding-bottom: 0px;
+	    padding-left: 0px;
+	    min-height: calc(0);
+	    display: flex;
+	}
+	#im-4-1-1-1 {
+	    margin-left: 8px;
+	    width: calc(45px);
+	}
+	#la-4-1-1-2,  #la-5-1-2-2 {
+	    text-align: left;
+	    font-family: 'Cormorant Garamond', serif;
+	    font-size: 58px;
+	    font-weight: 600;
+	    color: #636669;
+	    line-height: 1.3em;
+	    margin-bottom: 0px;
+	    width: calc(100%);
+	}
+	#la-4-1-1-3,  #la-5-1-2-3 {
+	    text-align: left;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 18px;
+	    font-weight: 500;
+	    color: #636669;
+	    line-height: 28px;
+	    margin-bottom: 0px;
+	    width: calc(100%);
+	}
+	#gr-4-1-1-4,  #gr-5-1-2-4 {
+	    margin-top: 25px;
+	    width: calc(100%);
+	}
+	#gr-4-1-1-4-1,  #gr-4-1-1-4-2,  #gr-4-1-1-4-3,  #gr-4-1-1-4-4,  #gr-5-1-2-4-1,  #gr-5-1-2-4-2,  #gr-5-1-2-4-3 {
+	    flex-direction: row;
+	    align-items: flex-start;
+	    justify-content: flex-start;
+	}
+	#im-4-1-1-4-1-1,  #im-4-1-1-4-2-1,  #im-4-1-1-4-3-1,  #im-4-1-1-4-4-1,  #im-5-1-2-4-1-1,  #im-5-1-2-4-2-1,  #im-5-1-2-4-3-1 {
+	    margin-top: 6px;
+	    width: calc(18px );
+	}
+	#gr-4-1-1-4-1-2,  #gr-4-1-1-4-2-2,  #gr-4-1-1-4-3-2,  #gr-4-1-1-4-4-2,  #gr-5-1-2-4-1-2,  #gr-5-1-2-4-2-2,  #gr-5-1-2-4-3-2 {
+	    align-items: flex-start;
+	    justify-content: flex-start;
+	}
+	#la-4-1-1-4-1-2-1 {
+	    text-align: left;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 18px;
+	    font-weight: 500;
+	    color: #636669;
+	    line-height: 28px;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    margin-left: 10px;
+	    width: calc(80%);
+	}
+	#la-4-1-1-4-2-2-1,  #la-4-1-1-4-3-2-1,  #la-5-1-2-4-1-2-1,  #la-5-1-2-4-2-2-1,  #la-5-1-2-4-3-2-1 {
+	    text-align: left;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 18px;
+	    font-weight: 500;
+	    color: #636669;
+	    line-height: 28px;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    margin-left: 10px;
+	    width: calc(100%);
+	}
+	#la-4-1-1-4-4-2-1 {
+	    text-align: left;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 18px;
+	    font-weight: 500;
+	    color: #636669;
+	    line-height: 28px;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    margin-left: 10px;
+	    width: calc(70%);
+	}
+	#la-4-1-1-5 {
+	    text-align: left;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 18px;
+	    font-weight: 500;
+	    color: #636669;
+	    line-height: 28px;
+	    margin-top: 10px;
+	    margin-bottom: 5px;
+	    width: calc(100%);
+	}
+	#gr-4-1-1-6,  #gr-5-1-2-5 {
+	    align-items: flex-start;
+	}
+	#bu-4-1-1-6-1,  #bu-5-1-2-5-1,  #bu-9-4-2 {
+	    text-align: center;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 17px;
+	    font-weight: 500;
+	    color: #fff;
+	    line-height: calc(55px - (0px * 2));
+	    background-color: #d7b4b5;
+	    border-radius: 40px;
+	    border-width: 0px;
+	    border-style: solid;
+	    margin-top: 30px;
+	    margin-bottom: 0px;
+	    height: calc(55px);
+	    width: calc(265px);
+	}
+	#gr-4-1-2 {
+	    flex-direction: row;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    padding-left: 50px;
+	}
+	#im-4-1-2-1 {
+	    width: calc(100%);
+	}
+	#gr-5 {
+	    justify-content: flex-start;
+	    background-color: #fff;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    padding-top: 120px;
+	    padding-right: 0px;
+	    padding-bottom: 120px;
+	    padding-left: 0px;
+	    width: calc(100%);
+	}
+	#gr-5-1-1 {
+	    flex-direction: row;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    padding-right: 50px;
+	    padding-left: 0px;
+	}
+	#im-5-1-1-1 {
+	    margin-top: 0px;
+	    width: calc(100%);
+	}
+	#gr-5-1-2 {
+	    align-items: flex-start;
+	    background-color: transparent;
+	    background-image: none;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    padding-top: 0px;
+	    padding-right: 0px;
+	    padding-bottom: 0px;
+	    padding-left: 50px;
+	    min-height: calc(0);
+	    display: flex;
+	}
+	#im-5-1-2-1 {
+	    width: calc(65px);
+	}
+	#gr-6 {
+	    justify-content: center;
+	    background-color: rgba(240, 229, 185, 0.20);
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    padding-top: 110px;
+	    padding-right: 0px;
+	    padding-bottom: 180px;
+	    padding-left: 0px;
+	    width: calc(100%);
+	}
+	#gr-6-1,  #gr-9-2 {
+	    align-items: center;
+	    justify-content: center;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    padding-left: 0px;
+	    width: calc(90%);
+	}
+	#im-6-1-1 {
+	    margin-bottom: 0px;
+	    margin-left: 8px;
+	    width: calc(55px);
+	}
+	#la-6-1-2 {
+	    text-align: center;
+	    font-family: 'Cormorant Garamond', serif;
+	    font-size: 58px;
+	    font-weight: 600;
+	    color: #636669;
+	    line-height: 1.3em;
+	    background-color: transparent;
+	    background-image: none;
+	    margin-bottom: 20px;
+	    width: calc(450px);
+	}
+	#la-6-1-3 {
+	    text-align: center;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 25px;
+	    font-weight: 500;
+	    color: #636669;
+	    line-height: 28px;
+	    margin-top: 10px;
+	    margin-bottom: 10px;
+	    width: calc(100%);
+	}
+	#la-6-1-4 {
+	    text-align: center;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 18px;
+	    font-weight: 500;
+	    color: #636669;
+	    line-height: 28px;
+	    margin-top: 0px;
+	    margin-bottom: 20px;
+	    width: calc(55%);
+	}
+	#gr-6-1-5 {
+	    flex-direction: row;
+	    align-items: flex-start;
+	    padding-bottom: 0px;
+	    width: calc(85%);
+	}
+	#gr-6-1-5-1,  #gr-6-1-5-2,  #gr-6-1-5-3 {
+	    flex-direction: column;
+	    margin-bottom: 22px;
+	    padding-top: 22px;
+	    padding-right: 0px;
+	    padding-bottom: 0px;
+	    padding-left: 0px;
+	    width: calc(30%);
+	}
+	#im-6-1-5-1-1,  #im-6-1-5-2-1,  #im-6-1-5-3-1,  #im-6-1-6-1-1,  #im-6-1-6-2-1 {
+	    border-radius: 20px;
+	    margin-right: 0px;
+	    margin-bottom: 10px;
+	    margin-left: 0px;
+	    width: calc(65%);
+	}
+	#la-6-1-5-1-2 {
+	    text-align: center;
+	    font-size: 25px;
+	    font-weight: 700;
+	    color: #cc1030;
+	    line-height: 25px;
+	    margin-top: 10px;
+	    margin-bottom: 0px;
+	    width: calc(100%);
+	}
+	#la-6-1-5-1-3,  #la-6-1-5-2-3,  #la-6-1-5-3-3,  #la-6-1-6-1-3,  #la-6-1-6-2-3 {
+	    text-align: center;
+	    font-family: 'Cormorant Garamond', serif;
+	    font-size: 22px;
+	    font-weight: 600;
+	    color: #636669;
+	    line-height: 28px;
+	    margin-top: 0px;
+	    margin-bottom: 5px;
+	    width: calc(100%);
+	}
+	#la-6-1-5-1-4,  #la-6-1-6-1-4 {
+	    text-align: center;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 18px;
+	    font-weight: 500;
+	    color: #636669;
+	    line-height: 28px;
+	    margin-top: 10px;
+	    margin-bottom: 5px;
+	    width: calc(100%);
+	}
+	#la-6-1-5-2-2 {
+	    text-align: center;
+	    font-size: 25px;
+	    font-weight: 700;
+	    color: #ebc005;
+	    line-height: 25px;
+	    margin-top: 10px;
+	    margin-bottom: 0px;
+	    width: calc(100%);
+	}
+	#la-6-1-5-2-4,  #la-6-1-6-2-4 {
+	    text-align: center;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 18px;
+	    font-weight: 500;
+	    color: #636669;
+	    line-height: 28px;
+	    margin-top: 10px;
+	    margin-bottom: 5px;
+	    width: calc(95%);
+	}
+	#la-6-1-5-3-2 {
+	    text-align: center;
+	    font-size: 25px;
+	    font-weight: 700;
+	    color: #0183ff;
+	    line-height: 25px;
+	    margin-top: 10px;
+	    margin-bottom: 0px;
+	    width: calc(100%);
+	}
+	#la-6-1-5-3-4 {
+	    text-align: center;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 18px;
+	    font-weight: 500;
+	    color: #636669;
+	    line-height: 28px;
+	    margin-top: 10px;
+	    margin-bottom: 5px;
+	    width: calc(85%);
+	}
+	#gr-6-1-6 {
+	    flex-direction: row;
+	    align-items: flex-start;
+	    justify-content: space-evenly;
+	    padding-bottom: 30px;
+	    padding-left: 0px;
+	    width: calc(85%);
+	}
+	#gr-6-1-6-1 {
+	    flex-direction: column;
+	    margin-right: -50px;
+	    margin-bottom: 22px;
+	    padding-top: 22px;
+	    padding-right: 0px;
+	    padding-bottom: 0px;
+	    padding-left: 0px;
+	    width: calc(30%);
+	}
+	#la-6-1-6-1-2 {
+	    text-align: center;
+	    font-size: 25px;
+	    font-weight: 700;
+	    color: #f57e02;
+	    line-height: 25px;
+	    margin-top: 10px;
+	    margin-bottom: 0px;
+	    width: calc(100%);
+	}
+	#gr-6-1-6-2 {
+	    flex-direction: column;
+	    margin-bottom: 22px;
+	    margin-left: -50px;
+	    padding-top: 22px;
+	    padding-right: 0px;
+	    padding-bottom: 0px;
+	    padding-left: 0px;
+	    width: calc(30%);
+	}
+	#la-6-1-6-2-2 {
+	    text-align: center;
+	    font-size: 25px;
+	    font-weight: 700;
+	    color: #a73cd1;
+	    line-height: 25px;
+	    margin-top: 10px;
+	    margin-bottom: 0px;
+	    width: calc(100%);
+	}
+	#bu-6-1-7,  #bu-9-3-2 {
+	    text-align: center;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 17px;
+	    font-weight: 500;
+	    color: #fff;
+	    line-height: calc(55px - (0px * 2));
+	    background-color: #d7b4b5;
+	    border-radius: 40px;
+	    border-width: 0px;
+	    border-style: solid;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    height: calc(55px);
+	    width: calc(265px);
+	}
+	#gr-8 {
+	    align-items: center;
+	    background-color: #fff;
+	    margin-top: 0px;
+	    padding-top: 90px;
+	    padding-right: 0px;
+	    padding-bottom: 100px;
+	    padding-left: 0px;
+	    width: calc(100%);
+	}
+	#la-8-1 {
+	    text-align: center;
+	    font-family: 'Cormorant Garamond', serif;
+	    font-size: 58px;
+	    font-weight: 600;
+	    color: #636669;
+	    line-height: 1.3em;
+	    background-image: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/selfcare-text-desktop.png);
+	    background-position: center;
+	    background-size: cover;
+	    margin-bottom: 30px;
+	    width: calc(470px);
+	}
+	#la-8-2 {
+	    text-align: center;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 18px;
+	    font-weight: 500;
+	    color: #636669;
+	    line-height: 28px;
+	    margin-top: 0px;
+	    margin-bottom: 30px;
+	    width: calc(100%);
+	}
+	#gr-8-3 {
+	    flex-direction: row;
+	    justify-content: space-between;
+	    margin-bottom: 40PX;
+	    width: calc(85%);
+	}
+	#gr-8-3-1 {
+	    flex-direction: row;
+	    flex-wrap: nowrap;
+	    align-items: center;
+	    justify-content: center;
+	    margin-left: 0px;
+	    padding-top: 0px;
+	    padding-right: 0px;
+	    padding-bottom: 0px;
+	    padding-left: 0px;
+	    width: calc(100%);
+	}
+	#gr-8-3-1-1 {
+	    align-items: center;
+	    margin-top: 0px;
+	    margin-right: 0px;
+	    margin-bottom: 0px;
+	    margin-left: 0px;
+	    width: calc(65%);
+	    display: flex;
+	}
+	#im-8-3-1-1-1 {
+	    margin-top: 0px;
+	    margin-left: 0px;
+	    width: calc(100%);
+	}
+	#gr-8-3-1-2 {
+	    flex-direction: column;
+	    align-items: flex-start;
+	    justify-content: center;
+	    padding-top: 0px;
+	    padding-right: 0px;
+	    padding-bottom: 20px;
+	    padding-left: 0px;
+	    width: calc(50%);
+	}
+	#la-8-3-1-2-1 {
+	    text-align: left;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 25px;
+	    font-weight: 500;
+	    color: #636669;
+	    line-height: 28px;
+	    margin-top: 10px;
+	    margin-bottom: 0px;
+	    width: calc(100%);
+	}
+	#la-8-3-1-2-2-2 {
+	    text-align: left;
+	    font-family: 'Cormorant Garamond', serif;
+	    font-size: 32px;
+	    font-weight: 700;
+	    color: #636669;
+	    line-height: 20px;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    width: calc(85%);
+	}
+	#la-8-3-1-2-2-3 {
+	    text-align: left;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 17px;
+	    font-weight: 500;
+	    color: #636669;
+	    line-height: 17px;
+	    margin-top: 5px;
+	    margin-right: 5px;
+	    margin-bottom: 0px;
+	    width: calc(190px);
+	}
+	#im-8-3-1-2-2-4 {
+	    border-radius: 0px;
+	    margin-top: 6px;
+	    margin-bottom: 5px;
+	    margin-left: 0px;
+	}
+	#bu-8-3-1-2-3 {
+	    text-align: center;
+	    font-family: 'Helvetica Neue', sans-serif;
+	    font-size: 17px;
+	    font-weight: 500;
+	    color: #fff;
+	    line-height: calc(55px - (0px * 2));
+	    background-color: #d7b4b5;
+	    border-radius: 40px;
+	    border-width: 0px;
+	    border-style: solid;
+	    margin-top: 40px;
+	    margin-bottom: 0px;
+	    height: calc(55px);
+	    width: calc(265px);
+	}
+	#gr-9 {
+	    justify-content: center;
+	    background-image: url({{ section.settings.banner8_desktop_bg_image | img_url: 'master' }});
+	    background-position: center;
+	    background-size: cover;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    padding-top: 110px;
+	    padding-right: 0px;
+	    padding-bottom: 110px;
+	    padding-left: 0px;
+	    width: calc(100%);
+	}
+	#im-9-1 {
+	    margin-top: -230px;
+	    margin-bottom: 20px;
+	    width: calc(230px);
+	}
+	#la-9-2-1 {
+	    text-align: center;
+	    font-family: 'Cormorant Garamond', serif;
+	    font-size: 58px;
+	    font-weight: 600;
+	    color: #636669;
+	    line-height: 1.3em;
+	    background-color: transparent;
+	    background-image: none;
+	    margin-bottom: 40px;
+	    width: calc(100%);
+	}
+	#im-9-4-1 {
+	    margin-bottom: 20px;
+	    width: calc(40%);
+	}
+}
+  
+@media (max-width: 1007px){
+  .pmr-button{
+    display: none !important;
+  }
+  #la-1-1-1-1-1-2{
+    margin-top: 120px;
+  }
+}
+
+@media (max-width: 767px){
+  #gr-top-banner{
+    padding: 80px 50px;
+  }
+  #gr-top-banner .section-heading h2{
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 575px){
+  #gr-top-banner{
+    padding: 80px 70px;
+  }
+}
+  
+@media (max-width: 480px){
+  #gr-top-banner{
+    padding: 80px 40px;
+  }
+  #gr-top-banner .section-heading h2{
+    font-size: 32px;
+  }
+  #gr-1{
+    min-height: calc(815px);
+  }
+  #la-1-1-1-1-1-2{
+    margin-top: 60px;
+  }
+}
+@media (max-width: 480px){
+  #gr-top-banner {
+      padding: 80px 20px;
+  }
+}
+</style>
+
+<script>
+  $( document ).ready(function() {
+    $('.custom-add-to-cart-button').click(function(){
+      $('.add-to-cart-btn .ProductForm__AddToCart').click();
+    });
+  });
+</script>

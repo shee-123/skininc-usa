@@ -1,0 +1,87 @@
+<div class="g-sidebar init" id="g-sidebar">
+    <div class="g-sidebar__wrap" id="g-sidebar__wrap">
+        <div class="g-sidebar__inner" id="g-sidebar__inner">
+            <div class="sidebar-product" id="sw_sidebar-product">
+                <div class="container">
+                    <div class="sidebar-product__description">
+                        <div class="product-pic"><img id="bottle-pic" src="{{'bottle.png' | asset_img_url: 'x400', scale: 2}}" alt="product"></div>
+                        <div class="product-name">
+                            <div class="product-name__ttl" id="product-name-ttl"></div>
+                            <div class="product-name__txt" id="product-short-description"></div>
+                        </div>
+                        <div class="product-price">
+                            <div class="product-price__ttl" id="product-price__ttl"></div>
+                        </div>
+                    </div>
+                    <!-- end of sidebar-product__description -->
+                    <form class="sidebar-product__form" id="add-to-cart-form">
+                        <div class="form-group">
+                            <label class="form-name">Bottle colour:</label>
+                            <div class="checkbox-color" id="color-boxes">
+                                <label class="color-box">
+                                    <input id="color-box-35" data-url="/m/d/mdd_green.png" type="radio" name="color" value="35">
+                                    <div style="background-color: #B9DB91;" class="box-view"></div>
+                                </label>
+                                <label class="color-box">
+                                    <input id="color-box-34" data-url="/m/d/mdd_blue.png" type="radio" name="color" value="34">
+                                    <div style="background-color: #76C8EB;" class="box-view"></div>
+                                </label>
+                                <label class="color-box">
+                                    <input id="color-box-38" data-url="/m/d/mdd_orange.png" type="radio" name="color" value="38">
+                                    <div style="background-color: #F8BE83;" class="box-view"></div>
+                                </label>
+                                <label class="color-box">
+                                    <input id="color-box-36" data-url="/m/d/mdd_turquoise.png" type="radio" name="color" value="36">
+                                    <div style="background-color: #C8E8E9;" class="box-view"></div>
+                                </label>
+                                <label class="color-box">
+                                    <input id="color-box-37" data-url="/m/d/mdd_pink.png" type="radio" name="color" value="37">
+                                    <div style="background-color: #F273B9;" class="box-view"></div>
+                                </label>
+                                <label class="color-box">
+                                    <input id="color-box-39" data-url="/m/d/mdd_yellow.png" type="radio" name="color" value="39">
+                                    <div style="background-color: #FEF585;" class="box-view"></div>
+                                </label>
+                                <label class="color-box">
+                                    <input id="color-box-90" data-url="/r/o/rose_gold_mdd-hr.jpg" type="radio" name="color" value="90">
+                                    <div style="background-color: #D4AF37;" class="box-view"></div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-name">Your Name:</label>
+                            <input type="text" placeholder="Enter your name here..." required="" class="form-control" id="skinid_name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-name">Your Email:</label>
+                            <input type="email" placeholder="Enter email..." required="" class="form-control" id="skinid_email" data-cta="add-to-cart">
+                        </div>
+                        <div class="form-group">
+                            <div id="skininc-result-messages" style="text-align: center;"></div>
+                        </div>
+                        <div class="form-group" id="email-result-container">
+                            <button type="button" class="btn btn-bag" data-status="disable" id="email-result-btn"><span>Email My Results</span></button>
+                        </div>
+                        <div class="form-group" id="add-to-cart-container">
+                            <button type="submit" class="btn btn-bag" data-status="disable" id="add-to-cart-btn"><span>Add to bag</span></button>
+                        </div>
+                        <div class="form-group">
+                            <div class="controls-buttons" id="controls-buttons">
+                                <button class="btn" type="button" id="skinid-redo-button"><span class="icon ic2-btn-redo"></span><span>Redo quiz</span></button>
+                                <button class="btn" type="button" id="skinid-facebook-button" data-title="Article Title" data-desc="Some description for this article"><span class="icon ic2-btn-share"></span><span>Share</span></button>
+                                <button class="btn" type="button" id="skinid-print-button"><span class="icon ic2-btn-print"></span><span>Print</span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="g-sidebar__progress">
+            <div class="sidebar-progress">
+                <div id="sidebar-barcode" class="sidebar-progress">
+                    <div style="background-image: url(&quot;https://skininc.staging.overdose.digital/pub/media/images/progress-placeholder.svg&quot;)" class="progress__placeholder"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

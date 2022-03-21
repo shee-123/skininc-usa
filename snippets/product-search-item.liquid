@@ -1,0 +1,62 @@
+<div class="product-card text-center {{className}}">
+  {%- if settings.product_show_secondary_image and product.images[1] != blank-%}
+    {%- assign has_alternate_image = true -%}
+  {%- else -%}
+    {%- assign has_alternate_image = false -%}
+  {%- endif -%}
+  
+  <div class="meta clearfix">
+    {% if product.tags contains 'New' %}
+    <div class="tag">NEW</div>
+    {% endif %}
+  </div>
+  <div class="single-product-wrapper">
+    <a href="{{product.url}}" class="product-image ProductItem__ImageWrapper {% if has_alternate_image %}ProductItem__ImageWrapper--withAlternateImage{% endif %}">
+      {%- if has_alternate_image -%}
+        {%- include 'image-size', sizes: '200,300,400,600,800,900,1000,1200', image: product.images[1] -%}
+        {%- assign image_url = product.images[1] | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+        <img class="ProductItem__Image ProductItem__Image--alternate Image--lazyLoad Image--fadeIn" data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ product.images[1].alt | escape }}" data-image-id="{{ product.images[1].id }}">
+      {%- endif -%}
+      {%- include 'image-size', sizes: '200,400,600,700,800,900,1000,1200', image: product.featured_image -%}
+      {%- assign image_url = product.featured_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      <img class="ProductItem__Image Image--lazyLoad Image--fadeIn" data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ product.featured_image.alt | escape }}" data-image-id="{{ product.featured_image.id }}">
+      <span class="Image__Loader"></span>
+
+      <noscript>
+        <img class="ProductItem__Image ProductItem__Image--alternate" src="{{ product.images[1] | img_url: '600x' }}" alt="{{ product.images[1].alt | escape }}">
+        <img class="ProductItem__Image" src="{{ product.featured_image | img_url: '600x' }}" alt="{{ product.featured_image.alt | escape }}">
+      </noscript>
+    </a>
+    <div class="caption">
+      {%- if label != blank -%}
+        <p class="label">{{label}}</p>
+      {%- endif -%}
+      <h4 class="product-title"> <a href="{{product.url}}">{{ product.title  | escape }}</a></h4>
+      <p class="product-subtitle">
+        {% if product.metafields.meta contains "subtitle" %}
+        {{ product.metafields.meta.subtitle | escape | truncate: 90 }}
+        {% endif %}
+      </p>
+      {%- if product.template_suffix != 'coming-soon' -%}
+      <div class="ProductMeta__PriceList Heading">
+        {%- comment %}
+          checking for if contains variant with retail, need to hide
+        {% endcomment -%}
+        {% assign hideVariantTitle = false %}
+        {%- for v in product.variants -%}
+          {% assign downcase_vtitle = v.title | downcase %}
+          {%- if downcase_vtitle contains 'retail' -%}
+            {% assign hideVariantTitle = true %}
+          {%- endif -%}
+        {%- endfor -%}
+        <span data-money-convertible>{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span>
+      </div>
+      {%- endif -%}
+      
+      {%- if show_reviews != false -%}
+      	{%- include 'yotpo-stars2' -%}
+      {%- endif -%}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<div id="Yes_no">
+    {% for block in section.blocks %}
+    {% if block.type == 'personalise_your_gift' %}
+    <h4>{{block.settings.title}}</h4>
+    {% if block.settings.buy_gift %}
+    <div class="radio-group">
+      <p>{{block.settings.buy_gift_text}}</p>
+      <input type="radio" id="yes-button" class="asGift attrCartCheck" name="attributes[As Gift]" value="yes"{% if cart.attributes["As Gift"] == "yes" %} checked="checked"{% endif %}>
+      <label for="yes-button">Yes</label>
+      <input type="radio" id="no-button" class="asGift attrCartCheck" name="attributes[As Gift]" value="no"{% if cart.attributes["As Gift"] == "no" %} checked="checked" {% endif %} {% unless cart.attributes["As Gift"] %} checked="checked"{% endunless %}>
+      <label for="no-button">No</label>
+    </div>
+    {% endif %}
+    {%comment%}
+    {% if block.settings.gift_wrapping %}
+    <div class="radio-group">
+      <p>{{block.settings.gift_wrapping_text}}</p>
+      <input type="radio" name="attributes[gift-wrapping]" class="gift-wrapping attrCartCheck" value="yes"{% if cart.attributes["gift-wrapping"] %} checked="checked"{% endif %} id="yes-button2">
+      <label for="yes-button2">Yes</label>
+      <input type="radio" name="attributes[gift-wrapping]" class="gift-wrapping attrCartCheck" value="no" {% unless cart.attributes["gift-wrapping"] %} checked="checked"{% endunless %} id="no-button2">
+      <label for="no-button2">No</label>
+    </div>
+    {% endif %}  
+    {% endcomment %}
+    {% if block.settings.perso_mess %}
+    <div class="radio-group">
+      <p>{{block.settings.personalized_message_text}}</p>
+      <input type="radio" name="attributes[Gift Message]" class="giftMessage attrCartCheck" value="yes" {% if cart.attributes["Gift Message"] == "yes" %} checked="checked"{% endif %} id="yes-button3">
+      <label for="yes-button3">Yes</label>
+      <input type="radio" name="attributes[Gift Message]" class="giftMessage attrCartCheck" value="no" {% if cart.attributes["Gift Message"] == "no" %} checked="checked"{% endif %} id="no-button3" {% unless cart.attributes["Gift Message"] %} checked="checked"{% endunless %}>
+      <label for="no-button3">No</label> 
+    </div>
+    <div id="pers_meg" class="gift_text" style="{% if cart.attributes["Gift Message"] == "yes" %}{% else %}display: none{% endif %}">
+      <textarea {% if cart.attributes["Gift Message"] == "yes" %}required {% endif %} class="Form__Textarea {% if cart.attributes["Gift Message"] == "yes" %}required{% endif %}" name="attributes[Gift Note]" id="pers_meg" placeholder="Write your message here">{{cart.attributes["Gift Note"]}}</textarea>             
+    </div> 
+    {% endif %}  
+    {%comment%}                
+    {% if block.settings.pers_stiker %}
+    <div class="radio-group">
+      <p>{{block.settings.pers_stiker_text}}</p>
+      <input type="radio" name="attributes[Personalized Sticker]" class="persSticker attrCartCheck" value="yes"{% if cart.attributes["Personalized Sticker"] == "yes" %} checked="checked"{% endif %} id="yes-button4">
+      <label for="yes-button4">Yes</label>
+      <input type="radio" name="attributes[Personalized Sticker]" class="persSticker attrCartCheck" value="no"{% if cart.attributes["Personalized Sticker"] == "no" %} checked="checked"{% endif %} {% unless cart.attributes["Personalized Sticker"] %} checked="checked"{% endunless %} id="no-button4">
+      <label for="no-button4">No</label>
+    </div> 
+    <div id="pers_stiker" class="gift_text" style="{% if cart.attributes["Personalized Sticker"] == "yes" %}{% else %}display: none{% endif %}">                
+      <div class="main_selc">
+        <img src="{% if cart.attributes["Sticker Url"]%} {{cart.attributes["Sticker Url"]}} {% else %}{{ block.settings.image1 | img_url: 'master' }} {% endif %}">
+        <input type="hidden" id="stickerUrl" name="attributes[Sticker Url]" value="{% if cart.attributes["Sticker Url"] != blank %}{{cart.attributes["Sticker Url"]}} {% elsif cart.attributes["Personalized Sticker"] == "yes"%} {{ block.settings.image1 | img_url: 'master' }} {% endif %}" id="sticker_url">
+      </div>
+      <div class="img_selc">
+        <img src="{{ block.settings.image1 | img_url: 'master' }}" id="sticker1">
+        <img src="{{ block.settings.image2 | img_url: 'master' }}" id="sticker2">
+        <img src="{{ block.settings.image3 | img_url: 'master' }}" id="sticker3">
+      </div>
+    </div>
+    {% endif %}     
+    {% endcomment %}              
+  
+    {% endif %}
+    {% endfor %}   
+  </div> 

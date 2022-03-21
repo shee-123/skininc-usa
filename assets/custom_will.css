@@ -1,0 +1,773 @@
+ul.payment_icon {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 10px 0;
+}
+ul.payment_icon li {
+    margin-right: 5px;
+}
+input#devPromo {
+    padding: 10px 14px;
+    border-radius: 0;
+    border: 1px solid #e0e0e0;
+    text-transform: capitalize;
+    margin: 0;
+    border-right: 0;
+    width: 250px;
+}
+a#redemDevPromo {
+    background: #b2cce9;
+    padding: 10px 14px;
+    text-transform: uppercase;
+    font-family: neuzeit-grotesk,sans-serif;
+    color: #fff;
+    letter-spacing: 1px;
+    border: 1px solid #b2cce9;
+    text-align: center; 
+}
+.cart-inner_promo {
+    display: flex;
+    justify-content: flex-end;
+}
+.cart-promo {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 12px;
+}
+a#redemDevPromo:hover {
+    color: #fff;
+}
+#shopify-section-cart-template .Cart__Checkout.active {
+    max-width: 323px;
+    width: 323px !important;
+    position: relative;
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/lock1_1.png?v=1633527961) #d7b4b5;
+    background-size: 13px;
+    background-repeat: no-repeat;
+    background-position: 90px;
+}
+ul.payment_icon li {
+    width: 60px;
+    margin-top: 6px;
+}
+ul.payment_icon svg {
+    height: 35px;
+    width: auto;
+}
+.lion-loyalty-widget.lion-loyalty-widget_position_left {
+    display: none;
+}
+form.Cart.Drawer__Content .Drawer__Main input.Button.Button--primary.Button--full,#add_to_cart_custom_bundle_btn .bndlr-inner-products-container .bndlr-add-to-cart {
+    background: #d7b4b5 !important;
+    border-color: #d7b4b5  !important;
+    color:#fff  !important;
+}
+section.section.usp,ul.marquee-content-items,.skinid23__answer>span:hover,.skinid23__answer--checked>span,.skinid23-continue-button,.skinid23__submit{
+    background-color: #d7b4b5 !important;
+    color: #fff !important;
+}
+section.section.usp h2.header,section.section.usp h3 ,p.AnnouncementBar__Content.Heading.u-h5,ul.marquee-content-items li {
+    color: #fff !important;
+}
+.skinid23-concern,.skinid23-result-serum {
+    border-color: #d7b4b5 !important;
+}
+.skinid23__desc circle {
+    fill: #d7b4b5 !important;
+}
+button.rebuy-button ,.simple-marquee-container{
+    color: #fff !important;
+    background: #d7b4b5 !important;  
+}
+
+/* wranty app */
+
+div#product-registration {
+    position: relative;
+    padding-bottom: 40px;
+    margin-bottom: -13px;
+}
+div#product-registration:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(https://cdn.shopify.com/s/files/1/0150/9231/8256/files/Image.png?v=1623231603) no-repeat;
+    background-position: top;
+    opacity: .2;
+}
+#product-registration .intro-wrapper {
+    max-width: 1140px;
+    width: 100% !important;
+}
+div#product-registration h1 {
+    font-family: 'Cormorant Garamond',serif!important;
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #c497a0;
+    font-style: italic;
+    letter-spacing: 0!important;
+}
+div#product-registration label.label {
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 5px;
+}
+#product-registration input{
+    border: 1px solid #e0e0e0;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+#product-registration .form-group input {
+    text-align: left !important;
+}
+#product-registration .form-group input[value="Submit"] {
+    background: #c497a0 !important;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-align: center !important;
+    text-transform: uppercase;
+    margin: 20px 0 40px !important;
+}
+#product-registration .form-group {padding: 0 !important;}
+#product-registration .form-group.select-product-wrapper label.label {
+    margin-bottom: -15px;
+}
+#product-registration .form-group.select-product-wrapper i {
+    top: 38px;
+    color: #333;
+    opacity: 0.8;
+    font-size: 20px;
+}
+div#product-registration div#mpr-app-content {
+    margin: 20px auto;
+    width: 1140px;
+}
+div#product-registration th {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 0px;
+    background: #c497a0;
+    color: #fff;
+    padding: 10px 8px;
+    text-transform: capitalize;
+}
+div#product-registration tr td {
+    padding: 10px 5px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+}
+.registered-products td img {
+    width: 70px;
+}
+div#product-registration tr td input.btn {
+    background: #fbdcce !important;
+    border: #fbdcce !important;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-radius: 50px !important;
+}
+#product-registration .add-more-product,input#cancel-and-add {
+    background: #c497a0!important;
+    border: #c497a0;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border-radius: 50px !important;
+}
+#product-registration h2 div {
+    font-family: Futura,sans-serif;
+    font-size: 16px;
+}
+#product-registration .form-group.half {width: 49% !important;}
+#product-registration .mpr-customer-names {
+    display: flex;
+    justify-content:space-between;
+}
+.form-group.half.required-field.mpr-address1,.form-group.half.required-field.mpr-password {
+    margin-right: 8px;
+}
+.form-group.half.required-field.mpr-address2,.form-group.half.required-field.mpr-password-confirm {
+    margin-left: 8px;
+}
+#product-registration select {
+    border: 1px solid #e0e0e0;
+    border-radius: 0!important;
+    box-shadow: none!important;
+    background-color: transparent !important;
+}
+div#product-registration .form-group.third {
+    text-align: left;
+}
+div#product-registration .country.form-group.third {
+    margin-left: 0;
+}
+div#product-registration .state.form-group.third {
+    position: relative;
+}
+div#product-registration .state.form-group.third:before {content: "";background: #eff7f1; position: absolute; transparent;position: absolute;width: 12px;height: 60px;top: 26px;bottom: 0;left: 0;border-right: 1px solid #e0e0e0;}
+div#product-registration .state.form-group.third:after {
+    content: "";
+    background: #fff;
+    position: absolute;
+    width: 10px;
+    height: 59px;
+    top: 27px;
+    bottom: 0;
+    right: -10px;
+    border-right: 1px solid #e0e0e0;
+}
+#product-registration .form-group input[disabled] {
+    background: grey !important;
+}
+.phone.form-group.third input {
+    padding-left: 15px !important;
+}
+a.wra_action {     
+    padding: 13px 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    position: absolute;
+    right: 140px;
+    top: 0;
+    background: #d7b4b5;
+    color: #fff;
+    border: 1px solid #d7b4b5;
+    font-family: neuzeit-grotesk,sans-serif;
+}
+.Button--inverse.logout-button:hover {
+    color: #d7b4b5;
+    border-color: #d7b4b5;
+}
+#mpr-customer-form .select-label {
+    font-size: 18px;
+}
+#product-registration input.btn.btn-primary[value="Register"]  {
+    background: #c497a0 !important;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-align: center!important;
+    text-transform: uppercase;
+    margin: 10px 0 40px !important;
+    padding: 15px 0 !important;
+}
+#product-registration input.button[value="Show Registered Products"] ,#product-registration input.button[value="Hide Registered Products"] {
+    background: #c497a0 !important;
+    border: #c497a0;
+    color: #fff !important;
+    padding: 10px 20px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border-radius: 50px !important;
+}
+#product-registration input.button:hover {
+    background: #fbdcce;
+    color: #000;
+}
+.my-product-reg-listing .table-responsive, .my-product-reg-listing .VueTables .row:first-child {
+    overflow: auto !important;
+}
+div#product-registration table {
+    width: 100%;
+}
+div#product-registration tbody {
+}
+div#product-registration tbody tr td a {
+    display: flex;
+    align-items: center;
+}
+div#product-registration tbody tr td p {
+    margin: 0;
+}
+p.VuePagination__count {
+    margin: 20px 0;
+    text-transform: capitalize;
+    border: 1px solid #c497a0;
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 50px;
+}
+p.warranty-errmsg {
+    text-align: left;
+    color: #fe0000;
+    padding: 5px 0 0;
+}
+.form-group.mpr-class-Placeofpurchase {
+    margin: 15px 0 0;
+}
+.form-group.mpr-class-Placeofpurchase select {
+    padding: 10px 8px;
+    font-size: 16px;
+}
+.form-control-feedback {
+    text-align: left;
+} 
+.form-group.mpr-class-UploadReceipt img.extra-fields-image {
+    height: 200px !important;
+    margin: 20px 0 0 0!important;
+    display: block;
+}
+#product-registration .form-group input[value=Submit]:hover , #product-registration input.btn.btn-primary[value=Register]:hover{ 
+    background: #fff !important;
+    color: #c497a0;
+    border-color: #c497a0;
+} 
+#product-registration .add-more-product:hover, input#cancel-and-add:hover {
+    background: #fbdcce!important;
+    color: #000;
+}
+.form-group.error p {
+    text-align: left;
+    padding-top: 5px !important;
+}
+.form-group.full.consent.mpr-send-data-thrid-party-consent {
+    position: relative;
+    margin: 10px 0;
+}
+.form-group.full.consent.mpr-send-data-thrid-party-consent label:before {
+    content: '';
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 2px solid #d7b4b5;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 5%), inset 0px -15px 10px -12px rgb(0 0 0 / 5%);
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 10px;
+    display: none;
+}
+.form-group.full.consent.mpr-send-data-thrid-party-consent input:checked + label:after {
+    content: '';
+    display: block; 
+    position: absolute;
+    top: 4px;
+    left: 9px;
+    width: 6px;
+    height: 14px;
+    border: solid #c497a0;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    display: none;
+}
+.form-group.full.consent.mpr-send-data-thrid-party-consent input#consent-send-data {
+    border: 0;
+    position: absolute;
+    padding: 13px;
+    z-index: 9;
+    cursor: pointer;
+}
+/* end wranty app */
+/* pre order css */
+.shipment-info {
+    font-weight: 600;
+    margin: 20px 0 -10px;
+    font-family: 'neuzeit-grotesk';
+    font-size: 16px;
+}
+p.CartItem_Metadata i {
+    font-style: normal;
+    letter-spacing: 0;
+    text-transform: none;
+    font-size: 14px;
+}
+.Cart--expanded .CartItem__Info~.CartItem__Actions, .Cart--expanded .CartItem__Info~.CartItem__LinePrice {
+    vertical-align: top;
+    padding-top: 13px;
+}
+.Cart__Recap p.pre_ord{
+    color: #F95363;
+    text-align: center;
+    border: 2px solid #F95363;
+    padding: 10px 10px;
+    max-width: 100%;
+    margin: 10px 0 0 10px;
+    font-weight: 600;
+}
+.drawer_pre_ord {
+    color: #F95363;
+    text-align: center;
+    border: 2px solid #F95363;
+    padding: 10px 10px;
+    max-width: 100%;
+    margin: 10px 0 0 10px;
+    font-weight: 600;
+}
+/* pre order css */
+.pro_wranty a {
+    position: unset;
+}
+header.PageHeader.pro_head {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+/* free gift */
+.free-products-section .free-offer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.free-products-section .title {
+    margin-bottom: 0!important;
+    min-height: auto;
+    font-size: 17px;
+    color: #333;
+    text-align: left;
+    width: 50%;
+    margin: 0 10px 0 0px;
+}
+.free-products-section .free-offer img {
+    margin: 0 !important;
+}
+.free-products-section .image-wrapper {
+    height: auto;
+    width: 200px; 
+}
+.free-products-section button {
+    width: 170px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+.free-products-section .products-list {
+    margin: 0;  
+}
+.Cart__free button.Collapsible__Button.Heading.u-h6 {
+    text-align: left;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #d7b4b570;
+}
+.Cart__free span.Collapsible__Plus {
+    right: 10px;
+}
+.Cart__free .Collapsible__Content {
+    padding-bottom: 0;
+    padding-top: 20px;
+}
+.Cart--expanded .Cart__Footer {
+    border-top: 0;
+}
+#yes-button:checked + label,#yes-button2:checked + label,#yes-button3:checked + label,#yes-button4:checked + label {
+    background: #D7B4B5;
+    color: #efefef;
+}
+#Yes_no label{
+        display: inline-block;
+        padding: 6px 20px;
+        margin: 0 2px;
+        cursor: pointer;
+        color: #292929;
+        border-radius: 4px;
+        background: #eee;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0%), inset 0 -3px 0 rgb(0 0 0 / 22%);
+        transition: 0.3s;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: 60px;
+}
+#Yes_no input[type=radio] {
+    position: absolute;
+    visibility: hidden;
+    display: none;
+    -webkit-appearance: auto;
+}
+#no-button:checked + label,#no-button2:checked + label,#no-button3:checked + label,#no-button4:checked + label   {
+    background: #B2CCE9;
+    color: #efefef;
+}
+#Yes_no {margin-bottom: 10px;}
+#Yes_no .radio-group {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin: 10px 0;
+}
+#Yes_no .radio-group.hide, .gift_text.hide{
+    display: none;
+}
+#Yes_no p {
+    width: 100%;
+    margin: 0;
+    font-size: 16px;
+}
+.Cart--expanded .Cart__NoteContainer {
+    width: 450px;
+}
+.gift_text {
+    display: block;
+}
+.gift_text textarea {
+    width: 100%;
+}
+.gift_text textarea {
+    width: 100%;
+    border: 1px solid #eee;
+    padding: 12px 12px;
+    font-size: 16px;
+    resize: none;
+    height: 100px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: left;
+} 
+.main_selc img {
+    width: 100%;
+    margin-top: 10px;
+}
+.img_selc {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+.img_selc img {
+    width: 33%;
+    padding: 0 3px;
+    cursor: pointer;
+}
+#Yes_no h4 {
+    font-size: 20px;
+    letter-spacing: 0 !important;
+    font-weight: 600;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+span.Cart__NoteButton {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: neuzeit-grotesk,sans-serif!important;
+    letter-spacing: 0 !important;
+    width: 100%;
+    display: block;
+    margin-top: 30px;
+} 
+#shopify-section-cart-template .Cart__Checkout {
+    max-width: 200px;
+    padding: 15px 60px;
+    width: 250px !important;
+}
+/* free gift */
+.rebuy-widget-content h4.super-title , .rebuy-widget-content h3.primary-title {
+    display: none;
+}
+button.rebuy-button {
+    border-radius: 0 !important;
+    height: 45px !important;
+    text-transform: uppercase;
+    font-size: 14px;
+    border: 0;
+}
+select.rebuy-select {
+    border-radius: 0 !important;
+    padding: 6px 10px;
+}
+#rebuy-widget-16817 .flickity-page-dots .dot {
+    background: #d7b4b5;
+    border: 0;
+    height: 10px;
+    width: 10px;
+    transform: scale(1.1);
+}
+.rebuy-widget .flickity-prev-next-button, .rebuy-recommended-products .flickity-prev-next-button, .rebuy-landing-page .flickity-prev-next-button {
+    transform: none;
+}
+.powered-by-rebuy {
+    display: none;
+}
+
+@media screen and (max-width: 1200px){
+div#product-registration {
+    max-width: 100%;
+}
+div#product-registration h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+} 
+#product-registration .intro-wrapper {
+    width: 100%;
+}
+div#product-registration div#mpr-app-content {
+    width: 90%;
+}
+div#product-registration .form-group.third {
+    width: 100%;
+    margin: 0;
+}
+div#product-registration .state.form-group.third:before,div#product-registration .state.form-group.third:after {
+    display: none;
+}
+div#product-registration .phone.form-group.third {
+    margin: 0;
+}
+#product-registration .form-group.half {
+    width: 100% !important;
+}
+.form-group.half.required-field.mpr-address1, .form-group.half.required-field.mpr-password {
+    margin-right: 0;
+}
+.form-group.half.required-field.mpr-address2,.form-group.half.required-field.mpr-password-confirm {
+    margin-left: 0;
+    margin-bottom: 15px;
+}
+#product-registration .mpr-customer-names {
+    flex-wrap: wrap;
+}  
+  
+}
+
+
+@media (max-width: 1024px) {
+table[data-v-ca5de1a8], tbody[data-v-ca5de1a8], td[data-v-ca5de1a8], th[data-v-ca5de1a8], thead[data-v-ca5de1a8], tr[data-v-ca5de1a8] {
+    display: flex !important;
+}
+div#mpr-product-list td::before {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    background: #c497a0;
+    color: #fff;
+    padding: 10px 8px;
+    text-transform: capitalize;
+     height: 40px;    
+  
+}
+div#mpr-product-list td {
+    display: flex;
+    flex-direction: column;
+}
+div#mpr-product-list td[data-column="Product name"] {
+    width: 300px;
+}
+.free-products-section .image-wrapper {
+    width: 120px;
+} 
+
+}
+
+@media (max-width: 900px) {
+    .Cart--expanded .Cart__NoteContainer {
+        width: 340px;
+    }  
+}
+
+/* end css wranty app */
+
+
+@media (max-width: 767px){
+footer.Cart__Footer.mobile textarea#cart-note {
+    display: none;
+}
+#shopify-section-cart-template .Cart__Checkout {
+    width: 100%;
+    max-width: 100% !important;
+}
+#shopify-section-cart-template footer.Cart__Footer.mobile.fixed_bott .Cart__Checkout.active{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 23px 15px;
+    z-index: 999;
+    font-size: 18px;
+    border: 0;
+    color: #fff;
+    margin: 15px auto;
+    max-width: 92%!important;
+    width: 100%!important;
+    background-size: 15px;
+    background-position: 70px;
+}
+footer.Cart__Footer.mobile .Cart__Recap {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}  
+input#devPromo {
+    padding: 10px 10px;
+    font-size: 14px;
+    width: 100%;
+}
+a#redemDevPromo {
+    padding: 10px 5px;
+    font-size: 14px;
+    width: 180px;
+}   
+ul.payment_icon {
+    margin-top: 15px;
+}
+#shopify-section-cart-template .Cart__Checkout.active {
+    max-width: 100%;
+}
+.cart-inner_promo {
+    width: 100%;
+} 
+ul.payment_icon li {
+    margin: 0 10px 0;
+    width: auto;
+}
+ul.payment_icon svg {
+    height: auto;
+    width: auto;
+} 
+.free-products-section .title {
+    font-size: 15px;
+}
+.free-products-section button {
+    padding: 10px 0;
+}
+
+} 
+
+/* wranty app*/
+
+@media (max-width: 640px) {
+div#product-registration th ,div#mpr-product-list td::before{
+    font-size: 14px;
+    width: 100px;
+    padding: 5px 10px;
+}
+div#product-registration tr td {
+    width: 180px;
+}
+div#product-registration tbody tr td a {
+    width: 280px;
+}
+div#product-registration h1 {
+    margin: 20px 0;
+    font-size: 26px;
+}
+div#mpr-product-list td::before {
+    width: 100%;
+    height: 50px;
+    padding: 15px 10px;
+}
+header.PageHeader.pro_head {
+    flex-direction: column-reverse;
+}
+.Cart--expanded .Cart__NoteContainer {
+    width: 100%;
+} 
+
+}  
+/* wranty app*/
+

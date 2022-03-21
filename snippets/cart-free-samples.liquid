@@ -1,0 +1,68 @@
+{%- assign cart_total = cart.total_price -%}
+{%- assign free_samples = ''-%}
+{%- assign free_samples_in_cart = 0 -%}
+{%- assign maximum_allowed_free_samples = 3 -%}
+{%- assign products_handles_in_cart = '' -%}
+
+{%- for line_item in cart.items -%}
+  {%- if line_item.product.tags contains 'FREE SAMPLE' -%}
+    {% assign products_handles_in_cart = products_handles_in_cart | append: '##' | append: line_item.product.handle %}
+  {%- endif -%}
+{%- endfor -%}
+{%- for block in section.blocks -%}
+  {%- if block.type != 'free_samples' -%}
+    {%- continue -%}
+  {%- endif -%}
+  {% assign min_price = block.settings.min_price | plus: 0 %}
+  {%- if block.settings.condition == ">=" and cart_total >=  min_price -%}
+    {%- assign free_samples = free_samples | append:  '|' | append: block.settings.sample-%}
+  {%- elsif block.settings.condition == "<="  and cart_total <=  min_price and cart_total != 0 -%}
+    {%- assign free_samples = free_samples | append:  '|' | append: block.settings.sample-%}
+  {%- endif -%}
+{%- endfor -%}
+
+
+{%- capture free_samples_offer -%}
+{%- assign free_samples = free_samples | split : '|' | uniq -%}
+{%- assign products_handles_in_cart = products_handles_in_cart | split: '##' -%}
+{%- for sample in free_samples -%}
+  {%- if sample == blank -%}
+    {%- continue -%}
+  {%- endif -%}
+  {%- if products_handles_in_cart contains sample -%}
+    {% assign free_samples_in_cart = free_samples_in_cart | plus: 1 %}
+  {%- else -%}
+  {% assign product = all_products[sample] %}
+  {%- if product != blank -%}
+    <div class="free-offer col-6 col-sm-4 col-lg-3">
+      <div class="image-wrapper">
+        <img class="ProductItem__Image Image--lazyLoad Image--fadeIn" data-src="{{ product.featured_image | img_url: '240x' }}" data-sizes="auto" alt="{{ product.featured_image.alt | escape }}" data-image-id="{{ product.featured_image.id }}">
+        <span class="Image__Loader"></span>
+      </div>
+      <p class="title">{{ product.title }}</p>
+      <button type="button" class="Button Button--primary Button--small" data-action="add-sample" data-id="{{ product.variants.first.id }}">{{- 'product.form.add_to_cart' | t -}}</button>
+    </div>
+  {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- endcapture -%}
+
+{%- if free_samples_offer != blank and  free_samples_in_cart < maximum_allowed_free_samples-%}
+<div class="Collapsible Collapsible--large">
+  <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+      {{- 'cart.general.free_sample_heading' | t -}} <span class="Collapsible__Plus"></span>
+    <p class="SectionHeader__Description Text--subdued">{{- 'cart.general.free_sample_subheading' | t -}}</p>
+  </button>
+  <div class="Collapsible__Inner" style="overflow: hidden; height: 0px;">
+    <div class="Collapsible__Content">
+      <div class="Rte">
+        <div class="free-products-section">
+          <div class="products-list row">
+          {{ free_samples_offer }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%- endif -%}

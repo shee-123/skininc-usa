@@ -1,0 +1,494 @@
+var serum = {
+  'vta': {
+    'vid': 18843392147552,
+    'title': 'Vitamin A (VTA)',
+    'benefit': 'Even Tone & Reduce Dark Circles',
+    'dose_img' : "{{ 'vitamin_a.jpg' | asset_img_url: 'x300',scale: 2 }}",
+    'diagnosis' : 'Accelerated Aging',
+    'diagnosis_img' : "{{ 'Accelerated_Aging.png' | asset_img_url: 'x300', scale: 2}}",
+    'main_copy' : 'Your skin is likely to be experiencing signs of accelerated aging. Accelerated skin aging causes skin dullness, premature lines and wrinkles and dark under eye circles to form.'
+  },
+  'vtb': {
+    'vid': 18843387822176,
+    'title': 'Vitamin B3 (VTB)',
+    'benefit': 'Rescue Troubled Skin',
+    'dose_img' : "{{ 'vitamin_b3.jpg' | asset_img_url: 'x300',scale: 2 }}",
+    'diagnosis' : 'Temperamental Skin',
+    'diagnosis_img' : "{{ 'Temperamental_Skin.png' | asset_img_url: 'x300', scale: 2}}",
+    'main_copy' : "Your skin is likely to be behaving more temperamentally due to a slowdown in skin communication. This interferes in skin's ability to look, act, and behave like a normal healthy skin. It may lead to blemishes, pigmentation and even a change in texture. "
+  },
+  'vtc': {
+    'vid': 18843391950944,
+    'title': 'Vitamin C (VTC)',
+    'benefit': 'Rebalance & Refine Pores',
+    'dose_img' : "{{ 'vitamin_c.png' | asset_img_url: 'x300',scale: 2 }}",
+    'diagnosis' : 'Sebum Imbalance',
+    'diagnosis_img' : "{{ 'Sebum_Imbalance.png' | asset_img_url: 'x300', scale: 2}}",
+    'main_copy' : "Your skin is likely to be experiencing a sebum imbalance.  This may lead to excess oiliness, acne, blemishes and enlarged pores."
+  },
+  'cqt': {
+    'vid': 18843388313696,
+    'title': 'Coenzyme Q10 (CQT)',
+    'benefit': 'Energize & Renew',
+    'dose_img' : "{{ 'coenzyme_q10.jpg' | asset_img_url: 'x300',scale: 2 }}",
+    'diagnosis' : 'Tired Skin',
+    'diagnosis_img' : "{{ 'Tired_Skin.png' | asset_img_url: 'x300', scale: 2}}",
+    'main_copy': 'Your skin is likely to be experiencing a slowdown in skin energy.  The slowing down of skin renewal and cell turnover can lead to a weaker skin barrier and skin that looks tired, uneven, and dull.'
+  },
+  'fpb': {
+    'vid': 18843392606304,
+    'title': 'French Pine Bark (FPB)',
+    'benefit': 'Anti-Oxidant Protection',
+    'dose_img' : "{{ 'french_pine_bark.jpg' | asset_img_url: 'x300',scale: 2 }}",
+    'diagnosis' : 'Oxidative Stress',
+    'diagnosis_img' : "{{ 'Oxidative_Stress.png' | asset_img_url: 'x300', scale: 2}}",
+    'main_copy' : 'Your skin is likely to be experiencing increased stress due to oxidation. Oxidative stress may appear as roughness, lines or wrinkles, or overly pale skin color. '
+  },
+  'chl': {
+    'vid': 18843388805216,
+    'title': 'Chlorella (CHL)',
+    'benefit': 'Brighten & Reduce Spots',
+    'dose_img' : "{{ 'chlorella.jpg' | asset_img_url: 'x300',scale: 2 }}",
+    'diagnosis': 'Excess Stress',
+    'diagnosis_img' : "{{ 'Excess_Stress.png' | asset_img_url: 'x300', scale: 2}}",
+    'main_copy' : 'Your skin is likely to be experiencing excess stress. This may appear as dullness, uneven skin tone, dark spots (pigmentation) or age spots.'
+  },
+  'lic': {
+    'vid': 18843391426656,
+    'title': 'Licorice (LIC)',
+    'benefit': 'Calm Irritated Skin',
+    'dose_img' : "{{ 'licorice.jpg' | asset_img_url: 'x300',scale: 2 }}",
+    'diagnosis' : "Increased Inflammation",
+    'diagnosis_img' : "{{'Increased_Inflation.png' | asset_img_url: 'x300', scale: 2}}",
+    'main_copy' : "Your skin is likely to be experiencing increased inflammation. Inflammation may appear as increased skin sensitivity, red or blotchy skin, pimples and even itchiness.  If not controlled, inflammation can lead to dryness and an over-production of melanin (age spots and pigmentation)."
+  },
+  'hya': {
+    'vid': 18843390836832,
+    'title': 'Hyaluronic Acid (HYA)',
+    'benefit': 'Long-Lasting Hydration',
+    'dose_img' : "{{ 'hyaluronic.jpg' | asset_img_url: 'x300',scale: 2 }}",
+    'diagnosis' : 'Dehydration',
+    'diagnosis_img' : "{{ 'Dehydration.png' | asset_img_url: 'x300', scale: 2}}",
+    'main_copy' : 'Your skin is likely to be experiencing the signs of dehydration.  Signs of dehydrated skin may include dryness, roughness and a feeling of tightness.'
+  },
+  'cer': {
+    'vid': 20723705544817,
+    'title': 'Ceramide (CER)',
+    'benefit': 'Strengthen & Soothe',
+    'dose_img' : "{{ 'ceramide.jpg' | asset_img_url: 'x300',scale: 2 }}",
+    'diagnosis': "Environmental Stress",
+    'diagnosis_img' : "{{ 'Environmental_Stress.png' | asset_img_url: 'x300', scale: 2}}",
+    'main_copy': "Your skin is likely to be experiencing environmental stress.  This leads to a weaker skin barrier and more sensitivity or reactivity to both internal or external changes. "
+  },
+  'col': {
+    'vid': 18843391393888,
+    'title': 'Collagen (COL)',
+    'benefit': 'Elasticity & Suppleness',
+    'dose_img' : "{{ 'collagen.jpg' | asset_img_url: 'x300',scale: 2 }}",
+    'diagnosis' : 'Premature Aging',
+    'diagnosis_img' : "{{ 'Premature_Aging.png' | asset_img_url: 'x300', scale: 2}}",
+    'main_copy' : 'Your skin is likely to be experiencing the signs of premature aging.  This primarily affects the skin’s structural proteins like collagen leading to visible lines and loss of skin firmness and suppleness.'
+  }
+}
+
+var serum_points = {
+  'vta': 0,
+  'vtb': 0,
+  'vtc': 0,
+  'cqt': 0,
+  'fpb': 0,
+  'chl': 0,
+  'lic': 0,
+  'hya': 0,
+  'cer': 0,
+  'col': 0
+}
+
+var params = [];
+
+var save_serum;
+
+var _gender = "";
+var male_skip_question = [4,5];
+var female_skip_question = [3];
+
+var tags_string = "";
+var _skinid_result = {
+  "email" : "",
+  "skin_id_result": "",
+  "firstname" : "",
+  "lastname" : ""
+}
+
+var $template;
+
+var _analytics_id = "UA-37929019-2";
+
+// Exception case
+
+$(function(){
+  bindSkinidOptions();
+  $template = $('#js_template').val();
+  // console.log(sessionStorage.getItem('serum_points'),window.location.pathname, !(window.location.pathname).toString().includes('challenge'));
+  console.log($template);
+  if (sessionStorage.getItem('serum_points') && !(window.location.pathname).toString().includes('challenge') && $template == 'page.skinid') {
+    buildLayout(sessionStorage.getItem('serum_points'))
+  }
+
+  $('.color-box').on('click', function(){
+    var _input = $(this).find('input');
+    var _img = _input.attr('data-url');
+    var _vid = _input.attr('data-vid');
+
+    $('#bottle-pic').attr('data-vid', _vid);
+    $('#bottle-pic').attr('src', _img);
+  })
+
+  bindQuestionNode();
+
+
+
+  var e = document.createElement("script");
+  e.type = "text/javascript",
+  e.src = "https://www.googletagmanager.com/gtag/js?id=" + _analytics_id,
+  e.setAttribute("async", ""),
+  document.head.append(e);
+  var s = document.createElement("script")
+    , i = "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '" + _analytics_id + "');";
+  s.innerHTML = i,
+  document.head.append(s)
+})
+
+setGAEvent = function(e, s) {
+  _analytics_id && gtag("event", e, {
+    event_category: "SkinId Wizard",
+    event_label: s,
+    value: 1
+  })
+}
+
+retrieveCustomerAPI = () => {
+  var _a = sessionStorage.getItem('skin_result');
+  var _e = sessionStorage.getItem('skin_email');
+  var _fn = sessionStorage.getItem('first_name');
+  var _ln = sessionStorage.getItem('last_name');
+
+  _skinid_result['email'] = _e;
+  _skinid_result['skin_id_result'] = _a;
+  _skinid_result['firstname'] = _fn;
+  _skinid_result['lastname'] = _ln;
+
+  console.log('finallist', _skinid_result);
+  if (_skinid_result) {
+        setGAEvent("Serum Results", $('#dose-1-ttl').text())
+        setGAEvent("Serum Results", $('#dose-2-ttl').text())
+        setGAEvent("Serum Results", $('#dose-3-ttl').text())
+    }
+
+  var settings = {
+    "url": "https://usemechanic.com/webhook/01fbb851-5209-45ac-aa39-c3fd4a95b2ff",
+    "method": "POST",
+    "timeout": 0,
+    "headers": {
+      "Content-Type": "application/json",
+    },
+    "data" : JSON.stringify(_skinid_result)
+  };
+
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+}
+
+bindQuestionNode = () => {
+  $('.q_numbers_node').on('click', function(){
+    var $this = $(this);
+    if ($this.hasClass('active')) {
+      var _s = parseInt($this.attr('data-step'));
+      var _rs = $this.attr('data-realsteps');
+      var _g = $this.parent().hasClass('female_numbers') ? 'female_numbers' : 'male_numbers' ;
+
+      if (_g = "female_numbers") {
+        for (var i = _s; i < 16; i++) {
+          $('.s-list__item-wrap.is-selected').each(function(){
+            var $this = $(this);
+            var _n = parseInt($this.parent().attr('data-female'));
+            if (_n > i) {
+              $this.removeClass('is-selected');
+            }
+          })
+        }
+      }
+      else {
+        for (var i = _s; i < 15; i++) {
+          $('.s-list__item-wrap.is-selected').each(function(){
+            var $this = $(this);
+            var _n = parseInt($this.parent().attr('data-male'));
+            if (_n > i) {
+              $this.removeClass('is-selected');
+            }
+          })
+        }
+      }
+      $('.quiz-main-container').hide();
+      $('.quiz-'+_rs).show();
+
+      $('.stripe').remove();
+      $('.q_numbers_node').removeClass('active');
+
+      console.log(parseInt(_rs), 'trelyon');
+      parseInt(_rs) == 8 ? $('.multiquestion-continue').show() : $('.multiquestion-continue').hide();
+
+
+      if (parseInt(_rs) < 10) {
+        $('.g-main').removeClass('theme-2').addClass('theme-1');
+      }
+      else {
+        $('.g-main').removeClass('theme-1').addClass('theme-2');
+      }
+
+      for (var i = 1; i <= _s; i++) {
+        $('.q_node_id_'+i).addClass('active').append('<div class="stripe"></div>')
+      }
+    }
+
+
+  })
+}
+
+backFunctionQuiz = () => {
+  console.log('yoyo');
+}
+
+countResult = () => {
+
+  tags_string = "";
+  $('.s-list__item-wrap.is-selected').each(function(index){
+
+
+
+    var _a = $(this).find('.item-txt-wrap').text().replace(/,/g, ' ');
+
+    console.log($(this).parent().attr('data-tag'), _a);
+    setGAEvent($(this).parent().attr('data-tag'), _a)
+
+    tags_string += 'js-' + $(this).parent().attr('data-tag') + ':' + _a + ',';
+    var _serums = $(this).attr('data-serums').split(',');
+    if (_serums.length > 0) {
+      for (var i = 0; i < _serums.length; i++) {
+
+        if (_serums[i] != "") {
+          serum_points[_serums[i]] += 1;
+        }
+      }
+    }
+  })
+
+  $('#contact_skinid_firstname').val($("#skinid_firstname").val());
+  $('#contact_skinid_lastname').val($("#skinid_lastname").val());
+  $('.skinid_note').val(tags_string); // for skinid note
+  $('#newsletter_tagging').val(tags_string+'newsletter'); // tagging for firstcreated customer
+
+  // Set dictionary to later sessionStorage setItem
+  _skinid_result['skin_id_result'] = tags_string;
+  _skinid_result['firstname'] = $("#skinid_firstname").val();
+  _skinid_result['lastname'] = $("#skinid_lastname").val();
+  var _result = sortDictionary(serum_points);
+  save_serum = _result;
+}
+
+saveSessionStorage = () => {
+  console.log('_skinid_result', _skinid_result);
+  sessionStorage.setItem('serum_points', save_serum[0][0] + ',' + save_serum[1][0] + ',' + save_serum[2][0]);
+  sessionStorage.setItem('skin_result', _skinid_result['skin_id_result']);
+  sessionStorage.setItem('first_name', _skinid_result['firstname']);
+  sessionStorage.setItem('last_name', _skinid_result['lastname']);
+  sessionStorage.setItem('skin_email', $('#skin_id_email').val());
+}
+
+buildLayout = (serum_rank) => {
+
+  $('.quiz-0').hide();
+  $('.g-main').show();
+  $('.g-content__steps').hide();
+  $('.g-main').addClass('theme-2').removeClass('theme-1');
+  var result_serum = serum_rank.split(',');
+  for (var i = 0; i < result_serum.length; i++) {
+    var _i = parseInt(i) + 1;
+    $('#r-serum-'+_i+'-pic > img').attr('src', serum[result_serum[i]]['diagnosis_img']);
+    $('#r-serum-'+_i+'-ttl').html(serum[result_serum[i]]['diagnosis']);
+    $('#r-serum-'+_i+'-txt').html(serum[result_serum[i]]['main_copy']);
+
+    $('#dose-'+_i+'-pic > img').attr('src', serum[result_serum[i]]['dose_img']);
+    $('#dose-'+_i+'-ttl').html(serum[result_serum[i]]['title']);
+    $('#dose-'+_i+'-txt').html(serum[result_serum[i]]['benefit']);
+
+    params.push(
+      {
+        'id' : serum[result_serum[i]]['vid'],
+        'qty': 1,
+        'properties': ''
+      }
+    )
+
+
+  }
+  setTimeout(function(){
+    retrieveCustomerAPI();
+  },5500)
+
+  setTimeout(function(){
+    sessionStorage.removeItem('serum_points');
+    sessionStorage.removeItem('skin_result');
+    sessionStorage.removeItem('first_name');
+    sessionStorage.removeItem('last_name');
+    sessionStorage.removeItem('skin_email');
+  },7500)
+
+  $('.quiz-19').show();
+}
+
+addAll = () => {
+  document.dispatchEvent(new CustomEvent('theme:loading:start'));
+  params.push({'id' : parseInt($('#bottle-pic').attr('data-vid')), 'qty': 1 });
+  console.log(params);
+  MGUtil.begin(params);
+
+  setTimeout(function(){
+    for (var i = 0; i < params.length; i++) {
+      getThis8.element.dispatchEvent(new CustomEvent('product:added', {
+        bubbles: true,
+        detail: {
+          variant: params[i]['vid'],
+          quantity: 1
+        }
+      }));
+    }
+
+    $.getJSON("/cart.js", function(result){
+      if (_isFirst == false) {
+        calculateProgressbar(result);
+        if (result.item_count > 0 ) {
+          clearInterval(bigTimer);
+          //timerCountDownClearCart();
+          document.dispatchEvent(new CustomEvent('theme:loading:end'));
+        }
+        _isFirst = true;
+        setGAEvent("SkinId Application", "Add To Cart");
+      }
+      else {
+        document.dispatchEvent(new CustomEvent('theme:loading:end'));
+      }
+    });
+  },1500)
+}
+
+bindSkinidOptions = () => {
+  $('.s-list__item-wrap').on('click', function(){
+    // add class to selected
+    if (!$(this).hasClass('s-list__item-wrap-multi')) {
+      $(this).addClass('is-selected').siblings().removeClass('is-selected');
+      var _step = parseInt($(this).parent().attr('data-step'));
+      var _nextstep = (parseInt(_step) + 1);
+
+
+      var qnode = _step > 2 ? parseInt($(this).parent().attr('data-'+_gender)) + 1 : _nextstep ;
+      console.log(_step ,qnode);
+      _nextstep == 8 ? $('.multiquestion-continue').show() : $('.multiquestion-continue').hide();
+
+      if ($(this).attr('data-pregnancy') == 'yes') {
+        serum_points['vta'] = -99999;
+      }
+
+      if (_step == 2) {
+        // Check male go q3, skip q4 q5
+        _gender = $(this).attr('data-gender');
+        if (_gender == 'male') {
+          $('.male_numbers').show();
+          $('.female_numbers').hide();
+          $('.quiz-'+_step.toString()).hide();
+          $('.quiz-'+_nextstep.toString()).show();
+
+          $('.q_node_id_' + qnode).addClass('active').append('<div class="stripe"></div>')
+        }
+        else {
+          _nextstep = _step + 2;
+          $('.female_numbers').show();
+          $('.male_numbers').hide();
+          $('.quiz-'+_step.toString()).hide();
+          $('.quiz-'+_nextstep.toString()).show();
+
+          $('.q_node_id_' + qnode).addClass('active').append('<div class="stripe"></div>')
+        }
+
+
+      }
+      else {
+        // Normal step
+        _gender == 'male' && _step == 5 ? $('.quiz-3'.toString()).hide() : $('.quiz-'+_step.toString()).hide() ;
+        $('.quiz-'+_nextstep.toString()).show();
+        $('.q_node_id_' + qnode).addClass('active').append('<div class="stripe"></div>');
+      }
+    }
+
+    if (_step == 17) {
+      countResult();
+    }
+  })
+
+  $('.s-list__item-wrap-multi').on('click', function(){
+    event.preventDefault();
+    event.stopPropagation();
+
+
+
+    $(this).toggleClass('is-selected');
+
+    $('.s-list__item-wrap-multi.is-selected').length > 2 ? $(".multiquestion-continue").prop('disabled', false) : $(".multiquestion-continue").prop('disabled', true);
+  })
+
+}
+
+multiQuiz = (elem) => {
+  var $this = $(elem);
+  $('.quiz-main-container').hide();
+  $('.quiz-9').show();
+  console.log($this.attr('data-'+_gender));
+  $('.q_node_id_' + $this.attr('data-'+_gender)).addClass('active').append('<div class="stripe"></div>');
+  $('.multiquestion-continue').hide();
+  $('.g-main.wizard-mode').removeClass('theme-1').addClass('theme-2');
+}
+
+startQuiz = (step) => {
+  step = parseInt(step);
+  $('.para-quiz-text').hide();
+  console.log($('#skinid_lastname').val(), $('#skinid_firstname').val());
+  if ($('#skinid_lastname').val() != "" && $('#skinid_firstname').val() != "") {
+    $(".name_field_error").hide();
+    $(".quiz-"+(step-1).toString()).hide();
+    $(".quiz-"+step).show();
+    step == 1 ? $('.g-main').show() : $('.g-main').hide();
+    setGAEvent("SkinId Application", "Start");
+  }
+  else{
+    $(".name_field_error").show();
+  }
+
+
+}
+
+sortDictionary = (dict) => {
+  // Create items array
+  var items = Object.keys(dict).map(function(key) {
+    return [key, dict[key]];
+  });
+
+  // Sort the array based on the second element
+  items.sort(function(first, second) {
+    return second[1] - first[1];
+  });
+
+  // Create a new array with only the first 5 items
+  console.log(items.slice(0, 5));
+  return items.slice(0, 5)
+}

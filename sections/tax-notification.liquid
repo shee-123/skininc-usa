@@ -1,0 +1,99 @@
+
+  {%- if section.settings.disable == false -%}
+        <div class="notification hidden">
+
+          <div aria-atomic="true" aria-live="polite" class="notice notice--error hidden" role="alert" tabindex="-1">
+              <svg class="icon-svg icon-svg--size-24 notice__icon" aria-hidden="true" focusable="false">
+                  <use xlink:href="#error"></use>
+              </svg>
+              <p class="notice__text">{{ section.settings.notice-text }}</p>
+          </div>
+
+          <div class="radio-wrapper" data-shipping-method="shopify-taxNotify">
+              <div class="radio__input">
+                  <input class="input-radio"
+                         aria-label="Tav notify" type="checkbox"
+                         value="shopify-taxNotify" name="checkout[tax-notify][id]" id="checkout_shipping_id_shopify-taxNotify" checked>
+              </div>
+              <label class="radio__label" aria-hidden="true" for="checkout_shipping_id_shopify-taxNotify">
+                  <span class="radio__label__primary" data-shipping-method-label-title="Tax notify">
+                    {{ section.settings.tax-text }}
+                  </span>
+              </label>
+          </div>
+        </div>
+  {%- endif -%}
+
+<script>
+
+    var notificationSection = document.getElementById('shopify-section-tax-notification');
+    var notification = document.getElementsByClassName('notification')[0];
+    var paymentPage = document.querySelectorAll('[data-step="payment_method"]');
+    var taxNotificationCheckbox = document.getElementById('checkout_shipping_id_shopify-taxNotify');
+    var submitBtn = document.getElementsByClassName('step__footer__continue-btn')[0];
+    var notificationError = document.querySelector('.notification .notice--error');
+    var stepFooter = document.getElementsByClassName('step__footer')[0];
+    var form = document.getElementsByClassName('edit_checkout')[2];
+
+
+    // check if payment step
+    if(paymentPage.length){
+
+        // move under billing section
+        form.insertBefore(notificationSection, form.children[7]);
+
+        // show element
+        notification.classList.remove('hidden');
+
+        // add Event to input checkbox
+        taxNotificationCheckbox.addEventListener('click', checkCheckbox);
+
+        // check checkbox
+        function checkCheckbox() {
+            // check if checked = hide notification error and btn not disable
+            if( taxNotificationCheckbox.checked ){
+                notificationError.classList.add('hidden');
+                submitBtn.removeAttribute("disabled");
+
+            } else {
+                notificationError.classList.remove('hidden');
+                submitBtn.setAttribute("disabled", "true");
+            }
+        }
+
+        checkCheckbox();
+    }
+
+</script>
+
+{% schema %}
+{
+  "name": "Tax notification",
+  "class": "section",
+  "settings": [
+    {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content"
+    },
+    {
+        "type": "checkbox",
+        "id": "disable",
+        "label": "Disable tax notification",
+        "default": false
+    },
+    {
+        "type": "text",
+        "id": "notice-text",
+        "label": "Notice text",
+        "default": "Please asknowledge this notification"
+    },
+    {
+        "type": "text",
+        "id": "tax-text",
+        "label": "Asknowledge text",
+        "default": "I acknowledge that I am liable for all import duties, customs and local sales taxes levied by the country I am shipping to and that payment of these is necessary to release my order from customs on arrival."
+    }
+  ]
+}
+{% endschema %}

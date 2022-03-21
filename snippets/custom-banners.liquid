@@ -1,0 +1,588 @@
+<div class="desc_banner_1">
+  <div class="banner-heading grey1_bg">
+    <h2 class="tab_item_title">{{ section.settings.description_title }}</h2>
+    <h3 class="banner_title">{{ section.settings.banner1_title }}</h3>
+    <div class="banner_desc">{{ section.settings.banner1_desc }}</div>
+  </div>
+  <div class="banner-image">    
+    {%- assign image_url = section.settings.banner1_image | img_url: '1110x' -%}
+    <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner1_image.alt | escape }}">
+
+    <noscript>
+      <img src="{{ section.settings.banner1_image | img_url: 'original' }}" alt="{{ section.settings.banner1_image.alt | escape }}">
+    </noscript>
+  </div>
+  {% if section.settings.banner1_cart_btn != blank %}
+    <a class="body-device-template-custom-add-to-cart-button full-width-style">{{ section.settings.banner1_cart_btn }}</a>
+  {% endif %}
+</div>
+
+<div class="desc_banner_2">
+  <div class="banner-heading">
+    <h3 class="banner_title">{{ section.settings.banner2_title }}</h3>
+  </div>
+  <div class="banner-image">    
+    {%- assign image_url = section.settings.banner2_image | img_url: '1110x' -%}
+    <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner2_image.alt | escape }}">
+
+    <noscript>
+      <img src="{{ section.settings.banner2_image | img_url: 'original' }}" alt="{{ section.settings.banner2_image.alt | escape }}">
+    </noscript>
+  </div>
+  {% if section.settings.banner2_cart_btn != blank %}
+    <a class="body-device-template-custom-add-to-cart-button">{{ section.settings.banner2_cart_btn }}</a>
+  {% endif %}
+</div>
+
+<div class="desc_banner_3">
+  <div class="banner-heading grey1_bg">
+    <h3 class="banner_title">{{ section.settings.banner3_title }}</h3>
+    <div class="banner_desc">{{ section.settings.banner3_desc }}</div>
+  </div>
+  <div class="banner-image border-bottom-image">
+    {%- assign image_url = section.settings.banner3_image | img_url: '1110x' -%}
+    <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner3_image.alt | escape }}">
+
+    <noscript>
+      <img src="{{ section.settings.banner3_image | img_url: 'original' }}" alt="{{ section.settings.banner3_image.alt | escape }}">
+    </noscript>
+  </div>
+  {% if section.settings.banner3_cart_btn != blank %}
+    <a class="body-device-template-custom-add-to-cart-button full-width-style">{{ section.settings.banner3_cart_btn }}</a>
+  {% endif %}
+</div>
+
+<div class="desc_banner_4">
+  <div class="banner-heading grey2_bg">
+    {% if section.settings.banner4_icons %}
+    <div class="banner_icons">    
+      {%- assign image_url = section.settings.banner4_icons | img_url: 'master' -%}
+      <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner4_icons.alt | escape }}">
+
+      <noscript>
+        <img src="{{ section.settings.banner4_icons | img_url: 'original' }}" alt="{{ section.settings.banner4_icons.alt | escape }}">
+      </noscript>
+    </div>
+    {% endif %}
+    <h3 class="banner_title">{{ section.settings.banner4_title }}</h3>
+    <div class="banner_desc">{{ section.settings.banner4_desc }}</div>
+    <div class="heading-content-img">    
+      {%- assign image_url = section.settings.banner4_heading_img | img_url: '950x' -%}
+      <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner4_heading_img.alt | escape }}">
+
+      <noscript>
+        <img src="{{ section.settings.banner4_heading_img | img_url: 'original' }}" alt="{{ section.settings.banner4_heading_img.alt | escape }}">
+      </noscript>
+    </div>
+  </div>
+  <div class="banner-image border-bottom-image">    
+    {%- assign image_url = section.settings.banner4_image | img_url: '1110x' -%}
+    <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner4_image.alt | escape }}">
+
+    <noscript>
+      <img src="{{ section.settings.banner4_image | img_url: 'original' }}" alt="{{ section.settings.banner4_image.alt | escape }}">
+    </noscript>
+  </div>
+  {% if section.settings.banner4_cart_btn != blank %}
+    <a class="body-device-template-custom-add-to-cart-button full-width-style">{{ section.settings.banner4_cart_btn }}</a>
+  {% endif %}
+</div>
+
+<div class="desc_banner_5">
+  <div class="banner-heading grey2_bg">
+    {% if section.settings.banner5_icons %}
+    <div class="banner_icons">    
+      {%- assign image_url = section.settings.banner5_icons | img_url: 'master' -%}
+      <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner5_icons.alt | escape }}">
+
+      <noscript>
+        <img src="{{ section.settings.banner5_icons | img_url: 'original' }}" alt="{{ section.settings.banner5_icons.alt | escape }}">
+      </noscript>
+    </div>
+    {% endif %}
+    <h3 class="banner_title">{{ section.settings.banner5_title }}</h3>
+    <div class="banner_desc">{{ section.settings.banner5_desc }}</div>
+    <div class="heading-content-img">    
+      {%- assign image_url = section.settings.banner5_heading_img | img_url: '950x' -%}
+      <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner5_heading_img.alt | escape }}">
+
+      <noscript>
+        <img src="{{ section.settings.banner5_heading_img | img_url: 'original' }}" alt="{{ section.settings.banner5_heading_img.alt | escape }}">
+      </noscript>
+    </div>
+  </div>
+  <div class="banner-image border-bottom-image">    
+    {%- assign image_url = section.settings.banner5_image | img_url: '1110x' -%}
+    <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner5_image.alt | escape }}">
+
+    <noscript>
+      <img src="{{ section.settings.banner5_image | img_url: 'original' }}" alt="{{ section.settings.banner5_image.alt | escape }}">
+    </noscript>
+  </div>
+  {% if section.settings.banner5_cart_btn != blank %}
+    <a class="body-device-template-custom-add-to-cart-button full-width-style">{{ section.settings.banner5_cart_btn }}</a>
+  {% endif %}
+</div>
+
+<div class="desc_banner_6">
+  <div class="banner-heading grey2_bg">
+    {% if section.settings.banner6_icons %}
+    <div class="banner_icons">    
+      {%- assign image_url = section.settings.banner6_icons | img_url: 'master' -%}
+      <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner6_icons.alt | escape }}">
+
+      <noscript>
+        <img src="{{ section.settings.banner6_icons | img_url: 'original' }}" alt="{{ section.settings.banner6_icons.alt | escape }}">
+      </noscript>
+    </div>
+    {% endif %}
+    <h3 class="banner_title">{{ section.settings.banner6_title }}</h3>
+    <div class="banner_desc">{{ section.settings.banner6_desc }}</div>
+    <div class="heading-content-img">    
+      {%- assign image_url = section.settings.banner6_heading_img | img_url: '950x' -%}
+      <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner6_heading_img.alt | escape }}">
+
+      <noscript>
+        <img src="{{ section.settings.banner6_heading_img | img_url: 'original' }}" alt="{{ section.settings.banner6_heading_img.alt | escape }}">
+      </noscript>
+    </div>
+  </div>
+  <div class="banner-image border-bottom-image">    
+    {%- assign image_url = section.settings.banner6_image | img_url: '1110x' -%}
+    <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner6_image.alt | escape }}">
+
+    <noscript>
+      <img src="{{ section.settings.banner6_image | img_url: 'original' }}" alt="{{ section.settings.banner6_image.alt | escape }}">
+    </noscript>
+  </div>
+  {% if section.settings.banner6_cart_btn != blank %}
+    <a class="body-device-template-custom-add-to-cart-button full-width-style">{{ section.settings.banner6_cart_btn }}</a>
+  {% endif %}
+</div>
+
+<div class="desc_banner_7">
+  <div class="banner-heading grey1_bg">
+    {% if section.settings.banner7_icons %}
+    <div class="banner_icons">    
+      {%- assign image_url = section.settings.banner7_icons | img_url: 'master' -%}
+      <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner7_icons.alt | escape }}">
+
+      <noscript>
+        <img src="{{ section.settings.banner7_icons | img_url: 'original' }}" alt="{{ section.settings.banner7_icons.alt | escape }}">
+      </noscript>
+    </div>
+    {% endif %}
+    <h3 class="banner_title">{{ section.settings.banner7_title }}</h3>
+    <div class="banner_desc">{{ section.settings.banner7_desc }}</div>
+    <div class="heading-content-img">    
+      {%- assign image_url = section.settings.banner7_heading_img | img_url: '950x' -%}
+      <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner7_heading_img.alt | escape }}">
+
+      <noscript>
+        <img src="{{ section.settings.banner7_heading_img | img_url: 'original' }}" alt="{{ section.settings.banner7_heading_img.alt | escape }}">
+      </noscript>
+    </div>
+  </div>
+  <div class="banner-image border-bottom-image">    
+    {%- assign image_url = section.settings.banner7_image | img_url: '1110x' -%}
+    <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner7_image.alt | escape }}">
+
+    <noscript>
+      <img src="{{ section.settings.banner7_image | img_url: 'original' }}" alt="{{ section.settings.banner7_image.alt | escape }}">
+    </noscript>
+  </div>
+  {% if section.settings.banner7_cart_btn != blank %}
+    <a class="body-device-template-custom-add-to-cart-button full-width-style">{{ section.settings.banner7_cart_btn }}</a>
+  {% endif %}
+</div>
+
+<div class="desc_banner_8">
+  <div class="banner-heading">
+    <h3 class="banner_title">{{ section.settings.banner8_title }}</h3>
+    <div class="banner_desc">{{ section.settings.banner8_desc }}</div>
+  </div>
+  <div class="banner-image">    
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="single_item">
+          <div class="item_img">
+            {%- assign image_url = section.settings.banner8_item1_image | img_url: '350x' -%}
+            <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner8_item1_image.alt | escape }}">
+
+            <noscript>
+              <img src="{{ section.settings.banner8_item1_image | img_url: 'original' }}" alt="{{ section.settings.banner8_item1_image.alt | escape }}">
+            </noscript>
+          </div>
+          <div class="item_desc">
+            {{ section.settings.banner8_item1_detail }}
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="single_item">
+          <div class="item_img">
+            {%- assign image_url = section.settings.banner8_item2_image | img_url: '350x' -%}
+            <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner8_item2_image.alt | escape }}">
+
+            <noscript>
+              <img src="{{ section.settings.banner8_item2_image | img_url: 'original' }}" alt="{{ section.settings.banner8_item2_image.alt | escape }}">
+            </noscript>
+          </div>
+          <div class="item_desc">
+            {{ section.settings.banner8_item2_detail }}
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="single_item">
+          <div class="item_img">
+            {%- assign image_url = section.settings.banner8_item3_image | img_url: '350x' -%}
+            <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner8_item3_image.alt | escape }}">
+
+            <noscript>
+              <img src="{{ section.settings.banner8_item3_image | img_url: 'original' }}" alt="{{ section.settings.banner8_item3_image.alt | escape }}">
+            </noscript>
+          </div>
+          <div class="item_desc">
+            {{ section.settings.banner8_item3_detail }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if section.settings.banner8_cart_btn != blank %}
+    <a class="body-device-template-custom-add-to-cart-button">{{ section.settings.banner8_cart_btn }}</a>
+  {% endif %}
+</div>
+
+<div class="desc_banner_9">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-6 banner-left-image">
+      {%- assign image_url = section.settings.banner9_image | img_url: '540x' -%}
+      <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner9_image.alt | escape }}">
+
+      <noscript>
+        <img src="{{ section.settings.banner9_image | img_url: 'original' }}" alt="{{ section.settings.banner9_image.alt | escape }}">
+      </noscript>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6 banner-right-desc">
+      <div class="banner_icon">
+        {%- assign image_url = section.settings.banner9_icon | img_url: 'master' -%}
+        <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner9_icon.alt | escape }}">
+
+        <noscript>
+          <img src="{{ section.settings.banner9_icon | img_url: 'original' }}" alt="{{ section.settings.banner9_icon.alt | escape }}">
+        </noscript>
+      </div>
+      <h3 class="banner_title">{{ section.settings.banner9_title }}</h3>
+      <div class="banner_desc">{{ section.settings.banner9_desc }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="desc_banner_10">
+  <div class="banner-heading">
+    <h3 class="banner_title">{{ section.settings.banner10_title }}</h3>
+    <div class="banner_desc">{{ section.settings.banner10_desc }}</div>
+  </div>
+  <div class="banner-image">    
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="single_item">
+          <div class="item_img">
+            {%- assign image_url = section.settings.banner10_item1_image | img_url: '350x' -%}
+            <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner10_item1_image.alt | escape }}">
+
+            <noscript>
+              <img src="{{ section.settings.banner10_item1_image | img_url: 'original' }}" alt="{{ section.settings.banner10_item1_image.alt | escape }}">
+            </noscript>
+          </div>
+          <div class="item_desc">
+            {{ section.settings.banner10_item1_detail }}
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="single_item">
+          <div class="item_img">
+            {%- assign image_url = section.settings.banner10_item2_image | img_url: '350x' -%}
+            <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner10_item2_image.alt | escape }}">
+
+            <noscript>
+              <img src="{{ section.settings.banner10_item2_image | img_url: 'original' }}" alt="{{ section.settings.banner10_item2_image.alt | escape }}">
+            </noscript>
+          </div>
+          <div class="item_desc">
+            {{ section.settings.banner10_item2_detail }}
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="single_item">
+          <div class="item_img">
+            {%- assign image_url = section.settings.banner10_item3_image | img_url: '350x' -%}
+            <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner10_item3_image.alt | escape }}">
+
+            <noscript>
+              <img src="{{ section.settings.banner10_item3_image | img_url: 'original' }}" alt="{{ section.settings.banner10_item3_image.alt | escape }}">
+            </noscript>
+          </div>
+          <div class="item_desc">
+            {{ section.settings.banner10_item3_detail }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if section.settings.banner10_cart_btn != blank %}
+    <a class="body-device-template-custom-add-to-cart-button">{{ section.settings.banner10_cart_btn }}</a>
+  {% endif %}
+</div>
+
+<div class="desc_banner_11" style="background-image: url( {{ section.settings.banner11_bg_image | img_url: 'master' }} );">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-6 banner-left-desc">
+      <div class="banner_icon">
+        {%- assign image_url = section.settings.banner11_icon | img_url: 'master' -%}
+        <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner11_icon.alt | escape }}">
+
+        <noscript>
+          <img src="{{ section.settings.banner11_icon | img_url: 'original' }}" alt="{{ section.settings.banner11_icon.alt | escape }}">
+        </noscript>
+      </div>
+      <h3 class="banner_title">{{ section.settings.banner11_title }}</h3>
+      <div class="banner_desc">{{ section.settings.banner11_desc }}</div>
+      <div class="banner_details_img">
+        {%- assign image_url = section.settings.banner11_details_img | img_url: '470x' -%}
+        <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner11_details_img.alt | escape }}">
+
+        <noscript>
+          <img src="{{ section.settings.banner11_details_img | img_url: 'original' }}" alt="{{ section.settings.banner11_details_img.alt | escape }}">
+        </noscript>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6 banner-right-img">
+      {%- assign image_url = section.settings.banner11_img | img_url: '540x' -%}
+      <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner11_img.alt | escape }}">
+
+      <noscript>
+        <img src="{{ section.settings.banner11_img | img_url: 'original' }}" alt="{{ section.settings.banner11_img.alt | escape }}">
+      </noscript>
+    </div>
+  </div>
+</div>
+
+<div class="desc_banner_12">
+  <div class="banner-heading">
+    <h3 class="banner_title">{{ section.settings.banner12_title }}</h3>
+  </div>
+  <div class="banner-image">    
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="single_item">
+          <div class="item_img">
+            {%- assign image_url = section.settings.banner12_item1_image | img_url: '290x' -%}
+            <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner12_item1_image.alt | escape }}">
+
+            <noscript>
+              <img src="{{ section.settings.banner12_item1_image | img_url: 'original' }}" alt="{{ section.settings.banner12_item1_image.alt | escape }}">
+            </noscript>
+          </div>
+          <div class="item_desc">
+            {{ section.settings.banner12_item1_detail }}
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="single_item">
+          <div class="item_img">
+            {%- assign image_url = section.settings.banner12_item2_image | img_url: '290x' -%}
+            <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner12_item2_image.alt | escape }}">
+
+            <noscript>
+              <img src="{{ section.settings.banner12_item2_image | img_url: 'original' }}" alt="{{ section.settings.banner12_item2_image.alt | escape }}">
+            </noscript>
+          </div>
+          <div class="item_desc">
+            {{ section.settings.banner12_item2_detail }}
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="single_item">
+          <div class="item_img">
+            {%- assign image_url = section.settings.banner12_item3_image | img_url: '290x' -%}
+            <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner12_item3_image.alt | escape }}">
+
+            <noscript>
+              <img src="{{ section.settings.banner12_item3_image | img_url: 'original' }}" alt="{{ section.settings.banner12_item3_image.alt | escape }}">
+            </noscript>
+          </div>
+          <div class="item_desc">
+            {{ section.settings.banner12_item3_detail }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if section.settings.banner12_cart_btn != blank %}
+    <a class="body-device-template-custom-add-to-cart-button">{{ section.settings.banner12_cart_btn }}</a>
+  {% endif %}
+</div>
+
+<div class="desc_banner_13" style="background-image: url( {{ section.settings.banner13_bg_image | img_url: 'master' }} );">
+  <div class="row">
+    <div class="col-sm-6 col-md-6 col-lg-6"></div>
+    <div class="col-sm-6 col-md-6 col-lg-6 banner-right-desc">
+      <h3 class="banner_title">{{ section.settings.banner13_title }}</h3>
+      <div class="banner_desc">{{ section.settings.banner13_desc }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="desc_banner_14">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-6 banner-left-desc">
+      <h3 class="banner_title">{{ section.settings.banner14_title }}</h3>
+      <div class="banner_desc">{{ section.settings.banner14_desc }}</div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6 banner-right-img">
+      {%- assign image_url = section.settings.banner14_image | img_url: '540x' -%}
+      <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner14_image.alt | escape }}">
+
+      <noscript>
+        <img src="{{ section.settings.banner14_image | img_url: 'original' }}" alt="{{ section.settings.banner14_image.alt | escape }}">
+      </noscript>
+    </div>
+  </div>
+</div>
+
+<div class="desc_banner_15">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-6 banner-left-img">
+      {%- assign image_url = section.settings.banner15_image | img_url: '540x' -%}
+      <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner15_image.alt | escape }}">
+
+      <noscript>
+        <img src="{{ section.settings.banner15_image | img_url: 'original' }}" alt="{{ section.settings.banner15_image.alt | escape }}">
+      </noscript>
+    </div>
+    
+    <div class="col-sm-12 col-md-6 col-lg-6 banner-right-desc">
+      <div class="desc_item">
+        <h3 class="banner_title">{{ section.settings.banner15_title_1 }}</h3>
+        <div class="banner_desc">{{ section.settings.banner15_desc_1 }}</div>
+      </div>
+      <div class="desc_item">
+        <h3 class="banner_title">{{ section.settings.banner15_title_2 }}</h3>
+        <div class="banner_desc">{{ section.settings.banner15_desc_2 }}</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="banner_item_images">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="single_item">
+          <div class="item_img">
+            {%- assign image_url = section.settings.banner15_item1_image | img_url: '290x' -%}
+            <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner15_item1_image.alt | escape }}">
+
+            <noscript>
+              <img src="{{ section.settings.banner15_item1_image | img_url: 'original' }}" alt="{{ section.settings.banner15_item1_image.alt | escape }}">
+            </noscript>
+          </div>
+          <div class="item_desc">
+            {{ section.settings.banner15_item1_detail }}
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="single_item">
+          <div class="item_img">
+            {%- assign image_url = section.settings.banner15_item2_image | img_url: '290x' -%}
+            <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner15_item2_image.alt | escape }}">
+
+            <noscript>
+              <img src="{{ section.settings.banner15_item2_image | img_url: 'original' }}" alt="{{ section.settings.banner15_item2_image.alt | escape }}">
+            </noscript>
+          </div>
+          <div class="item_desc">
+            {{ section.settings.banner15_item2_detail }}
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="single_item">
+          <div class="item_img">
+            {%- assign image_url = section.settings.banner15_item3_image | img_url: '290x' -%}
+            <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner15_item3_image.alt | escape }}">
+
+            <noscript>
+              <img src="{{ section.settings.banner15_item3_image | img_url: 'original' }}" alt="{{ section.settings.banner15_item3_image.alt | escape }}">
+            </noscript>
+          </div>
+          <div class="item_desc">
+            {{ section.settings.banner15_item3_detail }}
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="single_item">
+          <div class="item_img">
+            {%- assign image_url = section.settings.banner15_item4_image | img_url: '290x' -%}
+            <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner15_item4_image.alt | escape }}">
+
+            <noscript>
+              <img src="{{ section.settings.banner15_item4_image | img_url: 'original' }}" alt="{{ section.settings.banner15_item4_image.alt | escape }}">
+            </noscript>
+          </div>
+          <div class="item_desc">
+            {{ section.settings.banner15_item4_detail }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if section.settings.banner15_cart_btn != blank %}
+    <a class="body-device-template-custom-add-to-cart-button">{{ section.settings.banner15_cart_btn }}</a>
+  {% endif %}
+</div>
+
+<div class="desc_banner_16">
+  <div class="banner-heading">
+    <h3 class="banner_title">{{ section.settings.banner16_title }}</h3>
+  </div>
+  <div class="banner-content">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-6 banner-left-desc">
+        <div class="single_desc_item">
+          <p class="banner_sub_index">1</p>
+          <h3 class="banner_sub_title">{{ section.settings.banner16_sub_title_1 }}</h3>
+          <div class="banner_sub_desc">{{ section.settings.banner16_sub_desc_1 }}</div>
+        </div>
+        <div class="single_desc_item">
+          <p class="banner_sub_index">2</p>
+          <h3 class="banner_sub_title">{{ section.settings.banner16_sub_title_2 }}</h3>
+          <div class="banner_sub_desc">{{ section.settings.banner16_sub_desc_2 }}</div>
+        </div>
+        <div class="single_desc_item">
+          <p class="banner_sub_index">3</p>
+          <h3 class="banner_sub_title">{{ section.settings.banner16_sub_title_3 }}</h3>
+          <div class="banner_sub_desc">{{ section.settings.banner16_sub_desc_3 }}</div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6 banner-right-img">
+        {%- assign image_url = section.settings.banner16_image | img_url: '540x' -%}
+        <img class="Image--lazyLoad" data-src="{{ image_url }}" data-sizes="auto" alt="{{ section.settings.banner16_image.alt | escape }}">
+
+        <noscript>
+          <img src="{{ section.settings.banner16_image | img_url: 'original' }}" alt="{{ section.settings.banner16_image.alt | escape }}">
+        </noscript>
+      </div>
+    </div>
+  </div>
+  {% if section.settings.banner16_cart_btn != blank %}
+    <a class="body-device-template-custom-add-to-cart-button">{{ section.settings.banner16_cart_btn }}</a>
+  {% endif %}
+</div>

@@ -1,0 +1,35 @@
+<section class="section spaced featurd-in">
+  <div class="container">
+      <div class="text-center">
+        <h1 class="header">AS FEATURED IN</h1>
+          {%- for block in section.blocks -%}
+            {%- assign image_url = block.settings.image | img_url -%}
+            <img src="{{image_url}}"/>
+          {%- endfor -%}
+      </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Featured In",
+  "blocks": [
+     {
+       "type" : "text",
+       "name" : "brand",
+       "settings" : [
+           {
+             "type": "image_picker",
+             "id": "image",
+             "label": "Image"
+           }
+       ]
+     }
+  ],
+  "presets": [
+    {
+      "category": "Text",
+      "name": "Featured In"
+    }
+  ]
+}
+{% endschema %}

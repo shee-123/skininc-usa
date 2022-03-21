@@ -1,0 +1,32 @@
+
+<div class="quiz-0">
+  <div class="g-content" id="g-content">
+    <div class="g-content__inner inner-full">
+      <div class="section-hero">
+    <div class="container s-wrap">
+    <div class="s-part s-part__first"><div class="s-subtitle">Skin ID</div>
+      <div class="s-title">
+        <div class="s-title__ttl h1">Customize your skincare in minutes</div>
+        <div class="s-title__pic"><img src="{{'skin-identity.png' | asset_img_url: 'x450', scale: 2 }}"></div>
+      </div>
+      <div class="s-info"><span class="icon ic2-icon-clock"></span><span>Time: 2-3 minutes</span></div>
+      <div class="s-description">Who is this custom serum for?
+      </div>
+
+      <div class="skinid-welcome m-t-20">
+        {%- comment %}
+          {% render 'register-snippet' %}
+        {% endcomment -%}
+        <input type="text" id="skinid_firstname" class="Form__Input" required="required" placeholder="First Name" aria-label="Name" autofocus="">
+        <input type="text" id="skinid_lastname" class="m-t-10 Form__Input" required="required" placeholder="Last Name" aria-label="Name" autofocus="">
+
+        <p class="name_field_error m-t-20 m-b-20" style="display:none; color:red; font-size: 12px;">Please fill in the details above</p>
+      </div>
+
+      <div class="s-buttons m-t-10" style="margin-top:10px;">
+        <button type="button" id="btn-start" onclick="startQuiz(1)" class="btn btn-default btn-start"><span>Start Skin Identity Check</span></button>
+      </div>
+    </div>
+      <div class="s-part s-part__second"><div class="s-pic"><img src="{{'hero-image-skinid.png' | asset_img_url: 'x900', scale: 2 }}"></div></div>
+    </div></div></div></div>
+</div>

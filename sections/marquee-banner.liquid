@@ -1,0 +1,114 @@
+<section class="section spaced marquee-banner" data-section-id="{{ section.id }}">
+  <div class="simple-marquee-container">
+    <div class="marquee">
+      <ul class="marquee-content-items">
+        {%- for block in section.blocks -%}
+        {% if block.settings.title != blank %}
+        	<li>{{ block.settings.title }}</li>
+        {% endif %}
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style type="text/css">
+  .marquee-banner {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 0px !important;
+  }
+  .simple-marquee-container *{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;
+  }
+  .simple-marquee-container {
+      width: 100%;
+      background: #fbdcce;
+      display: flex;
+      overflow: hidden;
+      box-sizing: border-box;
+      position: relative;
+      padding: 23px 0px;
+  }
+
+  .simple-marquee-container .marquee, .simple-marquee-container *[class^="marquee"] {
+      display: inline-flex;
+      white-space: nowrap;
+      position: absolute;
+      top: 0px;
+      height: 100%;
+  }
+
+  .simple-marquee-container .marquee{
+    margin-left: 25%;
+  }
+
+  .simple-marquee-container .marquee-content-items{
+    display: inline-flex;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    align-items: center;
+  }
+
+  .simple-marquee-container .marquee-content-items li{
+    display: inline-flex;
+    line-height: 1.4em;
+    color: #333333;
+    padding: 0px 28px;
+    height: 100%;
+    align-items: center;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+</style>
+<script type="text/javascript">
+  jQuery(function (){
+    let options = {
+      autostart: true,
+      property: 'value',
+      onComplete: null,
+      duration: 10000,
+      padding: 0,
+      marquee_class: '.marquee',
+      container_class: '.simple-marquee-container',
+      sibling_class: 0,
+      hover: false,
+      velocity: 0.04,
+      direction: 'left'
+    }
+
+    jQuery('.simple-marquee-container').SimpleMarquee(options);				
+  });
+
+</script>
+{% schema %}
+  {
+    "name": "Marquee Banner",
+    "blocks": [
+		{
+			"type": "marquee_item",
+			"name": "Marquee Item",
+			"settings": [
+				{
+					"type": "text",
+					"id": "title",
+					"label": "Title"
+				}
+			]
+		}
+	],
+	"presets": [
+      {
+        "category": "Text",
+        "name": "Marquee Banner"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,71 @@
+<section class="section spaced our-approach content-grid" data-section-id="{{ section.id }}">
+  <div class="container">
+    {%- for block in section.blocks -%}
+    {%- assign image_url = block.settings.image | img_url: 'master' -%}
+    <div class="row {{ block.settings.direction }} ">
+      <div class="col-sm-6 col-xs-12 img-col">
+        <div class="img-content" style="background-image: url({{ image_url }}) ;"></div>
+      </div>
+      <div class="col-sm-6 col-xs-12">
+        <div class="content">
+          <div>
+          <h4>{{block.settings.title | escape }}</h4>
+          <p>{{block.settings.content}}</p>
+        </div>
+        </div>
+      </div>
+    </div>
+    {%- endfor -%}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Content Grid",
+  "blocks": [
+  {
+    "type" : "grid_item",
+    "name" : "row",
+    "settings" : [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "530 x 300px jpg recommended"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "Direction",
+      "options": [
+      {
+        "value": "left",
+        "label": "Left"
+      },
+      {
+        "value": "right",
+        "label": "Right"
+      }
+      ],
+      "default": "left"
+    }
+    ]
+  }
+  ],
+  "presets": [
+  {
+    "category": "Text",
+    "name": "Content Grid"
+  }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,32 @@
+{% assign product = all_products["gift-wrapping"] %}
+{%- if product != blank -%}
+{% assign id = product.selected_or_first_available_variant.id  %}
+<style>
+#item-{{ id }} { display: none; }
+</style>
+<div class="gift-wrap">
+  <div class="CartItem" data-id="{{ id }}">
+  <div class="CartItem__ImageWrapper AspectRatio">
+    <div class="AspectRatio" style="--aspect-ratio: {{ product.featured_image.aspect_ratio }}">
+      <img class="CartItem__Image" src="{{ product.featured_image | img_url: '240x' }}" alt="{{ product.featured_image.alt | escape }}">
+    </div>
+  </div>
+  <div class="CartItem__Info">
+  <label for="gift-wrapping" class="checkbox CartItem__Title Heading">
+      <input type="hidden" name="attributes[gift-wrapping]" value="" />
+      <input id="gift-wrapping" type="checkbox" name="attributes[gift-wrapping]" data-id="{{ id }}" value="yes" {% if cart.attributes.gift-wrapping %} checked="checked"{% endif %}/>
+      {% assign  price = product.price | money  %}
+      {{- 'cart.general.gift_wrapping_label' | t: price: price -}}
+  </label>
+  <div class="gift-message-wrapper">
+    {%- if cart.attributes.gift-note == blank -%}
+    <button type="button" class="Button Button--primary Button--small" data-action="add-gift-wrapping-msg">{{- 'cart.general.add_gift_message' | t -}}</button>
+    {%- endif -%}
+    <div class="gift-message" style="{%- if cart.attributes.gift-note == blank -%} display:none; {%- endif -%}">
+      <textarea name="attributes[gift-note]" id="gift-note" class="Cart__Note Form__Textarea" placeholder="Gift message..." rows="4"></textarea>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+{%- endif -%}

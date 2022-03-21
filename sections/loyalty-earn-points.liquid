@@ -1,0 +1,50 @@
+<section>
+    <div class="loyalty-offer">
+        <h2 class="loyalty-offer__title loyalty-h2">{{ section.settings.title }}</h2>
+        <div class="loyalty-offer-img-with-text-block">
+            <div class="loyalty-offer-img-with-text-block__image-wrapper">
+                {% if section.settings.img_url != blank %}
+                <a href="{{ section.settings.img_url }}">
+                    {% endif %}
+                    <img src="{{ section.settings.image | img_url: '510x510' }}" alt="{{ section.settings.image.alt }}">
+                    {% if section.settings.img_url != blank %}</a> {% endif %}
+            </div>
+            <div class="loyalty-offer-img-with-text-block__text-wrapper">
+                <div class="loyalty-offer-img-with-text-block__text">
+                    <span class="loyalty-offer-img-with-text-block__name">
+{{ section.settings.offer_name }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+    {
+    "name": "Loyalty offer(earn)",
+    "settings":
+        [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title"
+            },
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image",
+                "info": "Image must have aspect ratio 1:1"
+            },
+            {
+                "type": "url",
+                "id": "img_url",
+                "label": "Link for image"
+            },
+            {
+                "type": "text",
+                "id": "offer_name",
+                "label": "Offer name"
+            }
+        ]
+    }
+{% endschema %}

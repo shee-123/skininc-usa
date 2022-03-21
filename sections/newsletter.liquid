@@ -1,0 +1,69 @@
+<section class="section spaced d-sm-block newsletters-section" id="section-{{ section.id }}">
+  <div class="container">
+  <div class="row">
+      <div class="col-sm-6 offset-sm-1">
+        <header>
+            <h2 class="header">
+              <small>{{ section.settings.subheading | escape }}</small>
+              {{ section.settings.title | escape }}
+            </h2>
+          {%- if section.settings.content != blank -%}
+            <div class="SectionHeader__Description">
+              {{ section.settings.content }}
+            </div>
+          {%- endif -%}
+        </header>
+      </div>
+      <div class="col-sm-5">
+        {%- assign newsletter_id = 'footer-' | append: section.id -%}
+        {%- form 'customer', id: newsletter_id, class: 'Form' -%}
+          {%- if form.posted_successfully? -%}
+            <p class="Form__Alert Alert Alert--success">{{ 'home_page.newsletter.success' | t }}</p>
+          {%- else -%}
+            {%- if form.errors -%}
+              <p class="Form__Alert Alert Alert--error">{{ form.errors.messages['email'] }}</p>
+            {%- endif -%}
+
+            <div class="">
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <input type="email" name="contact[email]" class="Form__Input" aria-label="{{ 'home_page.newsletter.input' | t }}" placeholder="{{ 'home_page.newsletter.input' | t }}" required>
+              <button type="submit" class="Form__Submit Button Button--primary Button--full">{{ 'home_page.newsletter.submit' | t }}</button>
+            </div>
+          {%- endif -%}
+        {%- endform -%}
+      </div>
+  </div>
+</div>
+</section>
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub-heading",
+      "default": "Keep updated"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Newsletter"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Text",
+      "default": "<p>A short sentence describing what someone will receive by subscribing</p>"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Promotional",
+      "name": "Newsletter",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

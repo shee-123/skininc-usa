@@ -1,0 +1,211 @@
+var _yotpo;
+var _date2;
+var _isFirst = false;
+
+$(function(){
+  retrieveYotpoStar();
+  progressBarJS();
+  $.getJSON("/cart.js", function(result){
+    if (result.item_count > 0 ) {
+      clearInterval(bigTimer);
+      //timerCountDownClearCart();
+    }
+  });
+})
+
+retrieveYotpoStar = () => {
+  setTimeout(() => {
+    _yotpo = $('.js-cart__upsell .yotpo').clone();
+  }, 2000);
+}
+
+addInYotpo = () => {
+  setTimeout(() => {
+    $('.js-cart__upsell .yotpo').empty();
+    $('.js-cart__upsell .yotpo').append(_yotpo);
+  }, 2000);
+
+}
+
+timerCountDownClearCart = () => {
+  // Set the date we're counting down to
+
+  var countDownDate = add_minutes(new Date(), 10).getTime();
+  var _localStorageTime = parseInt(localStorage.getItem('carttime'));
+  var _tominus = 0;
+  var _distance = 0;
+
+  // Custom to cater for right time
+  var _now = new Date();
+  var now = _now.getTime();
+
+  if (isNaN(_localStorageTime)) {
+    localStorage.setItem('carttime', now);
+  }
+
+  if (isNaN(_localStorageTime) == false) {
+    _tominus = now - _localStorageTime;
+    _distance = (countDownDate - now) - _tominus;
+  }
+  else {
+    _distance = countDownDate - now;
+  }
+  // End of custom to cater for right time
+  bigTimer = setInterval(function() {
+    _distance = _distance - 1000;
+    var minutes = (Math.floor((_distance % (1000 * 60 * 60)) / (1000 * 60)));
+    minutes < 10 ? minutes = "0" + minutes : minutes = minutes;
+    var seconds = (Math.floor((_distance % (1000 * 60)) / 1000));
+    seconds < 10 ? seconds = "0" + seconds : seconds = seconds;
+    // console.log(seconds, seconds+ 1);
+    // seconds += 1;
+    // Display the result in the element with id="demo"
+    $('.demo').html("<span>It's in the bag - Reserved for <p style='color: red; display: inline;'>" + minutes + ":" + seconds + "</p> minutes !</span>");
+    // document.getElementById("demo").innerHTML =
+
+    // If the count down is finished, write some text
+    if (_distance < 0) {
+      clearInterval(bigTimer);
+      document.getElementById("demo").innerHTML = "EXPIRED";
+      clearCartAndRefresh();
+    }
+  }, 1000);
+}
+
+clearCartAndRefresh = () => {
+  CartJS.clear();
+  localStorage.removeItem('carttime');
+  setTimeout(() => location.reload(), 1000);
+}
+
+removeCartItem = () => {
+  // addInYotpo();
+}
+
+add_minutes = (dt, minutes) => {
+    return new Date(dt.getTime() + minutes*60000);
+}
+
+goToCheckout = () => {
+  event.preventDefault();
+  event.stopPropagation();
+
+  var _ = $('#cart-note').val();
+  // Topup a cart note json note
+  CartJS.setNote(_);
+  window.location.href = "/checkout";
+}
+
+// Progress bar related function
+progressBarJS = () => {
+  _minprice = parseFloat($('#cart_min_price').val());
+  if (typeof $('#cart_price').val() != "undefined") {
+    if ($('#cart_price').val().toString().includes(',')) {
+      var values = $('#cart_price').val().toString().split(",")
+      var v1 = parseFloat(values[0])
+      var v2 = parseFloat(values[1])
+      var _cartprice = parseFloat(v1.toString()+v2.toString());
+    }
+    else{
+      var _cartprice = parseFloat($('#cart_price').val())
+    }
+
+    var _percent = parseInt((_cartprice/_minprice) * 100);
+
+    showHideShipElement(_cartprice, _minprice);
+    initiateProgressBar(_percent);
+  }
+}
+
+initiateProgressBar = (_percent) => {
+  if (_percent > 100) {
+    _percent = 100;
+  }
+  $('.cartshippingprogressbar').LineProgressbar({
+    percentage: _percent,
+    radius: '50px',
+    fillBackgroundColor: '#ababab',
+    ShowProgressCount: false
+  });
+}
+
+calculateProgressbar = (cart) => {
+  var _cur = cart.items_subtotal_price/100;
+  var _percent = parseInt((_cur / _minprice) * 100);
+
+  if (cart.items.length == 0) {
+    $('.cart-drawer-title').text("EMPTY BAG");
+  }
+  else {
+    $('.cart-drawer-title').text("BAG");
+  }
+
+  setTimeout(function(){
+    showHideShipElement(_cur, _minprice);
+    initiateProgressBar(_percent);
+  },600)
+
+}
+
+showHideShipElement = (_cartprice, _minprice) => {
+  var _left = parseInt(_minprice - _cartprice);
+
+  if (_left <= 0) {
+    $('.fullpercent').show();
+    $('.below100percent').hide();
+    $('.shipping_product_page').hide();
+    $('.free_shipping_product').show();
+  }
+  else{
+    $('.below100percent').show();
+    $('.fullpercent').hide();
+    $('.shipping_product_page').show();
+    $('.free_shipping_product').hide();
+
+    $('.product_ship_price').text(jsformatMoney(_left*100))
+    $('.ship_price').text(jsformatMoney(_left*100));
+  }
+}
+
+// End of Progress bar related function
+
+/**
+ * Custom Add to Cart function
+ * @param  {Number} vid Product varinat ID
+ */
+addItemAPI = (vid) => {
+  event.preventDefault();
+  event.stopPropagation();
+  document.dispatchEvent(new CustomEvent('theme:loading:start'));
+  CartJS.addItem(vid, 1, {}, {
+    // Define a success callback to display a success message.
+    "success": function(data, textStatus, jqXHR) {
+      getThis8.element.dispatchEvent(new CustomEvent('product:added', {
+        bubbles: true,
+        detail: {
+          variant: vid,
+          quantity: 1
+        }
+      }));
+
+      $.getJSON("/cart.js", function(result){
+        if (_isFirst == false) {
+          calculateProgressbar(result);
+          if (result.item_count > 0 ) {
+            clearInterval(bigTimer);
+            //timerCountDownClearCart();
+            document.dispatchEvent(new CustomEvent('theme:loading:end'));
+          }
+          _isFirst = true;
+        }
+        else {
+          document.dispatchEvent(new CustomEvent('theme:loading:end'));
+        }
+      });
+    },
+    // Define an error callback to display an error message.
+    "error": function(jqXHR, textStatus, errorThrown) {
+      // console.log("it's error");
+    }
+  });
+}

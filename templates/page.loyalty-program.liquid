@@ -1,0 +1,58 @@
+<div class="reward-page">
+  <div class="container">  
+    
+    {% section 'banner_reward' %}
+    
+    {% section 'rewards-three-sec' %} 
+    
+    {% comment %}
+    
+    <div class="reward-tiers">
+      <!-- h2 class="">{{ 'loyalty.loyalty_tiers_title' | t }}</h2>
+        <div class="reward-tiers__list" data-lion-tier-overview></div-->
+         <div data-lion-tier-benefits-compare></div>
+ 		 
+  	</div>
+    {% endcomment %}
+  
+  <!-- div data-lion-tier-overview></div>
+  <div data-lion-account></div -->
+  </div>
+</div>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script>
+  jQuery(document).ready(function($) {
+      $('.logo-bar').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: false,
+        responsive: [{
+          breakpoint: 1025,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+          }
+        },{
+          breakpoint: 640,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }]
+    });
+});
+</script>
+
+
+
+
+

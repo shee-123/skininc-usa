@@ -1,0 +1,753 @@
+<section class="section spaced bordered product-tabs">
+  <div class="wrapper container">
+    <input type="radio" name="slider" checked id="tab_description">
+    <input type="radio" name="slider" id="tab_how-to-use">
+    <input type="radio" name="slider" id="tab_faq">
+    <input type="radio" name="slider" id="tab_reviews">
+    <nav>
+      <label for="tab_description" class="tab_description">Description</label>
+      <label for="tab_how-to-use" class="tab_how-to-use">How To Use</label>
+      <label for="tab_faq" class="tab_faq">FAQ</label>
+      <label for="tab_reviews" class="tab_reviews">
+        <div class="yotpo bottomLine" data-product-id="{{ product.id }}"></div>
+      </label>
+    </nav>
+    <div class="tab-container">
+      <div class="content content-description">
+        {% include 'custom-tri-banner' %}
+      </div>
+      
+      <div class="content content-how-to-use">
+        <div class="how_to_use_details">
+          {{ product.metafields.meta.how_to_use}}
+        </div>
+        
+        {%- if product.metafields.meta contains "video" or product.metafields.meta contains "suggested_ritual" -%}
+          {%- if product.metafields.meta contains "suggested_ritual" -%}
+          <div class="ritual">
+            <div class="row">
+              <div class="col-sm-6">
+                <h2 class="header">Suggested Ritual</h2>
+                <p>{{ product.metafields.meta.suggested_ritual | escape }}</p>
+                <a href="{{product.metafields.meta.suggested_ritual_link}}">{{ product.metafields.meta.suggested_ritual_link_text | escape }}</a>
+              </div>
+              <div class="col-sm-6">
+                <h2 class="header">Benefits</h2>
+                <p>{{ product.metafields.meta.benefits | escape }}</p>
+                <a href="{{product.metafields.meta.benefits_link}}">{{ product.metafields.meta.benefits_link_text | escape }}</a>
+              </div>
+            </div>
+          </div>
+          {%- endif -%}
+          {%- if product.metafields.meta contains "video" -%}
+          {%- assign videos = product.metafields.meta.video | split: '|' -%}
+          <div id="product-ritual-video">
+            <div class="text-center">
+              <h2 class="header">Watch The Video</h2>
+              <div class="video-wrapper">
+                <div class="video-container">
+                  <iframe id="product-ritual-yplayer" type="text/html" width="640" height="360"
+                  src="https://www.youtube.com/embed/{{ videos.first | escape }}?showinfo=0&controls=0"
+                  frameborder="0"></iframe>
+                </div>
+              </div>
+              {% if videos.size > 1 %}
+                <div class="videos-list">
+                  {% for videoId in videos %}
+                    {% if videoId != blank %}
+                     <a href="#" data-src="https://www.youtube.com/embed/{{ videoId }}?showinfo=0&controls=0">
+                        <img src="https://img.youtube.com/vi/{{videoId | escape}}/2.jpg"/>
+                     </a>
+                     {% endif %}
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+      
+      <div class="content content-faq">
+        {{ product.metafields.meta.product_faq }}
+      </div>
+      
+      <div class="content content-reviews">
+        {% if product.metafields.yotpo.reviews_count and product.metafields.yotpo.reviews_count != "0" %}
+        <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+          <span itemprop="itemReviewed">{{ product.title }}</span>
+          has a rating of <span itemprop="ratingValue">{{ product.metafields.yotpo.reviews_average }}</span> stars
+          based on <span itemprop="ratingCount">{{ product.metafields.yotpo.reviews_count }}</span> reviews.
+        </div>
+        {% endif %}
+        {%- include "yotpo"-%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style type="text/css">
+  .wrapper{
+    width: 100%;
+    padding: 0px 15px;
+    border-radius: 5px;
+    background: #fff;
+  }
+  .wrapper nav{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .wrapper > nav > label{
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    line-height: 1.4em;
+    padding: 12px 30px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: .1em !important;
+    font-size: 14px;
+    border: 1px solid #e0e0e0;
+    border-width: 1px 1px 1px 0px;
+    transition: all 0.3s ease;
+  }
+  .wrapper > nav > label:first-child{
+    border-width: 1px 1px 1px 1px;
+  }
+  #tab_description:checked ~ nav label.tab_description,
+  #tab_how-to-use:checked ~ nav label.tab_how-to-use,
+  #tab_faq:checked ~ nav label.tab_faq,
+  #tab_reviews:checked ~ nav label.tab_reviews{
+    color: #fff;
+    background: #d7b4b5;
+    border-color: #d7b4b5;
+  }
+  input[type="radio"]{
+    display: none;
+  }
+  .tab-container .content{
+    display: none;
+    background: #fff;
+    margin-top: 50px;
+  }
+  #tab_description:checked ~ .tab-container .content-description,
+  #tab_how-to-use:checked ~ .tab-container .content-how-to-use,
+  #tab_faq:checked ~ .tab-container .content-faq,
+  #tab_reviews:checked ~ .tab-container .content-reviews{
+    display: block;
+  }
+  nav label.tab_reviews .yotpo-bottomline .text-m{
+    color: #000000 !important;
+  }
+  #tab_reviews:checked ~ nav label.tab_reviews .yotpo-bottomline .text-m{
+    color: #ffffff !important;
+  }
+  .wrapper > nav > label.tab_reviews{
+    line-height: 15px;
+  }
+  .wrapper > nav > label.tab_reviews div.yotpo.bottomLine{
+    margin: 0px;
+  }
+  @media (max-width: 1199px){
+    .wrapper > nav > label{
+      display: flex;
+      height: 67px;
+      align-items: center;
+      justify-content: center;
+    }
+    nav .tab_reviews div.yotpo.bottomLine .yotpo-bottomline{
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav .tab_reviews div.yotpo.bottomLine .yotpo-bottomline .yotpo-stars{
+      margin: 0px !important;
+    }
+    nav label.tab_reviews .yotpo-bottomline .text-m{
+      margin-top: 5px;
+    }
+  }
+  @media (max-width: 767px){
+    .product-tabs{
+      padding: 0px 15px;
+    }
+    .wrapper > nav > label{
+      padding: 10px 10px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      letter-spacing: .05em !important;
+    }
+    .video-container #product-ritual-yplayer{
+      width: 100%;
+    }
+    .tab-container .content{
+      margin-top: 30px;
+    }
+  }
+  @media (max-width: 575px){
+    .product-tabs{
+      padding: 0px;
+    }
+    .product-tabs .wrapper{
+      padding: 0px;
+    }
+    .tab-container .content, .wrapper nav{
+      padding: 0 15px;
+    }
+    .tab-container .content-description{
+      padding: 0px;
+    }
+  }
+  @media (max-width: 480px){
+    .wrapper nav{
+      flex-wrap: wrap;
+    }
+    .wrapper > nav > label{
+      width: 33.333%;
+      height: auto;
+      padding: 10px 5px;
+      font-size: 13px;
+      letter-spacing: 0.01em !important;
+    }
+    .wrapper > nav > label.tab_reviews{
+      width: 100%;
+      border-width: 1px 1px 1px 1px;
+      padding: 12px 10px;
+    }
+    nav .tab_reviews div.yotpo.bottomLine{
+      display: block;
+      margin: 0px;
+    }
+    nav .tab_reviews div.yotpo.bottomLine .yotpo-bottomline{
+      width: 100%;
+      justify-content: center;
+    }
+    nav label.tab_reviews .yotpo-bottomline .text-m{
+      margin-top: 0px;
+      margin-left: 5px;
+    }
+  }
+</style>
+
+<script type="text/javascript">
+  jQuery( document ).ready(function() {
+    jQuery(".ProductMeta .yotpo.bottomLine").on("click", function(){
+      jQuery(".product-tabs input[name=slider]").prop('checked', false);
+      jQuery("#tab_reviews").prop('checked', true);
+    });
+    jQuery(".tab_reviews .yotpo.bottomLine").on("click", function(){
+      jQuery(".product-tabs input[name=slider]").prop('checked', false);
+      jQuery("#tab_reviews").prop('checked', true);
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Product Tabs",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "paragraph",
+      "content": "All banners below Description will be customized here."
+    },
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "tab_title",
+      "label": "Tab Title"
+    },
+    {
+      "type": "richtext",
+      "id": "tab_desc",
+      "label": "Tab Description"
+    },
+    {
+      "type": "header",
+      "content": "Banner 1"
+    },
+    {
+      "type": "text",
+      "id": "banner1_title",
+      "label": "Banner 1 Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner1_desktop_image",
+      "label": "Banner 1 Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner1_mobile_image",
+      "label": "Banner 1 Mobile Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner1_logo_image",
+      "label": "Banner 1 Logo Image"
+    },
+    {
+      "type": "header",
+      "content": "Banner 2"
+    },
+    {
+      "type": "text",
+      "id": "banner_2_title",
+      "label": "Banner 2 Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_2_logo_image",
+      "label": "Banner 2 Logo Image"
+    },
+    {
+      "type": "textarea",
+      "id": "banner_2_content",
+      "label": "Banner 2 Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_2_image",
+      "label": "Banner 2 Image"
+    },
+    {
+      "type": "header",
+      "content": "Banner 3"
+    },
+    {
+      "type": "text",
+      "id": "banner_3_title",
+      "label": "Banner 3 Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_3_video_icon",
+      "label": "Banner 3 Video Icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_3_video_desktop_image",
+      "label": "Banner 3 Video Desktop Image"
+    },
+    {
+      "type": "text",
+      "id": "banner_3_video_desktop_link",
+      "label": "Banner 3 Video Desktop Link"
+    },
+	{
+      "type": "image_picker",
+      "id": "banner_3_video_mobile_image",
+      "label": "Banner 3 Video Mobile Image"
+    },
+    {
+      "type": "text",
+      "id": "banner_3_video_mobile_link",
+      "label": "Banner 3 Video Mobile Link"
+    },
+    {
+      "type": "text",
+      "id": "banner_3_btn_label",
+      "label": "Banner 3 Button Label",
+      "default": "ADD TO BAG"
+    },
+    {
+      "type": "header",
+      "content": "Banner 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_4_icon",
+      "label": "Banner 4 Icon"
+    },
+    {
+      "type": "text",
+      "id": "banner_4_title",
+      "label": "Banner 4 Title"
+    },
+    {
+      "type": "richtext",
+      "id": "banner_4_desc",
+      "label": "Banner 4 Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_4_image",
+      "label": "Banner 4 Image"
+    },
+    {
+      "type": "textarea",
+      "id": "banner_4_details_1",
+      "label": "Banner 4 Details - 1"
+    },
+    {
+      "type": "textarea",
+      "id": "banner_4_details_2",
+      "label": "Banner 4 Details - 2"
+    },
+    {
+      "type": "header",
+      "content": "Banner 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_5_image_left",
+      "label": "Banner 5 Image Left"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_5_image_right",
+      "label": "Banner 5 Image Right"
+    },
+    {
+      "type": "text",
+      "id": "banner_5_title",
+      "label": "Banner 5 Title"
+    },
+    {
+      "type": "textarea",
+      "id": "banner5_desc",
+      "label": "Banner 5 Description"
+    },
+    {
+        "type": "header",
+        "content": "Banner 6"
+      },
+    {
+      "type": "text",
+      "id": "banner_6_title",
+      "label": "Banner 6 Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_6_video_icon",
+      "label": "Banner 6 Video Icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_6_video_desktop_image",
+      "label": "Banner 6 Video Desktop Image"
+    },
+    {
+      "type": "text",
+      "id": "banner_6_video_desktop_link",
+      "label": "Banner 6 Video Desktop Link"
+    },
+	{
+      "type": "image_picker",
+      "id": "banner_6_video_mobile_image",
+      "label": "Banner 6 Video Mobile Image"
+    },
+    {
+      "type": "text",
+      "id": "banner_6_video_mobile_link",
+      "label": "Banner 6 Video Mobile Link"
+    },
+    {
+      "type": "text",
+      "id": "banner_6_btn_label",
+      "label": "Banner 6 Button Label",
+      "default": "ADD TO BAG"
+    },
+    {
+      "type": "text",
+      "id": "banner_6_scan_title",
+      "label": "Banner 6 Scan Title",
+      "default": "Scan QR code & download app to curate your wellness journey with"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_6_scan_icon",
+      "label": "Banner 6 Scan Icon"
+    },
+    {
+      "type": "header",
+      "content": "Banner 7"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_7_image",
+      "label": "Banner 7 Image"
+    },
+    {
+      "type": "text",
+      "id": "banner_7_title",
+      "label": "Banner 7 Title"
+    },
+    {
+      "type": "textarea",
+      "id": "banner_7_content",
+      "label": "Banner 7 Content"
+    },
+    {
+      "type": "textarea",
+      "id": "banner_7_content_bottom",
+      "label": "Banner 7 Content Bottom"
+    },
+    {
+      "type": "header",
+      "content": "Banner 8"
+    },
+    {
+      "type": "text",
+      "id": "banner_8_title",
+      "label": "Banner 8 Title"
+    },
+    {
+      "type": "text",
+      "id": "banner_8_bottom_title",
+      "label": "Banner 8 Bottom Title"
+    },
+    {
+      "type": "text",
+      "id": "banner_8_row_1_title",
+      "label": "Banner 8 Row 1 Title"
+    },
+    {
+      "type": "color",
+      "id": "banner_8_row_1_title_color",
+      "label": "Banner 8 Row 1 Title Color",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "banner_8_row_1_subtitle",
+      "label": "Banner 8 Row 1 Subtitle"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_8_row_1_icon",
+      "label": "Banner 8 Row 1 Icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_8_row_1_before",
+      "label": "Banner 8 Row 1 Before Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_8_row_1_after",
+      "label": "Banner 8 Row 1 After Image"
+    },
+    {
+      "type": "text",
+      "id": "banner_8_row_2_title",
+      "label": "Banner 8 Row 2 Title"
+    },
+    {
+      "type": "color",
+      "id": "banner_8_row_2_title_color",
+      "label": "Banner 8 Row 2 Title Color",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "banner_8_row_2_subtitle",
+      "label": "Banner 8 Row 2 Subtitle"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_8_row_2_icon",
+      "label": "Banner 8 Row 2 Icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_8_row_2_before",
+      "label": "Banner 8 Row 2 Before Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_8_row_2_after",
+      "label": "Banner 8 Row 2 After Image"
+    },
+    {
+      "type": "text",
+      "id": "banner_8_row_3_title",
+      "label": "Banner 8 Row 3 Title"
+    },
+    {
+      "type": "color",
+      "id": "banner_8_row_3_title_color",
+      "label": "Banner 8 Row 3 Title Color",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "banner_8_row_3_subtitle",
+      "label": "Banner 8 Row 3 Subtitle"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_8_row_3_icon",
+      "label": "Banner 8 Row 3 Icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_8_row_3_before",
+      "label": "Banner 8 Row 3 Before Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_8_row_3_after",
+      "label": "Banner 8 Row 3 After Image"
+    },
+    {
+      "type": "header",
+      "content": "Banner 9"
+    },
+    {
+      "type": "text",
+      "id": "banner9_title",
+      "label": "Banner 9 Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner9_red_product_image",
+      "label": "Banner 9 Red Product Image"
+    },
+    {
+      "type": "text",
+      "id": "banner9_red_product_label",
+      "label": "Banner 9 Red Product Label"
+      },
+    {
+      "type": "color",
+      "id": "banner9_red_product_label_color",
+      "label": "Banner 9 Red Product Label Color",
+      "default": "#000"
+    },
+    {
+      "type": "richtext",
+      "id": "banner9_red_product_desc",
+      "label": "Banner 9 Red Product Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner9_blue_product_image",
+      "label": "Banner 9 Blue Product Image"
+    },
+    {
+      "type": "text",
+      "id": "banner9_blue_product_label",
+      "label": "Banner 9 Blue Product Label"
+    },
+    {
+      "type": "color",
+      "id": "banner9_blue_product_label_color",
+      "label": "Banner 9 Blue Product Label Color",
+      "default": "#000"
+    },
+    {
+      "type": "richtext",
+      "id": "banner9_blue_product_desc",
+      "label": "Banner 9 Blue Product Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner9_yellow_product_image",
+      "label": "Banner 9 Yellow Product Image"
+    },
+    {
+      "type": "text",
+      "id": "banner9_yellow_product_label",
+      "label": "Banner 9 Yellow Product Label"
+    },
+    {
+      "type": "color",
+      "id": "banner9_yellow_product_label_color",
+      "label": "Banner 9 Yellow Product Label Color",
+      "default": "#000"
+    },
+    {
+      "type": "richtext",
+      "id": "banner9_yellow_product_desc",
+      "label": "Banner 9 Yellow Product Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner9_orange_product_image",
+      "label": "Banner 9 Orange Product Image"
+    },
+    {
+      "type": "text",
+      "id": "banner9_orange_product_label",
+      "label": "Banner 9 Orange Product Label"
+    },
+    {
+      "type": "color",
+      "id": "banner9_orange_product_label_color",
+      "label": "Banner 9 Orange Product Label Color",
+      "default": "#000"
+    },
+    {
+        "type": "richtext",
+        "id": "banner9_orange_product_desc",
+      "label": "Banner 9 Orange Product Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner9_purple_product_image",
+      "label": "Banner 9 Purple Product Image"
+    },
+    {
+      "type": "text",
+      "id": "banner9_purple_product_label",
+      "label": "Banner 9 Purple Product Label"
+    },
+    {
+      "type": "color",
+      "id": "banner9_purple_product_label_color",
+      "label": "Banner 9 Purple Product Label Color",
+      "default": "#000"
+    },
+    {
+      "type": "richtext",
+      "id": "banner9_purple_product_desc",
+      "label": "Banner 9 Purple Product Description"
+    },
+    {
+      "type": "text",
+      "id": "banner9_btn_label",
+      "label": "Banner 9 Button Label"
+    },
+    {
+      "type": "header",
+      "content": "Banner 10"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner10_mark_image",
+      "label": "Banner 10 Mark Image"
+    },
+    {
+      "type": "text",
+      "id": "banner10_title",
+      "label": "Banner 10 Title"
+    },
+    {
+        "type": "image_picker",
+        "id": "banner10_reviews_desktop_image",
+      "label": "Banner 10 Reviews Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner10_reviews_mobile_image",
+      "label": "Banner 10 Reviews Mobile Image"
+    },
+    {
+      "type": "text",
+      "id": "banner10_btn_label",
+      "label": "Banner 10 Button Label"
+    }
+  ]
+}
+{% endschema %}

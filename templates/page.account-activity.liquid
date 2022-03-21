@@ -1,0 +1,15 @@
+<div class="reward-page">
+  <div class="container">
+    <div class="banner_reward">
+      <h2>Account Activities</h2>      
+    </div>
+    <div class="how_it_works account_activity">      
+      {% if customer %}
+        <div data-lion-history-table></div>
+      {% else %}
+         <a href="/pages/my-account" class="rews_dign">Login or Sign up</a>
+      {% endif %}
+    </div>       
+     
+  </div>
+</div>

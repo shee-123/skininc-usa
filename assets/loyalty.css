@@ -1,0 +1,1316 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap');  
+.banner_reward {
+    text-align: center;
+}
+ul#some-id {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    width: 100%;
+    margin: 40px 0;
+    padding: 4px 10px;
+    background: #d7b4b55e;
+}
+ul#some-id li {padding: 0 4px;}
+ul#some-id li a {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: neuzeit-grotesk,sans-serif;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 15px 5px;
+    background: #fff;
+    width: 180px;
+    text-align: center;
+}
+ul#some-id li a.active {
+    font-weight: 600;
+    background: #d7b4b5;
+    color: #fff;
+}
+ul#some-id li a:hover {
+    color: #d7b4b5;
+}  
+.banner_reward h2 ,.how_it_works h2 ,.how_it_earn h2{
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #d7b4b5;
+    font-style: italic;
+    letter-spacing: 0px !important;
+}
+.banner_reward p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 30px;
+}
+.login_div {
+    margin: 30px auto;
+    display: flex;
+    max-width:500px;
+    align-items: center;
+}
+.login_div a {
+    font-size: 18px;
+    text-transform: uppercase;
+    border: 2px solid #d7b4b5;
+    line-height: 40px;
+    width: 200px;
+}
+.login_div a:first-child {
+    background: #d7b4b5;
+    color: #fff;
+/*     width: 50%; */
+}
+.login_div p {
+    font-size: 22px;
+/*     width: 70px; */
+}
+.how_it_works,.how_it_earn {
+    text-align: center;
+    margin: 60px 0;
+}
+.works_inner {
+    margin: 60px 0;
+    display: flex;
+}
+.iocn-sec img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+.iocn-sec {
+    padding: 0 20px;
+}
+.iocn-sec h4 {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 28px;
+    margin-bottom: 5px;
+    letter-spacing: 0px !important;
+    color: #626467;
+}
+.iocn-sec p {
+    font-size: 17px;
+    letter-spacing: 0px;
+    line-height: 28px;
+    color: #626467;
+}  
+nav.lion-loyalty-panel-sidebar__menu {
+    display: flex;
+    margin: 20px 0;
+    align-items: center;
+    justify-content: center;
+}
+nav.lion-loyalty-panel-sidebar__menu a.lion-loyalty-panel-sidebar__menu-item {
+    font-weight: 600;
+    width: 100%;
+    text-transform: uppercase;
+}
+.lion-loyalty-panel-content {
+    padding: 20px;
+    margin: 0;
+    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 4%), 0 6px 20px 0 rgb(0 0 0 / 4%);
+}
+header.lion-loyalty-panel-content__header {
+    font-size: 24px;
+    border-bottom: 1px solid;
+    margin-bottom: 20px;
+}
+.lion-loyalty-panel-content__page-description {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.lion-loyalty-panel-page-earn__rules-list {
+    display: flex;
+}
+.lion-loyalty-panel-page-earn__rules-list > div {
+    width: 50%;
+}
+.lion-other-site-rules {
+    display: block;
+}  
+.reward-page {
+    position: relative;
+    padding-bottom: 60px;
+    margin-bottom: -13px;
+}
+.reward-page:before {
+	content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(https://cdn.shopify.com/s/files/1/0150/9231/8256/files/Image.png?v=1623231603) no-repeat;
+    background-position: top;
+    opacity: .2;
+}
+div#loyaltylion {
+    position: relative;
+/*     z-index: 1; */
+}
+  header.lion-loyalty-panel-sidebar__header {
+    display: none;
+}
+/* .reward-page:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.4;
+    background: url(https://cdn.shopify.com/s/files/1/0150/9231/8256/files/Image__2.png?v=1623236445) no-repeat;
+    background-position: right bottom;
+}   */
+.lion-loyalty-splash-column__items {
+    display: flex;
+    width: 100%;
+}
+p.lion-loyalty-splash-column__intro-text {
+    font-size: 28px;
+    margin: 20px 0;
+    text-align: center;
+}
+.lion-loyalty-splash-column__items .lion-loyalty-splash-item {
+    width: 100%;
+    text-align: center;
+}
+.lion-loyalty-splash-item__value {
+    width: 150px;
+    display: block;
+    margin: 10px auto;
+    background: #fbdcce;
+    padding: 12px 0;
+    font-size: 18px;
+}
+.lion-loyalty-splash-item__info {
+    border: 1px solid #eee;
+    margin: 0 10px;
+    padding: 40px 0;
+}
+.lion-loyalty-splash-item__title {
+    font-size: 18px;
+    margin-bottom: 20px;
+}  
+.lion-loyalty-splash__footer,a.lion-loyalty-splash__close-button ,.lion-loyalty-splash__mobile-bar,.lion-loyalty-splash__heading {
+    display: none;
+}  
+ p.lion-loyalty-splash-column__intro-text strong {
+    font-size: 28px;
+}
+p.lion-loyalty-splash-column__intro-text span {
+    font-size: 0;
+} 
+.lion-loyalty-panel-tier-item__name {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.lion-loyalty-panel-tier-item__context {
+    font-size: 20px;
+}
+.lion-loyalty-panel-tier-item__accent {
+    font-size: 30px;
+}
+.lion-loyalty-panel-tier-item__list-heading, .lion-loyalty-panel-content__page-description strong ,.lion-other-site-rules__header {
+    margin: 0 0 10px;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 25px;
+}
+ul.lion-loyalty-panel-tier-item__list ,.lion-loyalty-panel-page-earn__rules-list {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+}
+ul.lion-loyalty-panel-tier-item__list li.lion-loyalty-panel-tier-item__list-item {
+    width: 30%;
+    text-align: center;
+    border: 1px solid #eee;
+    margin: 0 10px;
+    padding: 40px 0;
+    font-size: 18px;
+    margin-bottom: 20px;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.lion-loyalty-panel-tier-item__list-item-value, a.lion-loyalty-panel-tier-item__view-more-link ,.lion-loyalty-panel-rule-item__points {
+    width: 150px;
+    display: block;
+    margin: 10px auto;
+    background: #fbdcce;
+    padding: 12px 0;
+    font-size: 18px;
+}
+nav.lion-loyalty-panel-sidebar__menu a.lion-loyalty-panel-sidebar__menu-item {
+    cursor: pointer;
+}
+.lion-loyalty-panel-content__page-description {
+    font-size: 0;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.lion-loyalty-panel-page-earn__rules-list > div {
+    width: 31%;
+    margin: 0 10px;
+}
+.lion-loyalty-panel-rule-item__content {
+    width: 100%;
+    text-align: center;
+    border: 1px solid #eee;
+    margin: 0 10px;
+    padding: 40px 0;
+    font-size: 18px;
+    margin: 0 0px 20px;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#loyaltylion .lion-referral-widget-panels {
+    margin: 0 auto;
+}
+table.lion-customer-history-table {
+    width: 100%;
+    align-items: center;
+}
+table.lion-customer-history-table th {
+    text-align: left;
+    padding: 10px 0;
+}
+table.lion-customer-history-table tbody td {
+    padding-bottom: 10px;
+}
+.lion-loyalty-panel-page-help__content h1 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.lion-loyalty-panel-page-help__content p {
+    font-size: 16px;
+}
+td.lion-tier-benefits-compare__row-cell.lion-tier-benefits-compare__row-cell--tier-0 .lion-tier-benefits-compare__benefit-status-circle {
+    background: gold;
+}
+td.lion-tier-benefits-compare__row-cell.lion-tier-benefits-compare__row-cell--tier-1 .lion-tier-benefits-compare__benefit-status-circle {
+    background: green;
+}
+td.lion-tier-benefits-compare__row-cell.lion-tier-benefits-compare__row-cell--tier-2 .lion-tier-benefits-compare__benefit-status-circle {background: #0000ff59;}
+.lion-tier-benefits-compare table {
+    width: 100%;
+}
+th.lion-tier-compare__header-cell {
+    border-bottom: 3px solid #d7b4b5 !important;
+    font-size: 35px;
+    font-family: 'Cormorant Garamond', serif;
+    padding: 0 0 !important;
+}
+#loyaltylion .lion-tier-benefits-compare th:first-child::before {content: "Tier Perks";font-size: 50px;}
+#loyaltylion .lion-tier-benefits-compare td:first-child, #loyaltylion .lion-tier-benefits-compare th:first-child {
+    border-right: 0;
+    width: 40%;
+    text-align: left;
+}
+#loyaltylion .lion-tier-benefits-compare td:first-child {
+    text-align: left;
+}
+#loyaltylion .lion-tier-benefits-compare td {
+    padding: 20px 0;
+}
+tr.lion-tier-benefits-compare__row {
+    border-bottom: 2px solid #d7b4b5 !important;
+    font-size: 18px;
+}  
+.logo-bar {
+    display: flex;
+    margin-bottom: 60px;
+}
+.logo-bar img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+.logo-bar__item {
+    margin: 0 10px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 5px 5px 5px rgb(68 68 68 / 22%);
+    width: 95% !important;
+    overflow: hidden;
+}
+.right-logo-text {
+    padding: 35px 20px  30px;
+    text-align: center;
+    position: relative;
+    color: #626467;
+}
+p.icon_text {
+    font-size: 32px;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0px !important;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+p.point_text {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    width: 180px;
+    background: #d7b4b5;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: -1px;
+    padding: 6px 0;
+    margin: 0 auto;
+    border-radius: 50px;
+}
+p.icon_subtext , p.check_loyal{
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 0;
+}
+a.rews_dign {
+    background: #fff;
+    border: 2px solid #d7b4b5;
+    font-size: 16px;
+    padding: 8px 5px;
+    margin: 0 0;
+    display: inline-block;
+    width: 100%;
+    letter-spacing: -1px;
+}
+a.rews_dign:hover {
+    background: #d7b4b5;
+    color: #fff;
+}
+/* p.check_loyal {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    line-height: 28px;
+} */
+p.check_loyal i {
+    color: #d7b4b5;
+} 
+p.check_loyal {
+    margin-bottom: 30px;
+}
+.how_it_earn .lion-rules-list {
+    background-color: transparent !important;
+    grid-template-columns: repeat(auto-fill,minmax(260px,1fr)) !important;
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.how_it_earn .lion-rules-list .lion-rule-item {
+    width: 32% !important;
+}
+.how_it_earn .lion-reward-item__icon, .lion-rule-item__icon {
+    background-color: #d7b4b5;
+    width: 80px!important;
+    height: 70px!important;
+    -webkit-mask: none;
+}
+.how_it_earn .lion-rules-list .lion-rule-item:nth-of-type(1) .lion-rule-item__icon {
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/Asset_2.png?v=1626949417)no-repeat center;
+    background-size: 62px;    
+}
+.how_it_earn .lion-rules-list .lion-rule-item:nth-of-type(3) .lion-rule-item__icon {
+    background: url(https://cdn.shopify.com/s/files/1/0150/9231/8256/files/mind.png?v=1623216468) no-repeat center;
+    background-size: 70px;
+    filter: opacity(0.5);    
+}
+.how_it_earn .lion-rules-list .lion-rule-item:nth-of-type(2) .lion-rule-item__icon {
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/Asset_3.png?v=1626949417) no-repeat center;
+    background-size: 62px;    
+}
+.how_it_earn .lion-rules-list .lion-rule-item:nth-of-type(4) .lion-rule-item__icon {
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/Asset_6.png?v=1626949417)no-repeat center;
+    background-size: 62px;    
+}
+.how_it_earn .lion-rules-list .lion-rule-item:nth-of-type(5) .lion-rule-item__icon {
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/Asset_7.png?v=1626949417)no-repeat center;
+    background-size: 62px;    
+}
+.how_it_earn .lion-rules-list .lion-rule-item:nth-of-type(6) .lion-rule-item__icon {
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/Asset_4_e346d80c-59fb-456f-bc4e-dc3f21ce8596.png?v=1626949417)no-repeat center;
+    background-size: 75px;    
+}
+.how_it_earn .lion-rules-list .lion-rule-item:nth-of-type(7) .lion-rule-item__icon {
+    background: url(https://cdn.shopify.com/s/files/1/0086/9007/3696/files/Write_a_review.png?v=1627292654)no-repeat center;
+    background-size: 75px;    
+}
+.how_it_earn .lion-rule-item__title ,.lgin_cust_pg h1.Form__Title {
+    font-family: 'Cormorant Garamond',serif!important;
+    font-size: 30px!important;
+    line-height: 30px !important;
+    margin: 0 0 16px !important;
+    text-transform: none !important;
+    letter-spacing: 0!important;
+    color: #5e5e5e !important;
+}  
+.how_it_earn .lion-rule-item__content {
+    background-color: transparent !important;
+    border: 1px solid #d7b4b5!important;
+    box-shadow: none !important;
+    padding: 30px 0;
+}
+.lgin_cust_pg {
+    display: flex;
+    flex-wrap: wrap;
+}
+.lgin_lf , .lgin_rt{
+    width: 50%;
+}
+.lgin_cust_pg .PageContent {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.lgin_lf form {
+    width: 100%;
+}
+.lgin_cust_pg header.Form__Header {
+    text-align: left;
+}
+.lgin_lf h1.Form__Title {
+    margin-bottom: 8px;
+    text-transform: none;
+}
+.lgin_cust_pg p.Form__Legend {
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+.lgin_cust_pg input::placeholder {
+    text-transform: uppercase;
+}
+button.scrooll.Link.Link--primary {
+    padding: 0 20px;
+}
+.lgin_lf form#recover_customer_password {
+    margin-top: 60px;
+}
+form#recover_customer_password p.Form__Legend ,.lgin_rt p.Form__Legend {
+    text-transform: none;
+    font-style: normal;
+    letter-spacing: 0;
+}
+.lgin_cust_pg .Form__Submit {
+    background: #d7b4b5;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+.lgin_lf {
+    padding-right: 30px;
+    border-right: 1px solid #d7b4b5;
+}
+.lgin_rt {
+    padding-left: 30px;
+}
+.loyalty-offer {
+    max-width: 100%;
+}
+.loyalty-offer-img-with-text-block img {
+    width: 100%;
+}
+.no-offer-text {
+    max-width: 80%;
+    margin: 40px auto 0;
+    font-size: 18px;
+    border: 0px solid #c697a0;
+    padding: 10px 0;
+}
+.faqpage {
+    text-align: left;
+}
+.toggle-inner p {
+    font-size: 18px;
+}  
+/* Styles for Accordion  */
+.toggle:last-child {
+  border-bottom: 1px solid #dddddd;
+}
+.toggle .toggle-title {
+  position: relative;
+  display: block;
+}
+.toggle {
+    border: 1px solid whitesmoke;
+    margin-bottom: 20px;
+}  
+.toggle .toggle-title h3 {
+  font-size: 20px;
+  margin: 0px;
+  line-height: 1;
+  cursor: pointer;
+  font-weight: 200;
+}
+.toggle .toggle-inner {
+  padding: 20px 20px;
+    display: none;
+    margin: 0 0;
+    background: #f5f5f55c;
+}
+.toggle .toggle-inner div {
+  max-width: 100%;
+}
+.toggle .toggle-title .title-name {
+  display: block;
+  padding: 15px 20px;
+}
+.toggle .toggle-title a i {
+  font-size: 22px;
+  margin-right: 5px;
+}
+.account_activity .lion-history-table {
+    border: 0;
+}
+.account_activity .lion-history-table th.lion-history-table__header-cell {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    background: #d7b4b5;
+    text-transform: uppercase;
+    color: #fff;
+} 
+.lion-history-table__bubble {
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: .65;
+    transition: opacity .15s;
+    padding: 6px 0;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-family: 'neuzeit-grotesk';
+}
+.lion-history-state-bubble--approved {
+    color: #03543f;
+    background-color: #def7ec;  
+}
+.account_activity .lion-history-table .lion-history-table__row-cell {
+    font-size: 16px;
+    padding: 10px 10px 10px 14px;
+}
+.account_activity .lion-history-table__row:nth-child(even) {
+    background: #fde9e9;
+}
+#loyaltylion .lion-referral-widget-modal {
+    width: 100%!important;
+    box-shadow: none!important;
+    max-width: 100% !important;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div#shopify-section-header {
+    z-index: 1;
+}
+.lion-referral-widget-main__heading {
+    font-family: 'Cormorant Garamond',serif!important;
+    font-size: 42px!important;
+    font-weight: 600 !important;
+    margin-bottom: 20px !important;
+    color: #d7b4b5 !important;
+    font-style: italic !important;
+    letter-spacing: 0!important;
+    padding-bottom: 150px !important;
+    background: url(https://cdn.shopify.com/s/files/1/0150/9231/8256/files/50p.png?v=1626247450) no-repeat center bottom !important;
+    background-size: 200px !important;
+}
+.lion-referral-widget-main__heading::after {
+    display: none !important;
+}
+.lion-referral-widget-main__share-link-text ,.lion-referral-widget-main__intro span{
+    font-family: Futura,sans-serif!important;
+    color: #626467 !important;
+    font-size: 18px !important;
+}
+#lion-loyalty-panel-custom-css .lion-referral-widget-main__intro span {
+    font-size: 18px !important;
+    color: #626467!important;
+}
+.lion-referral-widget-modal:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(https://cdn.shopify.com/s/files/1/0150/9231/8256/files/Image.png?v=1623231603) no-repeat;
+    background-position: top;
+    opacity: .5;
+}
+/* #loyaltylion .lion-referral-widget-modal__close-button {
+    top: 100px;
+    right: -10px;
+} */
+.lion-modal__header .lion-modal__title {
+    font-size: 18px !important;
+    letter-spacing: 0 !important;
+    text-transform: capitalize !important;
+}
+#lion-loyalty-panel-custom-css * {color: #555;}
+.how_it_works.refer-friend a {
+    font-size: 16px;
+    text-transform: uppercase;
+    border: 2px solid #d7b4b5;
+    line-height: 40px;
+    padding: 10px 40px;
+    letter-spacing: 1px;
+}
+.how_it_works.refer-friend a:hover {
+    background: #d7b4b5;
+    color: #fff;
+}
+.account_activity a.rews_dign {
+    width: 180px;
+}
+.reward_icon .lion-rewards-list ,.reward_icon .lion-reward-item__content{
+    background-color: transparent;
+}
+.reward_icon .lion-reward-item {
+/*     border: 1px solid #d7b4b5 !important;
+    border-radius: 5px; */
+    width: 33% !important;
+}
+.reward_icon .lion-rewards-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px 0 0;
+}
+.reward_icon .lion-reward-item__title {
+    font-family: 'Cormorant Garamond',serif!important;
+    font-size: 28px!important;
+    line-height: 30px;
+    margin: 0 0 16px;
+    text-transform: none;
+    letter-spacing: 0!important;
+    color: #5e5e5e;
+}
+.reward_icon .lion-reward-item__icon {
+    display: none !important;
+}
+.reward_icon .lion-reward-item__content {
+    border: 1px solid #d7b4b5!important;
+    border-radius: 5px;
+    padding: 0 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: none;
+}
+.reward_icon .lion-reward-item:nth-of-type(3) .lion-reward-item__content{
+    background: url(https://cdn.shopify.com/s/files/1/0150/9231/8256/files/pnk.png?v=1626330287) no-repeat center!important;
+    background-size: cover!important;
+}
+.reward_icon .lion-reward-item:nth-of-type(1) .lion-reward-item__content{
+    background: url(https://cdn.shopify.com/s/files/1/0086/9007/3696/files/10_offf.png?v=1627890189) no-repeat center!important;
+    background-size: contain!important;
+}
+.reward_icon .lion-reward-item:nth-of-type(2) .lion-reward-item__content{
+    background: url(https://cdn.shopify.com/s/files/1/0150/9231/8256/files/hydro.png?v=1626330287) no-repeat center!important;
+    background-size: cover!important;
+}
+.reward_icon .lion-reward-item .lion-reward-item__content{
+    background: url(https://cdn.shopify.com/s/files/1/0150/9231/8256/files/colagen.png?v=1626330287) no-repeat center!important;
+    background-size: cover!important;
+}
+.reward_icon .lion-reward-item {
+    padding: 0 0px !important;
+    height: 350px !important;
+    margin: 10px 0 !important;
+}
+.reward_icon .lion-reward-item:nth-of-type(2) {
+    padding: 0 10px !important;
+}
+.reward_icon .lion-reward-item .lion-reward-item__title {
+    position: absolute !important;
+    top: 0;
+    left: 10px;
+    width: 180px !important;
+    text-align: left !important;
+    font-weight: 700 !important;
+    padding: 10px 0 0 !important;
+    color: #555 !important;
+    font-family: neuzeit-grotesk!important;
+    font-size: 20px!important;
+    line-height: 25px !important;
+}
+.reward_icon .lion-reward-item .lion-action-button {
+    position: absolute!important;
+    right: 10px;
+    bottom: 20px;
+}
+.reward_icon .lion-reward-item__fill{
+	background-color: transparent;
+}
+.how_it_works.reward_icon .lion-reward-item__actions button.lion-action-button.lion-action-button--tile {
+    color: #fff !important;
+}
+.reward_icon .lion-reward-item .lion-reward-item__actions button {
+    border: 1px solid #555555 !important;
+    color: #fff !important;
+    background: #555555 !important;
+}
+.reward_icon .lion-reward-item .lion-reward-item__meta {
+    position: absolute !important;
+    top: 10px;
+    right: 10px;
+    width: 100px !important;
+    height: 100px !important;
+    background: #fff !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: #555 !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+}
+.reward_icon .lion-reward-item .lion-reward-item__links a {
+    color: #555!important;
+    text-transform: capitalize !important;
+    padding: 7px 18px !important;
+    font-size: 1em!important;
+    border-radius: 4px;
+    position: absolute !important;
+    bottom: 20px;
+    left: 10px;
+    border: 1px solid #555!important;
+    text-decoration: none!important;
+}
+.reward_icon .lion-reward-item .lion-reward-item__links a:hover {
+    background: #555555 !important;
+    color: #fff !important;
+}
+.lgin_rt label.Form__FloatingLabel {
+    background: transparent !important;
+}
+i.fa.fa-check-circle-o {
+    color: #d7b4b5;
+    font-size: 20px;
+}
+html {
+  scroll-behavior: smooth;
+}
+.reward_center {
+    display: flex;
+}
+.reward_center > div {
+    width: 33%;
+    text-align: center;
+    padding: 20px;
+}
+.reward_text {
+    background: #eee;
+    width: 50% !important;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.reward_center .reward_pt h4 {
+    font-size: 28px;
+    margin: 10px 0 20px;
+    font-family: 'Cormorant Garamond',serif!important;
+    letter-spacing: 0px !important;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    padding: 10px 0 20px;
+}
+.reward_center .reward_text h4 {
+    font-size: 32px;
+    color: #333;
+    border-bottom: 0;
+    padding: 0 0;
+    margin: 0 0 10px;
+    font-family: 'Cormorant Garamond',serif!important;
+    letter-spacing: 0px !important;
+}
+.reward_center .reward_pt {
+    margin: 0 5px;
+    background: #d7b4b5;
+    color: #fff;
+    padding: 0 0 20px;
+}
+.reward_center > div p {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: neuzeit-grotesk,sans-serif;
+    letter-spacing: 1px;
+}
+.reward_pt.tier {
+    margin: 0;
+}
+.reward_center .reward_pt p {
+    font-size: 50px;
+}
+.tier_all #loyaltylion .lion-tier-overview ,#loyaltylion .lion-tier-box {
+    background-color: transparent;
+}
+.tier_all #loyaltylion .lion-tier-box__header {
+    background-color: transparent;
+    padding: 10px 0px 20px 0;
+    margin: 0 20px;
+}
+.tier_all #loyaltylion .lion-tier-box__position {
+    display: none;
+}
+.tier_all #loyaltylion .lion-tier-box__title {
+    font-size: 26px;
+    font-weight: 500;
+}
+.tier_all #loyaltylion .lion-tier-box__sub-title {
+    font-size: 20px;
+}
+.tier_all #loyaltylion .lion-tier-box__purchase-rule {
+    border: 0;
+    background: #d7b4b5;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: -1px;
+    padding: 6px 0;
+    margin: 0 auto;
+    border-radius: 50px;
+    width: 80%;
+}
+.tier_all #loyaltylion .lion-tier-box {
+    background-color: transparent;
+    box-shadow: 0 0 12px -1px rgb(253 233 233);
+}
+.tier_all .lion-tier-box.lion-tier-box--0.lion-tier-box--current {background-color: #fde9e9;}
+.tier_all ul.lion-tier-box__benefits-list.lion-tier-benefits-list li {
+    font-size: 16px !important;
+    line-height: 30px !important;
+    margin-bottom: 0 !important;
+    font-family: Futura,sans-serif !important;
+    color: #626467 !important;
+}
+li.lion-tier-box__benefit.lion-tier-benefits-list__item:before {
+    content: "\f05d";
+    font-family: 'FontAwesome';
+    color: #d7b4b5;
+    font-size: 20px;
+    margin-right: 5px;
+}
+.tier_all .lion-tier-box__footer.lion-tier-box__footer--current {
+    background: #fbdcce !important;
+    margin: 0 20px 30px !important;
+    padding: 0 0 40px !important;
+}
+.tier_all #loyaltylion .lion-tier-box__you-are-here {
+    background: transparent;
+    font-size: 24px;
+    padding: 10px 0 0 0;
+    color: #000;
+}
+.tier_all #loyaltylion .lion-tier-box__expiry,.tier_all #loyaltylion .lion-tier-box__value-to-next {
+    color: #000;
+    padding: 10px 0 0;
+}
+.tier_all .lion-tier-box__footer.lion-tier-box__footer--current:after {content: "";width: 100%;height: 25px;background: #d7b4b5;position: absolute;bottom: 0;top: auto;left: 0;right: 0;}
+.tier_all .lion-tier-box__footer.lion-tier-box__footer--current {
+    position: relative!important;
+}
+/* #loyaltylion .lion-referral-widget {
+    height: 100%!important;
+    margin: 0 auto 30px!important;
+} */
+#loyaltylion .lion-referral-widget-panels {
+    background: transparent;
+}
+.lion-referral-widget-panel.lion-referral-widget-email-form {
+    display: none!important;
+}
+.reward_pt.tier .lion-tier-box__title {
+    display: block!important;
+    background-color: #d7b4b5 !important;
+    width: 100% !important;
+    font-size: 50px!important;
+    color: #fff!important;
+    font-family: neuzeit-grotesk,sans-serif;
+    letter-spacing: 1px;
+    padding: 0!important;
+    font-weight: 400!important;
+}
+.reward_pt.tier .lion-tier-box,.reward_pt.tier .lion-tier-box.lion-tier-box--current .lion-tier-box__sub-title ,.reward_pt.tier .lion-tier-box.lion-tier-box--current .lion-tier-box__accent ,.reward_pt.tier .lion-tier-box.lion-tier-box--current .lion-tier-box__position ,.reward_pt.tier .lion-tier-box__purchase-rule,.reward_pt.tier .lion-tier-box.lion-tier-box--current ul,.reward_pt.tier .lion-tier-box.lion-tier-box--current .lion-tier-box__footer {
+    display: none;
+}
+.reward_pt.tier .lion-tier-overview {
+    padding: 0;
+    background-color: transparent;
+}
+.reward_pt.tier .lion-tier-box.lion-tier-box--current {
+    display: contents !important;
+    box-shadow: none; 
+}
+.reward_pt.tier .lion-tier-box.lion-tier-box--current .lion-tier-box__header {
+    padding: 0;
+}
+#loyaltylion .lion-action-button--tile:hover {
+    background: #d7b4b5 !important;
+    border-color: #d7b4b5 !important;
+    color: #fff !important;
+}
+#loyaltylion .lion-action-button--tile {color: #5e5e5e !important;border-color: #5e5e5e !important;}
+.logo-bar ul.slick-dots button::before {
+    opacity: 0 !important;
+}
+span.lion-reward-item__cost::before {
+    display: none !important;
+}
+.lion-rule-item__points {
+    padding: 0 0 20px !important;
+    font-weight: 400;
+    font-family: 'neuzeit-grotesk';
+}
+.lion-rule-item__points span {
+    color: #5e5e5e !important;
+}
+.lion-action-button {
+    background: transparent;
+    color: #5e5e5e!important;
+    font-size: 16px;
+    border: 1px solid #5e5e5e!important;
+}
+.lion-action-button:hover ,.how_it_earn .lion-action-button--disabled:hover{
+    background: #d7b4b5 !important;
+    color: #fff !important;
+    border-color: #d7b4b5 !important;
+}
+.how_it_earn .lion-rules-list .lion-rule-item:last-child .lion-rule-item__content {
+    width: 32%;
+    margin: 0 auto;
+}
+.how_it_earn .lion-rules-list .lion-rule-item:nth-of-type(7) .lion-rule-item__icon {
+    background-color: transparent;
+}
+.lion-rule-item__button.lion-rule-item__button--disabled .lion-rule-item__limit-reached {
+    color: #635e5e;
+}
+.reward_icon .lion-reward-item .lion-action-button {
+    background: #5e5e5e;
+    color: #fff !important;
+    border-color: #5e5e5e;
+}
+.lion-referral-widget-main__icon:before {content: "Refer your friends";font-family: 'Cormorant Garamond',serif!important;font-size: 42px!important;font-weight: 600!important;margin-bottom: 20px!important;color: #d7b4b5!important;width: 100%;text-align: center;position: absolute;margin: 0 auto;left: 0;}
+.lion-referral-widget-main__icon {
+    font-family: 'Cormorant Garamond',serif!important;
+    font-size: 42px!important;
+    font-weight: 600!important;
+    margin-bottom: 20px!important;
+    color: #d7b4b5!important;
+    font-style: italic!important;
+    letter-spacing: 0!important;
+    background: url(https://cdn.shopify.com/s/files/1/0086/9007/3696/files/50_off_1.png?v=1627301113) no-repeat center bottom!important;
+    background-size: 200px!important;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 200px !important;
+}
+#loyaltylion #lion-loyalty-panel-custom-css * {
+    color: #555;
+}
+ul#some-id li a.active:hover {
+    color: #000;
+}
+
+
+
+@media (max-width: 1199px) { 
+.reward_icon .lion-reward-item {
+    width: 31.9%;
+}
+ul#some-id {
+    text-align: center;
+    margin: 20px 0;
+    overflow: scroll;
+    align-items: unset;
+    justify-content: unset;
+}
+  
+}
+
+@media (max-width: 1025px) { 
+.reward_icon .lion-reward-item {
+    width: 50% !important;
+}  
+.reward-page .container {
+    max-width: 90%;
+    padding: 0;
+}  
+.logo-bar ul.slick-dots {
+    width: 100%;
+    position: absolute;
+    display: inline-flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+}
+.logo-bar ul.slick-dots button {
+    border-radius: 50%;
+    font-size: 0;
+    background: #d7b4b5;
+    padding: 6px;
+}
+.logo-bar ul.slick-dots li {
+    margin: 0 3px;
+    transform: scale(0.8);
+}
+.logo-bar ul.slick-dots li.slick-active {
+  transform: scale(1);
+  margin-top: -2px;
+}
+.how_it_earn .lion-rules-list .lion-rule-item:last-child .lion-rule-item__content {
+    width: 50%;
+}
+.reward_icon .lion-reward-item{
+    padding: 0 5px !important;
+}  
+.reward_icon .lion-reward-item:nth-of-type(2) {
+    padding: 0 5px !important;
+}  
+  
+}
+
+
+
+@media (max-width: 768px) { 
+.how_it_earn {
+    margin-top: 30px;
+}
+.how_it_earn .lion-rules-list .lion-rule-item {
+    width: 48% !important;
+}
+ul#some-id li a {
+    width: 180px;
+    padding: 15px 0;
+}
+  
+}
+
+
+@media (max-width: 767px) { 
+.how_it_earn .lion-rules-list .lion-rule-item {
+    width: 48% !important;
+}
+.reward-page .container {
+    max-width: 100%;
+}
+.reward_icon .lion-reward-item .lion-reward-item__links a,.reward_icon .lion-reward-item .lion-reward-item__actions button.lion-action-button {
+    padding: 7px 8px !important;
+}
+.container {
+    max-width: 100%;
+}  
+.reward_pt.tier .lion-tier-overview {
+    overflow: hidden;
+}
+.loyalty-offer .loyalty-offer-img-with-text-block {flex-direction: row !important;flex-wrap: inherit !important;}
+  
+  
+}
+  
+@media (max-width: 640px) { 
+  .banner_reward h2, .how_it_works h2,.how_it_earn h2  {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.banner_reward p {
+    font-size: 16px;
+    line-height: 24px;
+}
+.login_div a {
+    font-size: 14px;
+    width: 130px;
+}
+.login_div {
+    margin-bottom: 0;
+}
+.how_it_works ,.how_it_earn {
+    margin: 30px 0 0;
+}
+.works_inner {
+    flex-wrap: wrap;
+    margin: 0 0;
+}
+.iocn-sec {
+    padding: 0 0 30px;
+}
+.lion-loyalty-splash-column__items {
+    flex-direction: column;
+}
+.lion-loyalty-splash-column__items .lion-loyalty-splash-item {
+    margin-bottom: 20px;
+}
+.lion-loyalty-panel-page-earn__rules-list > div {
+    width: 100%;
+}
+#loyaltylion .lion-referral-widget-main__heading {
+    font-size: 26px !important;
+}
+.lion-loyalty-panel-tier-item__list-heading, .lion-loyalty-panel-content__page-description strong, .lion-other-site-rules__header {
+    font-size: 20px;
+    margin: 15px 0;
+}
+.lion-loyalty-panel-tier-item__context {
+    font-size: 18px;
+}
+ul.lion-loyalty-panel-tier-item__list li.lion-loyalty-panel-tier-item__list-item {
+    width: 100%;
+}
+nav.lion-loyalty-panel-sidebar__menu a.lion-loyalty-panel-sidebar__menu-item {width: 50%;padding: 4px 0;}
+nav.lion-loyalty-panel-sidebar__menu {
+    flex-wrap: wrap;
+}  
+#loyaltylion .lion-tier-benefits-compare th:first-child::before ,th.lion-tier-compare__header-cell {
+    font-size: 20px;
+    width: auto;
+}
+tr.lion-tier-benefits-compare__row {
+    font-size: 16px;
+    line-height: 22px;
+}  
+.logo-bar__item {
+    width: 92% !important;
+}  
+ul#some-id li a {
+    font-size: 14px;
+}
+.how_it_earn .lion-rules-list .lion-rule-item {
+    width: 100%!important; 
+}
+.reward-page  .container {
+    max-width: 90%;
+    padding: 0;
+}
+.lgin_lf ,.lgin_rt {
+    width: 100%;
+    padding: 0;
+    border: 0;
+}
+.lgin_lf form#recover_customer_password {
+    margin: 30px 0 0;
+} 
+div#signup_myaccount {
+    margin-top: 30px;
+}  
+.no-offer-text {
+    max-width: 100%;
+    padding: 5px 5px;
+    font-size: 16px;
+}  
+.toggle .toggle-title h3 {
+    font-size: 17px;
+}
+.toggle-inner p {
+    font-size: 16px;
+}  
+.toggle .toggle-title .title-name {
+    line-height: 25px;
+    padding: 8px 30px  8px  10px;
+}
+.toggle .toggle-inner {
+    padding: 10px;
+}
+/* #loyaltylion .lion-referral-widget-modal {
+    top: 30px !important;
+    transform: translate(0%,10%) !important;
+}
+#loyaltylion .lion-referral-widget-modal__close-button {
+    top: 60px;
+}    
+  */
+.lion-referral-widget-main__heading {
+    padding-bottom: 120px !important;
+    background-size: 160px !important;
+}
+.lion-referral-widget-main__intro, .lion-referral-widget-main__share-link-text {
+    font-size: 14px !important;
+}
+#loyaltylion .lion-referral-widget-main__share-buttons {
+    padding: 10px 0;
+}
+.lion-referral-widget-panel.lion-referral-widget-main {
+    padding: 0 10px !important;
+}
+.how_it_works.refer-friend a {
+    font-size: 14px;
+    padding: 10px 10px;
+}
+.reward_icon .lion-reward-item {
+    width: 100%!important;
+}  
+.reward_center {
+    flex-wrap: wrap;
+}
+.reward_center>div {
+    width: 100% !important;
+}
+.reward_center .reward_pt {
+    margin: 5px 0 0 !important;
+    padding: 0 0;
+}
+.reward_center .reward_pt h4 {
+    margin-bottom: 0;
+    padding: 5px 0 15px;
+}
+.reward_center .reward_pt p ,.reward_pt.tier .lion-tier-box__title {
+    font-size: 30px !important;
+    padding: 10px 0 !important;
+}  
+#loyaltylion .lion-tier-box, .tier_all #loyaltylion .lion-tier-overview {
+    padding: 0 0;
+}  
+.how_it_works.reward_icon .loyalty-offer {
+    padding: 0 0;
+}  
+.how_it_earn .lion-rules-list .lion-rule-item:last-child .lion-rule-item__content {
+    width: 100%;
+}
+.reward_icon .lion-reward-item:nth-of-type(2) {
+    padding: 0 0 !important;
+}  
+.reward_center .reward_pt {
+    width: 50% !important;
+}
+.reward_center .reward_pt h4 {
+    height: 80px;
+}
+.reward_center .reward_pt.tier {
+    border-left: 1px solid #fff;
+}  
+  
+}
+
+
+@media (max-width: 480px) { 
+.loyalty-offer .loyalty-offer-img-with-text-block {
+    flex-direction: column-reverse !important;
+}
+  
+}

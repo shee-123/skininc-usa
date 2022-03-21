@@ -1,0 +1,142 @@
+{%- if section.settings.enable_bar -%}
+  {%- unless section.settings.home_page_only and template != 'index' -%}
+    <section id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="announcement-bar">
+      <div id="announcement-slideshow" class="announcement-bar-slide">
+            {% for block in section.blocks %}
+          <div class="AnnouncementBar__Wrapper " style="background: {{ block.settings.background }}; color: {{ block.settings.text_color }}">
+            <p class="AnnouncementBar__Content Heading u-h5">
+              {%- if block.settings.link -%}
+                <span class="announcement_desc">{{ block.settings.content | escape }}</span>
+                <span class="announcement_more_link"><a href="{{ block.settings.link }}">{{ block.settings.link_label }}</a></span>
+              {%- else -%}
+                {{ block.settings.content | escape }}
+              {%- endif -%}
+            </p>
+          </div>
+            {% endfor %}
+      </div>                                                                                                                  
+    </section>
+
+    <script>
+      document.documentElement.style.setProperty('--announcement-bar-height', document.getElementById('shopify-section-announcement').offsetHeight + 'px');
+    </script>
+  {%- endunless -%}
+{%- endif -%}
+
+<style type="text/css">
+  #announcement-slideshow {
+    position: relative;
+    width: 100%;
+    height: 49px;
+    text-align: center;
+  }
+  #announcement-slideshow > div {
+    position: absolute;
+    width: 100%;
+    height: 49px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #announcement-slideshow .AnnouncementBar__Content{
+    line-height: 1.8em;
+  }
+  .announcement_more_link{
+    margin-left: 15px;
+  }
+  .announcement_more_link a{
+    color: {{ block.settings.link_color }};
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  @media only screen and (max-width: 1024px){
+    #announcement-slideshow {
+      height: auto;
+    }
+    #announcement-slideshow > div {
+      position: relative;
+      height: auto;
+    }
+  }
+</style>
+
+<script type="text/javascript">
+  $("#announcement-slideshow > div:gt(0)").hide();
+  
+    var slide_length = $('#announcement-slideshow > div').length;
+  
+    if ( slide_length > 1){
+
+      var announcement_action = setInterval(function() {
+        $('#announcement-slideshow > div:first')
+          .hide()
+          .next()
+          .fadeIn(1000)
+          .end()
+          .appendTo('#announcement-slideshow');
+      }, 5000);
+    }
+</script>
+{% schema %}
+{
+  "name": "Announcement bar",
+    "max_blocks": 2,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_bar",
+      "label": "Enable bar",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "home_page_only",
+      "label": "Home page only",
+      "default": false
+    }
+  ],
+    "blocks": [
+        {
+            "type": "banner",
+            "name": "Baner",
+            "settings": [
+                {
+                    "type": "color",
+                    "id": "background",
+                    "label": "Background",
+                    "default": "#000000"
+                },
+                {
+                    "type": "color",
+                    "id": "text_color",
+                    "label": "Text",
+                    "default": "#ffffff"
+                },
+                {
+                    "type": "text",
+                    "id": "content",
+                    "label": "Text",
+                    "default": "Announce something here"
+                },
+        {
+                    "type": "text",
+                    "id": "link_label",
+                    "label": "Link Label",
+                    "default": "Learn More"
+                },
+        {
+                    "type": "color",
+                    "id": "link_color",
+                    "label": "Link Color",
+                    "default": "#000000"
+                },
+                {
+                    "type": "url",
+                    "id": "link",
+                    "label": "Link"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

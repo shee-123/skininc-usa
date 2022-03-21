@@ -1,0 +1,60 @@
+<section class="section spaced bordered instagram-feed" data-section-id="{{ section.id }}">
+  <div class="container">
+     <h2 class="header text-center">{{ section.settings.subheading | escape }} / {{ section.settings.title | escape }}</h2>
+  {%- if section.settings.access_token != blank -%}
+    <div class="row feed" data-access-token="{{ section.settings.access_token }}" data-image-count="{{ section.settings.image_count }}"></div>
+  {%- else -%}
+    {%- comment -%}If no images, we display some placeholder content{%- endcomment -%}
+    <div class="row">
+      {%- for i in (1..8) -%}
+        <div class="col-md-3 col-6">
+          <a href="#">
+            {{ 'image' | placeholder_svg_tag: 'Instafeed__Image PlaceholderBackground__Svg PlaceholderSvg--dark' }}
+          </a>
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Instagram feed",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub-heading",
+      "default": "@YourStore"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Follow us"
+    },
+    {
+      "type": "text",
+      "id": "access_token",
+      "label": "Access token",
+      "info": "[Find your access token](http://www.maestrooo.com/instagram)."
+    },
+    {
+      "type": "range",
+      "id": "image_count",
+      "min": 6,
+      "max": 20,
+      "step": 1,
+      "label": "Image count",
+      "default": 15
+    }
+  ],
+  "presets": [
+    {
+      "category": "Social media",
+      "name": "Instagram feed",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

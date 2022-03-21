@@ -1,0 +1,229 @@
+{%- assign first_page = pages[section.settings.tab_page_1_handle] -%}
+{%- assign second_page = pages[section.settings.tab_page_2_handle] -%}
+{%- assign first_custom_page = '' -%}
+{%- assign second_custom_page = '' -%}
+
+{%- comment -%}
+  We allow to add two tabs that are extracted using the tag system. To add such a tag, simply create a page and
+  note the handle somewhere.
+  Next, add a tag to your product in this form: __tab1:page-handle or __tab2:page-handle
+  The theme will automatically link the tab to the page
+{%- endcomment -%}
+
+{%- assign has_unique_tab_1 = false -%}
+{%- assign has_unique_tab_2 = false -%}
+
+{%- comment -%}First, check the metafields{%- endcomment -%}
+
+{%- if product.metafields.sf_product_tabs.tab_1_title != blank and product.metafields.sf_product_tabs.tab_1_content != blank -%}
+  {%- assign unique_tab_1_title = product.metafields.sf_product_tabs.tab_1_title -%}
+  {%- assign unique_tab_1_content = product.metafields.sf_product_tabs.tab_1_content -%}
+  {%- assign has_unique_tab_1 = true -%}
+{%- endif -%}
+
+{%- if product.metafields.sf_product_tabs.tab_2_title != blank and product.metafields.sf_product_tabs.tab_2_content != blank -%}
+  {%- assign unique_tab_2_title = product.metafields.sf_product_tabs.tab_2_title -%}
+  {%- assign unique_tab_2_content = product.metafields.sf_product_tabs.tab_2_content -%}
+  {%- assign has_unique_tab_2 = true -%}
+{%- endif -%}
+
+{%- comment -%}Then, let's try the tags{%- endcomment -%}
+
+{%- for tag in product.tags -%}
+  {%- if tag contains '__tab1' -%}
+    {%- assign first_custom_page = tag | split: ':' | last -%}
+    {%- assign first_custom_page = pages[first_custom_page] -%}
+
+    {%- assign unique_tab_1_title = first_custom_page.title -%}
+    {%- assign unique_tab_1_content = first_custom_page.content -%}
+    {%- assign has_unique_tab_1 = true -%}
+  {%- endif -%}
+
+  {%- if tag contains '__tab2' -%}
+    {%- assign second_custom_page = tag | split: ':' | last -%}
+    {%- assign second_custom_page = pages[second_custom_page] -%}
+
+    {%- assign unique_tab_2_title = second_custom_page.title -%}
+    {%- assign unique_tab_2_content = second_custom_page.content -%}
+    {%- assign has_unique_tab_2 = true -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<div class="Product__Tabs">
+
+  {%- if product.metafields.meta contains "benefits" -%}
+  <div class="Collapsible Collapsible--large">
+    <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+      {{ 'product.tabs.benefits' | t }} <span class="Collapsible__Plus"></span>
+    </button>
+    <div class="Collapsible__Inner">
+      <div class="Collapsible__Content">
+        <div class="Rte">
+          {{ product.metafields.meta.benefits  | newline_to_br }}
+        </div>
+      </div>
+    </div>
+  </div>
+  {%- endif -%}
+
+{%- if product.metafields.meta contains "how_to_use" -%}
+<div class="Collapsible Collapsible--large">
+  <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+    {{ 'product.tabs.how_to' | t }} <span class="Collapsible__Plus"></span>
+  </button>
+  <div class="Collapsible__Inner">
+    <div class="Collapsible__Content">
+      <div class="Rte">
+        {{ product.metafields.meta.how_to_use  | newline_to_br }}
+      </div>
+    </div>
+  </div>
+</div>
+{%- endif -%}
+
+{%- if product.metafields.meta contains "ingredient" -%}
+<div class="Collapsible Collapsible--large">
+  <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+    {{ 'product.tabs.ingredients' | t }} <span class="Collapsible__Plus"></span>
+  </button>
+  <div class="Collapsible__Inner">
+    <div class="Collapsible__Content">
+      <div class="Rte">
+        {{ product.metafields.meta.ingredient  | newline_to_br }}
+      </div>
+    </div>
+  </div>
+</div>
+{%- endif -%}
+
+{%- if product.metafields.meta contains "recommendation" -%}
+<div class="Collapsible Collapsible--large">
+  <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+    {{ 'product.tabs.recommendation' | t }} <span class="Collapsible__Plus"></span>
+  </button>
+  <div class="Collapsible__Inner">
+    <div class="Collapsible__Content">
+      <div class="Rte">
+        {{ product.metafields.meta.recommendation  | newline_to_br }}
+      </div>
+    </div>
+  </div>
+</div>
+{%- endif -%}
+
+{%- if product.metafields.meta contains "clinical_study" -%}
+<div class="Collapsible Collapsible--large">
+  <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+    {{ 'product.tabs.clinical_study' | t }} <span class="Collapsible__Plus"></span>
+  </button>
+  <div class="Collapsible__Inner">
+    <div class="Collapsible__Content">
+      <div class="Rte">
+        {{ product.metafields.meta.clinical_study  | newline_to_br }}
+      </div>
+    </div>
+  </div>
+</div>
+{%- endif -%}
+
+{%- if product.metafields.meta contains "more_details" -%}
+<div class="Collapsible Collapsible--large">
+  <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+    {{ 'product.tabs.more_details' | t }} <span class="Collapsible__Plus"></span>
+  </button>
+  <div class="Collapsible__Inner">
+    <div class="Collapsible__Content">
+      <div class="Rte">
+        {{ product.metafields.meta.more_details  | newline_to_br }}
+      </div>
+    </div>
+  </div>
+</div>
+{%- endif -%}
+
+
+
+{%- if first_page.handle != blank or second_page.handle != blank or has_unique_tab_1 or has_unique_tab_2 or section.settings.reviews_enabled -%}
+    {%- if has_unique_tab_1 -%}
+      <div class="Collapsible Collapsible--large">
+        <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+          {{- unique_tab_1_title -}} <span class="Collapsible__Plus"></span>
+        </button>
+
+        <div class="Collapsible__Inner">
+          <div class="Collapsible__Content">
+            <div class="Rte">
+              {{- unique_tab_1_content -}}
+            </div>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if has_unique_tab_2 -%}
+      <div class="Collapsible Collapsible--large">
+        <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+          {{- unique_tab_2_title -}} <span class="Collapsible__Plus"></span>
+        </button>
+
+        <div class="Collapsible__Inner">
+          <div class="Collapsible__Content">
+            <div class="Rte">
+              {{- unique_tab_2_content -}}
+            </div>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if first_page != empty -%}
+      <div class="Collapsible Collapsible--large">
+        <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+          {{- first_page.title -}} <span class="Collapsible__Plus"></span>
+        </button>
+
+        <div class="Collapsible__Inner">
+          <div class="Collapsible__Content">
+            <div class="Rte">
+              {{- first_page.content -}}
+            </div>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if second_page != empty -%}
+      <div class="Collapsible Collapsible--large">
+        <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+          {{- second_page.title -}} <span class="Collapsible__Plus"></span>
+        </button>
+
+        <div class="Collapsible__Inner">
+          <div class="Collapsible__Content">
+            <div class="Rte">
+              {{- second_page.content -}}
+            </div>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.reviews_enabled -%}
+      <div class="Collapsible Collapsible--large">
+        {%- comment -%}We parse from metafields the number of reviews{%- endcomment -%}
+        {%- assign reviews_count = product.metafields.spr.reviews | split: '<meta itemprop="reviewCount" content="' | last | split: '">' | first | times: 1 -%}
+
+        <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+          <span>{{ 'product.tabs.reviews' | t }} <span class="text--light">({{ reviews_count | default: 0 }})</span></span>
+          <span class="Collapsible__Plus"></span>
+        </button>
+
+        <div class="Collapsible__Inner">
+          <div class="Collapsible__Content">
+            <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+{%- endif -%}
+  </div>

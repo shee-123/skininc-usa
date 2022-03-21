@@ -1,0 +1,158 @@
+<section>
+    <div class="loyalty-offer">
+        <!-- h2 class="loyalty-offer__title loyalty-h2">{{ section.settings.title }}</h2 -->
+      {% comment %}  
+      {% for block in section.blocks %}
+            {% if block.type == 'loyalty_offer' %}
+
+                <div class="loyalty-offer-img-with-text-block">
+                    <div class="loyalty-offer-img-with-text-block__image-wrapper">
+                        {% if block.settings.img_url != blank %}
+                        <a href="{{ block.settings.img_url }}">
+                            {% endif %}
+                            <img src="{{ block.settings.image | img_url: '510x510' }}"
+                                 alt="{{ block.settings.image.alt }}">
+                            {% if block.settings.img_url != blank %}</a> {% endif %}
+                    </div>
+                    <div class="loyalty-offer-img-with-text-block__text-wrapper">
+                        <div class="loyalty-offer-img-with-text-block__text">
+                    <span class="loyalty-offer-img-with-text-block__name">
+{{ block.settings.offer_name }}
+                    </span>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+      
+      {% endcomment %} 
+      
+        <div data-lion-rewards-list></div>
+      
+        {% for block in section.blocks %}
+            {% if block.type == 'loyalty_offer_3_img' %}
+                <div class="loyalty_offer_3_img">
+                    <div class="loyalty_offer_3_img__item">
+                        {% if block.settings.img_url1 != balnk %}
+                        <a href="{{ block.settings.img_url1 }}">
+                            {% endif %}
+                            <img src="{{ block.settings.image1 | img_url: '510x510' }}">
+                            {% if block.settings.img_url1 != balnk %}
+                        </a>
+                        {% endif %}
+                    </div>
+                    <div class="loyalty_offer_3_img__item">
+                        {% if block.settings.img_url2 != balnk %}
+                        <a href="{{ block.settings.img_url2 }}">
+                            {% endif %}
+                            <img src="{{ block.settings.image2 | img_url: '510x510' }}">
+                            {% if block.settings.img_url2 != balnk %}
+                        </a>
+                        {% endif %}
+                    </div>
+                    <div class="loyalty_offer_3_img__item">
+                        {% if block.settings.img_url3 != balnk %}
+                        <a href="{{ block.settings.img_url3 }}">
+                            {% endif %}
+                            <img src="{{ block.settings.image3 | img_url: '510x510' }}">
+                            {% if block.settings.img_url3 != balnk %}
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        {% for block in section.blocks %}
+            {% if block.type == 'loyalty_No-offer' %}
+      <div class="no-offer-text"><span>{{ block.settings.offer_noany }}</span></div>
+        	{% endif %}
+        {% endfor %}
+    </div>
+</section>
+{% schema %}
+    {
+    "name": "Loyalty offer 2 rows",
+    "settings":
+    [
+    {
+    "type": "text",
+    "id": "title",
+    "label": "Title"
+    }],
+    "blocks":
+    [
+        {
+            "type": "loyalty_offer",
+            "name": "Loyalty offer(img/text)",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image",
+                    "info": "Image must have aspect ratio 1:1"
+                },
+                {
+                    "type": "url",
+                    "id": "img_url",
+                    "label": "Link for image"
+                },
+                {
+                    "type": "text",
+                    "id": "offer_name",
+                    "label": "Offer name"
+                }
+            ]
+        },
+        {
+        "type": "loyalty_offer_3_img",
+        "name": "Loyalty offer(3 image)",
+        "settings":
+            [
+                {
+                    "type": "image_picker",
+                    "id": "image1",
+                    "label": "First Image",
+                    "info": "Image must have aspect ratio 1:1"
+                },
+                {
+                    "type": "url",
+                    "id": "img_url1",
+                    "label": "Link for first image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image2",
+                    "label": "Second Image",
+                    "info": "Image must have aspect ratio 1:1"
+                },
+                {
+                    "type": "url",
+                    "id": "img_url2",
+                    "label": "Link for second image"
+                },{
+                    "type": "image_picker",
+                    "id": "image3",
+                    "label": "Third Image",
+                    "info": "Image must have aspect ratio 1:1"
+                },
+                {
+                    "type": "url",
+                    "id": "img_url3",
+                    "label": "Link for third image"
+                }
+            ]
+        },
+        {
+            "type": "loyalty_No-offer",
+            "name": "Loyalty no-offer",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "offer_noany",
+                    "label": "no offer text"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

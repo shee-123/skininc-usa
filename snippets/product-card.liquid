@@ -1,0 +1,88 @@
+<div class="product-card text-center {{className}}">
+  {%- if settings.product_show_secondary_image and product.images[1] != blank-%}
+    {%- assign has_alternate_image = true -%}
+  {%- else -%}
+    {%- assign has_alternate_image = false -%}
+  {%- endif -%}
+  <div class="meta clearfix">
+    {% if product.tags contains 'New' %}
+    <div class="tag">NEW</div>
+    {% endif %}
+    <!-- include 'wishlist-button-collection' with '{{ product.id }}' -->
+  </div>
+  <a href="{{product.url}}" class="product-image ProductItem__ImageWrapper {% if has_alternate_image %}ProductItem__ImageWrapper--withAlternateImage{% endif %}">
+    
+    {%- if show_labels -%}
+      {%- capture product_labels -%}
+        {%- for tag in product.tags -%}
+          {%- if tag contains '__label' -%}
+            <span class="ProductItem__Label Heading Text--subdued">{{ tag | split: '__label' | last }}</span>
+            {%- break -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- if product.available -%}
+          {%- if product.compare_at_price > product.price -%}
+              <span class="ProductItem__Label Heading Text--subdued">{{ 'product.labels.on_sale' | t }}</span>
+          {%- endif -%}
+        {%- else -%}
+          <span class="ProductItem__Label Heading Text--subdued">{{ 'product.labels.sold_out' | t }}</span>
+        {%- endif -%}
+      {%- endcapture -%}
+
+      {%- if product_labels != blank -%}
+      <div class="ProductItem__LabelList">
+        {{ product_labels }}
+      </div>
+      {%- endif -%}
+    {%- endif -%}
+    
+    {%- if has_alternate_image -%}
+      {%- include 'image-size', sizes: '200,300,400,600,800,900,1000,1200', image: product.images[1] -%}
+      {%- assign image_url = product.images[1] | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+      <img class="ProductItem__Image ProductItem__Image--alternate Image--lazyLoad Image--fadeIn" data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ product.images[1].alt | escape }}" data-image-id="{{ product.images[1].id }}">
+    {%- endif -%}
+    {%- include 'image-size', sizes: '200,400,600,700,800,900,1000,1200', image: product.featured_image -%}
+  	{%- assign image_url = product.featured_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+    <img class="ProductItem__Image Image--lazyLoad Image--fadeIn" data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ product.featured_image.alt | escape }}" data-image-id="{{ product.featured_image.id }}">
+    <span class="Image__Loader"></span>
+    
+    <noscript>
+      <img class="ProductItem__Image ProductItem__Image--alternate" src="{{ product.images[1] | img_url: '600x' }}" alt="{{ product.images[1].alt | escape }}">
+      <img class="ProductItem__Image" src="{{ product.featured_image | img_url: '600x' }}" alt="{{ product.featured_image.alt | escape }}">
+    </noscript>
+  </a>
+  <div class="caption">
+    {%- if label != blank -%}
+      <p class="label">{{label}}</p>
+    {%- endif -%}
+    <h4 class="product-title"> <a href="{{product.url}}">{{ product.title  | escape }}</a></h4>
+    <p class="product-subtitle">
+      {% if product.metafields.meta.subtitle %}
+      {{ product.metafields.meta.subtitle | escape }}
+      {% endif %}
+    </p>
+    {%- if product.template_suffix != 'coming-soon' -%}
+    <div class="ProductMeta__PriceList Heading">
+      <span data-money-convertible>{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span>
+    </div>
+    {%- endif -%}
+    {%- if show_reviews != false -%}
+      {%- include 'yotpo-stars2' -%}
+    {%- endif -%}
+      {% if product.tags contains "MDD" %}
+        <a href="/pages/skin-id" class="Button Button--primary Button--full  ">Build Your Own</a>
+      {% elsif product.tags contains "BYO" %}
+        <a href="{{ product.url }}" class="Button Button--primary Button--full  ">Build Your Own</a>
+      {% elsif product.tags contains "hide-quick-shop" %}
+        <a href="{{ product.url }}" class="Button Button--primary Button--full  ">Choose Now</a>
+      {% elsif product.available == false or product.selected_or_first_available_variant.title contains 'Retail' %}
+        <a href="{{ product.url }}" class="Button Button--primary Button--full  ">Waitlist Me</a>
+      {% else %}
+          {%- if show_add_to_cart -%}
+              {%- include 'add-to-cart' -%}
+          {%- endif -%}
+      {%- endif -%}
+  </div>
+</div>

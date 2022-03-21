@@ -1,0 +1,11 @@
+{% section 'loyalty-top-banner' %}
+{% section 'loyalty-earn-points' %}
+<div class="loyalty-rules">
+    <h2 class="loyalty-h2 loyalty-rules__title">{{ 'loyalty.loyalty_rules_title' | t }}</h2>
+    <div class="loyalty-rules__list{% if customer %} loyalty-rules__list--active{% endif %}" data-lion-rules-list></div>
+</div>
+{% section 'loyalty-rewards' %}
+<div class="loyalty-tiers">
+    <h2 class="loyalty-h2 loyalty-tiers__title">{{ 'loyalty.loyalty_tiers_title' | t }}</h2>
+    <div class="loyalty-tiers__list" data-lion-tier-overview></div>
+</div>

@@ -1,0 +1,126 @@
+<div class="">
+
+  {%- comment %}
+  	1st question
+  {% endcomment -%}
+  <div class="g-wrap__main">
+    <div class="g-main wizard-mode aside theme-1" id="g-main" style="display: none; padding-top: 0px;">
+        <div class="g-content" id="g-content">
+            <div class="g-content__inner">
+              {%- comment %}
+              	Step 1
+              {% endcomment -%}
+              {% render "quiz-step-1" %}
+
+              {%- comment %}
+                Step 2
+              {% endcomment -%}
+              {% render "quiz-step-2" %}
+
+              {%- comment %}
+                Step 3
+              {% endcomment -%}
+              {% render "quiz-step-3" %}
+
+              {%- comment %}
+                Step 4
+              {% endcomment -%}
+              {% render "quiz-step-4" %}
+
+              {%- comment %}
+                Step 5
+              {% endcomment -%}
+              {% render "quiz-step-5" %}
+
+              {%- comment %}
+                Step 5
+              {% endcomment -%}
+              {% render "quiz-step-6" %}
+
+              {%- comment %}
+                Step 5
+              {% endcomment -%}
+              {% render "quiz-step-7" %}
+
+              {%- comment %}
+                Step 8
+              {% endcomment -%}
+              {% render "quiz-step-8" %}
+
+              {% render "quiz-step-9" %}
+
+
+              {% render "quiz-step-10" %}
+              {% render "quiz-step-11" %}
+              {% render "quiz-step-12" %}
+              {% render "quiz-step-13" %}
+              {% render "quiz-step-14" %}
+              {% render "quiz-step-15" %}
+              {% render "quiz-step-16" %}
+              {% render "quiz-step-17" %}
+              {% render "last-step" %}
+
+              <div class="section-container section-result">
+                <div class="g-wrap">
+                  <button type="button" name="button" class="back-btn Button Button--secondary" style="display: none;">Back</button>
+                  <button type="button" name="button" disabled class="m-t-0 m-r-15 multiquestion-continue float-r Form__Submit Button Button--primary" data-male="7" data-female="8" onclick="multiQuiz(this)" style="display: none;">Continue</button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            {%- comment %}
+            	Steps for pagination
+            {% endcomment -%}
+            <div class="g-content__steps">
+                <div class="section-container section-steps">
+                    <div class="container">
+                        <div class="s-wrap">
+                            <div id="question-numbers " class="female_numbers s-wrap__inner">
+                                <div class="s-step active q_numbers_node q_node_id_1" data-realsteps="1" id="q_node_id_1" data-step="1">1<div class="stripe"></div></div>
+                                <div class="s-step q_numbers_node q_node_id_2" data-realsteps="2" data-step="2" id="q_node_id_2">2</div>
+                                <div class="s-step q_numbers_node q_node_id_3" data-realsteps="4" data-step="3" id="q_node_id_3">3</div>
+                                <div class="s-step q_numbers_node q_node_id_4" data-realsteps="5" data-step="4" id="q_node_id_4">4</div>
+                                <div class="s-step q_numbers_node q_node_id_5" data-realsteps="6" data-step="5" id="q_node_id_5">5</div>
+                                <div class="s-step q_numbers_node q_node_id_6" data-realsteps="7" data-step="6" id="q_node_id_6">6</div>
+                                <div class="s-step q_numbers_node q_node_id_7" data-realsteps="8" data-step="7" id="q_node_id_7">7</div>
+                                <div class="s-step q_numbers_node q_node_id_8 " data-realsteps="9" data-step="8" id="q_node_id_8">8</div>
+                                <div class="s-step q_numbers_node q_node_id_9" data-realsteps="10" data-step="9" id="q_node_id_9">9</div>
+                                <div class="s-step q_numbers_node q_node_id_10" data-realsteps="11" data-step="10" id="q_node_id_10">10</div>
+                                <div class="s-step q_numbers_node q_node_id_11" data-realsteps="12" data-step="11" id="q_node_id_11">11</div>
+                                <div class="s-step q_numbers_node q_node_id_12" data-realsteps="13" data-step="12" id="q_node_id_12">12</div>
+                                <div class="s-step q_numbers_node q_node_id_13" data-realsteps="14" data-step="13" id="q_node_id_13">13</div>
+                                <div class="s-step q_numbers_node q_node_id_14" data-realsteps="15" data-step="14" id="q_node_id_14">14</div>
+                                <div class="s-step q_numbers_node q_node_id_15" data-realsteps="16" data-step="15" id="q_node_id_15">15</div>
+                                <div class="s-step q_numbers_node q_node_id_16" data-realsteps="17" data-step="16" id="q_node_id_16">16</div>
+                            </div>
+
+                            <div id="question-numbers " style="display: none;" class="male_numbers s-wrap__inner">
+                                <div class="s-step active q_numbers_node q_node_id_1" data-realsteps="1" id="q_node_id_1" data-step="1">1<div class="stripe"></div></div>
+                                <div class="s-step q_numbers_node q_node_id_2" data-realsteps="2" data-step="2" id="q_node_id_2">2</div>
+                                <div class="s-step q_numbers_node q_node_id_3" data-realsteps="3" data-step="3" id="q_node_id_3">3</div>
+                                <div class="s-step q_numbers_node q_node_id_4" data-realsteps="6" data-step="4" id="q_node_id_4">4</div>
+                                <div class="s-step q_numbers_node q_node_id_5" data-realsteps="7" data-step="5" id="q_node_id_5">5</div>
+                                <div class="s-step q_numbers_node q_node_id_6" data-realsteps="8" data-step="6" id="q_node_id_6">6</div>
+                                <div class="s-step q_numbers_node q_node_id_7" data-realsteps="9" data-step="7" id="q_node_id_7">7</div>
+                                <div class="s-step q_numbers_node q_node_id_8 " data-realsteps="10" data-step="8" id="q_node_id_8">8</div>
+                                <div class="s-step q_numbers_node q_node_id_9" data-realsteps="11" data-step="9" id="q_node_id_9">9</div>
+                                <div class="s-step q_numbers_node q_node_id_10" data-realsteps="12" data-step="10" id="q_node_id_10">10</div>
+                                <div class="s-step q_numbers_node q_node_id_11" data-realsteps="13" data-step="11" id="q_node_id_11">11</div>
+                                <div class="s-step q_numbers_node q_node_id_12" data-realsteps="14" data-step="12" id="q_node_id_12">12</div>
+                                <div class="s-step q_numbers_node q_node_id_13" data-realsteps="15" data-step="13" id="q_node_id_13">13</div>
+                                <div class="s-step q_numbers_node q_node_id_14" data-realsteps="16" data-step="14" id="q_node_id_14">14</div>
+                                <div class="s-step q_numbers_node q_node_id_15" data-realsteps="17" data-step="15" id="q_node_id_15">15</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+</div>

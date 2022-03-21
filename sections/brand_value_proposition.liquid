@@ -1,0 +1,47 @@
+<section class="section spaced bordered bvp">
+  <div class="container text-center">
+    {%- if section.blocks[0].type == "header" -%}
+    <h2 class="header">{{section.blocks[0].settings.heading}}</h2>
+    {%- endif -%}
+    <div class="clearfix">
+      {%- for block in section.blocks -%}
+        {%- if block.type != "header" -%}
+          <span><i class="icon-circle"></i> {{block.settings.text}}</span>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Brand Value Proposition",
+  "blocks": [
+      {
+        "type": "header",
+        "name": "header",
+        "settings" : [{
+          "type": "text",
+          "id": "heading",
+          "label": "Header"
+        }]
+      },
+      {
+       "type" : "text",
+       "name" : "Item",
+       "settings" : [
+           {
+             "type": "text",
+             "id": "text",
+             "label": "Text"
+           }
+       ]
+     }
+  ],
+  "presets": [
+    {
+      "category": "Text",
+      "name": "Brand Value Proposition"
+    }
+  ]
+}
+{% endschema %}

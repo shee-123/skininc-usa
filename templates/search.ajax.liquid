@@ -1,0 +1,69 @@
+{% layout none %}
+
+<div class="Segment">
+    <div class="Segment__Title Segment__Title--flexed">
+        {%- if search.types contains 'product' -%}
+      		<span class="Heading Text--subdued u-h7">Products</span>
+        {%- else -%}
+      		{% if settings.search_mode == 'product,article,page,collection' %}
+      			<span class="Heading Text--subdued u-h7">{{ 'search.general.pages_and_articles' | t }}</span>
+      		{% else %}
+              {%- if search.types contains 'article' and search.types contains 'page' -%}
+                  <span class="Heading Text--subdued u-h7">{{ 'search.general.pages_and_articles' | t }}</span>
+                  {%- elsif search.types contains 'article' -%}
+                  <span class="Heading Text--subdued u-h7">{{ 'search.general.articles' | t }}</span>
+              {%- else -%}
+                  <span class="Heading Text--subdued u-h7">{{ 'search.general.pages' | t }}</span>
+              {%- endif -%}
+      		{% endif %}
+        {%- endif -%}
+    </div>
+
+    <div class="Segment__Content container">
+        {%- if search.results_count == 0 -%}
+            <p>{{ 'search.general.no_results' | t }}</p>
+        {%- else -%}
+            {%- if search.types contains 'product' -%}
+                <div class="row search-results">
+                    {%- for result in search.results limit: results_count -%}
+                        {%- if result.price == 0 -%}
+                            {%- continue -%}
+                        {%- endif -%}
+                        {%- comment -%}The inline onclick is a bit hacky, but it's easier on mobile to have the full line clickable{%- endcomment -%}
+                        <div class="col-sm-12 col-md-12 col-lg-12" onclick="window.location.href = '{{ result.url }}'">
+                            {%- include 'product-search-item', product: result, show_reviews: true -%}
+                        </div>
+                    {%- endfor -%}
+                  	
+                  	{%- if search.results_count > 0 -%}
+                        <a class="Heading Link u-h7 view_all_btn" href="/search?q={{ search.terms }}&type={{ search.types | join: ',' }}">
+                          {{ 'search.general.view_all' | t }} {{ 'search.general.results_count' | t: count: search.results_count }}
+                  		</a>
+                    {%- endif -%}
+                </div>
+            {%- else -%}
+                <ul class="Linklist">
+                    {%- for result in search.results limit: 6 -%}
+                        <li class="Linklist__Item">
+                            <a href="{{ result.url }}" class="Link Link--secondary">{{ result.title }}</a>
+                        </li>
+                    {%- endfor -%}
+                  	<a class="Heading Link u-h7 view_all_btn" href="/search?q={{ search.terms }}&type={{ search.types | join: ',' }}">{{ 'search.general.view_all' | t }}</a>
+                </ul>
+      			
+      			{% if settings.search_mode == 'product,article,page,collection' %}
+      			  <p class="search_index_title Heading Text--subdued u-h7">Categories</p>
+                  <ul class="Linklist collection-search-result">
+                    {% assign search_terms = search.terms | remove: "*" | downcase %}
+                    {%- for collection in collections -%}
+                    	{% assign collection_title = collection.title | downcase %}
+                    	{%- if collection_title contains search_terms -%}
+                    		<li class="collection-search-item"><a href="{{ collection.url }}">{{ collection.title }}</a></li>
+                    	{%- endif -%}
+                    {%- endfor -%}
+                  </ul>
+      			{% endif %}
+            {%- endif -%}
+        {%- endif -%}
+    </div>
+</div>

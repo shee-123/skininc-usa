@@ -1,0 +1,209 @@
+{% if customer  %}
+<script type="text/javascript">
+  window.location = "/pages/earn-point";
+</script>
+{% endif %}
+
+
+
+<div class="reward-page">
+  <div class="container">   
+    
+    <div class="banner_reward">
+      <h2>Login Page</h2>      
+    </div>
+    
+    <div class="lgin_cust_pg">
+      <div class="lgin_lf" id="login_myaccount" >
+        <section data-section-id="login" data-section-type="login">
+    <div class="PageContent PageContent--fitScreen">
+      {%- assign is_recover_active = false -%}
+
+      {%- form 'recover_customer_password' -%}
+        {%- if form.errors or form.posted_successfully? -%}
+          {%- assign is_recover_active = true -%}
+        {%- endif -%}
+      {%- endform -%}
+
+      {%- comment -%}
+      --------------------------------------------------------------------------------------------------------------------
+      CUSTOMER LOGIN FORM
+      --------------------------------------------------------------------------------------------------------------------
+      {%- endcomment -%}
+
+      {%- if is_recover_active -%}
+        {%- assign login_default_visibility = 'display: none' -%}
+      {%- else -%}
+        {%- assign login_default_visibility = 'display: block' -%}
+      {%- endif -%}
+
+      {%- form 'customer_login', name: 'login', class: 'Form Form--spacingTight', id: 'customer_login', style: login_default_visibility -%}
+      <input type="hidden" name="return_to" value="/pages/earn-point" />  
+      <header class="Form__Header">
+          <h1 class="Form__Title Heading u-h1">{{ 'customer.login.title' | t }}</h1>
+          <p class="Form__Legend">Already have an account?</p>
+        </header>
+
+        {%- if form.errors -%}
+          <p class="Form__Alert Alert Alert--error">
+            {{- form.errors.messages['form'] -}}
+          </p>
+        {%- endif -%}
+
+        <div class="Form__Item">
+          <input type="email" class="Form__Input" name="customer[email]" required="required" placeholder="{{ 'customer.login.email' | t }}" aria-label="{{ 'customer.login.email' | t }}" autofocus>
+          <label class="Form__FloatingLabel">{{ 'customer.login.email' | t }}</label>
+        </div>
+
+        <div class="Form__Item">
+          <input type="password" class="Form__Input" name="customer[password]" required="required" placeholder="{{ 'customer.login.password' | t }}" aria-label="{{ 'customer.login.password' | t }}">
+          <label class="Form__FloatingLabel">{{ 'customer.login.password' | t }}</label>
+         </div>
+      
+       <button type="button" class="scrooll Link Link--primary">Forgotten your password?</button>
+        
+
+        <button type="submit" class="Form__Submit Button Button--primary Button--full">SIGN IN</button>
+
+        
+      {%- endform -%}
+<!-- Begin ReCharge code -->
+{% render 'subscription-account-login' %}
+<!-- End ReCharge code -->
+
+
+      {%- comment -%}
+      --------------------------------------------------------------------------------------------------------------------
+      CUSTOMER RECOVERY FORM
+      --------------------------------------------------------------------------------------------------------------------
+      {%- endcomment -%}
+
+      {%- if is_recover_active -%}
+        {%- assign recover_default_visibility = 'display: block' -%}
+      {%- else -%}
+        {%- assign recover_default_visibility = 'display: block' -%}
+      {%- endif -%}
+
+      {%- form 'recover_customer_password', name: 'recover', class: 'Form Form--spacingTight', id: 'recover_customer_password', style: recover_default_visibility -%}
+      <input type="hidden" name="return_to" value="/pages/earn-point" />  
+      <header class="Form__Header">
+          <h1 class="Form__Title Heading u-h1">Reset your password</h1>
+
+          {%- unless form.posted_successfully? -%}
+            <p class="Form__Legend">We will send you an email to reset your password.</p>
+          {%- endunless -%}
+        </header>
+
+        {%- if form.errors -%}
+          <p class="Form__Alert Alert Alert--error">
+            {{- form.errors.messages['form'] -}}
+          </p>
+        {%- endif -%}
+
+        {%- if form.posted_successfully? -%}
+          <p class="Form__Alert Alert Alert--success">
+            {{- 'customer.recover_password.success' | t -}}
+          </p>
+        {%- endif -%}
+
+        <div class="Form__Item">
+          <input type="email" class="Form__Input" name="email" required="required" placeholder="{{ 'customer.recover_password.email' | t }}" aria-label="{{ 'customer.recover_password.email' | t }}" autofocus>
+          <label class="Form__FloatingLabel">{{ 'customer.recover_password.email' | t }}</label>
+        </div>
+
+        <button type="submit" class="Form__Submit Button Button--primary Button--full">SUBMIT</button>
+
+        
+      {%- endform -%}
+    </div>
+  <script>
+  var url_string = window.location.href
+  var url = new URL(url_string);
+  var c = url.searchParams.get("redirect");
+  if(c){
+    var i = document.createElement("input");
+    i.setAttribute('type',"hidden");
+    i.setAttribute('name',"checkout_url");
+    i.setAttribute('value',c);
+    document.getElementById("customer_login").appendChild(i);
+    document.getElementById("recover_customer_password").appendChild(i);
+  }
+</script>
+</section>
+
+        
+        
+      </div>
+      <div class="lgin_rt" id="signup_myaccount">
+         <section data-section-id="reset-password" data-section-type="reset-password">
+    <div class="PageContent PageContent--fitScreen">
+      
+      {%- form 'create_customer', name: 'create_customer', class: 'Form Form--spacingTight', id: 'create_customer' -%}
+        <input type="hidden" name="checkout_url" value="/pages/earn-point" />
+      <header  class="Form__Header">
+          <h1 class="Form__Title Heading u-h1">Create account and<br>recieve 50 reward points!</h1>
+          <p class="Form__Legend">Create an account to be enrolled in the Skin Inc Rewards Program! You’ll get 50 Reward Points for setting up an account along with the
+options below to receive bonus Rewards Points.</p>
+        </header>
+
+        {%- if form.errors -%}
+          <div class="Form__Alert Alert Alert--error">
+            <ul class="Alert__ErrorList">
+              {%- for field in form.errors -%}
+                {%- if field == 'form' -%}
+                  <li class="Alert__ErrorItem">{{ form.errors.messages[field] }}</li>
+                {%- else -%}
+                  <li class="Alert__ErrorItem"><strong>{{ form.errors.translated_fields[field] }}</strong> {{ form.errors.messages[field] }}</li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+
+        <div class="Form__Item">
+          <input type="text" class="Form__Input" name="customer[first_name]" aria-label="{{ 'customer.register.first_name' | t }}" placeholder="{{ 'customer.register.first_name' | t }}" autofocus>
+          <label class="Form__FloatingLabel">{{ 'customer.register.first_name' | t }}</label>
+        </div>
+
+        <div class="Form__Item">
+          <input type="text" class="Form__Input" name="customer[last_name]" aria-label="{{ 'customer.register.last_name' | t }}" placeholder="{{ 'customer.register.last_name' | t }}">
+          <label class="Form__FloatingLabel">{{ 'customer.register.last_name' | t }}</label>
+        </div>
+      
+      	<div class="Form__Item">
+          <input type="date" class="Form__Input" name="customer[note][birthday]" aria-label="{{ 'customer.register.birthday' | t }}" placeholder="{{ 'customer.register.birthday' | t }}">
+          <label class="Form__FloatingLabel">{{ 'customer.register.birthday' | t }}</label>
+        </div>
+
+        <div class="Form__Item">
+          <input type="email" class="Form__Input" name="customer[email]" aria-label="{{ 'customer.register.email' | t }}" placeholder="{{ 'customer.register.email' | t }}" required="required">
+          <label class="Form__FloatingLabel">{{ 'customer.register.email' | t }}</label>
+        </div>
+
+        <div class="Form__Item">
+          <input type="password" class="Form__Input" name="customer[password]" aria-label="{{ 'customer.register.password' | t }}" placeholder="{{ 'customer.register.password' | t }}" required="required">
+          <label class="Form__FloatingLabel">{{ 'customer.register.password' | t }}</label>
+        </div>
+
+        <button type="submit" class="Form__Submit Button Button--primary Button--full">{{ 'customer.register.submit' | t }}</button>
+        
+      {%- endform -%}
+    </div>
+</section>
+
+        
+      </div>
+    
+    </div>
+    
+    
+    
+    
+  </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+<section class="section bordered spaced" data-section-id="{{ section.id }}" data-section-type="stores">
+  <div class="container">
+    {%- if section.settings.header -%}
+    <h2 class="header text-center">{{section.settings.header | escape }}</h2>
+    {%- endif -%}
+    <div class="row">
+      {%- for block in section.blocks -%}
+      {%- assign image_url = block.settings.image | img_url : "original"-%}
+      {%- assign image_large_url = block.settings.image_large | img_url: 'original' -%}
+      <div class="col-sm-4 thumbnail">
+        {%- if image_large_url != blank -%}
+          <a href="{{ image_large_url }}" class="lightbox" data-target="#store-view-modal" target="_blank">
+            <img class="img-responsive" src="{{ image_url }}" alt="{{ block.settings.image.alt | escape }}">
+          </a>
+        {%- else -%}
+          <img class="img-responsive" src="{{ image_url }}" alt="{{ block.settings.image.alt | escape }}">
+        {%- endif -%}
+        <div class="caption">
+          <h4>{{ block.settings.name | escape }}</h4>
+          <p>{{ block.settings.address | escape }}</p>
+          <a href="{{ block.settings.direction }}" target="_blank" class="Link Link--underline">Get Direction</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="modal fade" tabindex="-1" role="dialog" id="store-view-modal">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        {%- include 'icon' with 'close'-%}
+        </button>
+        <div class="modal-body">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Stores",
+  "settings": [
+  {
+    "type": "text",
+    "id": "header",
+    "label": "Heading"
+  }
+  ],
+  "blocks": [
+  {
+    "type": "store",
+    "name": "Store",
+    "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "394 x 263px jpg recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_large",
+      "label": "Large Image",
+      "info": "1190 x 790px jpg recommended"
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "label": "Store Name"
+    },
+    {
+      "type": "text",
+      "id": "address",
+      "label": "Store Address"
+    },
+    {
+      "type": "text",
+      "id": "direction",
+      "label": "Direction Link"
+    }
+    ]
+  }
+  ],
+  "presets": [
+  {
+    "category": "Text",
+    "name": "Stores",
+    "settings": {}
+  }
+  ]
+}
+{% endschema %}

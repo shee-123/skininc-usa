@@ -1,0 +1,442 @@
+{%- capture section_settings -%}
+{
+  "type": {{ settings.cart_type | json }},
+  "itemCount": {{ cart.item_count }},
+  "drawer": false,
+  "total_price":  {{ cart.total_price }},
+  "hasShippingEstimator": {% if section.settings.show_shipping_estimator and cart.item_count > 0 %}true{% else %}false{% endif %}
+}
+{%- endcapture -%}
+{% assign existRechargeItem = false %}
+{% assign has_gift_wrapping = false  %}
+{% assign gift_wrapping_price = 0 %}
+{%- for line_item in cart.items -%}
+  {%- if line_item.product.handle == "gift-wrapping" -%}
+    {% assign has_gift_wrapping = true  %}
+    {% assign gift_wrapping_price = line_item.price  %}
+  {%- endif -%}
+
+  {%- if line_item.properties['shipping_interval_frequency'] -%}
+    {% assign existRechargeItem = true %}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- capture cart_info -%}
+{
+  "itemCount": {{ cart.item_count }},
+  "total_price":  {{ cart.total_price }},
+  "gwp" : {{ has_gift_wrapping }},
+  "gwpp": {{ gift_wrapping_price }}
+}
+{%- endcapture -%}
+<section data-section-id="{{ section.id }}" data-section-type="cart" data-section-settings='{{ section_settings }}'>
+  {%- if cart.item_count == 0 -%}
+    <div class="EmptyState">
+      <div class="Container">
+        <h1 class="EmptyState__Title Heading u-h5">{{ 'cart.general.empty' | t }}</h1>
+        {%- if settings.cart_show_free_shipping_threshold -%}
+          {%- assign threshold_in_cents = settings.cart_free_shipping_threshold | times: 100 -%}
+          {%- capture remaining_amount -%}<span>{{ cart.total_price | minus: threshold_in_cents | abs | money_without_trailing_zeros }}</span>{%- endcapture -%}
+          <p class="Text--subdued">{{- 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount -}}</p>
+        {%- endif -%}
+        <a href="/collections/all" class="EmptyState__Action Button Button--primary">{{ 'cart.general.empty_button' | t }}</a>
+      </div>
+    </div>
+  {%- else -%}
+    <div class="Container">
+      <header class="PageHeader">
+        <div class="SectionHeader SectionHeader--center">
+          <h1 class="SectionHeader__Heading Heading u-h1">{{ 'cart.general.title' | t }}</h1>
+
+          {%- if settings.cart_show_free_shipping_threshold -%}
+            {%- assign threshold_in_cents = settings.cart_free_shipping_threshold | times: 100 -%}
+            <p class="SectionHeader__Description Text--subdued">
+              {%- comment %}
+                {%- if cart.total_price >= threshold_in_cents -%}
+                  {{- 'cart.general.free_shipping' | t -}}
+                {%- else -%}
+                  {%- capture remaining_amount -%}<span>{{ cart.total_price | minus: threshold_in_cents | abs | money_without_trailing_zeros }}</span>{%- endcapture -%}
+                  {{- 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount -}}
+                {%- endif -%}
+              {% endcomment -%}
+              <div class="PageContent">
+              {%- include 'shipping-progressbar' -%}
+              </div>
+
+            </p>
+          {%- endif -%}
+        </div>
+      </header>
+      <div class="PageContent">
+        <form action="/cart" method="POST" class="Cart Cart--expanded" novalidate  data-cart-info='{{ cart_info }}'>
+          <input type="hidden" name="attributes[collection_mobile_items_per_row]" value="">
+          <input type="hidden" name="attributes[collection_desktop_items_per_row]" value="">
+          
+          
+          
+          {% include 'cart-items' %}
+          {% include 'cart-gift-wrapping' %}
+
+          <div class="Cart__free">
+            {% include 'cart-free-gifts' %}
+            {% include 'cart-free-samples' %}
+        </div>
+
+          <footer class="Cart__Footer">
+
+            {%- if settings.cart_enable_notes -%}
+              <div class="Cart__NoteContainer">
+
+                {% if section.settings.personalise_your_gift %}                              
+                  {% include 'Personalize_gift' %}
+                {% endif %} 
+                
+                <span class="Cart__NoteButton">{{ 'cart.general.add_note' | t }}</span>
+                <textarea class="Cart__Note Form__Textarea" name="note" id="cart-note" rows="4" placeholder="{{ 'cart.general.note_placeholder' | t }}">{{ cart.note }}</textarea>
+              </div>
+            {%- endif -%}
+            <div class="Cart__Recap">
+              <div class="cartpage">
+                  <!-- customer's approved (redeemable) points -->
+                  {%- if customer -%}
+                    <div class="drawer-foot lion-points">
+                      <p class="inline">Loyalty Points:</p>
+                      <span data-lion-points="approved" class="inline"></span>
+                    </div>
+                  {%- endif -%}
+
+              </div>
+              {%- capture shipping_and_taxes_notice -%}{{ 'cart.general.shipping_and_taxes_notice' | t }}{%- endcapture -%}
+              <span class="Cart__Total Heading u-h4">{{ 'cart.general.total' | t }}: <span data-money-convertible class="bundler-cart-price-info-container">{{ cart.total_price | money_without_trailing_zeros }}</span></span>
+              <p class="affirm-as-low-as" data-page-type="cart" data-amount="{{cart.total_price}}"></p>
+              
+              {% if cart.total_price > 7500 %}
+                <span class="Cart__Taxes Text--subdued">You are qualified for free shipping.</span>
+              {%- elsif shipping_and_taxes_notice != blank -%}
+                <span class="Cart__Taxes Text--subdued">{{ shipping_and_taxes_notice }}</span>
+              {%- endif -%}
+              
+              <div class="cart-promo">
+              <div class="cart-inner_promo">
+                <input type="text" id="devPromo" placeholder="Discount code or Gift Card">
+                <a href="/checkout?discount=none" id="redemDevPromo">Apply</a>
+              </div>
+            </div>
+
+            {%- assign preorder = 0 -%}
+            {%- assign nopreorder = 0 -%}
+
+            {% if cart.item_count > 0 %}
+              {% for item in cart.items %}
+                {% if item.product.tags contains 'Preorder' %}
+                    {%- assign preorder = 1 -%}
+                {% else %}
+                     {%- assign nopreorder = 1 -%}
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+
+            {% if preorder > 0 and nopreorder > 0 %}
+              <p class="pre_ord">Your basket includes pre-order items that will be send out as a separate tracked package. Kindly remove other items in your cart and place them as a separate in order to complete checkout.</p>
+            {% else %}
+              
+              {% if existRechargeItem %}
+              <button name="checkout" class="Cart__Checkout Button Button--primary Button--full active">{{ 'cart.general.checkout' | t }}</button>
+              {% else %}
+              <a name="checkout"  href="/checkout" class="Cart__Checkout Button Button--primary Button--full active">{{ 'cart.general.checkout' | t }}</a>
+              {% endif %}
+              
+              <ul class="payment_icon">
+                {%- for type in shop.enabled_payment_types -%}
+                  <li>{{ type | payment_type_svg_tag }}</li>
+                  {%- endfor -%}
+              </ul>
+              
+            {% endif %}  
+              
+              
+            </div>
+          </footer>
+        </form>
+        {%- if section.settings.show_shipping_estimator -%}
+          <div class="Section Section--spacingExtraLarge">
+            <div class="Panel">
+              <h2 class="Panel__Title Heading u-h2">{{ 'cart.shipping_estimator.title' | t }}</h2>
+              <div class="Panel__Content">
+                <div class="ShippingEstimator">
+                  <div class="ShippingEstimator__Form">
+                    <div class="ShippingEstimator__Country Form__Select Select Select--primary">
+                      {%- include 'icon' with 'select-arrow' -%}
+                      <select name="country" title="{{ 'cart.shipping_estimator.country' | t }}" data-default="{% if customer %}{{ customer.default_address.country }}{% elsif section.settings.shipping_estimator_default_country != '' %}{{ section.settings.shipping_estimator_default_country }}{% endif %}">{{ all_country_option_tags }}</select>
+                    </div>
+                    <div class="ShippingEstimator__Province Form__Select Select Select--primary" style="display: none">
+                      {%- include 'icon' with 'select-arrow' -%}
+                      <select name="province" title="{{ 'cart.shipping_estimator.province' | t }}"></select>
+                    </div>
+                    <input type="text" class="ShippingEstimator__Zip Form__Input" name="zip" placeholder="{{ 'cart.shipping_estimator.zip_code' | t }}">
+                    <button type="button" class="ShippingEstimator__Submit Button Button--primary">{{ 'cart.shipping_estimator.estimate' | t }}</button>
+                  </div>
+                  <div class="ShippingEstimator__Error Alert Alert--error" style="display: none"></div>
+                  <div class="ShippingEstimator__Results">
+                    <div class="ShippingEstimator__ResultsInner"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+</section>
+
+<style type="text/css">
+  #launcher, #loyaltylion{
+    display: none !important;
+  }
+</style>
+{% schema %}
+{
+  "name": "Cart page",
+  "class": "shopify-section--bordered",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_shipping_estimator",
+      "label": "Show shipping rates calculator",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "shipping_estimator_default_country",
+      "label": "Default country to use",
+      "info": "If your customer is logged-in, the country in his default shipping address will be selected.",
+      "default": "United States"
+    },
+    {
+      "type": "checkbox",
+      "id": "personalise_your_gift",
+      "label": "Personalise Your Gift",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "spend-x-get-y",
+      "name": "Spend $X get Y",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product_handle",
+          "label": "Free gift product"
+        },
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "type": "text",
+          "info": "The variant id for the customer to receive"
+        },
+        {
+          "id": "min_price",
+          "label": "Cart minimum price",
+          "type": "text",
+          "info": "Price in cents. eg for $150 enter '15000'"
+        },
+        {
+          "type": "text",
+          "id": "message",
+          "label": "Gift message",
+          "default": "Gift item",
+          "info": "A short message to appear at checkout"
+        }
+      ]
+    },
+    {
+      "type": "tierspend-x-get-y",
+      "name": "Tier Spend $X get Y",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product_handle",
+          "label": "Free gift product"
+        },
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "type": "text",
+          "info": "The variant id for the customer to receive"
+        },
+        {
+          "id": "min_price",
+          "label": "Cart minimum price",
+          "type": "text",
+          "info": "Price in cents. eg for $150 enter '15000'"
+        },
+        {
+          "type": "text",
+          "id": "message",
+          "label": "Gift message",
+          "default": "Gift item",
+          "info": "A short message to appear at checkout"
+        },
+        {
+          "type": "product",
+          "id": "product_handle2",
+          "label": "Free gift product 2"
+        },
+        {
+          "id": "variant_id2",
+          "label": "Variant ID 2",
+          "type": "text",
+          "info": "The variant id for the customer to receive"
+        },
+        {
+          "id": "min_price2",
+          "label": "Cart minimum price 2",
+          "type": "text",
+          "info": "Price in cents. eg for $150 enter '15000'"
+        },
+        {
+          "type": "text",
+          "id": "message2",
+          "label": "Gift message 2",
+          "default": "Gift item",
+          "info": "A short message to appear at checkout"
+        }
+      ]
+    },
+    {
+      "type": "personalise_your_gift",
+      "name": "Personalise your gift",
+      "settings": [
+        {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      	},
+        {
+          "type": "checkbox",
+          "id": "buy_gift",
+          "label": "Buy as a gift",
+          "default": true
+        },  
+        {
+        "type": "text",
+        "id": "buy_gift_text",
+        "label": "Buy as a gift"
+      	},
+        { 
+          "type": "checkbox",
+          "id": "perso_mess",
+          "label": "Personalized Message",
+          "default": true
+        },
+        {
+        "type": "text",
+        "id": "personalized_message_text",
+        "label": "Personalized Message"
+      	}  
+      ]
+    },
+    {
+      "type": "buy-x-get-y-gift",
+      "name": "Buy X get Y gift",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product_handle",
+          "label": "Free gift product"
+        },
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "type": "text",
+          "info": "The variant id for the customer to receive"
+        },
+        {
+          "id": "handle",
+          "label": "Original prodict",
+          "type": "product",
+          "info": "The product the customer adds to their cart"
+        },
+        {
+          "type": "text",
+          "id": "message",
+          "label": "Gift message",
+          "default": "Gift item",
+          "info": "A short message to appear at checkout"
+        }
+      ]
+    },
+    {
+      "type": "buy-x-get-y-gift-qty",
+      "name": "Buy X get Y gift (qty)",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product_handle",
+          "label": "Free gift product"
+        },
+        {
+          "id": "min_qty",
+          "label": "Min Quantity ",
+          "type": "text",
+          "info": "The minimum for the customer to receive"
+        },
+        {
+          "id": "variant_id",
+          "label": "Variant ID",
+          "type": "text",
+          "info": "The variant id for the customer to receive"
+        },
+        {
+          "id": "handle",
+          "label": "Original product",
+          "type": "product",
+          "info": "The product the customer adds to their cart"
+        },
+        {
+          "type": "text",
+          "id": "message",
+          "label": "Gift message",
+          "default": "Gift item",
+          "info": "A short message to appear at checkout"
+        }
+      ]
+    },
+    {
+      "type": "free_samples",
+      "name": "Free Sample",
+      "settings": [
+        {
+          "type": "product",
+          "id": "sample",
+          "label": "Free sample"
+        },
+        {
+          "type": "select",
+          "id": "condition",
+          "label": "Price Condition",
+          "options": [
+            {
+              "value": ">=",
+              "label": "Greater than or equal to"
+            },
+            {
+              "value": "<=",
+              "label": "Lesser than or equal to"
+            }
+          ],
+          "default": ">="
+        },
+        {
+          "id": "min_price",
+          "label": "Cart minimum price",
+          "type": "text",
+          "info": "Price in cents. eg for $150 enter '15000'"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

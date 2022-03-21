@@ -1,0 +1,82 @@
+<div class="faqpage">
+{% for block in section.blocks %}  
+	{% if block.type == 'faq-content' %}
+  
+  <div class="toggle">
+	<div class="toggle-title">
+		<h3>
+		<i></i>
+		<span class="title-name">{{ block.settings.faq_question }}</span>
+		</h3>
+	</div>
+	<div class="toggle-inner" style="display: none;">
+      <p>{{ block.settings.faq_answer }}</p>
+    </div>
+  </div>
+     
+      
+   {% endif %}
+{% endfor %}
+</div>   
+ 
+   
+{% schema %}
+    {
+    "name": "faq-content",
+    "blocks":
+    [
+        {
+            "type": "faq-content",
+            "name": "faq-content",
+            "settings": [ 
+                {
+                    "type": "text",
+                    "id": "sectionid",
+                    "label": "sectionid"
+                }, 
+                {
+                    "type": "text",
+                    "id": "faq_question",
+                    "label": "Faq Question"
+                },
+				{
+                    "type": "text",
+                    "id": "faq_answer",
+                    "label": "Faq Answer"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
+ 
+
+
+<style>
+/* Styles for page  */
+
+.toggle .toggle-title i {
+  position: absolute;
+  background: url("{{ 'minus.png' | asset_url }}") no-repeat;
+  filter: invert(1);    
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+  margin: 20px;
+  right: 0;
+}
+.toggle .toggle-title.active i {
+  background: url("{{ 'plus.png' | asset_url }}") 0px 0px no-repeat;
+  filter: none;
+}
+  
+  
+@media (max-width: 640px) { 
+.toggle .toggle-title i {
+    margin: 13px 0;
+}
+  
+}
+  
+
+</style>

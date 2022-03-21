@@ -1,0 +1,27 @@
+<div class="ProductMetaList">
+  <ul>
+    {%- for tag in product.tags -%}
+      {%- if tag contains '__points' -%}
+        {%- assign points = tag | split: ':' | last -%}
+        <li>
+          {%- include 'icon' with 'checked' -%}
+          {{- 'product.general.points_html' | t: points: points -}}
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if settings.cart_show_free_shipping_threshold -%}
+      {%- assign threshold_in_cents = settings.cart_free_shipping_threshold | times: 100 -%}
+        <li class="free_shipping_product" style="display: none;">
+          {%- include 'icon' with 'checked' -%}
+          {{- 'cart.general.free_shipping' | t -}}
+        </li>
+        {%- capture remaining_amount -%}<span class="product_ship_price ship_price">{{ cart.total_price | minus: threshold_in_cents | abs | money_without_trailing_zeros }}</span>{%- endcapture -%}
+        <li class="shipping_product_page" style="display: none;">
+          {%- include 'icon' with 'checked' -%}
+          {{- 'product.general.free_shipping_html' | t: remaining_amount: remaining_amount -}}
+        </li>
+
+    {%- endif -%}
+  </ul>
+</div>

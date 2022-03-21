@@ -1,0 +1,59 @@
+<div class="EmptyState">
+  <div class="container">
+    {% assign image_url = section.settings.image | img_url: 'original' -%}
+    <img src="{{ image_url }}" alt={{block.settings.image.alt}}>
+    <h1 class="header">{{ section.settings.heading | escape}}</h1>
+    <p class="EmptyState__Description Text--subdued">{{ section.settings.subheading | escape}}</p>
+    <a href="{{ section.settings.button_1_link | escape}}" class="EmptyState__Action Button Button--primary">{{ section.settings.button_1_text | escape }}</a>
+    <a href="{{ section.settings.button_2_link | escape}}" class="EmptyState__Action Button Button--primary">{{ section.settings.button_2_text | escape }}</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "404",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_1_text",
+      "label": "Button 1 Text"
+    },
+    {
+      "type": "url",
+      "id": "button_1_link",
+      "label": "Button 1 Link"
+    },
+    {
+      "type": "text",
+      "id": "button_2_text",
+      "label": "Button 2 Text"
+    },
+    {
+      "type": "url",
+      "id": "button_2_link",
+      "label": "Button 2 Link"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Text",
+      "name": "404"
+    }
+  ]
+}
+{% endschema %}

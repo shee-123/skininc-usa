@@ -1,0 +1,166 @@
+{% comment %} Find free gifts already in the cart {% endcomment %}
+{%- assign gift_variant_ids_in_cart = '' -%}
+{% assign count_gift_varint = 0 %}
+{% assign maximum_allowed_gift = 3 %}
+{%- for line_item in cart.items -%}
+{%- if line_item.properties['_g'] == 'true' -%}
+{%- assign variant_id = line_item.variant.id -%}
+ {% assign count_gift_varint = count_gift_varint | plus: 1 %}
+{%- assign gift_variant_ids_in_cart = gift_variant_ids_in_cart | append: '##' | append: variant_id -%}
+{%- endif -%}
+{%- endfor -%}
+
+
+{%- assign gift_variant_ids_to_add_to_cart = '' -%}
+
+{% comment %} Find BUY X GET Y offers {% endcomment %}
+{%- for block in section.blocks -%}
+{%- if block.type != 'buy-x-get-y-gift' -%}
+{%- continue -%}
+{%- endif -%}
+{%- assign product_handle = block.settings.handle -%}
+{%- assign gift_product_variant_id = block.settings.variant_id -%}
+{%- assign gift_product_handle = block.settings.product_handle -%}
+{%- assign gift_product_message = block.settings.message -%}
+{%- assign gift_product_dependency = all_products[product_handle].id -%}
+
+{%- if gift_product_variant_id == blank or gift_product_handle == blank -%}
+{%- continue -%}
+{%- endif -%}
+
+{%- for line_item in cart.items -%}
+{%- if line_item.product.handle == product_handle -%}
+{%- unless gift_variant_ids_in_cart contains gift_product_variant_id -%}
+{%- assign gift_variant_ids_to_add_to_cart = gift_variant_ids_to_add_to_cart | append: '##' | append: gift_product_variant_id | append: '||' | append: gift_product_handle | append: '||' | append: gift_product_message | append: '||' | append: gift_product_dependency -%}
+{%- endunless -%}
+{%- endif -%}
+{%- endfor -%}
+{%- endfor -%}
+
+{% comment %} Find SPEND X GET Y offers {% endcomment %}
+{%- assign cart_total = cart.total_price -%}
+{%- for block in section.blocks -%}
+{%- if block.type != 'spend-x-get-y' -%}
+{%- continue -%}
+{%- endif -%}
+{%- assign threshold_price = block.settings.min_price | plus: 0 -%}
+{%- if cart_total > threshold_price -%}
+
+{%- assign gift_product_variant_id = block.settings.variant_id -%}
+{%- assign gift_product_handle = block.settings.product_handle -%}
+{%- assign gift_product_dependency = threshold_price | prepend: '$' -%}
+
+{%- if gift_product_variant_id == blank or gift_product_handle == blank -%}
+{%- continue -%}
+{%- endif -%}
+
+{%- unless gift_variant_ids_in_cart contains gift_product_variant_id -%}
+{%- assign gift_variant_ids_to_add_to_cart = gift_variant_ids_to_add_to_cart | append: '##' | append: gift_product_variant_id | append: '||' | append: gift_product_handle | append: '||' | append: gift_product_message | append: '||' | append: gift_product_dependency -%}
+{%- endunless -%}
+
+{%- endif -%}
+{%- endfor -%}
+
+{% comment %} Find SPEND X GET Y offers {% endcomment %}
+{%- assign cart_total = cart.total_price -%}
+{%- for block in section.blocks -%}
+{%- if block.type != 'tierspend-x-get-y' -%}
+{%- continue -%}
+{%- endif -%}
+
+<input type="hidden" name="" value="{{block.settings.min_price}}" data-vid="{{block.settings.variant_id}}" class="tiergwp_{{block.settings.variant_id}}">
+<input type="hidden" name="" value="{{block.settings.min_price2}}" data-vid="{{block.settings.variant_id2}}" class="tiergwp_{{block.settings.variant_id2}}">
+{%- assign threshold_price = block.settings.min_price | plus: 0 -%}
+{%- assign threshold_price2 = block.settings.min_price2 | plus: 0 -%}
+
+<input type="hidden" name="" value="{{block.settings.min_price}}-{{block.settings.min_price2}}-{{cart_total}}">
+  {%- if cart_total >= threshold_price and cart_total < threshold_price2 -%}
+
+    {%- assign gift_product_variant_id = block.settings.variant_id -%}
+    {%- assign gift_product_handle = block.settings.product_handle -%}
+    {%- assign gift_product_dependency = threshold_price | prepend: '$' -%}
+
+    {%- if gift_product_variant_id == blank or gift_product_handle == blank -%}
+    {%- continue -%}
+    {%- endif -%}
+
+    {%- unless gift_variant_ids_in_cart contains gift_product_variant_id -%}
+      {%- assign gift_variant_ids_to_add_to_cart = gift_variant_ids_to_add_to_cart | append: '##' | append: gift_product_variant_id | append: '||' | append: gift_product_handle | append: '||' | append: gift_product_message | append: '||' | append: gift_product_dependency -%}
+    {%- endunless -%}
+
+  {%- endif -%}
+
+  {%- if cart_total >= threshold_price2 -%}
+
+    {% assign gift_first_tier_id = block.settings.variant_id %}
+    {%- assign gift_product_variant_id = block.settings.variant_id2 -%}
+    {%- assign gift_product_handle = block.settings.product_handle2 -%}
+    {%- assign gift_product_dependency = threshold_price2 | prepend: '$' -%}
+
+    {%- if gift_product_variant_id == blank or gift_product_handle == blank -%}
+    {%- continue -%}
+    {%- endif -%}
+
+    {%- unless gift_variant_ids_in_cart contains gift_product_variant_id -%}
+      {%- if cart_total >= threshold_price2 -%}
+        {%- assign gift_variant_ids_to_add_to_cart = gift_variant_ids_to_add_to_cart | append: '##' | append: gift_product_variant_id | append: '||' | append: gift_product_handle | append: '||' | append: gift_product_message | append: '||' | append: gift_product_dependency -%}
+      {%- endif -%}
+    {%- endunless -%}
+
+  {%- endif -%}
+{%- endfor -%}
+
+
+{%- if gift_variant_ids_to_add_to_cart != blank and count_gift_varint < maximum_allowed_gift-%}
+<div class="Collapsible Collapsible--large">
+  <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="true">
+    Free Gift(s) <span class="Collapsible__Plus"></span>
+    <p class="SectionHeader__Description Text--subdued">Add your free gift(s) to bag</p>
+  </button>
+  <div class="Collapsible__Inner" style="overflow: visible; height: auto;">
+    <div class="Collapsible__Content">
+      <div class="Rte">
+        <div class="free-products-section">
+          <div class="products-list row">
+            {%- assign free_gifts = gift_variant_ids_to_add_to_cart | split: '##' -%}
+            {%- for free_gift in free_gifts -%}
+            {%- assign this_gift      = free_gift | split: '||' -%}
+            {%- assign variant_id     = this_gift[0] -%}
+            {%- assign product_handle = this_gift[1] -%}
+            {%- assign message        = this_gift[2] -%}
+            {%- assign dependency     = this_gift[3] -%}
+            {%- assign product        = all_products[product_handle] -%}
+            {%- if variant_id == blank or product_handle == blank -%}
+            {%- continue -%}
+            {%- endif -%}
+
+            {% for variant in product.variants %}
+            {%- assign variant_id     = variant.id -%}
+            {%- capture variant_data -%}
+            {
+              "id": "{{ variant_id }}",
+              "g": "true",
+              "m": "{{ message }}",
+              "s": "{{ variant_id | times: 1337 | plus: product.id }}",
+              "d": "{{ dependency }}"
+            }
+            {%- endcapture -%}
+            {% if variant.available and gift_variant_ids_to_add_to_cart contains variant_id %}
+            <div class="free-offer">
+              <div class="image-wrapper">
+                <img class="ProductItem__Image Image--lazyLoad Image--fadeIn" data-src="{{ product.featured_image | img_url: '240x' }}" data-sizes="auto" alt="{{ product.featured_image.alt | escape }}" data-image-id="{{ product.featured_image.id }}">
+                <span class="Image__Loader"></span>
+              </div>
+              <p class="title">{{ product.title }}</p>
+              <button type="button" class="Button Button--primary Button--small" data-action="add-free-gift" data-p='{{ variant_data }}'>{{- 'product.form.add_to_cart' | t -}}</button>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%- endif -%}

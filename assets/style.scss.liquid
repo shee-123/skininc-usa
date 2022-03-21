@@ -1,0 +1,785 @@
+/*================ SETTINGS ================*/
+
+/*============================================================================
+  Grid Breakpoints & Class Names
+==============================================================================*/
+
+/* Breakpoints:
+   name breakpoint container
+   Defaults: xs == 36em = 576px
+             sm == 48em = 768px
+             md == 62em = 992px
+             lg == 75em = 1200px */
+
+$grid-breakpoints:
+        xs 36em 34rem,
+        sm 48em 46rem,
+        md 62em 61rem, // DEV NOTE: These container sizes do not apply on this site
+        lg 75em 71rem,
+        xl 92.5em 87.5rem !default;
+// $grid-max: strip-units(nth(nth($grid-breakpoints, length($grid-breakpoints)), 3)) * $font-size-base;
+$grid-max: 100%;
+
+
+/*================ HELPERS ================*/
+
+.bg--white {
+  background-color: #fff;
+}
+
+.overflow-visible {
+  overflow: visible;
+}
+
+.no-padding-sideways {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/*================ Media Query Mixin ================*/
+@mixin media-query($media-query) {
+  $breakpoint-found: false;
+
+  @each $breakpoint in $breakpoints {
+    $name: nth($breakpoint, 1);
+    $declaration: nth($breakpoint, 2);
+
+    @if $media-query == $name and $declaration {
+      $breakpoint-found: true;
+
+      @media only screen and #{$declaration} {
+        @content;
+      }
+    }
+  }
+
+  @if $breakpoint-found == false {
+    @warn 'Breakpoint "#{$media-query}" does not exist';
+  }
+}
+
+@mixin mq($bp) {
+  @each $breakpoint in $grid-breakpoints {
+    $name: nth($breakpoint, 1);
+    $width: nth($breakpoint, 2);
+
+    @if $bp == $name and $width {
+      @media only screen and (min-width: #{$width}) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin mq-max($bp) {
+  @each $breakpoint in $grid-breakpoints {
+    $name: nth($breakpoint, 1);
+    $width: nth($breakpoint, 2) - 0.01em;
+
+    @if $bp == $name and $width {
+      @media only screen and (max-width: #{$width}) {
+        @content;
+      }
+    }
+  }
+}
+
+// Flexbox Mixins - http://philipwalton.github.io/solved-by-flexbox/
+// Flexbox Containers
+// The 'flex' value causes an element to generate a block-level flex container box.
+// The 'inline-flex' value causes an element to generate a inline-level flex container box.
+// display: flex | inline-flex
+@mixin flexbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+%flexbox { @include flexbox; }
+
+@mixin display($value) {
+  @if $value == flex {
+    @include flexbox();
+  } @else {
+    display: $value;
+  }
+}
+
+//----------------------------------
+@mixin inline-flex {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+%inline-flex { @include inline-flex; }
+//----------------------------------------------------------------------
+// Flexbox Direction
+// The 'flex-direction' property specifies how flex items are placed in the flex container, by setting the
+// direction of the flex container's main axis. This determines the direction that flex items are laid out in.
+// Values: row | row-reverse | column | column-reverse
+// Default: row
+@mixin flex-direction($value: row) {
+  @if $value == row-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+  } @else if $value == column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+  } @else if $value == column-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+  } @else {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+  }
+  -webkit-flex-direction: $value;
+  -moz-flex-direction: $value;
+  -ms-flex-direction: $value;
+  flex-direction: $value;
+}
+@mixin flex-dir($args...) { @include flex-direction($args...); }
+//----------------------------------------------------------------------
+// Flexbox Wrap
+// The 'flex-wrap' property controls whether the flex container is single-line or multi-line, and the direction
+// of the cross-axis, which determines the direction new lines are stacked in.
+// Values: nowrap | wrap | wrap-reverse
+// Default: nowrap
+@mixin flex-wrap($value: nowrap) {
+  // No Webkit Box fallback.
+  -webkit-flex-wrap: $value;
+  -moz-flex-wrap: $value;
+  @if $value == nowrap {
+    -ms-flex-wrap: nowrap;
+  } @else {
+    -ms-flex-wrap: $value;
+  }
+  flex-wrap: $value;
+}
+//----------------------------------------------------------------------
+// Flexbox Flow (shorthand)
+// The 'flex-flow' property is a shorthand for setting the 'flex-direction' and 'flex-wrap' properties, which
+// together define the flex container's main and cross axes.
+// Values: <flex-direction> | <flex-wrap>
+// Default: row nowrap
+@mixin flex-flow($values: (row nowrap)) {
+  // No Webkit Box fallback.
+  -webkit-flex-flow: $values;
+  -moz-flex-flow: $values;
+  -ms-flex-flow: $values;
+  flex-flow: $values;
+}
+//----------------------------------------------------------------------
+// Flexbox Order
+// The 'order' property controls the order in which flex items appear within
+// their flex container, by assigning them to ordinal groups.
+// Default: 0
+@mixin order($int: 0) {
+  @if type-of($int) == 'string' {
+    -webkit-box-ordinal-group: $int;
+  } @else {
+    -webkit-box-ordinal-group: $int + 1;
+  }
+  -webkit-order: $int;
+  -moz-order: $int;
+  -ms-flex-order: $int;
+  order: $int;
+}
+//----------------------------------------------------------------------
+// Flexbox Grow
+// The 'flex-grow' property sets the flex grow factor. Negative numbers are invalid.
+// Default: 0
+@mixin flex-grow($int: 0) {
+  -webkit-box-flex: $int;
+  -webkit-flex-grow: $int;
+  -moz-flex-grow: $int;
+  -ms-flex-positive: $int;
+  flex-grow: $int;
+}
+//----------------------------------------------------------------------
+// Flexbox Shrink
+// The 'flex-shrink' property sets the flex shrink factor. Negative numbers are invalid.
+// Default: 1
+@mixin flex-shrink($int: 1) {
+  -webkit-flex-shrink: $int;
+  -moz-flex-shrink: $int;
+  -ms-flex-negative: $int;
+  flex-shrink: $int;
+}
+//----------------------------------------------------------------------
+// Flexbox Basis
+// The 'flex-basis' property sets the flex basis. Negative lengths are invalid.
+// Values: Like "width"
+// Default: auto
+@mixin flex-basis($value: auto) {
+  -webkit-flex-basis: $value;
+  -moz-flex-basis: $value;
+  -ms-flex-preferred-size: $value;
+  flex-basis: $value;
+}
+//----------------------------------------------------------------------
+// Flexbox "Flex" (shorthand)
+// The 'flex' property specifies the components of a flexible length: the flex grow factor and flex shrink
+// factor, and the flex basis. When an element is a flex item, 'flex' is consulted instead of the main size
+// property to determine the main size of the element. If an element is not a flex item, 'flex' has no effect.
+// Values: none | <flex-grow> <flex-shrink> || <flex-basis>
+// Default: See individual properties (1 1 0).
+@mixin flex($fg: 1, $fs: null, $fb: null) {
+  // Set a variable to be used by box-flex properties
+  $fg-boxflex: $fg;
+  // Box-Flex only supports a flex-grow value so let's grab the
+  // first item in the list and just return that.
+  @if type-of($fg) == 'list' {
+    $fg-boxflex: nth($fg, 1);
+  }
+  -webkit-box-flex: $fg-boxflex;
+  -webkit-flex: $fg $fs $fb;
+  -moz-box-flex: $fg-boxflex;
+  -moz-flex: $fg $fs $fb;
+  -ms-flex: $fg $fs $fb;
+  flex: $fg $fs $fb;
+}
+//----------------------------------------------------------------------
+// Flexbox Justify Content
+// The 'justify-content' property aligns flex items along the main axis of the current line of the flex container.
+// This is done after any flexible lengths and any auto margins have been resolved. Typically it helps distribute
+// extra free space leftover when either all the flex items on a line are inflexible, or are flexible but have
+// reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.
+// Note: 'space-*' values not supported in older syntaxes.
+// Values: flex-start | flex-end | center | space-between | space-around
+// Default: flex-start
+@mixin justify-content($value: flex-start) {
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -moz-box-pack: start;
+  } @else if $value == flex-end {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    -moz-box-pack: end;
+  } @else if $value == space-between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -moz-box-pack: justify;
+  } @else if $value == space-around {
+    -ms-flex-pack: distribute;
+  } @else {
+    -webkit-box-pack: $value;
+    -ms-flex-pack: $value;
+    -moz-box-pack: $value;
+  }
+  -webkit-justify-content: $value;
+  -moz-justify-content: $value;
+  justify-content: $value;
+}
+@mixin flex-just($args...) { @include justify-content($args...); }
+//----------------------------------------------------------------------
+// Flexbox Align Items
+// Flex items can be aligned in the cross axis of the current line of the flex container, similar to 'justify-content'
+// but in the perpendicular direction. 'align-items' sets the default alignment for all of the flex container's items,
+// including anonymous flex items. 'align-self' allows this default alignment to be overridden for individual flex items.
+// (For anonymous flex items, 'align-self' always matches the value of 'align-items' on their associated flex container.)
+// Values: flex-start | flex-end | center | baseline | stretch
+// Default: stretch
+@mixin align-items($value: stretch) {
+  @if $value == flex-start {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -moz-box-align: start;
+    -ms-grid-row-align: start;
+  } @else if $value == flex-end {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    -moz-box-align: end;
+    -ms-grid-row-align: end;
+  } @else {
+    -webkit-box-align: $value;
+    -ms-flex-align: $value;
+    -moz-box-align: $value;
+    -ms-grid-row-align: $value;
+  }
+  -webkit-align-items: $value;
+  -moz-align-items: $value;
+  align-items: $value;
+}
+//----------------------------------
+// Flexbox Align Self
+// Values: auto | flex-start | flex-end | center | baseline | stretch
+// Default: auto
+@mixin align-self($value: auto) {
+  // No Webkit Box Fallback.
+  -webkit-align-self: $value;
+  -moz-align-self: $value;
+  @if $value == flex-start {
+    -ms-flex-item-align: start;
+  } @else if $value == flex-end {
+    -ms-flex-item-align: end;
+  } @else {
+    -ms-flex-item-align: $value;
+  }
+  align-self: $value;
+}
+//----------------------------------------------------------------------
+// Flexbox Align Content
+// The 'align-content' property aligns a flex container's lines within the
+// flex container when there is extra space in the cross-axis, similar to
+// how 'justify-content' aligns individual items within the main-axis. Note,
+// this property has no effect when the flexbox has only a single line.
+// Values: flex-start | flex-end | center | space-between | space-around | stretch
+// Default: stretch
+@mixin align-content($value: stretch) {
+  // No Webkit Box Fallback.
+  -webkit-align-content: $value;
+  -moz-align-content: $value;
+  @if $value == flex-start {
+    -ms-flex-line-pack: start;
+  } @else if $value == flex-end {
+    -ms-flex-line-pack: end;
+  } @else {
+    -ms-flex-line-pack: $value;
+  }
+  align-content: $value;
+}
+
+
+
+/*================ SECTIONS ================*/
+
+.AnnouncementBar {
+  @include display(flex);
+  @include mq-max(sm) {
+    @include flex-wrap(wrap);
+  }
+}
+
+.AnnouncementBar__Wrapper {
+  @include flex-basis(100%);
+}
+
+
+
+.Header__FlexItem .Header__Logo {
+  margin-left: 0;
+}
+
+@include mq-max(lg) {
+  .Header__FlexItem--flex {
+    @include display(flex);
+    @include align-items(center);
+    .Header__Icon--login {
+      margin-right: 20px;
+    }
+    .Icon--login {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  left: calc(100% - 35px);
+  z-index: 9999;
+}
+
+.icon-gallery {
+  padding: 20px;
+  @include mq-max(sm) {
+    padding: 5px;
+  }
+}
+
+.icon-gallery__container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.icon-gallery__title {
+  margin-top: 60px;
+  text-align: center;
+  color: #ababab;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2.1px !important;
+  @include mq-max(sm) {
+    margin-top: 40px;
+  }
+}
+
+.icon-gallery__wrapper {
+  margin: 0 auto;
+  max-width: 650px;
+  @include display(flex);
+  @include mq-max(sm) {
+    @include flex-wrap(wrap);
+    max-width: 313px;
+  }
+}
+
+.icon-gallery__item {
+  @include display(flex);
+  @include flex-basis(25%);
+  padding: 0 5px;
+  @include mq-max(sm) {
+    @include flex-basis(50%);
+    &:nth-child(1), &:nth-child(2) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.icon-gallery__img {
+  width: 23px;
+  height: 23px;
+  margin-right: 12px;
+}
+
+.icon-gallery__text {
+  color: #ababab;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+#section-loyalty-top-banner {
+  margin-bottom: 70px;
+  @include mq-max(sm) {
+    margin-bottom: 40px;
+  }
+  .ImageHero__content {
+    max-width: 42%;
+    margin-right: -10%;
+    text-align: center;
+    margin-left: auto;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    @include mq-max(lg) {
+      max-width: 50%;
+    }
+    @include mq-max(md) {
+      max-width: none;
+      margin-right: 0;
+    }
+  }
+  .ImageHero__title {
+    color: #f4f5fa;
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 3.84px;
+    @include mq-max(sm) {
+      font-size: 36px;
+    }
+    .ImageHero__subtitle {
+      font-size: 40px;
+      color: #d7b4b5;
+    }
+  }
+
+  .ImageHero__buttons {
+    width: 65%;
+    @include display(flex);
+    margin: 0 auto;
+    @include justify-content (space-between);
+    @include mq-max(md) {
+      width: 100%;
+      max-width: 310px;
+    }
+  }
+  .ImageHero__button {
+    @include display(flex);
+    @include justify-content (center);
+    @include align-items(center);
+    width: 136px;
+    height: 44px;
+    border: 3px solid #ffffff;
+    color: #f4f5fa;
+    font-size: 20px;
+    letter-spacing: 2px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    &:hover {
+      background-color: #f8cfd3;
+      border-color: #f8cfd3;
+    }
+  }
+}
+
+/*================ TEMPLATES ================*/
+@include mq-max(sm){
+  .PageHeader--withBackground {
+    background: #ffffff!important;
+  }
+  .PageHeader__ImageWrapper {
+    background-position: 90% center;
+  }
+  .PageHeader.PageHeader--withBackground .container {
+    width: auto;
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+    & .SectionHeader {
+      padding: 20px 10px;
+      background-color: rgba(255,255,255,.7);
+    }
+    & .SectionHeader__Heading {
+      margin-bottom: 0;
+    }
+  }
+}
+
+h2.loyalty-h2 {
+  color: #9a9b9e;
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  text-align: center;
+}
+
+.loyalty-rules {
+  margin-bottom: 70px;
+  @include mq-max(sm) {
+    margin-bottom: 20px;
+  }
+  .loyalty-rules__title {
+    margin-top: 100px;
+    @include mq-max(sm) {
+      margin-top: 40px;
+    }
+  }
+  .loyalty-rules__list {
+    max-width: 930px;
+    margin: 0 auto;
+    .lion-rules-list {
+      @include justify-content(space-between);
+      @include mq-max(sm) {
+        padding: 10px 15px;
+        @include justify-content(center);
+      }
+      .lion-rule-item {
+        @include flex(0 1 33.33%);
+        max-width: 280px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        .lion-rule-item__content {
+          padding: 0;
+          @include justify-content(space-between);
+        }
+        .lion-rule-item__icon {
+          position: absolute;
+          top: -27px;
+          right: -27px;
+          background-size: 50%;
+          border-radius: 50%;
+          box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.12);
+          background-color: #fff;
+          z-index: 2;
+        }
+        .lion-rule-item__title {
+          min-height: 75px;
+          text-align: left;
+          width: 100%;
+          color: #9a9b9e;
+        }
+        .lion-rule-item__points {
+          padding: 0 15px;
+          @include display(flex);
+          @include align-items(center);
+          @include justify-content(flex-start);
+          height: 50px;
+          width: 100%;
+          background-color: #fbfbfb;
+          .value, .text {
+            color: #9a9b9e;
+            font-weight: 400;
+          }
+
+        }
+      }
+
+    }
+    &.loyalty-rules__list--active {
+      .lion-rules-list {
+        .lion-rule-item {
+          &.lion-rule-item--actionable:hover {
+            .lion-rule-item__content {
+              border: 1px solid #d7b4b5;
+            }
+          }
+          .lion-rule-item__content {
+            padding-bottom: 10px;
+            .lion-rule-item__points {
+              background-color: #ffffff;
+              @include justify-content(center);
+            }
+            .lion-action-button {
+              border-radius: 0;
+              background: #d7b4b5;
+              color: #fff;
+              border: 1px solid #e8c5c5;
+              &:hover {
+                background-color: #ffffff;
+                border: 1px solid #a37272;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.loyalty-tiers {
+  max-width: 1052px;
+  margin: 100px auto;
+  @include mq-max(sm){
+    padding: 0 15px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .lion-tier-box {
+    margin-right: 36px;
+    margin-left: 36px;
+    border-color: #cccccc;
+    @include mq-max(sm){
+      margin: 0 0 10px;
+    }
+    .lion-tier-box__header {
+      padding: 0;
+      .lion-tier-box__title {
+        background-color: #cccccc;
+        color: #fefefe;
+        font-size: 24px;
+        font-weight: 400;
+        letter-spacing: 0.6px;
+        line-height: 1;
+        padding: 16px 0;
+      }
+      .lion-tier-box__sub-title {
+        height: 88px;
+        @include display(flex);
+        @include align-items(center);
+        @include justify-content(center);
+        color: #f8cfd3;
+        font-size: 22px;
+        font-weight: 400;
+      }
+    }
+    .lion-tier-box__footer--current, .lion-progress-bar__container {
+      background-color: #f8cfd3;
+    }
+    .lion-progress-bar__fill {
+      background-color: #a37272;
+    }
+  }
+}
+
+/*=======Loyalty offer=======*/
+
+.loyalty-offer {
+  max-width: 782px;
+  margin: 0 auto;
+  @include mq-max(sm) {
+    max-width: 540px;
+    padding: 0 15px;
+  }
+  .loyalty-offer__title {
+    margin-bottom: 60px;
+    @include mq-max(sm) {
+      margin-bottom: 40px;
+    }
+  }
+  .loyalty-offer-img-with-text-block {
+    @include display(flex);
+    @include mq-max(sm) {
+      @include flex-direction(column-reverse);
+      @include flex-wrap(wrap);
+    }
+  }
+  .loyalty-offer-img-with-text-block__image-wrapper, .loyalty-offer-img-with-text-block__text-wrapper {
+    @include flex-basis(50%);
+    @include mq-max(sm) {
+      @include flex-basis(100%);
+    }
+  }
+  .loyalty-offer-img-with-text-block__text-wrapper {
+    background-color: #cbc9c9;
+    padding: 16px;
+    .loyalty-offer-img-with-text-block__text {
+      border: 2px solid #ffffff;
+      width: 100%;
+      height: 100%;
+      @include display(flex);
+      @include align-items(center);
+      text-align: center;
+      @include justify-content(center);
+      @include mq-max(sm) {
+        min-height: 100px;
+      }
+      .loyalty-offer-img-with-text-block__name {
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 48px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: #ffffff;
+        @include mq-max(sm) {
+          font-size: 20px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+  .loyalty_offer_3_img {
+    @include display(flex);
+    @include flex-wrap(wrap);
+    margin-right: -5px;
+    margin-left: -5px;
+    margin-top: 33px;
+    @include mq-max(md) {
+      margin-right: 0;
+      margin-left: 0;
+    }
+    .loyalty_offer_3_img__item {
+      @include flex-basis(33.33%);
+      padding: 0 6px;
+      @include mq-max(sm) {
+        padding: 0;
+        &:not(:first-child) {
+          margin-top: 35px;
+        }
+        @include flex-basis(100%);
+      }
+    }
+  }
+  a {
+    @include display(flex);
+    @include align-items(center);
+  }
+}
+
+
+/*================ MODULES ================*/
+
+.Drawer--fromRight {
+  z-index: 1000000001;
+}
+
+.Drawer--fromLeft {
+  z-index: 1000000001;
+}
+
+
+/*================ SNIPPETS ================*/
+.product-card a.Button {
+  padding: 14px;
+}
+

@@ -1,0 +1,82 @@
+<section class="section spaced bordered featured-products-section" data-section-id="{{ section.id }}">
+    <div class="container">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a id="best-sellers-tab" class="nav-link active" href="#" data-target="#featured-products-best-sellers">Best Sellers</a>
+        </li>
+        <li class="nav-item">
+          <a id="custom-serums" class="nav-link" href="#"  data-target="#featured-products-custom-serums">Custom Serums</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="featured-products-best-sellers" role="tabpanel" aria-labelledby="best-sellers-tab">
+          <div class="list carousel">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.type == "best_sellers" -%}
+              {%- assign product = all_products[block.settings.product] -%}
+              {%- if product != blank -%}
+              <div class="item">
+                {%- include 'product-card', show_add_to_cart: true -%}
+              </div>
+              {%- endif -%}
+           {%- endif -%}
+          {%- endfor -%}
+          </div>
+        </div>
+        <div class="tab-pane" id="featured-products-custom-serums" role="tabpanel" aria-labelledby="custom-serums-tab">
+          <div class="list carousel">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.type == "custom_serums" -%}
+              {%- assign product = all_products[block.settings.product] -%}
+              {%- if product != blank -%}
+              <div class="item">
+                {%- include 'product-card', show_add_to_cart: true -%}
+              </div>
+              {%- endif -%}
+           {%- endif -%}
+          {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+{% schema %}
+{
+  "name": "Featured products",
+  "blocks": [
+     {
+       "type" : "product",
+       "name" : "Product",
+       "settings" : [
+           {
+             "type": "product",
+             "id": "product",
+             "label": "Product"
+           },
+           {
+             "type": "select",
+             "id": "type",
+             "label": "Type",
+             "options": [
+               {
+                 "value": "best_sellers",
+                 "label": "Best Sellers"
+               },
+               {
+                 "value": "custom_serums",
+                 "label": "Custom Serums"
+               }
+             ],
+             "default": "best_sellers"
+           }
+       ]
+     }
+  ],
+  "presets": [
+    {
+      "category": "Product",
+      "name": "Featured products"
+    }
+  ]
+}
+{% endschema %}

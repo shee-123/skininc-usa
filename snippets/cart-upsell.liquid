@@ -1,0 +1,19 @@
+{% assign upsell_product = all_products[settings.cart_product] %}
+<div class="js-cart__upsell padding-30 m-t-30">
+  <div class="text-center">
+    <h2 class=" fontWeight-6 m-b-0" style="font-size: 18px">FEATURED PRODUCT</h2>
+    <img class="lazyload empty_cart" src="{{ upsell_product.featured_image | img_url: 'x150', scale: 2}}">
+    {%- if show_reviews != false -%}
+      {%- include 'yotpo-stars2', product: upsell_product -%}
+    {%- endif -%}
+    <h4 class="cart-product-title fontWeight-6">{{upsell_product.title}}</h3>
+    <p class="upsell-p">
+      {{upsell_product.description | truncatewords: 40 }}
+    </p>
+  </div>
+  <div class="m-t-20">
+    {% assign new_price = upsell_product.price | money %}
+    <input style="background: #fbdcce;" type="button" onclick="addItemAPI('{{upsell_product.selected_or_first_available_variant.id}}')" class=" Button Button--primary Button--full" name="" value="Add to bag  • {{new_price}}">
+  </div>
+
+</div>

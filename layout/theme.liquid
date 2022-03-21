@@ -1,0 +1,511 @@
+<!doctype html>
+<html class="no-js" lang="{{ shop.locale }}">
+<head>
+  <!-- Tiktok Pixel -->
+  <script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+
+  ttq.load('C8PBN1A3RRRFDD69OG0G');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+  <!-- Tiktok Pixel End -->
+  <!-- Geo IP Redirect -->
+    <script>
+      (function(g,e,o,t,a,r,ge,tl,y,s){
+      t=g.getElementsByTagName(e)[0];y=g.createElement(e);y.async=true;
+      y.src='https://g990421675.co/gr?id=-MSfk0SBiPMPDgP0-qnp&refurl='+g.referrer+'&winurl='+encodeURIComponent(window.location);
+      t.parentNode.insertBefore(y,t);
+      })(document,'script');
+      </script>
+    <!-- End Geo IP Redirect -->
+  	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="theme-color" content="{{ settings.accent_color }}">
+  	<meta name="google-site-verification" content="8oTzfhpjmDyWA7Umk5gK_wICSo-uMtFUOU4L5u7mKfQ" />
+  	<meta name="p:domain_verify" content="5b486028bca8591fdaf6edc89a5a645f"/>
+  	
+    <!-- Yotpo Rest of the world -->
+    <script type="text/javascript">(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/BbEqQkWcuDTXrmOx17C9YwbOYfzKLjtuffBIlvqm/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();</script>
+
+    <!-- Global site tag (gtag.js) - Google Ads: 974289217 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-974289217"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-974289217');
+    </script>
+    <!-- Google Optimize -->
+    <script src="https://www.googleoptimize.com/optimize.js?id=OPT-NTQFVFM"></script>
+    <title>
+      {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+    </title>
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+    <link rel="canonical" href="{{ canonical_url }}">
+    {%- if settings.favicon -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- endif -%}
+    {% include 'social-meta-tags' %}
+
+    {{ content_for_header }}
+
+    <link rel="stylesheet" href="https://use.typekit.net/rpn7job.css">
+    <link rel="stylesheet" href="{{ 'theme.scss.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'custom.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'style.scss.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'jumpstart_reset_styles.scss.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'custom_will.css' | asset_url }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {%- if template contains 'skinid' -%}
+ <link rel="stylesheet" href="{{ 'skininc.scss.css' | asset_url }}">
+{%- endif -%}
+    <script>
+      // This allows to expose several variables to the global scope, to be used in scripts
+      window.theme = {
+        template: {{ template.name | json }},
+        shopCurrency: {{ shop.currency | json }},
+        moneyFormat: {{ shop.money_format | json }},
+        moneyWithCurrencyFormat: {{ shop.money_with_currency_format | json }},
+        currencyConversionEnabled: {{ settings.currency_conversion_enabled | json }},
+        currencyConversionMoneyFormat: {{ settings.currency_conversion_money_format | json }},
+        currencyConversionRoundAmounts: {{ settings.currency_conversion_round_amounts | json }},
+        productImageSize: {{ settings.product_image_size | json }},
+        searchMode: {{ settings.search_mode | json }},
+        showPageTransition: {{ settings.show_page_transition | json }},
+        showElementStaggering: {{ settings.show_element_staggering | json }},
+        showImageZooming: {{ settings.show_image_zooming | json }},
+        enableExperimentalResizeObserver: false,
+          {% if customer %}
+          customerDetail: {
+              email: '{{ customer.email }}',
+              firstName: '{{ customer.first_name  }}',
+              lastName: '{{ customer.last_name }}',
+          },
+          {% endif %}
+        cid : {% if customer %} {{customer.id}} {% else %} false {% endif %}
+      };
+
+      window.languages = {
+        cartAddNote: {{ 'cart.general.add_note' | t | json }},
+        cartEditNote: {{ 'cart.general.edit_note' | t | json }},
+        productImageLoadingError: {{ 'product.slideshow.image_loading_error' | t | json }},
+        productFormAddToCart: {% if product.template_suffix == 'pre-order' %}{{ 'product.form.pre_order' | t | json }}{% else %}{{ 'product.form.add_to_cart' | t | json }}{% endif %},
+        productFormUnavailable: {{ 'product.form.unavailable' | t | json }},
+        productFormSoldOut: {{ 'product.form.sold_out' | t | json }},
+        shippingEstimatorOneResult: {{ 'cart.shipping_estimator.one_result_title' | t | json }},
+        shippingEstimatorMoreResults: {{ 'cart.shipping_estimator.more_results_title' | t | json }},
+        shippingEstimatorNoResults: {{ 'cart.shipping_estimator.no_results_title' | t | json }}
+      };
+
+      window.lazySizesConfig = {
+        loadHidden: false,
+        hFac: 0.5,
+        expFactor: 2,
+        ricTimeout: 150,
+        lazyClass: 'Image--lazyLoad',
+        loadingClass: 'Image--lazyLoading',
+        loadedClass: 'Image--lazyLoaded'
+      };
+
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+      document.documentElement.style.setProperty('--window-height', window.innerHeight + 'px');
+
+      // We do a quick detection of some features (we could use Modernizr but for so little...)
+      (function() {
+        document.documentElement.className += ((window.CSS && window.CSS.supports('(position: sticky) or (position: -webkit-sticky)')) ? ' supports-sticky' : ' no-supports-sticky');
+        document.documentElement.className += (window.matchMedia('(-moz-touch-enabled: 1), (hover: none)')).matches ? ' no-supports-hover' : ' supports-hover';
+      }());
+
+      window.onpageshow = function (event) {
+        if (event.persisted) {
+          window.location.reload();
+        }
+      };
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="{{ 'lazysizes.min.js' | asset_url }}" async></script>
+
+    {% if settings.currency_conversion_enabled %}
+      <script src="//cdn.shopify.com/s/javascripts/currencies.js" defer></script>
+    {% endif %}
+
+    {%- if template == 'customers/addresses' -%}
+      <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer></script>
+      <script src="{{ 'customer_area.js' | shopify_asset_url }}" defer></script>
+    {%- endif -%}
+
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch,Element.prototype.closest,Element.prototype.remove,Element.prototype.classList,Array.prototype.includes,Array.prototype.fill,Object.assign,CustomEvent,IntersectionObserver,IntersectionObserverEntry" defer></script>
+    <script src="{{ 'libs.min.js' | asset_url }}" defer></script>
+    <script src="{{ 'jquery.lineprogressbar.js' | asset_url }}" defer></script>
+    <script src="{{ 'jumpstart_global.js' | asset_url }}" defer></script>
+    <script src="{{ 'recursive_cart.js' | asset_url }}" defer></script>
+    <script src="{{ 'custom.js' | asset_url }}" defer></script>
+    <script src="{{ 'jumpstart_skinid_scripts.js' | asset_url }}" defer></script>
+    <script src="{{ 'skininc.js' | asset_url }}" defer></script>
+  	<script src="{{ 'marquee.js' | asset_url }}" defer></script>
+  	<script src="{{ 'sticky.js' | asset_url }}" defer></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/shopify-cartjs/0.4.1/cart.min.js" defer></script>
+    <!--<script src="{{ 'logic.js' | asset_url }}" defer></script>-->
+    <script type="text/javascript" defer>
+    jQuery(function() {
+        CartJS.init({{ cart | json }}, {
+            "dataAPI": false,
+            "requestBodyClass": "loading"
+        });
+    });
+    </script>
+    <script src="{{ 'jumpstart_reset_scripts.js' | asset_url }}" defer></script>
+
+    {% include 'microdata-schema' %}
+
+    {% if settings.app_wk_enabled %}
+      {% include 'appmate-wishlist-king' %}
+    {% endif %}
+    {% include 'loyaltylion' %}
+
+
+    {% comment %} HREFLANG TAGS {% endcomment %}
+ 	{%- assign row_domain = 'iloveskininc.com' -%}
+ 	{%- assign sg_domain = 'www.iloveskininc.com.sg' -%}
+ 	{%- assign us_domain = 'iloveskininc.us' -%}
+
+ 	{%- assign row_store = false -%}
+ 	{%- assign sg_store = false -%}
+  	{%- assign us_store = false -%}
+
+ 	{%- if shop.permanent_domain contains 'skininc-row' -%}
+ 	{%- assign row_store = true -%}
+ 	{%- endif -%}
+
+ 	{%- if shop.permanent_domain contains 'skininc-dev' -%}
+ 	{%- assign sg_store = true -%}
+ 	{%- endif -%}
+
+ 	{%- if shop.permanent_domain contains 'skininc-usa' -%}
+ 	{%- assign us_store = true -%}
+ 	{%- endif -%}
+
+   	{%- if row_store == true -%}
+   	{%- assign row_canonical_url = canonical_url | replace: shop.permanent_domain, row_domain -%}
+   	{%- assign sg_canonical_url = canonical_url | replace: row_domain, sg_domain | replace: shop.permanent_domain, sg_domain -%}
+   	{%- assign us_canonical_url = canonical_url | replace: row_domain, us_domain | replace: shop.permanent_domain, us_domain -%}
+   	{%- endif -%}
+
+	{%- if sg_store == true -%}
+ 	{%- assign sg_canonical_url = canonical_url | replace: shop.permanent_domain, sg_domain -%}
+   	{%- assign row_canonical_url = canonical_url | replace: sg_domain, row_domain | replace: shop.permanent_domain, row_domain -%}
+   	{%- assign us_canonical_url = canonical_url | replace: sg_domain, us_domain | replace: shop.permanent_domain, us_domain -%}
+ 	{%- endif -%}
+
+	{%- if us_store == true -%}
+   	{%- assign us_canonical_url = canonical_url | replace: shop.permanent_domain, us_domain -%}
+   	{%- assign row_canonical_url = canonical_url | replace: us_domain, row_domain | replace: shop.permanent_domain, row_domain -%}
+   	{%- assign sg_canonical_url = canonical_url | replace: us_domain, sg_domain | replace: shop.permanent_domain, sg_domain -%}
+ 	{%- endif -%}
+
+
+ 	{% if collection or product or template == 'index' or page.url =='/pages/about-us' or blog -%}
+   	<link rel="alternate" hreflang="en-sg" href="{{ sg_canonical_url }}"	/>
+   	<link rel="alternate" hreflang="en-us" href="{{ us_canonical_url }}"	/>
+   	<link rel="alternate" hreflang="ex-default" href="{{ row_canonical_url }}"	/>
+ 	{%- endif -%}
+ 	{% comment %} END HREFLANG TAGS {% endcomment %}
+
+	<meta name="google-site-verification" content="kSQvH34tH6EKi_OOu-Xnedf69csiCvKjFz6s7x60Qw4" />
+  
+    <!-- Hotjar Tracking Code for https://www.iloveskininc.us -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:2392188,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
+{%- assign yotpo_offload_content = shop.metafields.yotpo.yotpo_offload_content %}
+{%- assign time_now = 'now' | date: '%s' %}
+{%- assign yotpo_live_time = shop.metafields.yotpo.yotpo_live | date: '%s' %}
+{%- assign diffSeconds = time_now | minus: yotpo_live_time %}
+{%- if yotpo_offload_content == 'yes' and diffSeconds < 86400 -%}
+{{ 'yotpo-full-css.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+  <script>
+/* ----------------------------------------------------------------------------------------------------
+            IMPORTANT!
+
+            The code below requires a developer to install and setup.
+
+            Please do not simply copy/paste this onto your website.
+            ---------------------------------------------------------------------------------------------------- */
+
+                // Initiate Web Behaviour Tracking (this section MUST come prior any other dmPt calls)
+                // Do not change this
+                (function(w,d,u,t,o,c){w['dmtrackingobjectname']=o;c=d.createElement(t);c.async=1;c.src=u;t=d.getElementsByTagName
+                (t)[0];t.parentNode.insertBefore(c,t);w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments);};
+                })(window, document, '//static.trackedweb.net/js/_dmptv4.js', 'script', 'dmPt');
+
+                window.dmPt('create', 'DM-2479622448-03', 'iloveskininc.com,iloveskininc.com.sg,iloveskininc.us');
+              window.dmPt('track');
+                // window.dmPt("identify", "test@test.com");  // Hardcoded example, inject contact email address.
+</script>
+{%- if template contains 'skinid' -%}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: "Helvetica Neue";
+            font-weight: 400;
+            src: url('{{ "HelveticaNeueLight.ttf" | asset_url }}') format("truetype");
+        }
+
+        @font-face {
+            font-family: "Helvetica Neue";
+            font-weight: 700;
+            src: url('{{ "HelveticaNeuBold.ttf" | asset_url }}') format("truetype");
+        }
+    </style>
+    <link rel="stylesheet" href="{{ 'app.css' | asset_url }}">
+    <script>
+      window.skinid23 = {
+        landingBg: "{{'hero-image-skinid.png' | asset_img_url: 'x900', scale: 2 }}",
+      }
+    </script>
+    <script src="{{ 'app.js' | asset_url }}"></script>
+{%- endif -%}
+  
+  <script src="https://www.dwin1.com/19038.js" type="text/javascript" defer="defer"></script>
+  
+  <!-- Affirm -->
+  <script>
+  _affirm_config = {
+     public_api_key:  "WGVXM5DYPG42VH3Z",
+     script:          "https://cdn1.affirm.com/js/v2/affirm.js"
+  };
+  (function(l,g,m,e,a,f,b){var d,c=l[m]||{},h=document.createElement(f),n=document.getElementsByTagName(f)[0],k=function(a,b,c){return function(){a[b]._.push([c,arguments])}};c[e]=k(c,e,"set");d=c[e];c[a]={};c[a]._=[];d._=[];c[a][b]=k(c,a,b);a=0;for(b="set add save post open empty reset on off trigger ready setProduct".split(" ");a<b.length;a++)d[b[a]]=k(c,e,b[a]);a=0;for(b=["get","token","url","items"];a<b.length;a++)d[b[a]]=function(){};h.async=!0;h.src=g[f];n.parentNode.insertBefore(h,n);delete g[f];d(g);l[m]=c})(window,_affirm_config,"affirm","checkout","ui","script","ready");
+  // Use your live public API Key and https://cdn1.affirm.com/js/v2/affirm.js script to point to Affirm production environment.
+  </script>
+  <!-- End Affirm -->
+
+  {% render 'shogun-head' %}
+  
+  {% if page.url == '/pages/tiers' or page.url == '/pages/loyalty-program' or page.url == '/pages/earn-point'or page.url == '/pages/rewards' or page.url == '/pages/refer-a-friends' or page.url == '/pages/account-activities' or page.url == '/pages/faq'  or page.url == '/pages/my-account'  -%}
+        <link rel="stylesheet" href="{{ 'loyalty.css' | asset_url }}">
+  {%- endif -%}
+
+  <script>
+    $( document ).on( "click", ".cell", function() {
+      $(".warranty-errmsg").remove();
+      var purchasedate_input = $("input[name='purchaseDate']").val();
+      var present_date = new Date();
+      var purchasedate = new Date(purchasedate_input);
+      var Difference_In_Time = present_date.getTime() - purchasedate.getTime();
+      var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+      var days = Math.round(Difference_In_Days);
+      //console.log(days);
+      if(days > 365){
+          $("input[value='Submit']").prop('disabled', true);
+
+ 
+
+        $(".datepicker").append("<p class='warranty-errmsg'>Your warranty has expired</p>");
+      }
+      else{
+        $("input[value='Submit']").prop('disabled', false);
+        $(".warranty-errmsg").remove();
+      }
+    });
+        
+  </script>
+  
+</head>
+
+  <body class="prestige--v2 {% if template.directory %}template-{{ template.directory | handle }}{% endif %} template-{{ template.name | handle }}">
+    <a class="PageSkipLink u-visually-hidden" href="#main">{{ 'header.navigation.skip_to_content' | t }}</a>
+    <span class="LoadingBar"></span>
+    <div class="PageOverlay" id="overlay"></div>
+    <div class="PageTransition"></div>
+
+    {% section 'popup' %}
+    {% section 'sidebar-menu' %}
+
+    {%- if template != 'cart' -%}
+      {% include 'cart-drawer' %}
+    {%- endif -%}
+    
+    <div class="PageContainer">
+      {% section 'announcement' %}
+      {% section 'header' %}
+      {% include 'breadcrumbs' %}
+
+      <main id="main" role="main">
+        
+        {% if page.url == '/pages/tiers' or page.url == '/pages/loyalty-program' or page.url == '/pages/earn-point'or page.url == '/pages/rewards' or page.url == '/pages/refer-a-friends' or page.url == '/pages/account-activities' or page.url == '/pages/faq' or page.url == '/pages/my-account' -%}
+         {% if customer %} 
+      
+        {% include 'reward_center' %}
+        <div id="your-custom-linklist container">
+            <ul id="some-id">
+            {% for link in linklists.loyalty-menu.links %}
+              <li>
+                <a href="{{ link.url }}" {% if link.active %} class="active"{% endif %}>{{ link.title }}</a>
+              </li>
+            {% endfor %}
+            </ul>
+          </div>    
+  	   
+      {% else %}
+      {% endif %}
+      {%- endif -%}
+        
+        {{ content_for_layout }}
+      </main>
+
+      <!--Announcement redirection tag.-->
+      <h2 id="newsl" ></h2>
+
+      {% section 'footer' %}
+    </div>
+
+    {%- comment -%}
+    --------------------------------------------------------------------------------------------------------------------
+    SEARCH FORM (available globally)
+    --------------------------------------------------------------------------------------------------------------------
+    {%- endcomment -%}
+
+    <div id="Search" class="Ajax_Search Search Modal Modal--fullScreen mobile_search" aria-hidden="true" data-scrollable>
+        <div class="Search__SearchBar">
+
+
+            <form action="/search" name="GET" role="search" class="Search__Form">
+                <input type="search" class="Search__Input Heading" name="q" autocomplete="off" autocorrect="off"
+                       autocapitalize="off" placeholder="{{ 'search.general.input_placeholder' | t }}" autofocus>
+                <input type="hidden" name="type" value="product">
+            </form>
+
+
+            <button class="Search__Close Link Link--primary"
+                    data-action="close-modal">{% include 'icon' with 'close' %}</button>
+        </div>
+
+        <div class="Search__Results">
+            {%- if settings.search_mode != 'product' -%}
+                <div class="PageLayout PageLayout--breakLap">
+                    <div class="PageLayout__Section"></div>
+                    <div class="PageLayout__Section PageLayout__Section--secondary"></div>
+                </div>
+            {%- endif -%}
+        </div>
+    </div>
+    
+		<!-- Begin ReCharge code -->
+		{% include 'subscription-theme-footer' %}
+		<!-- End ReCharge code -->
+
+    <!-- Begin Klaviyo Integration code -->
+        <script
+        async type="text/javascript"
+              src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id=QAqfh5">
+        </script>
+        <script>
+          var _learnq = _learnq || [];
+        </script>
+        <!-- End Klaviyo Integration code -->
+        <input type="hidden" name="" id="js_template" value="{{template}}">
+    
+    <script type="text/javascript" async="" src="https://cdn-bundler.nice-team.net/app/js/bundler.js?shop={{ shop.permanent_domain }}"></script>
+
+<!-- **BEGIN** Hextom CTB Integration // Main Include - DO NOT MODIFY -->
+    {% render 'hextom_ctb_main', product: product, customer: customer %}
+    <!-- **END** Hextom CTB Integration // Main Include - DO NOT MODIFY -->
+    
+    <!-- Tiktok Pixel -->
+    
+     <script>
+      
+      {% if customer %}
+        ttq.identify({
+          email: '{{customer.email}}',
+          phone_number: '{{customer.phone}}',
+        })
+      {% endif %}
+      
+      	ttq.track('ViewContent',{
+content_id:
+ '{{ line_item.variant_id }}', 
+content_type:
+ 'product', 
+content_name:
+ '{{ line_item.product.title }}' 
+})
+
+    </script>
+    <script>
+      {% if template == 'product' %}
+      
+        $(document).on('submit', '.ProductForm', function(e) {
+          ttq.track('AddToCart',{
+content_id:
+ '{{ line_item.variant_id }}', 
+content_type:
+ 'product', 
+content_name:
+ '{{ line_item.product.title }}' 
+})
+        });
+      
+      {% endif %}
+    </script>
+    
+    <!-- Tiktok Pixel End -->
+    
+<!--     <script type="text/javascript">
+document.getElementById("addToCartButton").onclick = function(){
+    ttq.track('AddToCart',{
+content_id:
+ '{{ line_item.variant_id }}', 
+content_type:
+ 'product', 
+content_name:
+ '{{ line_item.product.title }}' 
+})
+        }
+</script>
+     -->
+   <script src="//email.skininc.jp/resources/sharing/popoverv2.js?sharing=lp-popover&domain=email.skininc.jp&id=7APT-590%2Fenjoy-10-off%22&delay=0&mobile=&keydismiss=true&width=860"></script> 
+  
+  </body>
+</html>
+
+<!-- Begin Shopify-Afterpay JavaScript Snippet (v1.0.12) -->
+<script type="text/javascript">
+// Overrides:
+// var afterpay_min = 0.04;            // As per your Afterpay contract.
+// var afterpay_max = 2000.00;         // As per your Afterpay contract.
+// var afterpay_cbt_enabled = false;   // As per your Afterpay contract; change to true to display Cross-Border Trade artwork (for AU/NZ).
+// var afterpay_logo_theme = 'colour'; // Can be 'colour', 'black' or 'white'.
+// var afterpay_product_selector = '#product-price-selector';
+// var afterpay_cart_integration_enabled = true;
+// var afterpay_cart_static_selector = '#cart-subtotal-selector';
+
+// Non-editable fields:
+var afterpay_shop_currency = {{ shop.currency | json }};
+var afterpay_cart_currency = {{ cart.currency.iso_code | json }};
+var afterpay_shop_money_format = {{ shop.money_format | json }};
+var afterpay_shop_permanent_domain = {{ shop.permanent_domain | json }};
+var afterpay_theme_name = {{ theme.name | json }};
+var afterpay_product = {{ product | json }};
+var afterpay_current_variant = {{ product.selected_or_first_available_variant | json }};
+var afterpay_cart_total_price = {{ cart.total_price | json }};
+var afterpay_js_snippet_version = '1.0.12';
+</script>
+<script type="text/javascript" src="https://static.afterpay.com/shopify-afterpay-javascript.js"></script>
+<!-- End Shopify-Afterpay JavaScript Snippet (v1.0.12) -->

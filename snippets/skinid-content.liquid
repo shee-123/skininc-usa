@@ -1,0 +1,95 @@
+{%- comment %}
+	Welcome stage
+{% endcomment -%}
+{% render 'skinid-welcome' %}
+
+{% render 'quiz-content' %}
+
+<style>
+/*!
+ * 2020 dmitry.sachko@raisetech.net
+ */
+
+.section-result .ic2-icon-equal {
+  position: relative !important;
+  top: initial !important;
+  left: initial !important;
+  transform: initial !important;
+}
+
+ .d-flex-block {
+   display: flex;
+ }
+.theme-1 .s-list__item-wrap.is-selected > .s-list__item {
+  background:  #76C8EB !important;
+  color: #fff;
+  border: 0 !important;
+  stroke: #fff !important;
+}
+
+.s-list__item-wrap.is-selected svg {
+  stroke: #fff !important;
+}
+
+.s-list__item-wrap:hover svg {
+  stroke: #fff !important;
+}
+
+.theme-2 .s-list__item-wrap.is-selected > .s-list__item {
+  background: #F2BBAD !important;
+  color: #fff;
+  border: 0 !important;
+  stroke: #fff !important;
+}
+
+.s-list__item-wrap-multi.is-selected > .s-list__item {
+  background:  #76C8EB !important;
+  color: #fff;
+  border: 0 !important;
+}
+
+@media (min-width: 1024px) {
+  .g-main.aside .section-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1280px){
+  .section-result .s-list-dose .s-list__plus {
+      margin: auto 20px;
+  }
+ }
+
+ @media (max-width: 1024px) {
+   .g-wrap__main {
+     display: block;
+   }
+
+   .d-flex-block {
+     display: block;
+   }
+ }
+
+  .section-result .s-list-dose .s-list__plus {
+    position: relative;
+    width: 16px;
+    height: 16px;
+  }
+
+.s-list__item-wrap-multi.is-selected > .s-list__item > .item-pic > svg {
+  stroke: #fff !important;
+}
+
+.s-list__item-wrap {
+  border: 0 !important;
+}
+
+.theme-1 .s-list-question .s-list__item:hover {
+  background: #76c8EB;
+}
+
+.theme-2 .s-list-question .s-list__item:hover {
+  background: #F2BBAD;
+}
+</style>

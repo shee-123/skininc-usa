@@ -1,0 +1,58 @@
+<section class="section spaced intro" data-section-id="{{ section.id }}" data-section-type="homepage-intro">
+    <div class="container">
+      <div class="row">
+        {%- for block in section.blocks -%}
+          {%- assign image_url = block.settings.image | img_url: '603x600' -%}
+          <div class="col-md-6 col-xs-12 {% unless forloop.first %}d-none d-md-block{% endunless %}">
+            <img src="{{ image_url }}" class="img-responsive"/>
+            <div class="caption-wrapper">
+              <div class="caption">
+                <h4><small>{{block.settings.heading}}</small> {{block.settings.subheading}}</h4>
+                <a href="{{ block.settings.button_link }}" class="Button Button--primary">{{block.settings.button_text}}</a>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+</section>
+{% schema %}
+{
+  "name": "Homepage Intro",
+  "max_blocks": 2,
+  "blocks": [
+    {
+      "type": "homepage_intro_item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "603 x 600px jpg recommended"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Subtitle"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

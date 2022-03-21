@@ -1,0 +1,70 @@
+{%- if product.metafields.meta contains "video" or product.metafields.meta contains "suggested_ritual" -%}
+<section class="section spaced bordered product-ritual">
+  {%- if section.settings.show -%}
+  {%- if product.metafields.meta contains "suggested_ritual" -%}
+  <div class="ritual">
+    <div class="container">
+      <div class="row">
+      <div class="col-sm-6">
+        <h2 class="header">Suggested Ritual</h2>
+        <p>{{ product.metafields.meta.suggested_ritual | escape }}</p>
+        <a href="{{product.metafields.meta.suggested_ritual_link}}">{{ product.metafields.meta.suggested_ritual_link_text | escape }}</a>
+      </div>
+      <div class="col-sm-6">
+        <h2 class="header">Benefits</h2>
+        <p>{{ product.metafields.meta.benefits | escape }}</p>
+        <a href="{{product.metafields.meta.benefits_link}}">{{ product.metafields.meta.benefits_link_text | escape }}</a>
+      </div>
+    </div>
+    </div>
+  </div>
+  {%- endif -%}
+  {%- endif -%}
+  {%- if product.metafields.meta contains "video" -%}
+  {%- assign videos = product.metafields.meta.video | split: '|' -%}
+  <div class="container" id="product-ritual-video">
+    <div class="text-center">
+      <h2 class="header">Watch The Video</h2>
+      <div class="video-wrapper">
+        <div class="video-container">
+          <iframe id="product-ritual-yplayer" type="text/html" width="640" height="360"
+          src="https://www.youtube.com/embed/{{ videos.first | escape }}?showinfo=0&controls=0"
+          frameborder="0"></iframe>
+        </div>
+      </div>
+      {% if videos.size > 1 %}
+        <div class="videos-list">
+          {% for videoId in videos %}
+            {% if videoId != blank %}
+             <a href="#" data-src="https://www.youtube.com/embed/{{ videoId }}?showinfo=0&controls=0">
+                <img src="https://img.youtube.com/vi/{{videoId | escape}}/2.jpg"/>
+             </a>
+             {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  {%- endif -%}
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Product Ritual",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show",
+      "label": "Show product ritual",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Ritual",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

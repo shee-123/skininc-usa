@@ -1,0 +1,48 @@
+<section  class="section spaced bordered skinid text-center">
+  <div class="container">
+    {%- assign image_url = section.settings.image | img_url : 'master' -%}
+    <img src="{{ image_url }}" class="img-responsive"/>
+    <div class="content">
+      <h1 class="header">{{ section.settings.title | escape}}</h1>
+      <p>{{  section.settings.subheading | escape}}</p>
+      <a href="{{ section.settings.button_link }}" class="Button Button--primary">{{ section.settings.button_text | escape }}</a>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "skinid",
+  "class": "shopify-section--bordered",
+  "settings": [
+  {
+    "type": "text",
+    "id": "title",
+    "label": "Heading"
+  },
+  {
+    "type": "text",
+    "id": "subheading",
+    "label": "Sub-heading"
+  },
+  {
+    "type": "text",
+    "id": "button_text",
+    "label": "Button Text"
+  },
+  {
+    "type": "url",
+    "id": "button_link",
+    "label": "Button Link"
+  },
+  {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Image"
+  }
+  ],
+  "presets": [{
+    "name": "skinid",
+    "category": "Text"
+  }]
+}
+{% endschema %}

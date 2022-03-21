@@ -1,0 +1,109 @@
+<section class="section spaced our-approach two_bodies" data-section-id="{{ section.id }}">
+  <div class="container">
+    {%- for block in section.blocks -%}
+    {%- if block.type == "header" -%}
+    <h2 class="text-center header">{{block.settings.heading | escape }}</h2>
+    {%- else -%}
+    {%- assign image_url = block.settings.image | img_url: 'master' -%}
+    <div class="row {{ block.settings.direction }} ">
+      <div class="col-sm-6 col-xs-12 img-col">
+          {% if block.settings.img_link != blank %}
+        <a href="{{ block.settings.img_link }}">
+            {% endif %}
+          <img class="img-responsive" src="{{ image_url }}" alt="{{ block.settings.image.alt | escape }}">
+            {% if block.settings.img_link != blank %}
+        </a>
+          {% endif %}
+      </div>
+      <div class="col-sm-6 col-xs-12 des-col">
+        <div class="content">
+          <div>
+          <h4>{{block.settings.title }}</h4>
+          <p>{{block.settings.content}}</p>
+          {% if block.settings.cta_btn_link %}
+          	<a class="Button Button--primary approach-cta" href="{{ block.settings.cta_btn_link }}">{{ block.settings.cta_btn_label }}</a>
+          {% endif %}
+        </div>
+        </div>
+      </div>
+    </div>
+    {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "to-breathe",
+  "class": "shopify-section--bordered",
+  "blocks": [
+  {
+    "type": "header",
+    "name": "header",
+    "settings" : [{
+      "type": "text",
+      "id": "heading",
+      "label": "Header"
+    }]
+  },
+  {
+    "type" : "approach_item",
+    "name" : "row",
+    "settings" : [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "530 x 300px jpg recommended"
+    },
+    {
+      "type": "url",
+      "id": "img_link",
+      "label": "Link for image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "Direction",
+      "options": [
+      {
+        "value": "left",
+        "label": "Left"
+      },
+      {
+        "value": "right",
+        "label": "Right"
+      }
+      ],
+      "default": "left"
+    },
+	{
+      "type": "text",
+      "id": "cta_btn_label",
+      "label": "CTA Button Label"
+    },
+	{
+      "type": "url",
+      "id": "cta_btn_link",
+      "label": "CTA Button Link"
+    }
+    ]
+  }
+  ],
+  "presets": [
+  {
+    "category": "Text",
+    "name": "to-breathe"
+  }
+  ]
+}
+{% endschema %}

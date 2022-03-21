@@ -1,0 +1,1369 @@
+<div class="pmr-group" id="gr-root">
+  {% if section.settings.tab_title != blank or section.settings.tab_desc != blank  %}
+  <div class="pmr-group" id="gr-top-banner">
+    {% if section.settings.tab_title %}
+    <div class="section-heading">
+      <h2>{{ section.settings.tab_title }}</h2>
+    </div>
+    {% endif %}
+
+    {% if section.settings.tab_desc %}
+    <div class="section_desc">
+      <p>{{ section.settings.tab_desc }}</p>
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+  <!--  Banner 1  -->
+  <div class="pmr-group" id="gr-1">
+    <div class="pmr-group" id="gr-1-wrap">
+      {% if section.settings.banner1_desktop_image != blank or section.settings.banner1_mobile_image != blank %}
+      <div class="pmr-group" id="gr-1-wrap-image">
+        {% if section.settings.banner1_desktop_image != blank %}
+        <img alt="{{ section.settings.banner1_desktop_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner1_desktop_image | img_url: 'master' }}" data-sizes="auto" id="im-1-wrap-desktop">
+        {% endif %}
+        {% if section.settings.banner1_desktop_image != blank %}
+        <img alt="{{ section.settings.banner1_desktop_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner1_desktop_image | img_url: 'master' }}" data-sizes="auto" id="im-1-wrap-mobile">
+        {% endif %}
+      </div>
+      {% endif %}
+      {% if section.settings.banner1_title != blank %}
+      <h2 class="pmr-group" id="gr-1-wrap-title">{{ section.settings.banner1_title }}</h2>
+      {% endif %}
+      {% if section.settings.banner1_logo_image != blank %}
+      <img alt="{{ section.settings.banner1_logo_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner1_logo_image | img_url: 'master' }}" data-sizes="auto" id="im-1-wrap-logo">
+      {% endif %}
+    </div>
+  </div>
+  
+  <!--  Banner 2  -->
+  <div class="pmr-group" id="gr-2">
+    <div class="pmr-group" id="gr-2-wrap">
+      {% if section.settings.banner_2_logo_image != blank %}
+      <img alt="{{ section.settings.banner_2_logo_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner_2_logo_image | img_url: 'master' }}" data-sizes="auto" id="gr-2-wrap-logo">
+      {% endif %}
+      {% if section.settings.banner_2_content != blank %}
+      <div class="pmr-group" id="gr-2-wrap-content">{{ section.settings.banner_2_content }}</div>
+      {% endif %}
+      {% if section.settings.banner_2_image != blank %}
+      <img alt="{{ section.settings.banner_2_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner_2_image | img_url: 'master' }}" data-sizes="auto" id="gr-2-wrap-image">
+      {% endif %}
+    </div>
+  </div>
+  
+  <!--  Banner 3  -->
+  <div class="pmr-group" id="gr-3">
+    <div class="pmr-group" id="gr-3-wrap">
+      {% if section.settings.banner_3_video_desktop_image != blank or section.settings.banner_3_video_desktop_link != blank %}
+      <div class="pmr-group" id="gr-3-desktop-video">
+        <div class="pmr-video-wrap">
+          <div class="pmr-video-container">
+            {% if section.settings.banner_3_video_desktop_image != blank %}
+            <img alt="{{ section.settings.banner_3_video_desktop_image.alt | escape }}" class="pmr-image Image--lazyLoad pmr-image-video-img" data-src="{{ section.settings.banner_3_video_desktop_image | img_url: 'master' }}" data-sizes="auto">
+            {% endif %}
+            {% if section.settings.banner_3_video_desktop_link contains '.mp4' or section.settings.banner_3_video_desktop_link contains '.MP4' %}
+              <video
+                class="pmr-video-tag"
+                data-type="mp4"
+                src="{{ section.settings.banner_3_video_desktop_link }}"
+                loop muted playsinline></video>
+            {% endif %}
+          </div>
+          {% if section.settings.banner_3_video_icon != blank or section.settings.banner_3_title != blank  %}
+          <div class="pmr-video-content">
+            {% if section.settings.banner_3_video_icon != blank %}
+            <img alt="{{ section.settings.banner_3_video_icon.alt | escape }}" class="pmr-image Image--lazyLoad pmr-video-play-icon" data-src="{{ section.settings.banner_3_video_icon | img_url: 'master' }}" data-sizes="auto">
+            {% endif %}
+            {% if section.settings.banner_3_title != blank %}
+            	<h2 class="pmr-video-title">{{ section.settings.banner_3_title }}</h2>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+      
+      {% if section.settings.banner_3_video_mobile_image != blank or section.settings.banner_3_video_mobile_link != blank %}
+      <div class="pmr-group" id="gr-3-mobile-video">
+        <div class="pmr-video-wrap">
+          <div class="pmr-video-container">
+            {% if section.settings.banner_3_video_mobile_image != blank %}
+            <img alt="{{ section.settings.banner_3_video_mobile_image.alt | escape }}" class="pmr-image Image--lazyLoad pmr-image-video-img" data-src="{{ section.settings.banner_3_video_mobile_image | img_url: 'master' }}" data-sizes="auto">
+            {% endif %}
+            {% if section.settings.banner_3_video_mobile_link contains '.mp4' or section.settings.banner_3_video_mobile_link contains '.MP4' %}
+              <video
+                class="pmr-video-tag"
+                data-type="mp4"
+                src="{{ section.settings.banner_3_video_mobile_link }}"
+                loop muted playsinline></video>
+            {% endif %}
+          </div>
+          {% if section.settings.banner_3_video_icon != blank or section.settings.banner_3_title != blank  %}
+          <div class="pmr-video-content">
+            {% if section.settings.banner_3_video_icon != blank %}
+            <img alt="{{ section.settings.banner_3_video_icon.alt | escape }}" class="pmr-image Image--lazyLoad pmr-video-play-icon" data-src="{{ section.settings.banner_3_video_icon | img_url: 'master' }}" data-sizes="auto">
+            {% endif %}
+            {% if section.settings.banner_3_title != blank %}
+            	<h2 class="pmr-video-title">{{ section.settings.banner_3_title }}</h2>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+      {% if section.settings.banner_3_btn_label != blank %}
+        <div class="pmr-group" id="gr-3-cta">
+          <a class="pmr-button custom-add-to-cart-button">{{ section.settings.banner_3_btn_label }}</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  
+  <!--  Banner 4  -->
+  <div class="pmr-group" id="gr-4">
+    <div class="pmr-group" id="gr-4-wrap">
+      {% if section.settings.banner_4_icon != blank or section.settings.banner_4_title != blank %}
+      	<div class="pmr-group" id="gr-4-header">
+          {% if section.settings.banner_4_title != blank %}
+          	<span class="pmr-group" id="gr-4-title">{{ section.settings.banner_4_title }}</span>
+          {% endif %}
+          {% if section.settings.banner_4_icon != blank %}
+          <img alt="{{ section.settings.banner_4_icon.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner_4_icon | img_url: 'master' }}" data-sizes="auto">
+          {% endif %}
+      	</div>
+      {% endif %}
+      {% if section.settings.banner_4_desc != blank %}
+      	<div class="pmr-group" id="gr-4-des">
+          {{ section.settings.banner_4_desc }}
+      	</div>
+      {% endif %}
+      <div class="pmr-group" id="gr-4-details">
+        {% if section.settings.banner_4_image != blank %}
+        <div class="pmr-group" id="gr-4-details-img">
+          <img alt="{{ section.settings.banner_4_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner_4_image | img_url: 'master' }}" data-sizes="auto">
+        </div>
+        {% endif %}
+        {% if section.settings.banner_4_details_1 != blank or section.settings.banner_4_details_2 != blank %}
+        <div class="pmr-group" id="gr-4-details-content">
+          <div class="pmr-group" id="gr-4-details-content-left">{{ section.settings.banner_4_details_1 }}</div>
+          <div class="pmr-group" id="gr-4-details-content-right">{{ section.settings.banner_4_details_2 }}</div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  
+  <!--  Banner 5  -->
+  <div class="pmr-group" id="gr-5">
+    <div class="pmr-group" id="gr-5-wrap">
+      {% if section.settings.banner_5_title != blank %}
+      	<h2 class="pmr-group" id="gr-5-wrap-title-top">{{ section.settings.banner_5_title }}</h2>
+      {% endif %}
+      <div class="pmr-group" id="gr-5-left-side">
+        {% if section.settings.banner_5_title != blank %}
+        <h2 class="pmr-group" id="gr-5-wrap-title">{{ section.settings.banner_5_title }}</h2>
+        {% endif %}
+        {% if section.settings.banner_5_image_left != blank %}
+          <div class="pmr-group" id="gr-5-wrap-left-img-content">
+            <img alt="{{ section.settings.banner_5_image_left.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner_5_image_left | img_url: 'master' }}" data-sizes="auto">
+            {% if section.settings.banner5_desc %}
+            <div class="pmr-group" id="gr-5-wrap-left-content">
+              {{ section.settings.banner5_desc }}
+            </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="pmr-group" id="gr-5-right-side">
+        {% if section.settings.banner_5_image_right != blank %}
+        <img alt="{{ section.settings.banner_5_image_right.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner_5_image_right | img_url: 'master' }}" data-sizes="auto">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  
+  <!--  Banner 6  -->
+  <div class="pmr-group" id="gr-6">
+    <div class="pmr-group" id="gr-6-wrap">
+      {% if section.settings.banner_6_video_desktop_image != blank or section.settings.banner_6_video_desktop_link != blank %}
+      <div class="pmr-group" id="gr-6-desktop-video">
+        <div class="pmr-video-wrap">
+          <div class="pmr-video-container">
+            {% if section.settings.banner_6_video_desktop_image != blank %}
+            <img alt="{{ section.settings.banner_6_video_desktop_image.alt | escape }}" class="pmr-image Image--lazyLoad pmr-image-video-img" data-src="{{ section.settings.banner_6_video_desktop_image | img_url: 'master' }}" data-sizes="auto">
+            {% endif %}
+            {% if section.settings.banner_6_video_desktop_link contains '.mp4' or section.settings.banner_6_video_desktop_link contains '.MP4' %}
+              <video
+                class="pmr-video-tag"
+                data-type="mp4"
+                src="{{ section.settings.banner_6_video_desktop_link }}"
+                loop muted playsinline></video>
+            {% endif %}
+          </div>
+          {% if section.settings.banner_6_video_icon != blank or section.settings.banner_6_title != blank  %}
+          <div class="pmr-video-content">
+            {% if section.settings.banner_6_video_icon != blank %}
+            <img alt="{{ section.settings.banner_6_video_icon.alt | escape }}" class="pmr-image Image--lazyLoad pmr-video-play-icon" data-src="{{ section.settings.banner_6_video_icon | img_url: 'master' }}" data-sizes="auto">
+            {% endif %}
+            {% if section.settings.banner_6_title != blank %}
+            	<h2 class="pmr-video-title">{{ section.settings.banner_6_title }}</h2>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+      
+      {% if section.settings.banner_6_video_mobile_image != blank or section.settings.banner_6_video_mobile_link != blank %}
+      <div class="pmr-group" id="gr-6-mobile-video">
+        <div class="pmr-video-wrap">
+          <div class="pmr-video-container">
+            {% if section.settings.banner_6_video_mobile_image != blank %}
+            <img alt="{{ section.settings.banner_6_video_mobile_image.alt | escape }}" class="pmr-image Image--lazyLoad pmr-image-video-img" data-src="{{ section.settings.banner_6_video_mobile_image | img_url: 'master' }}" data-sizes="auto">
+            {% endif %}
+            {% if section.settings.banner_6_video_mobile_link contains '.mp4' or section.settings.banner_6_video_mobile_link contains '.MP4' %}
+              <video
+                class="pmr-video-tag"
+                data-type="mp4"
+                src="{{ section.settings.banner_6_video_mobile_link }}"
+                loop muted playsinline></video>
+            {% endif %}
+          </div>
+          {% if section.settings.banner_6_video_icon != blank or section.settings.banner_6_title != blank  %}
+          <div class="pmr-video-content">
+            {% if section.settings.banner_6_video_icon != blank %}
+            <img alt="{{ section.settings.banner_6_video_icon.alt | escape }}" class="pmr-image Image--lazyLoad pmr-video-play-icon" data-src="{{ section.settings.banner_6_video_icon | img_url: 'master' }}" data-sizes="auto">
+            {% endif %}
+            {% if section.settings.banner_6_title != blank %}
+            	<h2 class="pmr-video-title">{{ section.settings.banner_6_title }}</h2>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+      
+      {% if section.settings.banner_6_btn_label != blank %}
+        <div class="pmr-group" id="gr-6-cta">
+          <a class="pmr-button custom-add-to-cart-button">{{ section.settings.banner_6_btn_label }}</a>
+        </div>
+      {% endif %}
+      {% if section.settings.banner_6_scan_title != blank or section.settings.banner_6_scan_icon != blank %}
+        <div class="pmr-group" id="gr-6-scan">
+          {% if section.settings.banner_6_scan_title != blank %}
+          	<h3 id="gr-6-scan-title">{{ section.settings.banner_6_scan_title }}</h3>
+          {% endif %}
+          {% if section.settings.banner_6_scan_icon != blank %}
+          	<img alt="{{ section.settings.banner_6_scan_icon.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner_6_scan_icon | img_url: 'master' }}" data-sizes="auto">
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  
+  <!--  Banner 7  -->
+  <div class="pmr-group" id="gr-7">
+    {% if section.settings.banner_7_title != blank %}
+    <h2 class="pmr-group" id="gr-7-wrap-title-top">{{ section.settings.banner_7_title }}</h2>
+    {% endif %}
+    <div class="pmr-group" id="gr-7-wrap">
+      <div class="pmr-group" id="gr-7-content">
+        {% if section.settings.banner_7_title != blank %}
+        <h2 class="pmr-group" id="gr-7-wrap-title">{{ section.settings.banner_7_title }}</h2>
+        {% endif %}
+        {% if section.settings.banner_7_content != blank %}
+        <div class="pmr-group" id="gr-7-wrap-content">{{ section.settings.banner_7_content }}</div>
+        {% endif %}
+        {% if section.settings.banner_7_content_bottom != blank %}
+        <div class="pmr-group" id="gr-7-wrap-content-bottom">{{ section.settings.banner_7_content_bottom }}</div>
+        {% endif %}
+      </div>
+      <div class="pmr-group" id="gr-7-img">
+        {% if section.settings.banner_7_image != blank %}
+        <img alt="{{ section.settings.banner_7_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner_7_image | img_url: 'master' }}" data-sizes="auto">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  
+  <!--  Banner 8  -->
+  <div class="pmr-group" id="gr-8">
+    <div class="pmr-group" id="gr-8-wrap">
+      {% if section.settings.banner_8_title != blank %}
+      <h2 class="pmr-group" id="gr-8-wrap-title">{{ section.settings.banner_8_title }}</h2>
+      {% endif %}      
+      <div class="pmr-group pmr-group-before-after-grid">
+        <div class="pmr-group pmr-group-before-after-header">
+          {% if section.settings.banner_8_row_1_icon != blank %}
+            <img alt="{{ section.settings.banner_8_row_1_icon.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner_8_row_1_icon | img_url: 'master' }}" data-sizes="auto">
+          {% endif %}
+          {% if section.settings.banner_8_row_1_title != blank %}
+          	<h3 style="color: {{ section.settings.banner_8_row_1_title_color }};">{{ section.settings.banner_8_row_1_title }}</h3>
+      	  {% endif %}
+          {% if section.settings.banner_8_row_1_subtitle != blank %}
+          	<p>{{ section.settings.banner_8_row_1_subtitle }}</p>
+          {% endif %}
+        </div>
+        <div class="pmr-group pmr-group-before-after-content">
+          <div class="pmr-group pmr-group-before-cell">
+            {% if section.settings.banner_8_row_1_before != blank %}
+              <img alt="{{ section.settings.banner_8_row_1_before.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner_8_row_1_before | img_url: 'master' }}" data-sizes="auto">
+            {% endif %}
+          </div>
+          <div class="pmr-group pmr-group-after-cell">
+            {% if section.settings.banner_8_row_1_after != blank %}
+              <img alt="{{ section.settings.banner_8_row_1_after.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner_8_row_1_after | img_url: 'master' }}" data-sizes="auto">
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="pmr-group pmr-group-before-after-grid">
+        <div class="pmr-group pmr-group-before-after-header">
+          {% if section.settings.banner_8_row_2_icon != blank %}
+            <img alt="{{ section.settings.banner_8_row_2_icon.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner_8_row_2_icon | img_url: 'master' }}" data-sizes="auto">
+          {% endif %}
+          {% if section.settings.banner_8_row_2_title != blank %}
+          	<h3 style="color: {{ section.settings.banner_8_row_2_title_color }};">{{ section.settings.banner_8_row_2_title }}</h3>
+      	  {% endif %}
+          {% if section.settings.banner_8_row_2_subtitle != blank %}
+          	<p>{{ section.settings.banner_8_row_2_subtitle }}</p>
+          {% endif %}
+        </div>
+        <div class="pmr-group pmr-group-before-after-content">
+          <div class="pmr-group pmr-group-before-cell">
+            {% if section.settings.banner_8_row_2_before != blank %}
+              <img alt="{{ section.settings.banner_8_row_2_before.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner_8_row_2_before | img_url: 'master' }}" data-sizes="auto">
+            {% endif %}
+          </div>
+          <div class="pmr-group pmr-group-after-cell">
+            {% if section.settings.banner_8_row_2_after != blank %}
+              <img alt="{{ section.settings.banner_8_row_2_after.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner_8_row_2_after | img_url: 'master' }}" data-sizes="auto">
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="pmr-group pmr-group-before-after-grid">
+        <div class="pmr-group pmr-group-before-after-header">
+          {% if section.settings.banner_8_row_3_icon != blank %}
+            <img alt="{{ section.settings.banner_8_row_3_icon.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner_8_row_3_icon | img_url: 'master' }}" data-sizes="auto">
+          {% endif %}
+          {% if section.settings.banner_8_row_3_title != blank %}
+          	<h3 style="color: {{ section.settings.banner_8_row_3_title_color }};">{{ section.settings.banner_8_row_3_title }}</h3>
+      	  {% endif %}
+          {% if section.settings.banner_8_row_3_subtitle != blank %}
+          	<p>{{ section.settings.banner_8_row_3_subtitle }}</p>
+          {% endif %}
+        </div>
+        <div class="pmr-group pmr-group-before-after-content">
+          <div class="pmr-group pmr-group-before-cell">
+            {% if section.settings.banner_8_row_3_before != blank %}
+              <img alt="{{ section.settings.banner_8_row_3_before.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner_8_row_3_before | img_url: 'master' }}" data-sizes="auto">
+            {% endif %}
+          </div>
+          <div class="pmr-group pmr-group-after-cell">
+            {% if section.settings.banner_8_row_3_after != blank %}
+              <img alt="{{ section.settings.banner_8_row_3_after.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner_8_row_3_after | img_url: 'master' }}" data-sizes="auto">
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      
+      {% if section.settings.banner_8_bottom_title != blank %}
+      <div class="pmr-group" id="gr-8-wrap-bottom-title">{{ section.settings.banner_8_bottom_title }}</div>
+      {% endif %}
+    </div>
+  </div>
+  
+  <!--  Banner 9  -->
+  <div class="pmr-group" id="gr-9">
+    <div class="pmr-group" id="gr-9-wrap">
+      {% if section.settings.banner9_title != blank %}
+      <h2 class="pmr-group" id="gr-9-wrap-title">{{ section.settings.banner9_title }}</h2>
+      {% endif %} 
+      <div class="pmr-group gr-9-grid-list" id="gr-9-grid-list">
+        <div class="pmr-group gr-9-grid-cell" id="gr-9-grid-cell">
+          {% if section.settings.banner9_red_product_image %}
+          <img alt="{{ section.settings.banner9_red_product_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner9_red_product_image | img_url: 'master' }}" data-sizes="auto">
+          {% endif %}
+
+          {% if section.settings.banner9_red_product_label %}
+          <div class="pmr-label" style="color: {{ section.settings.banner9_red_product_label_color }};">{{ section.settings.banner9_red_product_label }}</div>
+          {% endif %}
+
+          {% if section.settings.banner9_red_product_desc %}
+          <div class="pmr-des">{{ section.settings.banner9_red_product_desc }}</div>
+          {% endif %}
+        </div>
+        
+        <div class="pmr-group gr-9-grid-cell" id="gr-9-grid-cell">
+          {% if section.settings.banner9_blue_product_image %}
+          <img alt="{{ section.settings.banner9_blue_product_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner9_blue_product_image | img_url: 'master' }}" data-sizes="auto">
+          {% endif %}
+
+          {% if section.settings.banner9_blue_product_label %}
+          <div class="pmr-label" style="color: {{ section.settings.banner9_blue_product_label_color }};">{{ section.settings.banner9_blue_product_label }}</div>
+          {% endif %}
+
+          {% if section.settings.banner9_blue_product_desc %}
+          <div class="pmr-des">{{ section.settings.banner9_blue_product_desc }}</div>
+          {% endif %}
+        </div>
+        
+        <div class="pmr-group gr-9-grid-cell" id="gr-9-grid-cell">
+          {% if section.settings.banner9_yellow_product_image %}
+          <img alt="{{ section.settings.banner9_yellow_product_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner9_yellow_product_image | img_url: 'master' }}" data-sizes="auto">
+          {% endif %}
+
+          {% if section.settings.banner9_yellow_product_label %}
+          <div class="pmr-label" style="color: {{ section.settings.banner9_yellow_product_label_color }};">{{ section.settings.banner9_yellow_product_label }}</div>
+          {% endif %}
+
+          {% if section.settings.banner9_yellow_product_desc %}
+          <div class="pmr-des">{{ section.settings.banner9_yellow_product_desc }}</div>
+          {% endif %}
+        </div>
+        
+        <div class="pmr-group gr-9-grid-cell" id="gr-9-grid-cell">
+          {% if section.settings.banner9_orange_product_image %}
+          <img alt="{{ section.settings.banner9_orange_product_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner9_orange_product_image | img_url: 'master' }}" data-sizes="auto">
+          {% endif %}
+
+          {% if section.settings.banner9_orange_product_label %}
+          <div class="pmr-label" style="color: {{ section.settings.banner9_orange_product_label_color }};">{{ section.settings.banner9_orange_product_label }}</div>
+          {% endif %}
+
+          {% if section.settings.banner9_orange_product_desc %}
+          <div class="pmr-des">{{ section.settings.banner9_orange_product_desc }}</div>
+          {% endif %}
+        </div>
+        
+        <div class="pmr-group gr-9-grid-cell" id="gr-9-grid-cell">
+          {% if section.settings.banner9_purple_product_image %}
+          <img alt="{{ section.settings.banner9_purple_product_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner9_purple_product_image | img_url: 'master' }}" data-sizes="auto">
+          {% endif %}
+
+          {% if section.settings.banner9_purple_product_label %}
+          <div class="pmr-label" style="color: {{ section.settings.banner9_purple_product_label_color }};">{{ section.settings.banner9_purple_product_label }}</div>
+          {% endif %}
+
+          {% if section.settings.banner9_purple_product_desc %}
+          <div class="pmr-des">{{ section.settings.banner9_purple_product_desc }}</div>
+          {% endif %}
+        </div>
+      </div>
+      {% if section.settings.banner9_btn_label != blank %}
+        <div class="pmr-group" id="gr-9-cta">
+          <a class="pmr-button custom-add-to-cart-button">{{ section.settings.banner9_btn_label }}</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  
+  <!--  Banner 9  -->
+  <div class="pmr-group" id="gr-10">
+    <div class="pmr-group" id="gr-10-wrap">
+      {% if section.settings.banner10_mark_image %}
+        <div class="pmr-group" id="gr-10-mark-img">
+          <img alt="{{ section.settings.banner10_mark_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner10_mark_image | img_url: 'master' }}" data-sizes="auto">
+        </div>
+      {% endif %}
+
+      <div class="pmr-group" id="gr-10-content">
+        {% if section.settings.banner10_title %}
+        <h2 class="pmr-group" id="gr-10-wrap-title">{{ section.settings.banner10_title }}</h2>
+        {% endif %}
+      </div>
+      
+      <div class="pmr-group" id="gr-10-review">
+        {% if section.settings.banner10_reviews_desktop_image %}
+        <img alt="{{ section.settings.banner8_reviews_mobile_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner10_reviews_desktop_image | img_url: 'master' }}" data-sizes="auto" id="im-10-desktop">
+        {% endif %}
+        {% if section.settings.banner10_reviews_mobile_image %}
+        <img alt="{{ section.settings.banner10_reviews_mobile_image.alt | escape }}" class="pmr-image Image--lazyLoad" data-src="{{ section.settings.banner10_reviews_mobile_image | img_url: 'master' }}" data-sizes="auto" id="im-10-mobile">
+        {% endif %}
+      </div>
+      
+      {% if section.settings.banner10_btn_label != blank %}
+        <div class="pmr-group" id="gr-10-cta">
+          <a class="pmr-button custom-add-to-cart-button">{{ section.settings.banner10_btn_label }}</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style type="text/css">
+  @font-face {
+    font-family: 'Palatino';
+    font-weight: normal;
+    font-style: normal;
+    src: url("https://cdn.shopify.com/s/files/1/0077/6162/5201/files/Palatino.ttc?v=1645771357"); 
+  }
+  #im-1-wrap-mobile{
+  	display: none;
+  }
+  #gr-3-mobile-video, #gr-6-mobile-video{
+    display: none;
+  }
+  .pmr-group img{
+  	max-width: 100%;
+  }
+  .pmr-group video{
+  	max-width: 100%;
+  }
+  #gr-1-wrap-image{
+  	position: relative;
+  }
+  #gr-1-wrap-title{
+  	text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 58px;
+    font-weight: 600;
+    color: #636669;
+    line-height: 1.3em;
+    position: absolute;
+    top: 68px;
+    width: 100%;
+    left: 0;
+  }
+  #im-1-wrap-logo{
+  	position: absolute;
+    right: 20px;
+    bottom: 20px;
+    max-width: 150px;
+  }
+  #gr-2-wrap{
+  	text-align: center;
+    padding: 83px 0;
+  }
+  #gr-2-wrap-content{
+  	font-family: 'Helvetica Neue', sans-serif;
+    font-size: 22px;
+    line-height: 1.5;
+    color: #919195;
+    max-width: 850px;
+    margin: 35px auto;
+  }
+  .pmr-video-wrap{
+  	position: relative;
+  }
+  .pmr-video-content{
+  	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .pmr-video-content img{
+  	max-width: 130px;
+    cursor: pointer;
+  }
+  .pmr-video-container{
+  	position: relative;
+  }
+  .pmr-video-tag{
+  	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+  }
+  .pmr-video-wrap.active .pmr-video-tag{
+  	opacity: 1;
+  }
+  .pmr-video-wrap.active img{
+  	opacity: 0;
+    z-index: -1;
+    margin-top: 10px;
+  }
+  .pmr-video-title{
+  	font-family: 'Helvetica', sans-serif !important;
+    font-size: 21px;
+    line-height: 34px;
+    color: #ffffff;
+    text-align: center;
+  }
+  .pmr-group a.pmr-button{
+    display: block;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #CFC4C5;
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 40px;
+    margin: 52px auto;
+    max-width: 280px;
+    text-align: center;
+    font-size: 22px;
+    line-height: 1;
+  }
+  #gr-4-details, #gr-5{
+    background: #fdfbfc;
+  }
+  #gr-4-wrap{
+  	padding-top: 100px;
+  }
+  #gr-4-header{
+  	max-width: 400px;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+  }
+  #gr-4-title{
+  	font-family: 'Helvetica Neue', sans-serif;
+    font-size: 36px;
+    line-height: 0.9;
+    color: #919195;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    transform: rotate(337deg);
+    font-style: italic;
+  }
+  #gr-4-des{
+  	font-family: 'Helvetica Neue', sans-serif;
+    font-size: 22px;
+    line-height: 1.5;
+    color: #919195;
+    max-width: 902px;
+    margin: 35px auto;
+    text-align: center;
+  }
+  #gr-4-details-content{
+  	display: flex;
+    flex-wrap: wrap;
+  }
+  #gr-4-details-content-left{
+    max-width: 355px;
+    width: 100%;
+    text-align: center;
+    margin-left: 10%;
+    margin-top: 50px;
+  }
+  #gr-4-details-content-left h3{
+  	font-family: 'Helvetica Neue', sans-serif !important;
+    color: #F370A3;
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: 0 !important;
+    margin-bottom: 0;
+  }
+  #gr-4-details-content-left p{
+  	font-size: 24px;
+    line-height: 32px;
+    color: #76777A;
+    font-style: italic;
+  }
+  #gr-4-details-content-right{
+  	max-width: 425px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin-left: 10%;
+    margin-top: 50px;
+  }
+  #gr-4-details-content-right h3{
+  	font-family: 'Helvetica Neue', sans-serif !important;
+    color: #EE948E;
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: 0 !important;
+    margin-bottom: 0;
+  }
+  #gr-4-details-content-right p{
+  	font-size: 24px;
+    line-height: 32px;
+    color: #76777A;
+    font-style: italic;
+  }
+  #gr-4-details-content-right span{
+  	font-family: 'Helvetica Neue', sans-serif;
+    font-size: 27px;
+    line-height: 0.9;
+    color: #EE948E;
+    position: absolute;
+    top: -33px;
+    left: 14%;
+    transform: rotate(337deg);
+    font-style: italic;
+  }
+  #gr-5-wrap{
+  	display: flex;
+    flex-wrap: wrap;
+    padding: 105px 0px;
+  }
+  #gr-5-left-side{
+  	width: 50%;
+  }
+  #gr-5-right-side{
+  	width: 50%;
+    text-align: center;
+  }
+  #gr-5-wrap-title-top{
+    display: none;
+  	width: 100%;
+    font-family: 'Helvetica Neue', sans-serif !important;
+    font-size: 34px;
+    line-height: 44px;
+    text-align: center;
+    color: #919195;
+    max-width: 428px;
+    letter-spacing: 0 !important;
+  }
+  #gr-5-wrap-title{
+  	font-family: 'Helvetica Neue', sans-serif !important;
+    font-size: 34px;
+    line-height: 44px;
+    text-align: center;
+    color: #919195;
+    max-width: 428px;
+    letter-spacing: 0 !important;
+    margin: 0px auto 30px;
+  }
+  #gr-5-wrap-left-img-content img{
+  	max-width: initial;
+  }
+  #gr-5-wrap-left-content{
+  	max-width: 365px;
+    margin: 45px auto 0;
+    position: relative;
+    text-align: center;
+  }
+  #gr-5-wrap-left-content h3{
+  	font-family: 'Helvetica Neue', sans-serif !important;
+    color: #C192BE;
+    font-size: 26px;
+    line-height: 30px;
+    letter-spacing: 0 !important;
+    margin-bottom: 5px;
+  }
+  #gr-5-wrap-left-content span{
+  	font-family: 'Helvetica Neue', sans-serif;
+    font-size: 27px;
+    line-height: 30px;
+    color: #C192BE;
+    position: absolute;
+    top: -35px;
+    left: -50px;
+    transform: rotate(337deg);
+    font-style: italic;
+  }
+  #gr-5-wrap-left-content::after{
+  	content: '';
+    right: -65px;
+    top: -66%;
+    width: 63px;
+    height: 111px;
+    background-image: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/barometer-img-slug.png?v=1645522504);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+  }
+  #gr-5-wrap-left-content p{
+  	color: #76777A;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    font-style: italic;
+  }
+  #gr-7-wrap{
+  	display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  #gr-7-content{
+  	width: 70%;
+    padding-left: 6%;
+  }
+  #gr-7-wrap-title-top{
+  	display: none;
+  }
+  #gr-7-wrap-title,#gr-7-wrap-title-top{
+  	font-family: 'Helvetica Neue', sans-serif !important;
+    letter-spacing: 0 !important;
+    color: #76777A;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 32px;
+    margin-bottom: 30px;
+  }
+  #gr-7-wrap-content{
+  	margin-bottom: 50px;
+  }
+  #gr-7-wrap-content ul{
+  	list-style: none;
+  }
+  #gr-7-wrap-content ul li{
+  	font-family: 'Helvetica', sans-serif;
+    font-size: 21px;
+    line-height: 1.5em;
+    color: #BCAAAC;
+    padding-left: 72px;
+    position: relative;
+    margin-bottom: 15px;
+  }
+  #gr-7-wrap-content ul li span{
+  	color: #BCAAAC;
+    position: absolute;
+    left: 0;
+    font-size: 30px;
+    font-family: 'Palatino';
+    font-weight: bold;
+    line-height: 1;
+  }
+  #gr-7-img{
+  	width: 30%;    
+  }
+  #gr-7-wrap-content-bottom{
+  	color: #919195;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 21px;
+    line-height: 34px;
+    font-weight: bold;
+  }
+  #gr-7-wrap-content-bottom em{
+  	display: block;
+    font-size: 14px;
+    line-height: 34px;
+    font-weight: 100;
+  }
+  #gr-8-wrap{
+  	padding-top: 70px;
+    padding-bottom: 120px;
+  }
+  #gr-8-wrap-title{
+  	font-family: 'Helvetica Neue', sans-serif !important;
+    letter-spacing: 0 !important;
+    color: #76777A;
+    font-weight: 500;
+    font-size: 37px;
+    line-height: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .pmr-group-before-after-grid{
+    max-width: 760px;
+    margin: 0px auto;
+    padding-top: 100px;
+  }
+  .pmr-group-before-after-grid:nth-child(even) .pmr-group-before-after-header{
+  	text-align: right;
+  }
+  .pmr-group-before-after-header{
+  	position: relative;
+    padding: 30px 0;
+  }
+  .pmr-group-before-after-header h3{
+  	font-family: 'Helvetica', sans-serif !important;
+    font-size: 21px;
+    line-height: 34px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  .pmr-group-before-after-header p{
+  	font-family: 'Helvetica', sans-serif !important;
+    font-size: 21px;
+    line-height: 34px;
+    font-weight: 100;
+    color: #919195;
+    margin-bottom: 0;
+    font-style: italic;
+  }
+  .pmr-group-before-after-header img{
+  	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  .pmr-group-before-after-grid:nth-child(even) .pmr-group-before-after-header img{
+  	left: -70px;
+  }
+  .pmr-group-before-after-grid:nth-child(odd) .pmr-group-before-after-header img{
+  	right: -70px;
+  }
+  .pmr-group-before-after-content{
+  	display: flex;
+    flex-wrap: wrap;
+  }
+  .pmr-group-before-cell,.pmr-group-after-cell{
+  	padding: 5px;
+    width: 50%;
+    position: relative;
+  }
+  .pmr-group-before-cell img,.pmr-group-after-cell img{
+  	width: 100%;
+  }
+  .pmr-group-before-cell::after{
+  	content: 'BEFORE';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    font-family: 'Helvetica', sans-serif !important;
+    color: #fff;
+    background-color: #BCAAAC;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 10px;
+    width: 100%;
+    max-width: 217px;
+    transform: translateX(-50%);
+    text-align: center;
+    border-radius: 30px;
+  }
+  .pmr-group-after-cell::after{
+  	content: 'AFTER';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    font-family: 'Helvetica', sans-serif !important;
+    color: #fff;
+    background-color: #BCAAAC;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 10px;
+    width: 100%;
+    max-width: 217px;
+    transform: translateX(-50%);
+    text-align: center;
+    border-radius: 30px;
+  }
+  #gr-8-wrap-bottom-title{
+  	text-align: center;
+    margin-top: 100px;
+    font-size: 17px;
+  }
+  #gr-9-wrap-title{
+  	font-family: 'Helvetica Neue', sans-serif !important;
+    letter-spacing: 0 !important;
+    color: #76777A;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .gr-9-grid-list{
+  	max-width: 870px;
+    margin: 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .gr-9-grid-cell{
+  	text-align: center;
+    width: 33.3333%;
+    padding: 25px;
+  }
+  .gr-9-grid-cell .pmr-label{
+  	color: #CB1132;
+    font-family: 'Helvetica', sans-serif !important;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 34px;
+    margin-top: 25px;
+  }
+  .gr-9-grid-cell .pmr-des{
+  	font-family: 'Helvetica', sans-serif !important;
+    color: #919195;
+    font-size: 21px;
+    line-height: 34px;
+    font-weight: 100;
+    font-style: italic;
+  }
+  #gr-10-wrap{
+  	text-align: center;
+  }
+  #im-10-mobile{
+  	display: none;
+  }
+  #gr-10-wrap-title{
+  	font-family: 'Cormorant Garamond', serif !important;
+    letter-spacing: 0 !important;
+    font-size: 56px;
+    line-height: 1.2;
+    font-style: italic;
+    color: #76777A;
+  }
+  #gr-10-wrap{
+  	background: #f7efed;
+    padding: 40px 20px;
+  }
+  #gr-6-scan{
+  	display: none;
+  }
+  #gr-root{
+    background: #f7efed;
+  }
+  .custom-add-to-cart-button:hover{
+    cursor: pointer;
+  }
+  @media only screen and (max-width: 1199px) {
+    #gr-4-details-content-left{
+      max-width: 50%;
+      margin-left: 0;
+      padding: 0 15px;
+    }
+    #gr-4-details-content-right{
+      max-width: 50%;
+      margin-left: 0;
+      padding: 0 15px;
+    }
+    #gr-5-wrap-left-img-content img{
+      width: 110%;
+    }
+    #gr-5-wrap-left-content{
+      max-width: 320px;
+      text-align: left;
+    }
+    #gr-5-wrap-left-content span{
+      top: -45px;
+      left: -35px;
+    }
+    #gr-5-wrap-left-content::after{
+      right: -55px;
+      top: -38%;
+    }
+  }
+  @media only screen and (max-width: 1007px) {
+    .pmr-group a.pmr-button{
+      display: none;
+    }
+    #gr-4-wrap{
+      padding-top: 115px;
+    }
+    #gr-7-wrap{
+      padding-top: 80px;
+    }
+  }
+  @media only screen and (max-width: 991px) {
+    #gr-5-wrap-left-content::after{
+      right: -5px;
+      top: -35%;
+    }
+    #gr-7-wrap{
+      align-items: flex-start;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    #im-1-wrap-mobile{
+      display: block;
+    }
+    #im-1-wrap-desktop{
+      display: none;
+    }
+    #gr-top-banner{
+      padding: 80px 50px;
+    }
+    #gr-top-banner .section-heading h2{
+      font-size: 36px;
+    }
+    #im-10-desktop{
+      display: none;
+    }
+    #im-10-mobile{
+      display: block;
+    }
+    #gr-2-wrap-logo{
+      max-width: 250px;
+    }
+    #gr-2-wrap-content{
+      font-size: 18px;
+      padding: 0 20px;
+    }
+    .pmr-video-content img{
+      max-width: 85px;
+    }
+    #gr-3-mobile-video, #gr-6-mobile-video{
+      display: block;
+    }
+    #gr-3-desktop-video, #gr-6-desktop-video{
+      display: none;
+    }
+    #gr-4-header img{
+      max-width: 250px;
+    }
+    #gr-4-title{
+      left: 10%;
+    }
+    #gr-4-details-content-left{
+      max-width: 50%;
+      padding: 0px 10px;
+    }
+    #gr-4-details-content-left h3,#gr-4-details-content-right h3{
+      font-size: 21px;
+    }
+    #gr-4-details-content-left p,#gr-4-details-content-right p{
+      font-size: 18px;
+    }
+    #gr-4-details-content-right{
+      max-width: 50%;
+      padding: 0px 10px;
+    }
+    #gr-4-details-content-right span{
+      font-size: 20px;
+      top: -22px;
+      left: 2%;
+    }
+    #gr-5-left-side{
+    }
+    #gr-5-right-side{
+    }
+    #gr-5-wrap-left-img-content img{
+      max-width: 130%;
+    }
+    #gr-5-wrap-left-content p{
+      font-size: 18px;
+    }
+    #gr-5-wrap-left-content h3{
+      font-size: 21px;
+    }
+    #gr-5-wrap-left-content{
+      margin: 25px auto 0;
+    }
+    #gr-5-wrap-left-content span{
+      top: -16%;
+      left: -10%;
+    }
+    #gr-5-wrap-left-content::after{
+      right: -15px;
+      width: 35px;
+      height: 63px;
+      top: -37px;
+    }
+    #gr-5-wrap-left-content span{
+      top: -14%;
+      left: -6%;
+      font-size: 21px;
+    }
+    #gr-7-img{
+      width: 30%;
+    }
+    #gr-7-content{
+      width: 70%;
+      padding-left: 20px;
+      padding-right: 0px;
+    }
+    #gr-7-wrap-content ul li{
+      font-size: 18px;
+    }
+    #gr-7-wrap-title{
+      display: none;
+    }
+    #gr-7-wrap-title-top{
+    	font-size: 25px;
+      padding: 0px 20px;
+    }
+    #gr-8-wrap-title{
+      font-size: 25px;
+    }
+    .pmr-group-before-after-header img{
+      max-width: 150px;
+    }
+    .pmr-group-before-after-grid:nth-child(even) .pmr-group-before-after-header{
+      padding-left: 100px;
+    }
+    .pmr-group-before-after-grid:nth-child(odd) .pmr-group-before-after-header{
+      padding-right: 100px;
+    }
+    .pmr-group-before-after-grid:nth-child(even) .pmr-group-before-after-header img{
+      left: -45px;
+    }
+    .pmr-group-before-after-header{
+      padding: 20px 5px;
+    }
+    .pmr-group-before-cell::after,.pmr-group-after-cell::after{
+      font-size: 15px;
+      line-height: 20px;
+      padding: 10px;
+      max-width: 150px;
+    }
+    .pmr-group-before-after-grid{
+      padding-top: 50px;
+    }
+    #gr-8-wrap{
+      padding-top: 50px;
+      padding-bottom: 80px;
+      overflow: hidden;
+    }
+    #gr-9-wrap-title{
+      font-size: 25px;
+      padding: 0px 20px;
+    }
+    .gr-9-grid-cell{
+      width: 50%;
+      padding: 20px;
+    }
+    .gr-9-grid-cell .pmr-label{
+      font-size: 18px;
+    }
+    .gr-9-grid-cell .pmr-des{
+      font-size: 18px;
+      line-height: 27px;
+    }
+    #gr-10-wrap-title{
+    	font-size: 32px;
+    }
+    #gr-4-des{
+    	font-size: 18px;
+      padding: 0px 20px;
+    }
+    .pmr-group-before-after-header p{
+    	font-size: 18px;
+    }
+    #gr-7-wrap-title-top{
+      display: block;
+    	text-align: center;
+    }
+    #gr-5-wrap{
+    	padding: 50px 0px;
+      overflow: hidden;
+    }
+    #gr-5-wrap-title-top{
+    	padding: 0 20px;
+      font-size: 25px;
+      display: block;
+    }
+    #gr-5-wrap-title{
+      display: none;      
+      padding: 0px 20px;
+    }
+    #gr-5-wrap-left-content{
+    	max-width: 80%;
+    }
+    #gr-8-wrap-bottom-title{
+    	margin-top: 40px;
+    }
+    #gr-5-wrap-left-img-content{
+      z-index: 1;
+      position: relative;
+    }
+    #gr-6-scan{
+      text-align: center;
+      display: block;
+      margin-bottom: 40px;
+      padding-top: 60px;
+    }
+    #gr-6-scan-title{
+    	max-width: 70%;
+      font-size: 21px;
+      line-height: 1.2;
+      color: #919195;
+      margin: 0 auto 20px;
+    }
+    #gr-7-wrap{
+      padding-top: 0px;
+    }
+  }
+  @media (max-width: 575px){
+    #gr-top-banner{
+      padding: 80px 70px;
+    }
+  }
+
+  @media (max-width: 480px){
+    .pmr-group-before-cell, .pmr-group-after-cell{
+      margin-bottom: 30px;
+    }
+    #gr-top-banner{
+      padding: 80px 40px;
+    }
+    #gr-top-banner .section-heading h2{
+      font-size: 32px;
+    }
+    .pmr-video-content img{
+      max-width: 70px;
+    }
+    .pmr-video-title{
+    	font-size: 14px;
+    line-height: 20px;
+    }
+    #gr-4-details-content-left h3, #gr-4-details-content-right h3{
+    	font-size: 18px;
+      line-height: 1.5;
+    }
+    #gr-4-details-content-left p, #gr-4-details-content-right p{
+    	font-size: 16px;
+    }
+    #gr-4-details-img{
+    	overflow: hidden;
+    }
+    #gr-4-details-img img{
+      max-width: 120%;
+      margin-left: -10%;
+    }
+    #gr-5-left-side{
+      width: 100%;
+    }
+    #gr-5-wrap-left-img-content img{
+      width: 100%;
+    }
+    #gr-5-wrap-left-content{
+      max-width: 320px;
+      margin-left: 40px;
+    }
+    #gr-5-wrap-left-content span{
+      top: -25%;
+      left: -8%;
+    }
+    #gr-5-wrap-left-content::after{
+      display: none;
+    }
+    #gr-5-right-side{
+      width: 100%;
+    }
+    #gr-7-wrap-content ul li {
+      font-size: 13px;
+      line-height: 2;
+      padding-left: 50px;
+    }
+    #gr-7-wrap-content ul li span{
+      font-size: 21px;
+    }
+    #gr-7-wrap-content-bottom{
+      font-size: 18px;
+      line-height: 25px;
+    }
+    .pmr-group-before-after-header p{
+      font-size: 14px;
+      line-height: 2;
+    }
+    .pmr-group-before-after-header h3{
+      font-size: 18px;
+    }
+    #gr-10-wrap-title {
+      font-size: 25px;
+    }
+  }
+  @media (max-width: 480px){
+    #gr-top-banner {
+        padding: 80px 20px;
+    }
+  }
+</style>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.pmr-video-play-icon').hide();
+    $('.pmr-video-wrap').addClass('active');
+    $('#gr-3-desktop-video .pmr-video-wrap').find('video').get(0).play();
+    $('#gr-3-mobile-video .pmr-video-wrap').find('video').get(0).play();
+    $('#gr-6-desktop-video .pmr-video-wrap').find('video').get(0).play();
+    $('#gr-6-mobile-video .pmr-video-wrap').find('video').get(0).play();
+//     $('.pmr-video-play-icon').on('click', function(){
+//       $(this).hide();
+//       $(this).closest('.pmr-video-wrap').addClass('active');
+//       $(this).closest('.pmr-video-wrap').find('video').get(0).play();
+//     });
+    
+    $('.custom-add-to-cart-button').click(function(){
+      $('.add-to-cart-btn .ProductForm__AddToCart').click();
+    });
+  });
+</script>

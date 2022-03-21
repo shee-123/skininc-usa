@@ -1,0 +1,85 @@
+{% if product.metafields.meta.bundle_widget_shortcode %}
+<div id="custom_bundle_widget_section" class="custom_bundle_product_widget">
+  <div class="container">
+  	{{ product.metafields.meta.bundle_widget_shortcode }}
+  </div>
+</div>
+{% endif %}
+
+<style type="text/css">
+  .custom_spaced{
+      margin: 0;
+      padding: 80px 0px;
+      border-top: 1px solid #f4f4f4;
+      border-bottom: 1px solid #f4f4f4;
+  }
+  .bndlr-product.bndlr-mix-and-match{
+    padding: 20px 20px 30px;
+    max-width: 300px !important;
+  }
+  .bndlr-container .bndlr-break-plus-signs .bndlr-add-to-cart{
+    border-radius: 0px;
+    font-size: 13px;
+    text-align: center;
+    letter-spacing: 0.2em;
+    font-family: neuzeit-grotesk,sans-serif;
+    font-weight: 300;
+    padding: 14px 28px;
+    border: 1px solid #d7b4b5;
+    margin-top: 15px;
+  }
+  .bundler-target-element{
+    display: inline-block;
+  }
+  .bundler-target-element > div.bndlr-container{
+    display: inline-block;
+    width: auto;
+  }
+  .custom_bundle_product_widget > div.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .bndlr-products-container .bndlr-product{
+    max-width: 260px;
+  }
+  .bundler-target-element .bndlr-mnm-available-products .bundle1_custom_txt_1{
+    width: 100%;
+    font-weight: bold;
+    font-style: normal;
+    color: #5e5e5e;
+    font-size: 20px;
+    padding: 20px 15px;
+  }
+  .bundler-target-element .bndlr-mnm-available-products .bundle1_custom_txt_2{
+    width: 100%;
+    font-weight: bold;
+    font-style: normal;
+    color: #5e5e5e;
+    font-size: 20px;
+    padding: 20px 15px;
+    margin-top: 30px;
+  }
+</style>
+
+<script type="text/javascript">
+  $(function() {
+      document.body.onload = function () {
+        $('.bundler-target-element .bndlr-mnm-available-products .bndlr-product[data-product-id="4795695661152"]').before('<div class="bundle1_custom_txt_1">Select Your Mask Base</div>');
+        $('.bundler-target-element .bndlr-mnm-available-products .bndlr-product[data-product-id="4795695661152"]').after('<div class="bundle1_custom_txt_2">Select Your Booster Shoots</div>');
+      }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Bundle Product Widget",
+    "settings": [
+		{
+          "type": "header",
+          "content": "Custom Bundle Product Widget",
+		  "info": "Custom Bundle product widget will come from widget shortcode of custom meta field."
+        }
+	]
+  }
+{% endschema %}

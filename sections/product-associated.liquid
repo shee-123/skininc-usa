@@ -1,0 +1,27 @@
+{%- capture product_associated -%}
+  {%- assign tags = product.tags | reverse -%}
+  {%- for tag in tags -%}
+    {%- if tag contains '__with' -%}
+      {%- assign __tag = tag | split: ':' -%}
+      {%- assign product_handle = __tag[1] -%}
+      {%- assign position = __tag | last -%}
+      {%- assign associated_product = all_products[product_handle] -%}
+      {%- if associated_product != empty -%}
+        {%- assign label = "Step "  | append: position -%}
+        <div class="col-sm-3 order-{{ position }}">
+          {% include 'product-card', product: associated_product, show_add_to_cart: true, className: 'associated-product', label : label %}
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- if product_associated != blank -%}
+<div class="section spaced bordered associated-products">
+  <div class="container">
+    <h2 class="header text-center">{{ 'product.buy_it_with.title' | t }}</h2>
+    <div class="row">
+      {{- product_associated -}}
+    </div>
+  </div>
+</div>
+{%- endif -%}

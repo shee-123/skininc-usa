@@ -1,0 +1,73 @@
+<section  class="section spaced bordered social-media-rewards">
+  <div class="container">
+    {%- for block in section.blocks -%}
+    <div class="row">
+      <div class="col-md-7 col-sm-12">
+        <h2 class="header">
+         <small>{{block.settings.title | escape }}</small>
+         {{block.settings.subtitle | escape }}
+       </h2>
+        {{block.settings.content}}
+        {% if block.settings.button_link and block.settings.button_text %}
+        <a href="{{block.settings.button_link}}" class="Button Button--primary">{{block.settings.button_text | escape }}</a>
+        {% endif %}
+      </div>
+      <div class="col-md-5 col-sm-12">
+        {%- assign image_url = block.settings.brand | img_url : '375x205' -%}
+        <img src="{{ image_url }}" class="img-responsive" alt="{{ block.settings.brand.alt | escape }}"/>
+      </div>
+    </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Social Media Awards",
+  "max_blocks": 1,
+  "blocks": [
+      {
+        "type": "content",
+        "name": "content",
+        "settings" : [
+           {
+              "type": "text",
+              "id": "title",
+              "label": "Title"
+           },
+           {
+              "type": "text",
+              "id": "subtitle",
+              "label": "Sub Title"
+           },
+           {
+              "type": "richtext",
+              "id": "content",
+              "label": "Content"
+           },
+           {
+             "type": "text",
+             "id": "button_text",
+             "label": "Button Text"
+           },
+           {
+             "type": "url",
+             "id": "button_link",
+             "label": "Button Link"
+           },
+           {
+             "type": "image_picker",
+             "id": "brand",
+             "label": "Brands"
+           }
+        ]
+      }
+  ],
+  "presets": [
+    {
+      "category": "Text",
+      "name": "Social Media Awards"
+    }
+  ]
+}
+{% endschema %}
