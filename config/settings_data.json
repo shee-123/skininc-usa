@@ -1133,7 +1133,7 @@
             "type": "spend-x-get-y",
             "settings": {
               "product_handle": "beauty-jelly-dose",
-              "variant_id": "39453137797216",
+              "variant_id": "39453137764448",
               "min_price": "18500",
               "message": "Gift item"
             }
