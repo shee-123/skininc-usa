@@ -109,6 +109,7 @@
           },
           "c59454a8-accf-4fcb-904e-13a800fbec6e": {
             "type": "banner",
+            "disabled": true,
             "settings": {
               "background": "#d7b4b5",
               "text_color": "#ffffff",
@@ -1128,21 +1129,11 @@
               "handle": "tri-light-sabi",
               "message": "Exclusive Gift item"
             }
-          },
-          "8bfc1586-54c6-4bff-b4b9-df9e4ee46139": {
-            "type": "spend-x-get-y",
-            "settings": {
-              "product_handle": "beauty-jelly-dose",
-              "variant_id": "39453137764448",
-              "min_price": "18500",
-              "message": "Gift item"
-            }
           }
         },
         "block_order": [
           "c36064d3-d27f-4b4e-bad6-5eb276169c92",
-          "208dfad5-b6bc-4893-9c21-f11aacba0d7e",
-          "8bfc1586-54c6-4bff-b4b9-df9e4ee46139"
+          "208dfad5-b6bc-4893-9c21-f11aacba0d7e"
         ],
         "settings": {
           "show_shipping_estimator": false,
