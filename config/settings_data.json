@@ -2956,6 +2956,51 @@
       },
       "164810450399ba4be8": {
         "type": "sabi-section",
+        "blocks": {
+          "e8007e33-d60f-4541-ae4e-fd75d11ae091": {
+            "type": "header",
+            "settings": {
+              "heading": "POWERED BY",
+              "logo": "shopify:\/\/shop_images\/SABI_AI_Logo.png"
+            }
+          },
+          "67e83b0e-0a3b-4bda-a491-8385fa24a5b5": {
+            "type": "header",
+            "settings": {
+              "heading": "<span>Step-by-step treatment for transformational results<br> <i>Glow, Revive, Soothe & V-Sculpt with 5 NASA LED Lights<\/i><\/span>",
+              "logo": "shopify:\/\/shop_images\/Full-Packshot.gif"
+            }
+          },
+          "11c818d8-b9b3-45d6-888a-8980a54980ba": {
+            "type": "approach_item",
+            "settings": {
+              "img_link": "",
+              "title": "Customize your self-care treatment based on your skin goals.",
+              "content": "<p>Pair +SABI AI app with Tri-Light™ to enjoy a guided and customised LED facial treatments with your selfie & hydro-sensor analysis. Complete the Skin Identity Quiz to get your clinically-proven and award-winning customised cocktail serum and booster. Leveraging on the data of over 1.2 million skin profiles, your self-care treatment is customised based on water intake, sleep, stress, activity level, menstrual cycle, pollution index, and blue light exposure.<\/p>",
+              "direction": "left",
+              "cta_btn_label": "",
+              "cta_btn_link": ""
+            }
+          },
+          "dc216b06-985a-42b2-aa44-b6d26cf53b46": {
+            "type": "approach_item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/QR_Code-ai.png",
+              "img_link": "",
+              "title": "Download +SABI AI app, the world’s first 360 wellness skin health coach",
+              "content": "",
+              "direction": "left",
+              "cta_btn_label": "",
+              "cta_btn_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "e8007e33-d60f-4541-ae4e-fd75d11ae091",
+          "67e83b0e-0a3b-4bda-a491-8385fa24a5b5",
+          "11c818d8-b9b3-45d6-888a-8980a54980ba",
+          "dc216b06-985a-42b2-aa44-b6d26cf53b46"
+        ],
         "settings": {
         }
       }
