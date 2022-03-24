@@ -2897,6 +2897,67 @@
           "text2": "It is the first place to show signs of other ailments. Our every thought,  lifestyle and environment greatly affects our greater health and well-being,  impacting us emotionally, mentally, and physically.",
           "text3": "https:\/\/cdn.shopify.com\/s\/files\/1\/0077\/6162\/5201\/files\/Statement-Gif.gif?v=1645175266"
         }
+      },
+      "1648104327acfa372d": {
+        "type": "sabi-section",
+        "blocks": {
+          "fe93038c-2a03-408e-bef3-703c3e626e93": {
+            "type": "header",
+            "settings": {
+              "heading": "INTRODUCING THE WORLD’S FIRST BREAKTHROUGH APP",
+              "logo": "shopify:\/\/shop_images\/SABI_AI_Logo.png"
+            }
+          },
+          "169b609e-43ba-4150-a821-8d67ac3fa3c0": {
+            "type": "approach_item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/SABI_AI_Prototype-01_1_1.png",
+              "img_link": "",
+              "title": "Take a Selfie and get a 360 AI diagnostic & progressive skin report.",
+              "content": "<p>Receive personalized coaching from +SABI AI, your new best friend. Get self-care tips and product recommendations based on computer-vision assessment of your lines, pores, moisture, skin tone, and more.<br\/><br\/>Measure your skin’s hydration level and get precise readings for optimal skin wellness.<\/p>",
+              "direction": "left",
+              "cta_btn_label": "",
+              "cta_btn_link": ""
+            }
+          },
+          "73551337-4c25-455b-9852-8378ff604b2f": {
+            "type": "approach_item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/SABI_AI_PDP_Vector_-_For_Van-02_1.png",
+              "img_link": "",
+              "title": "",
+              "content": "",
+              "direction": "right",
+              "cta_btn_label": "",
+              "cta_btn_link": ""
+            }
+          },
+          "73283d4d-dff9-423b-8acd-431e97acdb3e": {
+            "type": "approach_item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/QR_Code-ai.png",
+              "img_link": "",
+              "title": "Customise your 360 wellness journey  for your lit from within glow.",
+              "content": "",
+              "direction": "right",
+              "cta_btn_label": "",
+              "cta_btn_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "fe93038c-2a03-408e-bef3-703c3e626e93",
+          "169b609e-43ba-4150-a821-8d67ac3fa3c0",
+          "73551337-4c25-455b-9852-8378ff604b2f",
+          "73283d4d-dff9-423b-8acd-431e97acdb3e"
+        ],
+        "settings": {
+        }
+      },
+      "164810450399ba4be8": {
+        "type": "sabi-section",
+        "settings": {
+        }
       }
     },
     "content_for_index": [
@@ -2914,7 +2975,9 @@
       "1602273737880",
       "1544002093716",
       "1544161388661",
-      "16063078622fed03dc"
+      "16063078622fed03dc",
+      "1648104327acfa372d",
+      "164810450399ba4be8"
     ]
   },
   "presets": {
