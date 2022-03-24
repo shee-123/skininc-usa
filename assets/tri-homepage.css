@@ -1,0 +1,1309 @@
+body,p,span,a{    
+    font-family: Helvetica,"Helvetica Neue",Arial,"Lucida Grande",sans-serif;
+    font-weight: 400;
+} 
+.being-is-you p {
+    letter-spacing: 0px;
+    line-height: 40px;
+    color: #99999c;
+    margin-bottom: 4px;
+    font-size: 30px;  
+    width: 1024px;
+}
+.ImageHero {
+    height: 800px;
+}
+p.being > img {
+    margin-left: -44px;
+    margin-top: -10px;
+}
+p.being span img {
+    position: relative;
+    left: -200px;
+    top: 33px;
+}
+p.barometer {
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 600;
+}
+.being-is-you:before {
+    position: absolute;
+    content: "";
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/line.png?v=1645089782)no-repeat left top;
+    height: 100%;
+    left: 0;
+    top: -40px;
+    width: 60px;
+    background-size: 18px 380px;
+}
+p.being {
+    font-size: 30px;
+    margin: 0 0;
+    font-weight: 600;
+}
+p.being i.jour {
+    font-weight: 400;
+}
+p.being span {
+    margin: 0 20px;
+}
+.video-sec-custom .ImageHero__ContentOverlay {
+    flex-basis: 100%;
+    text-align: right;
+    position: relative;
+}
+.video-sec-custom .SectionHeader__IconHolder {
+    text-align: center;
+}
+.video-sec-custom h3 {
+    background: #ff0200;
+    color: #fff !important;
+    padding: 5px 10px;
+    text-transform: none;
+    font-family: Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif !important;
+    letter-spacing: 0 !important;
+    width: 195px;
+    text-align: center;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+.video-sec-custom .ImageHero__ContentOverlay {position: unset;}
+.video-sec-custom h2 {
+ padding: 5px 10px;
+ text-transform: none;
+ font-family: Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif !important;
+ letter-spacing: 0 !important;
+ position: absolute;
+ top: 40px;
+ right: 22px;
+ width: 500px;
+ font-size: 23px;
+ line-height: 35px;
+ font-weight: 400!important;
+}
+/* .video-sec-custom .ImageHero__Image {
+    background-size: 100% 100%;
+} */
+.sabi-section h2.text-center.header {
+    line-height: 22px;
+    font-family: Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif !important;
+    font-weight: 600;
+    color: #99999c;
+    margin-bottom: 0;
+    font-size: 28px;
+}
+.sabi-section img.top-img {
+    width: 600px;
+    margin: 0 auto;
+    display: block;
+}
+.sabi-section .row .content {
+    align-items: flex-start;
+    text-align: center;
+}
+.sabi-section .row .content>div h4 {
+    font-size: 26px;
+    line-height: 33px;
+    font-family: Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif !important;
+    font-weight: 400;
+    color: #99999c;
+    text-transform: none;
+    letter-spacing: 0 !important;
+}
+.sabi-section .row .content p{
+    line-height: 23px;
+    color: #99999c;
+    font-size: 16px;
+}
+section.sabi-section .row.right:last-child .col-sm-6.col-xs-12.img-col {
+    flex: 0 0 25%;
+    max-width: 25%;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+section.sabi-section .row.right:last-child .col-sm-6.col-xs-12.des-col {
+    flex: 0 0 70%;
+    max-width: 70%;
+}
+section.sabi-section .row.right:last-child .col-sm-6.col-xs-12.img-col img {
+    width: auto;
+}
+section.sabi-section .row.right:last-child .col-sm-6.col-xs-12.des-col .content {
+    align-items: center;
+}
+section#section-16451725577bc8e47c .video-sec-custom h2 {
+    left: 0;
+    top: 20px;
+    text-align: center;
+    font-size: 23px;
+    width: 480px;
+    line-height: 35px;
+    margin-top: 0;
+}
+#shopify-section-1648040652e58c84be h2 span {
+    line-height: 40px;
+    text-transform: none;
+    font-size: 38px;
+    color: #77777a;
+}
+#shopify-section-1648040652e58c84be h2 span i {
+    font-size: 30px;
+}
+.sabi-section img.top-img:nth-of-type(2) {
+    width: auto;
+}
+div#shopify-section-1648040652e58c84be .sabi-section .row.left:nth-of-type(1) .col-sm-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+div#shopify-section-1648040652e58c84be .sabi-section .row.left:nth-of-type(1) .content >div {
+    max-width: 100%;
+}
+div#shopify-section-1648040652e58c84be .sabi-section .row.left:nth-of-type(1) .col-sm-6 img.img-responsive {
+    position: absolute;
+    width: 120px;
+    right: 90px;
+    left: auto;
+    margin-top: -9px;
+}
+.icon-gallery__wrapper {
+    max-width: 100%;
+}
+img.icon-gallery__img {
+    width: auto;
+    height: auto;
+}
+.icon-gallery__item {position: relative;overflow: hidden;}
+.icon-gallery__item:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 85px;
+    background: #fbf9f8;
+    z-index: 9;
+    bottom: 0;
+}
+body.prestige--v2.template-index {
+    background: #fbf9f8;
+}
+#shopify-section-164804125767f97197 section.section.spaced {
+    margin: 0 0;
+    position: relative;
+}
+#shopify-section-164804125767f97197 .centered-content {
+    margin: 0 auto;
+}
+#shopify-section-164804125767f97197 img {
+    right: 0;
+}
+#shopify-section-164804125767f97197 .FeatureText__ImageWrapper {
+    position: absolute;
+    z-index: 999999999;
+    width: 140px;
+    right: 0;
+    top: -60px;
+}
+#shopify-section-164804125767f97197 .container {
+    max-width: 550px;
+    position: relative;
+}
+#shopify-section-164804125767f97197 h2.header {
+    font-size: 40px;
+    text-transform: none;
+    color: #76777a;
+    font-weight: 600;
+    font-family: Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif!important;
+    letter-spacing: 1px !important;
+    margin-bottom: 20px;
+}
+#shopify-section-164804125767f97197 p {
+    font-weight: 500;
+    font-family: Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif!important;
+    letter-spacing: 1px !important;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-size: 26px;
+    color: #76777a;
+    line-height: 35px;
+}
+div#shopify-section-16480402579038fbd6 {
+    position: relative;
+}
+div#shopify-section-16480402579038fbd6:after {
+    content: "";
+    position: absolute;
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/SABI_AI_PDP_Vector_-_For_Van-01.png?v=1645186469)no-repeat;
+    width: 100%;
+    height: 100%;
+    bottom: 15%;
+    background-position: bottom;
+    background-size: contain;
+    z-index: -1;
+}
+section.section.spaced.our-approach.sabi-section .row.left:nth-of-type(1) .content div {
+    max-width: 100%;
+}
+.spaced.our-approach.science .row {
+    position: relative;
+    margin: 0 0;
+    width: 100%;
+}
+.spaced.our-approach.science .row img.img-responsive {
+    height: 500px;
+    object-fit: cover;
+    width: 70%;
+}
+.spaced.our-approach.science .row img.img-res {
+    position: absolute;
+    top: -170px;
+    width: 200px;
+    right: 110px;
+    z-index: -1;
+}
+section.section.spaced.our-approach.science {
+    overflow: hidden;
+    margin: 0 0;
+    padding: 160px 0;
+}
+.featured-products-section.devvv {
+    padding: 80px 0;
+    background: #fff;
+}
+.section.spaced.our-approach.science .des-col {position: absolute;left: 30%;bottom: 60px;}
+.spaced.our-approach.science .content {
+    background: #fff;
+    width: 300px;
+    padding: 20px 10px;
+    height: 80px;
+    box-shadow: 8px 8px #d7b4b5;
+    position: absolute;
+    right: 0;
+}
+.spaced.our-approach.science .content p {
+    color: #99999c;
+    font-size: 22px;
+}
+.spaced.our-approach.science .content div {
+    max-width: 100%;
+}
+section.section.spaced.our-approach.science img.top-img {
+    position: absolute;
+    right: 50px;
+    width: 500px;
+    margin-top: -120px;
+}
+section.section.spaced.our-approach.science .img-col {
+    padding: 0;
+}
+.spaced.our-approach.science .row:nth-of-type(2) {
+    padding: 0 0;
+    position: relative;
+    left: 360px;
+    top: -20px;
+}
+.spaced.our-approach.science .row:nth-of-type(3) {
+    position: relative;
+    left: 200px;
+    padding-top: 40px;
+}
+.spaced.our-approach.science .row:nth-of-type(3) img.img-res {
+    top: -90px;
+    left: -165px;
+}
+.spaced.our-approach.science .row:nth-of-type(3) .des-col {
+    left: 0px;
+}
+.spaced.our-approach.science .row:nth-of-type(3) .content {
+    left: -180px;
+    right: auto;
+    position: absolute;
+    bottom: 50px;
+}  
+body,p,span,a{    
+    font-family: Helvetica,"Helvetica Neue",Arial,"Lucida Grande",sans-serif;
+    font-weight: 400;
+} 
+.being-is-you {
+    position: relative;
+    padding: 80px 0px 80px 80px;
+}
+p.being > img {
+    margin-left: -44px;
+    margin-top: -20px;
+}
+p.being span img {
+    position: relative;
+    left: -200px;
+    top: 33px;
+}
+p.being {
+    font-size: 24px;
+    margin: 0 0;
+    font-weight: 600;
+}
+p.being i.jour {
+    font-weight: 400;
+}
+p.being span {
+    margin: 0 20px;
+}
+.video-sec-custom .ImageHero__ContentOverlay {
+    flex-basis: 100%;
+    text-align: right;
+    position: relative;
+}
+.video-sec-custom .SectionHeader__IconHolder {
+    text-align: center;
+}
+.video-sec-custom h3 {
+    background: #ff0200;
+    color: #fff !important;
+    padding: 5px 10px;
+    text-transform: none;
+    font-family: Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif !important;
+    letter-spacing: 0 !important;
+    width: 195px;
+    text-align: center;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+.video-sec-custom .ImageHero__ContentOverlay {position: unset;}
+.video-sec-custom .ImageHero__Image {
+    background-size: 100% 100%;
+}
+.sabi-section img.top-img {
+    width: 600px;
+    margin: 0 auto;
+    display: block;
+}
+.sabi-section .row .content {
+    align-items: flex-start;
+    text-align: center;
+}
+.sabi-section .row .content p{
+    line-height: 22px;
+    color: #99999c;
+}
+.sabi-section .row.left img {
+    width: 100%;
+    height: 900px;
+    object-fit: contain;
+}
+section.sabi-section .row.right:last-child .col-sm-6.col-xs-12.img-col {
+    flex: 0 0 25%;
+    max-width: 25%;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+section.sabi-section .row.right:last-child .col-sm-6.col-xs-12.des-col {
+    flex: 0 0 70%;
+    max-width: 70%;
+}
+section.sabi-section .row.right:last-child .col-sm-6.col-xs-12.img-col img {
+    width: auto;
+}
+section.sabi-section .row.right:last-child .col-sm-6.col-xs-12.des-col .content {
+    align-items: center;
+}
+.sabi-section img.top-img:nth-of-type(2) {
+    width: auto;
+}
+div#shopify-section-1648040652e58c84be .sabi-section .row.left:nth-of-type(1) .col-sm-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+div#shopify-section-1648040652e58c84be .sabi-section .row.left:nth-of-type(1) .content >div {
+    max-width: 100%;
+}
+div#shopify-section-1648040652e58c84be .sabi-section .row.left:nth-of-type(1) .col-sm-6 img.img-responsive {
+    position: absolute;
+    width: 120px;
+    right: 90px;
+    left: auto;
+    margin-top: -9px;
+}
+.icon-gallery__wrapper {
+    max-width: 100%;
+}
+img.icon-gallery__img {
+    width: auto;
+    height: auto;
+}
+.icon-gallery__item {position: relative;overflow: hidden;}
+.icon-gallery__item:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 85px;
+    background: #fbf9f8;
+    z-index: 9;
+    bottom: 0;
+}
+body.prestige--v2.template-index {
+    background: #fbf9f8;
+}
+#shopify-section-164804125767f97197 section.section.spaced {
+    margin: 0 0;
+    position: relative;
+}
+#shopify-section-164804125767f97197 .centered-content {
+    margin: 0 auto;
+}
+#shopify-section-164804125767f97197 img {
+    right: 0;
+}
+#shopify-section-164804125767f97197 .FeatureText__ImageWrapper {
+    position: absolute;
+    z-index: 999999999;
+    width: 140px;
+    right: 0;
+    top: -60px;
+}
+#shopify-section-164804125767f97197 .container {
+    max-width: 550px;
+    position: relative;
+}
+div#shopify-section-16480402579038fbd6 {
+    position: relative;
+}
+div#shopify-section-16480402579038fbd6 .row.right:nth-of-type(2) {
+    margin-top: -400px;
+    margin-bottom: 80px;
+}
+.spaced.our-approach.science .row {
+    position: relative;
+    margin: 0 0;
+}
+.spaced.our-approach.science .row img.img-responsive {
+    height: 500px;
+    object-fit: cover;
+    width: 70%;
+}
+section.section.spaced.our-approach.science {
+    overflow: hidden;
+    margin: 0 0;
+    padding: 160px 0;
+}
+.featured-products-section.devvv {
+    padding: 80px 0;
+    background: #fff;
+}
+.section.spaced.our-approach.science .des-col {position: absolute;left: 30%;bottom: 60px;}
+.spaced.our-approach.science .content div {
+    max-width: 100%;
+}
+section.section.spaced.our-approach.science img.top-img {
+    position: absolute;
+    right: 50px;
+    width: 500px;
+    margin-top: -120px;
+}
+section.section.spaced.our-approach.science .img-col {
+    padding: 0;
+}
+.spaced.our-approach.science .row:nth-of-type(2) {
+    padding: 0 0;
+    position: relative;
+    left: 360px;
+    top: -20px;
+}
+.spaced.our-approach.science .row:nth-of-type(3) {
+    position: relative;
+    left: 200px;
+    padding-top: 40px;
+}
+.spaced.our-approach.science .row:nth-of-type(3) .des-col {
+    left: 0px;
+}
+.spaced.our-approach.science .row:nth-of-type(3) .content {
+    left: -180px;
+    right: auto;
+    position: absolute;
+}  
+section.section.spaced.our-approach.science {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+section.section.spaced.our-approach.sabi-section {
+    border: 0;
+}
+.spaced.our-approach.science .row:nth-of-type(4) {
+    justify-content: flex-end;
+    margin-top: -250px;
+}
+.spaced.our-approach.science .row:nth-of-type(4) .img-col {
+    justify-content: end;
+}
+.spaced.our-approach.science .row:nth-of-type(4) .content {
+    right: auto;
+    left: 0;
+    bottom: 60px;
+}
+.spaced.our-approach.science .row:nth-of-type(4) img.img-res {
+    width: auto;
+    top: -200px;
+}
+div#shopify-section-1648041702fd3a7f68 .row .content>div {
+    max-width: 100%;
+    text-align: right;
+    padding-right: 60px;
+    padding-left: 100px;
+}
+.FlexboxIeFix.video-sec-custom h3.SectionHeader__SubHeading , p.being span img ,div#shopify-section-1648040652e58c84be .sabi-section .row.left:nth-of-type(1) .col-sm-6 img.img-responsive{
+    display: none;
+}
+.shopify-section--bordered+.shopify-section--bordered {
+    border: 0;
+}
+section.section.spaced.our-approach.science h2.text-center.header {
+    position: relative;
+    padding: 20px;
+    margin: 0;
+    top: 100px;
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/hori.png?v=1646194421) no-repeat;
+    background-position: right;
+    width: 50%;
+    float: right;
+    background-size: contain;
+}
+div#shopify-section-1648041702fd3a7f68:before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 650px;
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/verti.png?v=1646194421) no-repeat;
+    background-size: contain;
+    margin-top: -400px;
+    left: 200px;
+    right: auto;
+    z-index: -1;
+}
+div#shopify-section-164804125767f97197 {
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/Group__2.png?v=1645180746)no-repeat;
+    background-position: 74% 0px;
+    padding: 40px 0 0;
+    background-size: auto;
+}
+.sabi-section .row.left img {
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/New_App.png?v=1646292629)no-repeat;
+    background-size: 150px;
+    background-position: top left 20px;
+    padding-top: 30px;
+    margin-top: -20px;
+}
+.sabi-section h2.text-center.header {
+    letter-spacing: 1px !important;
+}
+.VideoWrapper.desktop {
+    display:  block ;
+}
+.VideoWrapper.mobile {
+    display:none ;
+}
+div#shopify-section-16480402579038fbd6 .row.right:nth-of-type(3) div {
+    max-width: 100%;
+}
+#shopify-section-1648040652e58c84be .content div {
+    max-width: 100%;
+}
+div#shopify-section-1648040652e58c84be .row.right .content>div {
+    max-width: 100%;  
+}
+div#shopify-section-1648041702fd3a7f68 h4 {
+    font-size: 32px;
+    text-align: right;
+}
+div#shopify-section-1648041702fd3a7f68 h4:after {
+    content: "";
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/SABI_Logo_FINAL_Main_Logo_-_SABI.png?v=1648045450)no-repeat right bottom;
+    background-size: 130px;
+    padding: 60px 60px 0px 60px;
+}
+.tri-vid-custom video:nth-of-type(2) {
+    display: none;
+}
+.tri-vid-custom video {
+    width: 100%;
+}
+
+
+@media screen and (min-device-width: 1920px) and (max-device-width: 2560px) {
+.spaced.our-approach.science .row img.img-res {
+    right: 200px;
+}
+.spaced.our-approach.science .content {
+    right: 120px;
+}
+.spaced.our-approach.science .row:nth-of-type(3) img.img-res {
+    left: -160px;
+    top: -90px;
+}
+.spaced.our-approach.science .row:nth-of-type(4) .content {
+    left: 60px;
+    width: 300px;
+    height: 110px;
+}
+.spaced.our-approach.science .row:nth-of-type(2) .content {
+    bottom: 110px;
+    width: 340px;
+    right: 40px;
+    height: 110px;
+}  
+.spaced.our-approach.science .row:nth-of-type(4) .img-col img.img-res {  
+    right: 70px;
+    top: -150px;
+    width: 40px;
+}
+section.section.spaced.our-approach.science h2.text-center.header {
+    width: 40%;
+}
+div#shopify-section-16480402579038fbd6:after {
+    content: "";
+    position: absolute;
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/SABI_AI_PDP_Vector_-_For_Van-01.png?v=1645186469)no-repeat;
+    width: 100%;
+    height: 100%;
+    bottom: -5%;
+    background-position: center;
+    background-size: 50% 50%;
+    z-index: -1;
+}  
+section.section.spaced.our-approach.sabi-section .row.left:nth-of-type(1) .content div {
+    max-width: 100%;
+}
+.sabi-section .row .content p {
+    font-size: 18px;
+} 
+.sabi-section img.top-img {
+    width: 750px;
+}  
+.spaced.our-approach.science .row:nth-of-type(3) .content {
+    left: -180px;
+    right: auto;
+    position: absolute;
+    width: 360px;
+    height: 110px;
+}
+.spaced.our-approach.science .row:nth-of-type(2) {top: -60px;}
+.spaced.our-approach.science .row:nth-of-type(2) img.img-res {
+    right: 120px;
+    top: -110px;
+}
+  
+  
+}
+
+@media screen and (max-device-width: 1680px) {
+.spaced.our-approach.science .row:nth-of-type(2) img.img-res {
+    right: 180px;
+}  
+  
+}
+
+
+@media screen and (min-device-width: 1440px) and (max-device-width: 1919px) {
+.spaced.our-approach.science .row img.img-responsive {
+    width: 500px;
+    height: 500px;
+}
+.spaced.our-approach.science .row:nth-of-type(2) img.img-res {
+    right: 130px;
+    top: -80px;
+}
+.spaced.our-approach.science .content {
+    right: 120px;
+    bottom: 80px;
+}
+.spaced.our-approach.science .row:nth-of-type(3) img.img-res {
+    left: -160px;
+    top: -90px;
+}
+.spaced.our-approach.science .row:nth-of-type(4) .content {
+    left: 60px;
+    width: 400px;
+}
+.spaced.our-approach.science .row:nth-of-type(2) .content {
+    bottom: 100px;
+    width: 400px;
+    right: 40px;
+}  
+.spaced.our-approach.science .row:nth-of-type(4) .img-col img.img-res {  
+    right: 70px;
+    top: -150px;
+    width: 40px;
+}
+section.section.spaced.our-approach.science h2.text-center.header {
+    width: 40%;
+}
+div#shopify-section-16480402579038fbd6:after {
+    content: "";
+    position: absolute;
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/SABI_AI_PDP_Vector_-_For_Van-01.png?v=1645186469)no-repeat;
+    width: 100%;
+    height: 100%;
+    bottom: 13%;
+    background-position: bottom;
+    background-size: contain;
+    z-index: -1;
+}  
+section.section.spaced.our-approach.sabi-section .row.left:nth-of-type(1) .content div {
+    max-width: 100%;
+}
+.sabi-section .row .content p {
+    font-size: 24px;
+    line-height: 32px;
+} 
+div#shopify-section-16480402579038fbd6 .row.right:nth-of-type(2) {
+    margin-top: -300px;
+    margin-bottom: 100px;
+    height: 1300px;
+}
+.sabi-section img.top-img {
+    width: 750px;
+}  
+.sabi-section .row .content>div h4 {
+    font-size: 44px;
+    line-height: 53px;
+}
+.sabi-section .row.left img {
+    height: 950px;
+}
+div#shopify-section-16480402579038fbd6 .row.right:nth-of-type(2) .img-col {
+    float: right;
+    position: absolute;
+    right: 0;  
+    padding: 0;
+    justify-content: flex-end;
+}
+div#shopify-section-16480402579038fbd6 .row.right:nth-of-type(2) .img-col img {
+    height: 1280px;
+    width: auto;
+}  
+div#shopify-section-1648040652e58c84be .row.left h4 {
+    font-size: 34px;
+}
+.spaced.our-approach.science .row:nth-of-type(2) {
+    padding: 0;
+    position: relative;
+    left: 450px;
+    top: -20px;
+}
+.spaced.our-approach.science .row:nth-of-type(3) {
+    left: 320px;
+}    
+.spaced.our-approach.science .row:nth-of-type(3) .content {
+    left: -180px;
+    right: auto;
+    position: absolute;
+    width: 360px;
+    height: 110px;
+}
+.spaced.our-approach.science .row img.img-res {
+    right: 190px;
+}  
+  
+}
+
+@media screen and (max-device-width: 1680px) {
+.spaced.our-approach.science .row:nth-of-type(2) img.img-res {
+    right: 180px;
+}  
+  
+}
+
+
+@media screen and (max-device-width: 1600px) {
+.spaced.our-approach.science .row:nth-of-type(2) img.img-res {
+    right: 130px;
+}  
+  
+}
+
+@media screen and (max-device-width: 1440px) {
+div#shopify-section-16480402579038fbd6 .row.right:nth-of-type(3) .content div , div#shopify-section-1648040652e58c84be .row.right .content>div {
+    max-width: 450px;
+    float: right;
+}
+div#shopify-section-16480402579038fbd6 .row.right:nth-of-type(3) .content {
+    justify-content: center;
+}
+.spaced.our-approach.science .content p {
+    font-size: 16px;
+}
+div#shopify-section-1648041702fd3a7f68 h4 {
+    font-size: 25px;
+    line-height: 35px;
+}
+div#shopify-section-1648041702fd3a7f68 h4:after {
+    background-size: 100px;
+    padding: 20px 55px 0;
+}
+div#shopify-section-1648041702fd3a7f68 .row .content>div{
+    max-width: 650px;
+}
+div#shopify-section-1648041702fd3a7f68 .row .content ,div#shopify-section-1648040652e58c84be .row.right .content{
+  justify-content: center;
+}
+div#shopify-section-16480402579038fbd6:after {
+    bottom: 19%;
+}  
+div#shopify-section-16480402579038fbd6 .row.right:nth-of-type(3) .content div, div#shopify-section-1648040652e58c84be .row.right .content>div {
+    max-width: 100%;
+}  
+.spaced.our-approach.science .row img.img-responsive {
+    width: 440px;
+}  
+.spaced.our-approach.science .content {
+    width: 200px;
+}  
+.spaced.our-approach.science .row:nth-of-type(4) .content {
+    left: 60px;
+    width: 290px;
+    box-shadow: -8px 8px #d7b4b5;
+}
+.spaced.our-approach.science .row:nth-of-type(3) .content {
+    width: 260px;
+    box-shadow: -8px 8px #d7b4b5;
+}
+.spaced.our-approach.science .row:nth-of-type(2) .content {
+    width: 300px;
+    right: 60px;
+}
+  
+}
+
+
+@media screen and (max-device-width: 1400px) {
+div#shopify-section-16480402579038fbd6 .row.right:nth-of-type(3) .content div , div#shopify-section-1648040652e58c84be .row.right .content>div {
+    max-width: 450px;
+    float: right;
+}
+div#shopify-section-16480402579038fbd6 .row.right:nth-of-type(3) .content {
+    justify-content: center;
+}
+.spaced.our-approach.science .content p {
+    font-size: 16px;
+}
+div#shopify-section-1648041702fd3a7f68 h4 {
+    font-size: 25px;
+    line-height: 35px;
+}
+div#shopify-section-1648041702fd3a7f68 h4:after {
+    background-size: 100px;
+    padding: 20px 55px 0;
+}
+div#shopify-section-1648041702fd3a7f68 .row .content>div{
+    max-width: 650px;
+}
+div#shopify-section-1648041702fd3a7f68 .row .content ,div#shopify-section-1648040652e58c84be .row.right .content{
+  justify-content: center;
+}
+div#shopify-section-16480402579038fbd6:after {
+    bottom: 14%;
+}
+.spaced.our-approach.science .content {
+    right: 80px;
+}  
+.spaced.our-approach.science .row:nth-of-type(2) .content {
+    right: -10px;
+    bottom: 50px;
+}
+.spaced.our-approach.science .row img.img-res {
+    top: -130px;
+    right: 60px;
+}
+.spaced.our-approach.science .row:nth-of-type(3) .content {
+    left: -120px;
+}   
+div#shopify-section-1648041702fd3a7f68:before {
+    height: 600px;
+    left: 130px;
+}  
+.spaced.our-approach.science .row:nth-of-type(2) img.img-res {
+    top: -130px;
+    right: 60px;
+}
+.spaced.our-approach.science .row img.img-res {
+    top: -170px;
+    right: 130px;
+}  
+}
+
+
+@media screen and (max-device-width: 1024px) {
+div#shopify-section-16480402579038fbd6:after {
+    bottom: 13%;
+}
+div#shopify-section-1648041702fd3a7f68:before {
+    height: 400px;
+}
+.being-is-you p {
+    width: 100%;
+}
+
+}
+
+@media screen and (max-device-width: 768px) {
+.being-is-you.container {
+    padding: 40px 0 40px 60px;
+}
+.being-is-you p {
+    font-size: 18px;
+}
+.our-approach .row .content>div {
+    max-width: 100%;
+}
+.spaced.our-approach.science .row img.img-responsive {
+    height: 300px;
+}
+.spaced.our-approach.science .row:nth-of-type(2) {left: 200px;top: 80px;}
+section.section.spaced.our-approach.science img.top-img {
+    width: 400px;
+    right: 0;
+}
+.spaced.our-approach.science .row img.img-res {
+    right: 80px;
+}
+.spaced.our-approach.science .content {right: -60px;}
+.spaced.our-approach.science .row:nth-of-type(3) {
+    left: 120px;
+}
+.spaced.our-approach.science .row:nth-of-type(3) .content {
+    left: -100px;
+}
+.spaced.our-approach.science .row:nth-of-type(4) {
+    margin-top: -80px;
+}
+div#shopify-section-164804125767f97197 {
+    background-position: 100% 0px;
+}  
+.sabi-section h2.text-center.header {
+    line-height: 40px;
+}
+.sabi-section .row.left img {
+    padding-top: 0;
+    margin-top: 0;
+}
+div#shopify-section-1648041702fd3a7f68 .row .content>div {
+    padding: 0;
+}  
+  
+}
+
+@media screen and (max-device-width: 667px) {
+.being-is-you.container {
+    padding: 40px;
+}
+  p.being {
+    width: 500px;
+}
+.being-is-you.container {
+    overflow: hidden;
+}
+.being-is-you:before {
+    left: 15px;
+    width: 10px;
+    height: 83%;
+}
+.being-is-you p {
+    font-size: 17px;
+    line-height: 26px;
+}
+.being-is-you p br {
+    display: none;
+}
+p.being>img {
+    margin-top: 0px;
+    width: 100%;
+}
+.video-sec-custom h2 {
+    margin-right: -10px;
+}
+div#shopify-section-16480402579038fbd6 .row.left:nth-of-type(2) {
+    flex-direction: column-reverse;
+}
+div#shopify-section-16480402579038fbd6 .row.left:nth-of-type(1) {
+    flex-direction: column-reverse;
+}
+.our-approach .row .des-col {
+    padding-top: 0;
+}
+div#shopify-section-16480402579038fbd6 .row.left:nth-of-type(1) .img-col {
+    width: 50%;
+}
+.sabi-section .row.left img {
+    height: auto;
+}
+div#shopify-section-16480402579038fbd6 .row.right:nth-of-type(3) {
+    position: absolute;
+    bottom: 38%;
+    width: 50%;
+    right: 20px;
+    flex-direction: column-reverse;
+}
+div#shopify-section-16480402579038fbd6 .row.right:nth-of-type(3) .img-col {
+    max-width: 80%;
+}
+div#shopify-section-16480402579038fbd6 .row.right:nth-of-type(3) .des-col {
+    max-width: 100%;
+    padding: 0;
+}
+div#shopify-section-16480402579038fbd6 .row.right:nth-of-type(3) .des-col h4 {
+    font-size: 16px;
+    line-height: 24px;
+}
+div#shopify-section-16480402579038fbd6 .row.right:nth-of-type(2)  .img-col {width: 60%;float: right;}
+div#shopify-section-16480402579038fbd6 .row.right:nth-of-type(2) {
+    justify-content: end;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+div#shopify-section-16480402579038fbd6:after {
+    z-index: -1;
+    bottom: 12%;
+}
+#shopify-section-1648040652e58c84be h2 span i {
+    font-size: 14px;
+    letter-spacing: 0;
+}
+div#shopify-section-1648040652e58c84be .sabi-section .row.left:nth-of-type(1) .col-sm-6 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+div#shopify-section-1648040652e58c84be .row.right {flex-direction: row-reverse;}
+div#shopify-section-1648040652e58c84be .row.right .img-col {
+    padding: 0;
+}
+div#shopify-section-1648040652e58c84be .row.right h4 ,#shopify-section-164804125767f97197 p {
+    font-size: 16px;
+    line-height: 22px;
+}
+div#shopify-section-164804125767f97197 {
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/Group__2.png?v=1645180746)no-repeat;
+    background-position: right 0;
+    padding: 40px 0 0;
+    background-size: 100px;
+}
+section.section.spaced.our-approach.science img.top-img {
+    right: 0;
+    left: 0;
+    position: unset;
+    width: auto;
+    margin-bottom: 90px;
+}
+section.section.spaced.our-approach.science .img-col {
+    width: 50%;
+}
+section.section.spaced.our-approach.science img.img-responsive {
+    height: 200px;
+    width: 100%;
+}
+.spaced.our-approach.science .row img.img-res {
+    right: -40px;
+}
+.spaced.our-approach.science .content {
+    right: -80%;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+section.section.spaced.our-approach.science h2.text-center.header {
+    top: 210px;
+    width: 55%;
+    z-index: 1;
+}
+.spaced.our-approach.science .row:nth-of-type(2) {
+    left: 0;
+    padding-left: 40px;
+    top: 100px;
+}
+.spaced.our-approach.science .row:nth-of-type(3) {
+    left: 0;
+    top: 140px;
+    padding-left: 75px;
+    padding-bottom: 150px;
+}
+.spaced.our-approach.science .row:nth-of-type(4) {
+    margin: 0;
+}
+.spaced.our-approach.science .row:nth-of-type(3) .content {
+    left: -70px;
+    bottom: -50px;
+    width: 210px;
+    height: 65px;
+}
+.spaced.our-approach.science .content {
+    font-size: 11px;
+    width: 180px;
+}
+.spaced.our-approach.science .row:nth-of-type(4) {
+    padding-bottom: 40px;
+}
+.spaced.our-approach.science .row:nth-of-type(4) img.img-res {
+    width: 30px;
+    top: -90px;
+    right: 20px;
+}  
+.spaced.our-approach.science .row img.img-res {
+    right: -40px;
+    width: 90px;
+    top: -80px;
+}
+.spaced.our-approach.science .row:nth-of-type(3) img.img-res {
+    top: -70px;
+    left: -50px;
+    width: 80px;
+}  
+.spaced.our-approach.science .row:nth-of-type(4) .content {
+    right: auto;
+    left: -120px;
+    bottom: -20px;
+}
+div#shopify-section-1648041702fd3a7f68:before {
+    left: 40px;
+    width: 10px;
+    background-size: cover;
+    height: 400px;
+    margin-top: -450px;
+}
+div#shopify-section-1648041702fd3a7f68 .row.right {flex-direction: row-reverse;}
+div#shopify-section-1648041702fd3a7f68 .img-col {
+    padding: 0;
+}
+div#shopify-section-1648041702fd3a7f68 .row .content>div {
+    padding: 0;
+}
+div#shopify-section-1648041702fd3a7f68 .row .content>div h4 {
+    font-size: 16px;
+    text-align: center;
+    line-height: 22px;
+}  
+div#shopify-section-16480402579038fbd6 .row.right:nth-of-type(2) .des-col {
+    display: none;
+}  
+.sabi-section .row.left img {
+  	background-size: 70px;
+    background-position: top left;
+}
+.ImageHero {
+    height: 350px;
+    min-height: 250px;
+}  
+.VideoWrapper.desktop {
+    display:  none ;
+}
+.VideoWrapper.mobile {
+    display:block ;
+}
+.spaced.our-approach.science .row:nth-of-type(2) img.img-res {
+    right: -40px;
+    width: 90px;
+    top: -80px;
+}  
+.spaced.our-approach.science .content {
+    width: 170px;
+    height: 50px;
+}  
+.spaced.our-approach.science .row:nth-of-type(2) .content {
+    right: -130px;
+    bottom: 20px;
+    width: 170px;
+    height: 65px;
+}
+.spaced.our-approach.science .row:nth-of-type(4) {
+    margin-top: 70px;
+}
+.spaced.our-approach.science .row:nth-of-type(4) .content {
+    width: 220px;
+}  
+.tri-vid-custom video:nth-of-type(1) {
+    display: none;
+}
+.tri-vid-custom video:nth-of-type(2) {
+    display: block;
+}  
+  
+  
+}
+
+@media screen and (max-device-width: 480px) {
+div#shopify-section-164804125767f97197 {
+    background-size: 70px;
+    margin-top: -70px;
+    position: relative;
+}  
+p.being>img {
+    margin-left: -52px;
+}
+div#shopify-section-16480402579038fbd6:after {
+    z-index: -1;
+    bottom: 9%;
+}
+div#shopify-section-16480402579038fbd6 .row.right:nth-of-type(3) {
+    bottom: 36%;
+}  
+div#shopify-section-16480402579038fbd6 .row.right:nth-of-type(2) .img-col {
+    width: 60%;
+    float: right;
+    position: absolute;
+    right: 0;
+    padding: 0;
+}  
+div#shopify-section-16480402579038fbd6 .row.right:nth-of-type(2) {
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 400px;
+}  
+.sabi-section h2.text-center.header {
+    font-size: 18px;
+    letter-spacing: 1px!important;
+}
+.video-sec-custom h2 ,section#section-16451725577bc8e47c .video-sec-custom h2 {
+    font-size: 14px;
+    width: auto;
+    line-height: 20px;
+}
+.sabi-section h2.text-center.header {
+    line-height: 25px;
+    font-weight: 500;
+}
+.sabi-section .row .content>div h4 {
+    font-size: 20px;
+    line-height: 26px;
+}
+.sabi-section .row.left img {
+    padding-top: 30px;
+}
+#shopify-section-1648040652e58c84be h2 span {
+    font-size: 20px;
+    line-height: 22px;
+}
+#shopify-section-164804125767f97197 h2.header {
+    font-size: 25px;
+}
+.spaced.our-approach.science .content p br {
+    display: none;
+}
+.spaced.our-approach.science .content p{
+    font-size: 12px;
+}
+div#shopify-section-1648041702fd3a7f68 .row .content>div h4 {
+    text-align: right;
+}
+div#shopify-section-1648041702fd3a7f68 h4:after {
+    position: relative;
+    top: 15px;
+    right: 12px;
+}  
+  
+  
+}
