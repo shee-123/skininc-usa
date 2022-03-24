@@ -1,6 +1,6 @@
 <div class="icon-gallery">
     <div class="icon-gallery__container">
-        <h2 class="header icon-gallery__title">{{section.settings.heading}}</h2>
+        <h2 class="header icon-gallery__title">{{section.settings.heading}}</h2>  
         <div class="icon-gallery__wrapper">
             {%- for block in section.blocks -%}
            <div class="icon-gallery__item">
@@ -11,6 +11,37 @@
         </div>
     </div>
 </div>
+
+<script>
+$(document).ready(function(){
+  $('.icon-gallery__wrapper').slick({
+  infinite: true,
+  slidesToShow: 4, // Shows a three slides at a time
+  slidesToScroll: 2, // When you click an arrow, it scrolls 1 slide at a time
+  arrows: false, // Adds arrows to sides of slider
+  dots: false ,// Adds the dots on the bottom
+  centerMode: true,
+  centerPadding: '60px',
+  autoplay: true,  
+  responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 2
+          },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ]  
+});
+  });
+</script>
 
 {% schema %}
     {
