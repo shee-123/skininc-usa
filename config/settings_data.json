@@ -252,6 +252,7 @@
       },
       "featured-products": {
         "type": "featured-products",
+        "disabled": true,
         "blocks": {
           "873ac7de-5418-400d-bcb5-37728236e8f4": {
             "type": "product",
@@ -501,6 +502,7 @@
       },
       "1544002093716": {
         "type": "social_media_awards",
+        "disabled": true,
         "blocks": {
           "1544070065822": {
             "type": "content",
@@ -522,6 +524,7 @@
       },
       "1544002103271": {
         "type": "approach",
+        "disabled": true,
         "blocks": {
           "1544002148825": {
             "type": "header",
@@ -590,6 +593,7 @@
       },
       "1544002128879": {
         "type": "featured_in",
+        "disabled": true,
         "blocks": {
           "1545674266961": {
             "type": "text",
@@ -640,6 +644,7 @@
       },
       "1544408691386": {
         "type": "usp",
+        "disabled": true,
         "blocks": {
           "1544408850006": {
             "type": "usp_item",
@@ -678,6 +683,7 @@
       },
       "1545015626607": {
         "type": "skinid",
+        "disabled": true,
         "settings": {
           "title": "4 steps to glowing, dewy skin",
           "subheading": "Why do 10 steps when you can achieve more with less?",
@@ -1331,29 +1337,29 @@
           "1552376539759": {
             "type": "brand_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/No-Phthalate-svg.png",
-              "text": "No Phthalates"
+              "image": "shopify:\/\/shop_images\/SABI_AI_Prototype-07_1.png",
+              "text": ""
             }
           },
           "1552376575495": {
             "type": "brand_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/No-Parabens-svg.png",
-              "text": "No Parabens"
+              "image": "shopify:\/\/shop_images\/SABI_AI_Prototype-03_1.png",
+              "text": ""
             }
           },
           "1552376597761": {
             "type": "brand_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/No-SLS-svg.png",
-              "text": "No SLS"
+              "image": "shopify:\/\/shop_images\/SABI_AI_Prototype-04_1.png",
+              "text": ""
             }
           },
           "1552376622836": {
             "type": "brand_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/No-Formaldehyde-svg__1.png",
-              "text": "No Formaldehyde"
+              "image": "shopify:\/\/shop_images\/SABI_AI_Prototype-08_1.png",
+              "text": ""
             }
           }
         },
@@ -1364,7 +1370,7 @@
           "1552376622836"
         ],
         "settings": {
-          "heading": "DESIGNED FOR SENSITIVE SKIN"
+          "heading": ""
         }
       },
       "password-template": {
@@ -1573,6 +1579,7 @@
       },
       "1602273737880": {
         "type": "reviews-carousel",
+        "disabled": true,
         "settings": {
         }
       },
@@ -1723,6 +1730,7 @@
       },
       "16063078622fed03dc": {
         "type": "instafeed",
+        "disabled": true,
         "settings": {
           "heading_font": "helvetica_n4",
           "heading_size": 26,
@@ -1760,6 +1768,7 @@
       },
       "16227934946ec5284d": {
         "type": "marquee-banner",
+        "disabled": true,
         "blocks": {
           "f96b21cf-8b45-4793-90dc-11bbdfe6f96e": {
             "type": "marquee_item",
@@ -3003,26 +3012,48 @@
         ],
         "settings": {
         }
+      },
+      "1648105436884e0dc8": {
+        "type": "video-section",
+        "settings": {
+          "section_size": "large",
+          "text_color": "#ffffff",
+          "subheading": "",
+          "title": "Your video",
+          "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+          "video_url_sec": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+        }
+      },
+      "1648105600cadb10d1": {
+        "type": "text-with-image",
+        "settings": {
+          "title": "Less is more.",
+          "content": "<p>You don’t need 20 steps or 20,000<br\/>ingredients for a healthy, glowing you.<br\/>Generate zero waste with No Nasties<br\/>formula customized just for you.<\/p>",
+          "link_text": "",
+          "link_url": ""
+        }
       }
     },
     "content_for_index": [
       "1574915750213",
       "16481039893a204fe3",
-      "homepage-intro",
-      "featured-products",
-      "16227934946ec5284d",
+      "1648105436884e0dc8",
+      "1648104327acfa372d",
+      "164810450399ba4be8",
+      "1552376488178",
+      "1648105600cadb10d1",
       "1606307195bd46c9cb",
+      "featured-products",
+      "homepage-intro",
+      "16227934946ec5284d",
       "1544002103271",
       "1545015626607",
       "1544002128879",
       "1544408691386",
-      "1552376488178",
       "1602273737880",
       "1544002093716",
       "1544161388661",
-      "16063078622fed03dc",
-      "1648104327acfa372d",
-      "164810450399ba4be8"
+      "16063078622fed03dc"
     ]
   },
   "presets": {
