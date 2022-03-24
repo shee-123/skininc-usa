@@ -2889,10 +2889,19 @@
           "banner10_title": "",
           "banner10_btn_label": "ADD TO BAG"
         }
+      },
+      "16481039893a204fe3": {
+        "type": "being-is-you",
+        "settings": {
+          "text1": "Your skin is your biggest organ and is the barometer of your wellbeing.",
+          "text2": "It is the first place to show signs of other ailments. Our every thought,  lifestyle and environment greatly affects our greater health and well-being,  impacting us emotionally, mentally, and physically.",
+          "text3": "https:\/\/cdn.shopify.com\/s\/files\/1\/0077\/6162\/5201\/files\/Statement-Gif.gif?v=1645175266"
+        }
       }
     },
     "content_for_index": [
       "1574915750213",
+      "16481039893a204fe3",
       "homepage-intro",
       "featured-products",
       "16227934946ec5284d",
