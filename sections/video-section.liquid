@@ -1,0 +1,93 @@
+<section class="Section" id="section-{{ section.id }}">
+  <div class="FlexboxIeFix tri-vid-custom">      
+<video autoplay muted loop controls="hidden" playsinline>
+   <source src="https://cdn.shopify.com/s/files/1/0077/6162/5201/files/desktop.mp4?v=1646993435" type="video/mp4" />
+   <source src="https://cdn.shopify.com/s/files/1/0077/6162/5201/files/desktop.mp4?v=1646993435" type="video/ogg" />
+   Your browser does not support the video element.
+</video>
+    <video autoplay muted loop controls="hidden" playsinline>
+   <source src="https://cdn.shopify.com/s/files/1/0077/6162/5201/files/mobile.mp4?v=1646993432" type="video/mp4" />
+   <source src="https://cdn.shopify.com/s/files/1/0077/6162/5201/files/mobile.mp4?v=1646993432" type="video/ogg" />
+   Your browser does not support the video element.
+</video>
+    </div>       
+</section>
+
+<style>
+  #section-{{ section.id }},
+  #section-{{ section.id }} .Heading {
+    color: {{ section.settings.text_color }};
+  }
+</style>
+
+{% schema %}   
+{
+  "name": "trivideo-section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_size",
+      "label": "Section size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "large"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub-heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Your video"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "1500 x 800px jpg recommended."
+    },
+    {
+      "type": "video_url",
+      "accept": ["vimeo", "youtube"],
+      "id": "video_url",
+      "label": "Video URL",
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+    },
+    {
+      "type": "video_url",
+      "accept": ["vimeo", "youtube"],
+      "id": "video_url_sec",
+      "label": "Video URL",
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Video",
+      "name": "trivideo-section",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}
