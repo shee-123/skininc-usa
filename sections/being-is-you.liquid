@@ -1,0 +1,44 @@
+<div class="being-is-you container">
+  <p class="barometer">{{section.settings.text1}}</p>
+  <p >{{section.settings.text2}}</p>
+  <p class="being"><img src="{{section.settings.text3}}"></p>
+</div>
+
+
+{% schema %}
+  {
+    "name": "being-is-you",
+    "settings": [
+	{
+      "type": "text",
+      "id": "text1",
+      "label": "text 1"
+    },
+    {
+      "type": "text",
+      "id": "text2",
+      "label": "text2"
+    },
+    {
+      "type": "text",
+      "id": "text3",
+      "label": "text3"
+    },
+    {
+      "type": "image_picker",
+      "id": "gif",
+      "label": "gif"
+    }
+
+	],
+  "presets": [{
+    "name": "being-is-you"
+  }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
