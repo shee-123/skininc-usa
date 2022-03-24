@@ -522,75 +522,6 @@
         "settings": {
         }
       },
-      "1544002103271": {
-        "type": "approach",
-        "disabled": true,
-        "blocks": {
-          "1544002148825": {
-            "type": "header",
-            "settings": {
-              "heading": "our approach to skincare"
-            }
-          },
-          "1544002169839": {
-            "type": "approach_item",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/mdd.sticker_b304338c-168f-4ef6-bc97-5d14327632ad.jpg",
-              "img_link": "shopify:\/\/pages\/skin-id",
-              "title": "customize, don’t compromise",
-              "content": "<p>Stop the guesswork from your skincare routine! Decode your unique skin concerns with the Skin Identity Check and customize your personal skincare solution for superior results. There's a custom beauty for every you, starting with My Daily Dose® Serums, to the award-winning Optimizer Voyage Tri-Light devices, and our latest #Skinnovation,  the world’s first custom sleeping mask My Nightly Dose®. <\/p>",
-              "direction": "right",
-              "cta_btn_label": "Learn More",
-              "cta_btn_link": "shopify:\/\/pages\/skin-id"
-            }
-          },
-          "1544002218467": {
-            "type": "approach_item",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Skin_Inc___Optimizer_Voyage_Tri-Light_USB_Rose_Gold_Chrome_w_MDDs___Lifestyle_Shot_copy.jpg",
-              "img_link": "shopify:\/\/pages\/skin-id",
-              "title": "less is more",
-              "content": "<p>You don&#x27;t need 20 steps or 20,000 ingredients for beautiful skin. Our scientists have selected ingredients in optimal concentrations as the building blocks for our custom-blended My Daily Dose® and My Nightly Dose™ serums. Turning on the power of customization, our Optimizer Voyage Tri-Light ++ is a multi-tasking 5-in-1 LED device that boosts the performance of your skincare. <\/p>",
-              "direction": "left",
-              "cta_btn_label": "Learn More",
-              "cta_btn_link": "shopify:\/\/pages\/skin-id"
-            }
-          },
-          "1544002270415": {
-            "type": "approach_item",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/ACTIVE_TO_THE_END.jpg",
-              "img_link": "shopify:\/\/pages\/skin-id",
-              "title": "CLINICALLY-PROVEN",
-              "content": "<p>Our Japanese proprietary encapsulation technology in our formula protects active ingredients from exposure to light and oxidation, ensuring supreme freshness and maximum absorption into your skin for optimal results.<\/p>",
-              "direction": "right",
-              "cta_btn_label": "Learn More",
-              "cta_btn_link": "shopify:\/\/pages\/skin-id"
-            }
-          },
-          "1544002320453": {
-            "type": "approach_item",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/SUPERCHARGE_YOUR_SKINCARE_WITH_LIGHT.jpg",
-              "img_link": "shopify:\/\/products\/optimizer-voyage-tri-light-usb-rose-gold-chrome",
-              "title": "Supercharge your skincare with light",
-              "content": "<p>Pair your custom serum with our Optimizer Voyage Tri-Light devices and use LED chromotherapy and low-frequency ultrasound stimulation to enhance results, increasing the efficiency and performance of your skincare.<\/p>",
-              "direction": "left",
-              "cta_btn_label": "Learn More",
-              "cta_btn_link": "shopify:\/\/products\/optimizer-voyage-tri-light-usb-rose-gold-chrome"
-            }
-          }
-        },
-        "block_order": [
-          "1544002148825",
-          "1544002169839",
-          "1544002218467",
-          "1544002270415",
-          "1544002320453"
-        ],
-        "settings": {
-        }
-      },
       "1544002128879": {
         "type": "featured_in",
         "disabled": true,
@@ -1763,44 +1694,6 @@
       },
       "product-custom-recovery-mask-widget": {
         "type": "product-custom-recovery-mask-widget",
-        "settings": {
-        }
-      },
-      "16227934946ec5284d": {
-        "type": "marquee-banner",
-        "disabled": true,
-        "blocks": {
-          "f96b21cf-8b45-4793-90dc-11bbdfe6f96e": {
-            "type": "marquee_item",
-            "settings": {
-              "title": "Loyal customers get 5% discount"
-            }
-          },
-          "0193182a-b29c-4250-9d81-97b2efd93e66": {
-            "type": "marquee_item",
-            "settings": {
-              "title": "Free shipping over $75"
-            }
-          },
-          "85e94b22-da56-465f-9895-ed20201dd3da": {
-            "type": "marquee_item",
-            "settings": {
-              "title": "Secure payments"
-            }
-          },
-          "c234843e-96b0-46b0-9ca3-e29b86d35857": {
-            "type": "marquee_item",
-            "settings": {
-              "title": "150+ Beauty awards"
-            }
-          }
-        },
-        "block_order": [
-          "f96b21cf-8b45-4793-90dc-11bbdfe6f96e",
-          "0193182a-b29c-4250-9d81-97b2efd93e66",
-          "85e94b22-da56-465f-9895-ed20201dd3da",
-          "c234843e-96b0-46b0-9ca3-e29b86d35857"
-        ],
         "settings": {
         }
       },
@@ -3032,6 +2925,101 @@
           "link_text": "",
           "link_url": ""
         }
+      },
+      "1648105754f6b470dc": {
+        "type": "science",
+        "blocks": {
+          "c233345a-7a0d-4634-bfd6-e90ee9b94e22": {
+            "type": "header",
+            "settings": {
+              "heading": "",
+              "logo": "shopify:\/\/shop_images\/SABI_AI_Logo.png"
+            }
+          },
+          "eb22e396-df95-413b-9ef2-e4847e6e5a96": {
+            "type": "approach_item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Blonde_Girl_with_Orange_Light_1_-_Without_Copy.jpg",
+              "s_logo": "shopify:\/\/shop_images\/s.png",
+              "img_link": "",
+              "title": "",
+              "content": "<p>Using <em><strong>SCIENCE<\/strong><\/em><em> <\/em>to unlock your full potential.<\/p>",
+              "direction": "left",
+              "cta_btn_label": "",
+              "cta_btn_link": ""
+            }
+          },
+          "c333ce78-78f7-4b54-93db-1932cc33cac3": {
+            "type": "approach_item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Asian_Girl_with_No_Light_2.jpg",
+              "s_logo": "shopify:\/\/shop_images\/r.png",
+              "img_link": "",
+              "title": "",
+              "content": "<p>Powered by <em><strong>AI <\/strong><\/em>to take the guesswork out of your wellness journey.<\/p>",
+              "direction": "left",
+              "cta_btn_label": "",
+              "cta_btn_link": ""
+            }
+          },
+          "4ec49518-f1a7-4f26-bcc8-7bc87a0ceab7": {
+            "type": "approach_item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/shutterstock_1960316680.jpg",
+              "s_logo": "shopify:\/\/shop_images\/b.png",
+              "img_link": "",
+              "title": "",
+              "content": "<p>Creating the perfect <em><strong>BALANCE <\/strong><\/em><br\/>between your emotional, mental,<br\/>and physical health.<\/p>",
+              "direction": "left",
+              "cta_btn_label": "",
+              "cta_btn_link": ""
+            }
+          },
+          "90c1feb6-0c60-4277-bb45-1acb9fdd8211": {
+            "type": "approach_item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Main_KV_2_-_Without_Copy_1.jpg",
+              "s_logo": "shopify:\/\/shop_images\/ii.png",
+              "img_link": "",
+              "title": "",
+              "content": "<p>Nurturing your <em><strong>INNER-BEING<\/strong><\/em> cause feeling good is the new looking good.<\/p>",
+              "direction": "left",
+              "cta_btn_label": "",
+              "cta_btn_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "c233345a-7a0d-4634-bfd6-e90ee9b94e22",
+          "eb22e396-df95-413b-9ef2-e4847e6e5a96",
+          "c333ce78-78f7-4b54-93db-1932cc33cac3",
+          "4ec49518-f1a7-4f26-bcc8-7bc87a0ceab7",
+          "90c1feb6-0c60-4277-bb45-1acb9fdd8211"
+        ],
+        "settings": {
+        }
+      },
+      "1648105969db5fc039": {
+        "type": "sabi-section",
+        "blocks": {
+          "4832ec49-0745-478d-898e-2f9783b49c05": {
+            "type": "approach_item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/QR_Code-ai.png",
+              "img_link": "",
+              "title": "Scan the QR code and download now to  curate your wellness journey with .",
+              "content": "",
+              "direction": "right",
+              "cta_btn_label": "",
+              "cta_btn_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "4832ec49-0745-478d-898e-2f9783b49c05"
+        ],
+        "settings": {
+        }
       }
     },
     "content_for_index": [
@@ -3043,17 +3031,15 @@
       "1552376488178",
       "1648105600cadb10d1",
       "1606307195bd46c9cb",
-      "featured-products",
-      "homepage-intro",
-      "16227934946ec5284d",
-      "1544002103271",
+      "1648105754f6b470dc",
       "1545015626607",
       "1544002128879",
       "1544408691386",
       "1602273737880",
       "1544002093716",
       "1544161388661",
-      "16063078622fed03dc"
+      "16063078622fed03dc",
+      "1648105969db5fc039"
     ]
   },
   "presets": {
