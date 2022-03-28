@@ -109,7 +109,6 @@
           },
           "c59454a8-accf-4fcb-904e-13a800fbec6e": {
             "type": "banner",
-            "disabled": true,
             "settings": {
               "background": "#d7b4b5",
               "text_color": "#ffffff",
