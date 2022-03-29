@@ -10,6 +10,14 @@
 
   ttq.load('C8PBN1A3RRRFDD69OG0G');
   ttq.page();
+  ttq.track('AddToCart',{
+              content_id:
+               '{{ line_item.variant_id }}', 
+              content_type:
+               'product', 
+              content_name:
+               '{{ line_item.product.title }}' 
+              });
 }(window, document, 'ttq');
 </script>
   <!-- Tiktok Pixel End -->
