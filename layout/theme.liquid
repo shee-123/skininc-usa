@@ -65,6 +65,9 @@
     {%- if template contains 'skinid' -%}
  <link rel="stylesheet" href="{{ 'skininc.scss.css' | asset_url }}">
 {%- endif -%}
+  {%- if template contains "subscription" %}
+	   <link rel="stylesheet" href="{{ 'subscription.css' | asset_url }}">
+    {% endif %}
     <script>
       // This allows to expose several variables to the global scope, to be used in scripts
       window.theme = {
