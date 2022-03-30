@@ -3114,6 +3114,22 @@
       },
       "Clinically-Proven": {
         "type": "Clinically-Proven",
+        "blocks": {
+          "c9f747fb-6aab-4328-96ad-41a731d5e5c0": {
+            "type": "approach_item",
+            "settings": {
+              "img_link": "",
+              "title": "Clinically-Proven & Visible Results*",
+              "content": "<ul>     <li>\n<span>95%<\/span>agree that skin is clearer with a more refined texture<\/li>     <li>\n<span>95%<\/span>agree that skin looks hydrated<\/li>     <li>\n<span>85%<\/span>agree that skin looks revived and radiant<\/li>     <li>\n<span>81%<\/span>agree that lines & wrinkles appear less visible<\/li> <\/ul> <p><i>*Based on a consumer study of My Daily Dose serum and Tri-Light™ conducted as part of an independent clinical study.<\/i><\/p>",
+              "direction": "left",
+              "cta_btn_label": "",
+              "cta_btn_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "c9f747fb-6aab-4328-96ad-41a731d5e5c0"
+        ],
         "settings": {
         }
       },
@@ -3124,24 +3140,152 @@
       },
       "subs_sabi": {
         "type": "subs_sabi",
+        "blocks": {
+          "087ffce4-4c19-4104-b1c5-0dfe4b69107c": {
+            "type": "header",
+            "settings": {
+              "heading": "Remove The Guesswork, <span>Take a Selfie <br>and get a 360 AI diagnostic & progressive skin report.<\/span>"
+            }
+          },
+          "19bd742c-206b-4d50-b2f3-6ff96a5f1371": {
+            "type": "approach_item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/SABI_AI_Prototype-01_1_1.png",
+              "img_link": "",
+              "title": "<img class=\"top-img\" src=\"\/\/cdn.shopify.com\/s\/files\/1\/0077\/6162\/5201\/files\/SABI_AI_Logo.png?v=1645161923\">",
+              "content": "<ul>\n<li>Progressive Skin Report<\/li> \t<li>Computer-Vision Assessment of your lines, pores, moisture, skin tone & more<\/li> \t<li>Precise readings of your skin’s hydration level<\/li> \t<li>Self-care tips based on your water intake, sleep, stress, activity level, menstrual cycle, pollution index, and blue light exposure<\/li>\n<li>Share your results and connect with your Skin Twin and the +SABI AI community.<\/li> <\/ul>",
+              "direction": "left",
+              "cta_btn_label": "LEARN MORE",
+              "cta_btn_link": "\/"
+            }
+          },
+          "1149c384-8cd8-454a-a08b-079a4649af85": {
+            "type": "approach_item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/SABI_AI_PDP_Vector_-_For_Van-02_1.png",
+              "img_link": "",
+              "title": "",
+              "content": "",
+              "direction": "right",
+              "cta_btn_label": "",
+              "cta_btn_link": ""
+            }
+          },
+          "0d585279-09d9-49fa-831e-00b56f2e9eff": {
+            "type": "approach_item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/QR_Code-ai.png",
+              "img_link": "",
+              "title": "Customise your 360 wellness journey  for your lit from within glow.",
+              "content": "",
+              "direction": "right",
+              "cta_btn_label": "",
+              "cta_btn_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "087ffce4-4c19-4104-b1c5-0dfe4b69107c",
+          "19bd742c-206b-4d50-b2f3-6ff96a5f1371",
+          "1149c384-8cd8-454a-a08b-079a4649af85",
+          "0d585279-09d9-49fa-831e-00b56f2e9eff"
+        ],
         "settings": {
         }
       },
       "tri-light-sbubs": {
         "type": "tri-light-sbubs",
+        "blocks": {
+          "05b01bf7-57b5-4e75-b9d8-e43d9bd5d20f": {
+            "type": "header",
+            "settings": {
+              "heading": "Tri-Light™ <br> <p>Tri-Light™ combines 8-in-1 advanced technologies to empower you to customize a regime that addresses multiple skin concerns synergistically<\/p>",
+              "logo": "shopify:\/\/shop_images\/Subscription_PDP_-_Mobile.jpg"
+            }
+          },
+          "701e7e56-a193-45c7-b653-e55161cfe84a": {
+            "type": "approach_item",
+            "settings": {
+              "img_link": "",
+              "title": "",
+              "content": "",
+              "direction": "left",
+              "cta_btn_label": "LEARN MORE",
+              "cta_btn_link": "\/"
+            }
+          }
+        },
+        "block_order": [
+          "05b01bf7-57b5-4e75-b9d8-e43d9bd5d20f",
+          "701e7e56-a193-45c7-b653-e55161cfe84a"
+        ],
         "settings": {
         }
       },
       "subscription-three-sec": {
         "type": "subscription-three-sec",
+        "blocks": {
+          "5822ea9a-4cee-4e7a-a35e-e06c79f99463": {
+            "type": "icon_txt",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/test1.png",
+              "point-text": "",
+              "icon-text": "Glow More For Less. Full-sized, Not Full Price. Made Affordable For You.",
+              "icon-subtext": "",
+              "check_text": ""
+            }
+          },
+          "66a26bd2-3e07-40a2-95c3-2740ff68e51f": {
+            "type": "icon_txt",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/thumb.png",
+              "point-text": "",
+              "icon-text": "Clinically Proven &  Customized For Effective Results",
+              "icon-subtext": "",
+              "check_text": ""
+            }
+          },
+          "051d3a49-b53d-4db0-a873-90cd4468c358": {
+            "type": "icon_txt",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/test2.png",
+              "point-text": "",
+              "icon-text": "Effortless Beauty Delivered To Your  Door Monthly",
+              "icon-subtext": "",
+              "check_text": ""
+            }
+          }
+        },
+        "block_order": [
+          "5822ea9a-4cee-4e7a-a35e-e06c79f99463",
+          "66a26bd2-3e07-40a2-95c3-2740ff68e51f",
+          "051d3a49-b53d-4db0-a873-90cd4468c358"
+        ],
         "settings": {
-          "title": "Section Heading",
-          "button_1_text": "",
-          "button_1_link": ""
+          "title": "Why Subscribe?",
+          "button_1_text": "START MY JOURNEY NOW",
+          "button_1_link": "\/"
         }
       },
       "subs_testim": {
         "type": "subs_testim",
+        "blocks": {
+          "a2904753-f53f-48f0-a263-9759de77f0e8": {
+            "type": "approach_item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/beauty.png",
+              "img_link": "",
+              "title": "Fitbit For My Skin!",
+              "content": "My go-to app and device to pamper my skin.<br> - Sarah Lau, US Editor <div class=\"star-rating\">     <input type=\"radio\" id=\"5-stars\" name=\"rating\" value=\"5\">     <label for=\"5-stars\" class=\"star\">★<\/label>     <input type=\"radio\" id=\"4-stars\" name=\"rating\" value=\"4\">     <label for=\"4-stars\" class=\"star\">★<\/label>     <input type=\"radio\" id=\"3-stars\" name=\"rating\" value=\"3\">     <label for=\"3-stars\" class=\"star\">★<\/label>     <input type=\"radio\" id=\"2-stars\" name=\"rating\" value=\"2\">     <label for=\"2-stars\" class=\"star\">★<\/label>     <input type=\"radio\" id=\"1-star\" name=\"rating\" value=\"1\">     <label for=\"1-star\" class=\"star\">★<\/label>   <\/div>",
+              "direction": "left",
+              "cta_btn_label": "START MY JOURNEY NOW",
+              "cta_btn_link": "\/"
+            }
+          }
+        },
+        "block_order": [
+          "a2904753-f53f-48f0-a263-9759de77f0e8"
+        ],
         "settings": {
         }
       }
