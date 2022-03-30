@@ -3019,6 +3019,131 @@
         ],
         "settings": {
         }
+      },
+      "subscription_slideshow": {
+        "type": "subscription_slideshow",
+        "blocks": {
+          "8d84e573-d31c-4490-aeb6-c97d5bfeb426": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Subsciption_PDP_Top_Banner_1.png",
+              "mobile_image": "shopify:\/\/shop_images\/banner-mob.png",
+              "apply_overlay": true,
+              "content_position": "bottomLeft",
+              "subheading": "",
+              "title": "",
+              "button_1_text": "",
+              "button_1_link": "",
+              "button_2_text": "",
+              "button_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "8d84e573-d31c-4490-aeb6-c97d5bfeb426"
+        ],
+        "settings": {
+          "show_fullscreen": true,
+          "show_arrow": false,
+          "autoplay": true,
+          "cycle_speed": 5,
+          "text_color": "#ffffff",
+          "button_color": "#363636"
+        }
+      },
+      "subscription_today": {
+        "type": "subscription_today",
+        "blocks": {
+          "ca8ce875-ccb4-4eb1-af1f-63cbbac603f8": {
+            "type": "header",
+            "settings": {
+              "heading": "SUBSCRIBE TO YOUR 360 CUSTOMIZED SKIN PROGRAM"
+            }
+          },
+          "d4590a50-2a23-4116-96e4-ff038330968e": {
+            "type": "approach_item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/month1.png",
+              "img_link": "",
+              "title": "What You’ll Receive",
+              "content": "<span>4 Personalized Cocktail Serums ($169 x 4) + NEW Tri-Light ($458) Worth $1134 in total!<\/span><b>$169 \/ month<\/b><i>(billed monthly)<\/i>",
+              "direction": "left",
+              "cta_btn_label": "*Each personalized serum to be delivered monthly",
+              "cta_btn_link": ""
+            }
+          },
+          "e003a87b-2f02-488f-bb7a-96f55ba9215c": {
+            "type": "approach_item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/bottle.png",
+              "img_link": "",
+              "title": "5TH MONTH ONWARDS",
+              "content": "<b>$125 \/ month<\/b><i>(billed monthly)<\/i> <span>Save $44<i>on your monthly cocktail serum<\/i><\/span>",
+              "direction": "left",
+              "cta_btn_label": "",
+              "cta_btn_link": ""
+            }
+          },
+          "fa93c9a6-24f3-4449-9e23-78d3b805cd97": {
+            "type": "header",
+            "settings": {
+              "heading": "<span>RECALIBRATE ANYTIME<\/span> <br> Your skin changes over time, based on seasonal weather, environmental aggressors,  and other factors. Simply change your custom cocktail serum blend as your skin  progresses through the Skin ID Check. Adjust anytime through your account."
+            }
+          },
+          "21d5c4d8-f6c2-4488-956b-80a54de6f4ce": {
+            "type": "approach_item",
+            "settings": {
+              "img_link": "",
+              "title": "",
+              "content": "",
+              "direction": "left",
+              "cta_btn_label": "START MY JOURNEY NOW",
+              "cta_btn_link": "\/"
+            }
+          }
+        },
+        "block_order": [
+          "ca8ce875-ccb4-4eb1-af1f-63cbbac603f8",
+          "d4590a50-2a23-4116-96e4-ff038330968e",
+          "e003a87b-2f02-488f-bb7a-96f55ba9215c",
+          "fa93c9a6-24f3-4449-9e23-78d3b805cd97",
+          "21d5c4d8-f6c2-4488-956b-80a54de6f4ce"
+        ],
+        "settings": {
+        }
+      },
+      "Clinically-Proven": {
+        "type": "Clinically-Proven",
+        "settings": {
+        }
+      },
+      "before-after": {
+        "type": "before-after",
+        "settings": {
+        }
+      },
+      "subs_sabi": {
+        "type": "subs_sabi",
+        "settings": {
+        }
+      },
+      "tri-light-sbubs": {
+        "type": "tri-light-sbubs",
+        "settings": {
+        }
+      },
+      "subscription-three-sec": {
+        "type": "subscription-three-sec",
+        "settings": {
+          "title": "Section Heading",
+          "button_1_text": "",
+          "button_1_link": ""
+        }
+      },
+      "subs_testim": {
+        "type": "subs_testim",
+        "settings": {
+        }
       }
     },
     "content_for_index": [
