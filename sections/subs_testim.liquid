@@ -1,12 +1,107 @@
+<section class="section spaced our-approach tri_light custom" data-section-id="{{ section.id }}">
+  <div class="">
+    {%- for block in section.blocks -%}
+    {%- if block.type == "header" -%} 
+    <h2 class="text-center header">{{block.settings.heading }}</h2> 
+    <img class="" src="{{ block.settings.logo | img_url: 'master' }}" alt="{{ block.settings.image.alt | escape }}">
+    
+    {%- else -%}
+    {%- assign image_url = block.settings.image | img_url: 'master' -%}
+    <div class="row {{ block.settings.direction }} ">
+      <div class="col-sm-12 col-xs-12 des-col">
+        <div class="content subs_testim">
+          <div>
+          <img class="img-responsive" src="{{ image_url }}" alt="{{ block.settings.image.alt | escape }}">  
+          <h4>{{block.settings.title }}</h4>
+          <p>{{block.settings.content}}</p>
+          {% if block.settings.cta_btn_link %}
+          	<a class="Button Button--primary approach-cta" href="{{ block.settings.cta_btn_link }}">{{ block.settings.cta_btn_label }}</a>
+          {% endif %}
+        </div>
+        </div>
+      </div>
+    </div>
+    {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
 {% schema %}
+{
+  "name": "sabi-section",
+  "class": "shopify-section--bordered",
+  "blocks": [
   {
-    "name": "Section name",
-    "settings": []
+    "type": "header",
+    "name": "header",
+    "settings" : [{
+      "type": "text",
+      "id": "heading",
+      "label": "Header"
+    },{
+      "type": "image_picker",
+      "id": "logo",
+      "label": "logo"
+    }]
+  },
+  {
+    "type" : "approach_item",
+    "name" : "row",
+    "settings" : [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "530 x 300px jpg recommended"
+    },
+    {
+      "type": "url",
+      "id": "img_link",
+      "label": "Link for image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "Direction",
+      "options": [
+      {
+        "value": "left",
+        "label": "Left"
+      },
+      {
+        "value": "right",
+        "label": "Right"
+      }
+      ],
+      "default": "left"
+    },
+	{
+      "type": "text",
+      "id": "cta_btn_label",
+      "label": "CTA Button Label"
+    },
+	{
+      "type": "url",
+      "id": "cta_btn_link",
+      "label": "CTA Button Link"
+    }
+    ]
   }
+  ],
+  "presets": [
+  {
+    "category": "Text",
+    "name": "sabi-section"
+  }
+  ]
+}
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
