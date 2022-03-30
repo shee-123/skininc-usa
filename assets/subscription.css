@@ -470,7 +470,9 @@ div#shopify-section-subscription-three-sec h2 {
 .spaced.our-approach.sabi-section h2 span {
     font-weight: 600;
 }
-
+.content.subs_testim  img.img-responsive {
+    margin-bottom: 40px;
+}
 
 @media screen and (min-device-width: 1920px) and (max-device-width: 2560px) {
 .our-approach.sabi-section:after {
