@@ -1,0 +1,112 @@
+<div class="container icon-text">
+  {% if section.settings.title != blank %}
+    <div class="section-header text-center">
+      <h2>{{ section.settings.title | escape }}</h2>
+    </div>
+  {% endif %}
+
+  {% if section.blocks.size > 0 %}
+    <div class="subscription-bar{% if section.settings.title_enable %} logo-bar--large{% endif %}">
+      {% for block in section.blocks %}
+        <div class="subscription__item{% if section.settings.title_enable %} logo-bar__item--large{% endif %}" {{ block.shopify_attributes }}>
+          <div class="left-logo-text">
+          {% if block.settings.image != blank %}
+            <img src="{{ block.settings.image | img_url: 'master' }}">
+          {% else %}
+            <img src="https://cdn.shopify.com/s/files/1/0034/6780/4770/files/icon.png?2786506787789510682" alt="icon_placeholder">
+          {% endif %}
+          </div>
+          <div class="right-logo-text">
+		  {% if block.settings.point-text != blank %}
+          <p class="point_text">  {{ block.settings.point-text }}</p>
+          {% endif %}
+		  {% if block.settings.icon-text != blank %}
+          <p class="icon_text">  {{ block.settings.icon-text }}</p>
+          {% endif %}
+          
+		  {% if block.settings.icon-subtext != blank %}
+          <p class="icon_subtext">  {{ block.settings.icon-subtext }}</p>
+          {% endif %} 
+            
+          <p class="check_loyal">
+             {{ block.settings.check_text }}
+   		  </p> 
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  <div class="bottom_subs_rew">
+     <a href="{{ section.settings.button_1_link }}" class="ButtonGroup__Item Button">{{ section.settings.button_1_text }}</a>
+  </div>
+  
+  {% endif %}
+
+  {% if section.blocks.size == 0 %}
+    {% include 'no-blocks' %}
+  {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "subscription-three-sec",
+    "class": "icon-text",
+    "max_blocks": 4,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Section Heading"
+      },
+        {
+          "type": "text",
+          "id": "button_1_text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "button_1_link",
+          "label": "Link"
+        }
+    ],
+    "blocks": [
+      {
+        "type": "icon_txt",
+        "name": "Icon with Text",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+      	  {
+            "type": "text",
+            "id": "point-text",
+            "label": "point-text" 
+          },
+      	  {
+            "type": "text",
+            "id": "icon-text",
+            "label": "Heading" 
+          },
+      	  {
+            "type": "text",
+            "id": "icon-subtext",
+            "label": "Sub Heading" 
+          },
+		  {
+            "type": "text",
+            "id": "check_text",
+            "label": "Check Text" 
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "image With Text",
+        "category": "Custom Code"
+      }
+    ]
+  }
+{% endschema %}
