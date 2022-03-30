@@ -1,0 +1,978 @@
+body,p,span,h1,h2,h4{    
+    font-family: Helvetica,"Helvetica Neue",Arial,"Lucida Grande",sans-serif !important;
+    font-weight: 400;
+} 
+.breadcrumb-wrapper {
+    display: none;
+}
+div#shopify-section-subscription-three-sec h2  {
+    color: #919295 !important;
+    text-transform: unset;
+    font-size: 42px;
+    letter-spacing: 0px !important;
+    margin-bottom: 0;
+    order: 1;
+}
+.SectionHeader__ButtonWrapper {
+    order: 3;
+}
+#section-subscription_slideshow .Button {
+    border: 0;
+    border-radius: 50px !important;
+    color: #fff !important;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+#shopify-section-subscription-rewards-three-sec h2,div#shopify-section-subscription-three-sec h2 , .our-approach.subscription_today h2{
+    color: #919295;
+    margin-bottom: 30px;
+}
+#shopify-section-subscription-rewards-three-sec {
+    margin: 60px 0;
+}
+.subscription-bar {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.subscription-bar p.icon_text {
+    color: #919295!important;
+    text-transform: unset;
+    font-size: 22px;
+    letter-spacing: 0px!important;
+    margin-bottom: 15px;
+}
+.subscription__item {
+    text-align: center;
+    width: 33.33%;
+    padding: 0 10px;
+}
+.subscription-bar p.check_loyal {
+    color: #919295!important;
+    font-size: 20px;
+}
+.subscription__item img {
+    height: 180px; 
+    margin-bottom: 20px;
+}
+.bottom_subs_rew {
+    text-align: center;
+    margin: 60px 0 0;
+}
+.bottom_subs_rew a.ButtonGroup__Item ,.des-col .approach-cta{
+    border: 0;
+    border-radius: 50px!important;
+    color: #fff!important;
+    font-size: 18px;
+    letter-spacing: 2px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.spaced.our-approach.sabi-section {
+    position: relative;
+}
+.spaced.our-approach.sabi-section:after {
+    content: "";
+    position: absolute;
+    background: url(https://cdn.shopify.com/s/files/1/0150/9231/8256/files/bg_subs_1.png?v=1647321189)no-repeat;
+    width: 100%;
+    height: 100%;
+    bottom: 0%;
+    background-position: 0 bottom;
+    background-size: 110%;
+    z-index: -1;
+}
+section.section.spaced.our-approach.sabi-section .row.left:nth-of-type(1) .content div {
+    max-width: 100%;
+}
+section.section.spaced.our-approach.sabi-section .row.left:nth-of-type(1) .content div {
+    max-width: 100%;
+}
+.spaced.our-approach.sabi-section h2 {
+    font-size: 36px;
+    position: relative;
+    display: block;
+    letter-spacing: 2px!important;
+    text-transform: none;
+    color: #919295;
+    margin: 80px 0 20px;
+    line-height: 45px;
+}
+.spaced.our-approach.sabi-section p.leveraging {
+    text-align: center;
+    font-size: 22px;
+    color: #919295;
+    margin-bottom: 60px;
+}
+.sabi-section .row.left img {
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/New_App.png?v=1646292629)no-repeat;
+    background-size: 150px;
+    background-position: top left 20px;
+    padding-top: 30px;
+    margin-top: -20px;
+}
+.sabi-section .row.left img {
+    width: 100%;
+    height: 900px;
+    object-fit: contain;
+}
+.sabi-section .row.left img.top-img {
+    height: auto;
+    background: none;
+    margin-bottom: -20px;
+}
+.spaced.our-approach.sabi-section .row.left .content {
+    align-items: flex-start;
+    margin-top: -40px;
+    text-align:center;
+}
+.spaced.our-approach.sabi-section ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.spaced.our-approach.sabi-section ul li {
+    color: #919295;
+    text-align: left;
+    font-size: 24px;
+    padding: 0px 0 15px 60px;
+    background: url(https://cdn.shopify.com/s/files/1/0150/9231/8256/files/check.png?v=1647317957) no-repeat left top;
+}
+.spaced.our-approach.tri_light h2 {
+    color: #919295;
+    font-size: 70px;
+    font-weight: 600;
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/new.png?v=1648448082) no-repeat;
+    background-size: 90px;
+    background-position: 230px 0px;
+    padding-top: 40px;
+}
+.spaced.our-approach.tri_light h2 p {
+    color: #919295;
+    font-size: 30px;
+    line-height: 40px;
+    text-transform: none;
+    letter-spacing: 0;
+    margin: 20px 0;
+}
+.spaced.our-approach.tri_light .row.left {
+    flex-direction: column;
+}
+.spaced.our-approach.tri_light .img-col {
+    display: none;
+}
+.spaced.our-approach.tri_light .des-col {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+}
+.spaced.our-approach.tri_light .content {
+    justify-content: center;
+}
+section.section.spaced.our-approach.subscription_today {
+    padding: 40px 0 0;
+    text-align: center;
+    margin-bottom: -40px;
+}
+.our-approach.subscription_today h2 {
+    text-transform: none;
+    font-weight: 600;
+    font-size: 30px;
+    width: 100%;
+    color: #d7b4b5;
+    margin-bottom: 60px;
+}
+.our-approach.subscription_today .content>div {
+    max-width: 100%;
+    border: 1px solid #d2b5b5;
+    padding: 30px 0 50px;
+    border-radius: 15px;
+    position: relative;
+}
+.shopify-section--bordered+.shopify-section--bordered {
+    border-top: 0;
+}
+.our-approach.subscription_today .content {
+    padding: 0 30px;
+    width: 100%;
+    display: block;
+}
+.our-approach.subscription_today h4 {
+    background: #fff;
+    position: absolute;
+    margin: 0 auto;
+    top: -25px;
+    left: 0;
+    right: 0;
+    display: inline-block;
+    color: #d7b4b5;
+    font-size: 24px;
+    text-transform: none;
+    font-weight: 600;
+    letter-spacing: 1px!important;
+    width: 350px;
+    border-radius: 50px;
+    padding: 5px 0;
+    border: 1px solid #d7b4b5;
+}
+.our-approach.subscription_today b {
+    display: block;
+    font-size: 35px;
+    color: #919295;
+    line-height: 45px;
+}
+.our-approach.subscription_today .content>div p i {
+    font-weight: 100;
+    line-height: 35px;
+    font-size: 28px;
+}
+.our-approach.subscription_today .content p span {
+    display: block;
+    background: #d7b4b5;
+    color: #fff;
+    font-size: 30px;
+    padding: 15px 35px;
+    margin: 20px 0 20px;
+}
+.our-approach.subscription_today .content p span i {display: block;font-weight: 100;font-size: 20px;}
+.our-approach.subscription_today .content p {
+    color: #919295;
+    font-size: 18px;
+}
+section.section.spaced.our-approach.subscription_today h2:nth-of-type(2) {
+    font-weight: 500;
+    color: #919295;
+    font-size: 27px;
+    line-height: 40px;
+    text-transform: none;
+    margin: 40px 0 0;
+    letter-spacing: 0 !important;
+}
+section.section.spaced.our-approach.subscription_today h2:nth-of-type(2) span {
+    font-weight: 600;
+    color: #d7b4b5;
+    line-height: 70px;
+}
+.our-approach.subscription_today .row.left:last-child {
+    margin: 0 auto;
+    width: 100%;
+    float: none;
+}
+.our-approach.subscription_today .row.left:last-child div {
+    border: 0;
+}
+.our-approach.subscription_today .row.left:last-child h4 {
+    display: none;
+}
+.our-approach.subscription_today .row.left:last-child p {
+    display: none;
+}
+.our-approach.tri_light.custom h2 {
+    background: no-repeat;
+    font-size: 40px;
+    width: 100%;
+    line-height: 50px;
+    text-transform: none;
+    margin: 0 0 80px;
+}
+#shopify-section-subs_custom img {
+    width: 100%;
+}
+.Slideshow__ImageContainer.Image--contrast.hidden-phone {
+    background: url(https://cdn.shopify.com/s/files/1/0150/9231/8256/files/bg_home.png?v=1647926099)no-repeat !important;
+    background-size: cover !important;
+}
+.our-approach.subscription_today .content p.label {
+    margin: 50px 0 20px;
+    font-style: italic;
+    font-size: 22px;
+}
+section.section.spaced.our-approach.subscription_today .row.left:nth-of-type(2) .content {
+    width: 500px;
+    margin: 30px auto 0;
+}
+section.section.spaced.our-approach.subscription_today .row.left:nth-of-type(2) .content p {
+    margin-bottom: 0;
+}
+section.section.spaced.our-approach.subscription_today .row.left:nth-of-type(2) .content img {
+    height: 130px;
+    width: 200px;
+    margin: 20px auto 90px;
+}
+section.section.spaced.our-approach.subscription_today .row.left:nth-of-type(2) .content>div {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;;
+}
+section.section.spaced.our-approach.subscription_today .row.left:nth-of-type(2) .content span {
+    margin: 30px 0 0;
+    position: absolute;
+    width: 100%;
+    bottom: 50px;
+}
+.Clinically-Proven {
+    background: url(https://cdn.shopify.com/s/files/1/0150/9231/8256/files/Subscription_Page_Main_Image_1.jpg?v=1647943936) no-repeat;
+    background-size: cover;
+    padding-bottom: 900px;
+    background-position: bottom;
+    padding-top: 60px;
+}
+.Clinically-Proven .img-col {
+    display: none;
+}
+.Clinically-Proven .des-col > div {
+    max-width: 100%;
+}
+.Clinically-Proven .des-col {
+    max-width: 100%;
+    width: 100%;
+    flex: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+}
+.Clinically-Proven .row  .des-col .content>div {
+    max-width: 100%;
+    text-align: left;
+}
+.Clinically-Proven h4 {
+    font-size: 45px;
+    text-transform: capitalize;
+    color: #77777a;
+    letter-spacing: 0 !important;
+}
+.Clinically-Proven ul {
+    list-style: none;
+    color: #bcaaac;
+    font-size: 28px;
+    margin: 30px 0 40px;
+}
+.Clinically-Proven ul li {
+    padding: 10px 0;
+}
+.Clinically-Proven ul li span {
+    font-size: 0;
+    font-weight: 700;
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/95.png?v=1648444749)no-repeat;
+    padding: 40px;
+    position: relative;
+    top: 10px;
+    padding-right: 50px;
+}
+.Clinically-Proven ul li:nth-of-type(3) span {
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/85.png?v=1648444749)no-repeat;
+}
+.Clinically-Proven ul li:last-child span {
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/81.png?v=1648444749)no-repeat;
+}
+.Clinically-Proven p {
+    color: #919295;
+    font-size: 27px;
+}
+.before-after h2{
+    letter-spacing: 0px!important;
+    text-transform: none;
+    color: #919295;
+    margin: 0 0 40px;
+    font-style: italic;
+    font-size: 34px;
+    font-weight: 600;
+}
+.before-after {
+    text-align: center;
+}
+.before-after .content {
+    position: relative;
+    flex-direction: column;
+}
+.before-after .content p {
+    position: relative;
+    font-size: 24px;
+    background: #cec8c9;
+    color: #919295;
+    width: 200px;
+    padding: 8px 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 30px;
+    top: -25px;
+}
+.before-after p {
+    color: #919295;
+    font-size: 24px;
+}
+p.save {
+    background: #d7b4b5;
+    width: 100px;
+    position: absolute;
+    right: 25px;
+    z-index: 1;
+    text-align: left;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    line-height: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 50%;
+    color: #fff;
+    top: -40px;
+    flex-direction: column;
+    text-align: center;
+}
+p.save span {
+    font-size: 35px;
+    display: block;
+    width: 100%;
+    font-weight: 600;
+}
+section.section.spaced.our-approach.subscription_today .row.left:nth-of-type(2) p.save {
+    display: none;
+}
+.subs_testim h4 {
+    font-size: 60px;
+    font-weight: 600;
+    text-transform: none;
+    font-style: italic;
+    letter-spacing: 0 !important;
+    color: #919295;
+    margin: 30px 0;
+}
+.subs_testim p {
+    font-size: 30px;
+    color: #919295;
+    padding: 100px 0 0px;
+    background: url(https://cdn.shopify.com/s/files/1/0150/9231/8256/files/comma.png?v=1647951727)no-repeat center top 25px;
+}
+.subs_testim label.star {
+    color: #ebb4a2;
+    font-size: 35px;
+}
+.subs_testim p:nth-of-type(2) {
+    display: none;
+}
+.subs_testim .star-rating {
+    margin-bottom: 40px;
+}
+.section.spaced.our-approach.sabi-section .row.right:nth-of-type(3) {
+    display: none;
+}
+div#shopify-section-subs_testim {
+    overflow-x: hidden;
+}
+.subs_testim h4 ,.subs_testim p ,.subs_testim .star-rating {display:none}
+div#shopify-section-subscription-three-sec h2 {
+    margin-bottom: 80px;
+}
+.spaced.our-approach.sabi-section h2 span {
+    font-weight: 600;
+}
+
+
+@media screen and (min-device-width: 1920px) and (max-device-width: 2560px) {
+.our-approach.sabi-section:after {
+    content: "";
+    position: absolute;
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/SABI_AI_PDP_Vector_-_For_Van-01.png?v=1645186469)no-repeat;
+    width: 100%;
+    height: 100%;
+    bottom: -5%;
+    background-position: center;
+    background-size: 50% 50%;
+    z-index: -1;
+}  
+section.section.spaced.our-approach.sabi-section .row.left:nth-of-type(1) .content div {
+    max-width: 100%;
+}
+.sabi-section .row .content p {
+    font-size: 18px;
+} 
+.sabi-section img.top-img {
+    width: 750px;
+} 
+
+}
+
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1919px) {
+.our-approach.sabi-section:after {
+    content: "";
+    position: absolute;
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/SABI_AI_PDP_Vector_-_For_Van-01.png?v=1645186469)no-repeat;
+    width: 100%;
+    height: 100%;
+    bottom: 13%;
+    background-position: bottom;
+    background-size: contain;
+    z-index: -1;
+}  
+section.section.spaced.our-approach.sabi-section .row.left:nth-of-type(1) .content div {
+    max-width: 100%;
+}
+.sabi-section .row .content p {
+    font-size: 24px;
+    line-height: 32px;
+} 
+.our-approach.sabi-section .row.right:nth-of-type(2) {
+    margin-top: -250px;
+    margin-bottom: 100px;
+    height: 1000px;
+}
+.sabi-section img.top-img {
+    width: 750px;
+}  
+.sabi-section .row .content>div h4 {
+    font-size: 44px;
+    line-height: 53px;
+}
+.sabi-section .row.left img {
+    height: 950px;
+}
+.our-approach.sabi-section .row.right:nth-of-type(2) .img-col {
+    float: right;
+    position: absolute;
+    right: 0;  
+    padding: 0;
+    justify-content: flex-end;
+}
+.our-approach.sabi-section .row.right:nth-of-type(2) .img-col img {
+/*     height: 1100px; */
+    width: auto;
+}
+
+}
+
+
+
+@media screen and (max-device-width: 1440px) {
+.our-approach.sabi-section .row.right:nth-of-type(3) .content div , div#shopify-section-16451759081487e92a .row.right .content>div {
+    max-width: 450px;
+    float: right;
+}
+.our-approach.sabi-section .row.right:nth-of-type(3) .content {
+    justify-content: center;
+}
+.our-approach.sabi-section:after {
+    bottom: 19%;
+}  
+.our-approach.sabi-section .row.right:nth-of-type(3) .content div,.our-approach.sabi-section .row.right .content>div {
+    max-width: 100%;
+}
+  
+}
+
+
+
+@media screen and (max-device-width: 1400px) {
+.our-approach.sabi-section .row.right:nth-of-type(3) .content div , .our-approach.sabi-section .row.right .content>div {
+    max-width: 450px;
+    float: right;
+}
+.our-approach.sabi-section .row.right:nth-of-type(3) .content {
+    justify-content: center;
+}
+.our-approach.sabi-section:after {
+    bottom: 14%;
+}
+}
+
+@media screen and (max-device-width: 1200px) {
+.spaced.our-approach.tri_light h2 {
+    background-position: 280px 0px;
+}
+  
+}
+
+@media screen and (max-device-width: 1024px) {
+.our-approach.sabi-section:after {
+    bottom: 13%;
+}
+.spaced.our-approach.tri_light h2,.spaced.our-approach.sabi-section h2 , .before-after h2,.subs_testim h4 {
+    font-size: 34px;
+    font-weight: 600;
+    letter-spacing: 0 !important;
+}
+
+}
+
+@media screen and (max-device-width: 768px) {
+.sabi-section .row.left img {
+    object-position: top;
+    padding-top: 60px;
+}
+.our-approach.subscription_today h2 {
+    line-height: 35px;
+}
+p.save {
+    font-size: 28px;
+   line-height: 28px;
+}
+.our-approach.subscription_today .content p span {
+    font-size: 24px;
+}
+.our-approach.subscription_today .content p.label {
+    font-size: 18px;
+}
+section.section.spaced.our-approach.subscription_today h2:nth-of-type(2) {
+    margin-top: 0;
+    font-size: 22px;
+    line-height: 30px;
+}
+.Clinically-Proven h4,section.section.spaced.our-approach.subscription_today h2:nth-of-type(2) span {
+    font-size: 28px;
+}
+.Clinically-Proven ul {
+    font-size: 22px;
+    margin: 0 0 20px;
+}
+.Clinically-Proven p {
+    font-size: 20px;
+}
+.Clinically-Proven {
+    padding-bottom: 600px;
+}
+.spaced.our-approach.tri_light h2, .spaced.our-approach.sabi-section h2, .before-after h2, .subs_testim h4 {
+    font-size: 28px;
+    line-height: 35px;
+}
+.container.before-after {
+    max-width: 90%;
+    padding: 0;
+}
+.before-after .content p {
+    font-size: 20px;
+}
+.spaced.our-approach.sabi-section .container,.tri_light .container {
+    padding: 0 0;
+    max-width: 90%;
+}
+.spaced.our-approach.sabi-section ul li {
+    font-size: 16px;
+    padding: 0 0 10px 45px;
+    background-size: 30px;
+}
+.spaced.our-approach.sabi-section .row.right {
+    margin-top: -350px;
+    margin-bottom: 80px;
+}
+.spaced.our-approach.sabi-section .row.right>div:first-child {
+    order: 2;
+    padding-left: 0;
+}  
+.spaced.our-approach.sabi-section .row.right {
+    margin-top: -350px;
+    margin-bottom: 80px;
+}
+.spaced.our-approach.sabi-section .row.right>div:first-child {
+    order: 2;
+    padding-left: 0;
+}
+section.section.spaced.our-approach.tri_light.custom {
+    margin: 0 0;
+}
+.spaced.our-approach.tri_light h2 p {
+    font-size: 24px;
+    line-height: 35px;
+}
+.subscription-bar p.icon_text {
+    font-size: 18px;
+}
+.subs_testim p {
+    font-size: 24px;
+}
+.spaced.our-approach.tri_light h2 {
+    background-position: 200px 0px;
+}  
+.bottom_subs_rew a.ButtonGroup__Item, .des-col .approach-cta {
+    font-size: 14px;
+}
+  
+  
+}
+
+@media screen and (max-device-width: 667px) {
+.our-approach.sabi-section .row.left:nth-of-type(2) {
+    flex-direction: column-reverse;
+}
+.our-approach.sabi-section .row.left:nth-of-type(1) {
+    flex-direction: column-reverse;
+}
+.our-approach .row .des-col {
+    padding-top: 0;
+}
+.our-approach.sabi-section .row.left:nth-of-type(1) .img-col {
+    width: 50%;
+}
+.sabi-section .row.left img {
+    height: auto;
+}
+.our-approach.sabi-section .row.right:nth-of-type(3) {
+    position: absolute;
+    bottom: 38%;
+    width: 50%;
+    right: 20px;
+    flex-direction: column-reverse;
+}
+.our-approach.sabi-section .row.right:nth-of-type(3) .img-col {
+    max-width: 80%;
+}
+.our-approach.sabi-section .row.right:nth-of-type(3) .des-col {
+    max-width: 100%;
+    padding: 0;
+}
+.our-approach.sabi-section .row.right:nth-of-type(3) .des-col h4 {
+    font-size: 16px;
+    line-height: 24px;
+}
+.our-approach.sabi-section .row.right:nth-of-type(2)  .img-col {width: 60%;float: right;}
+.our-approach.sabi-section .row.right:nth-of-type(2) {
+    justify-content: end;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.our-approach.sabi-section:after {
+    z-index: -1;
+    bottom: 12%;
+}
+.our-approach.sabi-section .row.right:nth-of-type(2) .des-col {
+    display: none;
+}  
+.sabi-section .row.left img {
+  	background-size: 70px;
+    background-position: top left;
+}
+.Clinically-Proven .content {
+    padding: 0 20px !important;
+}
+.Clinically-Proven h4 {
+    font-size: 22px;
+}
+.Clinically-Proven ul li {
+    font-size: 18px;
+}
+.Clinically-Proven p {
+    font-size: 16px;
+}
+.before-after h2 {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+.before-after .col-6 {
+    padding: 0 5px;
+}
+.before-after .content p {
+    font-size: 14px;
+    width: 120px;
+    margin: 0 auto;
+}
+.sabi-section h2.text-center.header br {
+    display: none;
+}
+.spaced.our-approach.sabi-section p.leveraging {
+    font-size: 16px;
+}
+.spaced.our-approach.tri_light h2 p {
+    font-size: 16px;
+    line-height: 25px;
+}
+div#shopify-section-subscription-three-sec h2 {
+    font-size: 24px;
+}
+.subs_testim p {
+    font-size: 18px;
+    padding-top: 90px;
+}
+.subscription__item img {
+    height: 80px;
+}
+.subscription-bar p.icon_text {
+    font-size: 14px;
+}
+.subscription__item {
+    padding: 0 5px;
+}
+.bottom_subs_rew {
+    margin: 20px 0px;
+}
+.Clinically-Proven ul li span {
+    padding: 35px 30px 40px 40px !important;
+    background-size: 60px!important;
+}
+  
+  
+}
+
+@media screen and (max-device-width: 480px) {
+.our-approach.sabi-section:after {
+    z-index: -1;
+    bottom: 9%;
+}
+.our-approach.sabi-section .row.right:nth-of-type(3) {
+    bottom: 36%;
+}  
+.our-approach.sabi-section .row.right:nth-of-type(2) .img-col {
+    width: 60%;
+    float: right;
+    position: absolute;
+    right: 0;
+    padding: 0;
+}  
+.our-approach.sabi-section .row.right:nth-of-type(2) {
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 400px;
+}  
+.sabi-section h2.text-center.header {
+    line-height: 25px;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 1px!important;
+    margin-top: 0;
+    font-size: 22px;
+}
+.sabi-section .row .content>div h4 {
+    font-size: 20px;
+    line-height: 26px;
+}
+.sabi-section .row.left img {
+    padding-top: 30px;
+}  
+.container {
+    max-width: 90%;
+    padding: 0;
+}
+.our-approach.subscription_today h2 {
+    font-size: 19px;
+    line-height: 26px;
+}
+p.save {
+    width: 60px;
+    height: 60px;
+    font-size: 15px;
+    line-height: 1;
+    right: 10px;
+}
+.our-approach.subscription_today .content {
+    padding: 0;
+}
+.our-approach.subscription_today h4 {
+    padding: 5px 13px!important;
+    width: 200px;
+    margin: 0 auto;
+    top: -18px;
+    font-size: 16px;
+} 
+.our-approach.subscription_today .content p span {
+    font-size: 18px;
+    padding: 10px 10px;
+}
+.our-approach.subscription_today b {
+    font-size: 24px;
+    line-height: 30px;
+}
+.our-approach.subscription_today .content>div p i {
+    font-size: 20px;
+}
+.our-approach.subscription_today .content p.label {
+    margin: 20px 10px 0;
+    font-size: 16px;
+}
+section.section.spaced.our-approach.subscription_today h2:nth-of-type(2) {
+    font-size: 18px;
+}
+section.section.spaced.our-approach.subscription_today h2:nth-of-type(2) span {
+    font-size: 24px;
+}
+.bottom_subs_rew a.ButtonGroup__Item, .des-col .approach-cta {
+    font-size: 16px;
+    padding: 12px 30px;
+}  
+section.section.spaced.our-approach.subscription_today .row.left:nth-of-type(2) .content {
+    width: 100%;
+}
+section.section.spaced.our-approach.subscription_today .row.left:nth-of-type(2) .content h4 {
+    width: 240px;
+    left: 0;
+    top: -15px;
+} 
+.Slideshow.Slideshow--fullscreen {
+    height: 380px;
+}  
+.section.spaced.our-approach.sabi-section .row.right:nth-of-type(3) {
+    position: absolute;
+    bottom: 38%;
+    width: 50%;
+    right: 20px;
+    bottom: 25%; 
+    flex-direction: column-reverse;
+}
+.section.spaced.our-approach.sabi-section .row.right:nth-of-type(3) .img-col {
+    max-width: 70%;
+    padding: 0;
+    margin: 0 auto;
+}
+.section.spaced.our-approach.sabi-section .row.right:nth-of-type(3) .des-col {
+    max-width: 100%;
+    padding: 0;
+}
+.section.spaced.our-approach.sabi-section .row.right:nth-of-type(3) .des-col h4 {
+    font-size: 15px;
+    color: #919295;
+    text-transform: capitalize;
+    text-align: center;
+    letter-spacing: 0px !important;
+    line-height: 20px !important;
+}    
+.section.spaced.our-approach.sabi-section .row.right:nth-of-type(3) {
+    display: block;
+}  
+.Clinically-Proven {
+    padding-bottom: 250px;
+    background: url(https://cdn.shopify.com/s/files/1/0150/9231/8256/files/Subscription_Page_Main_Image_1.jpg?v=1647943936) no-repeat #f0e8e2;
+    background-size: contain;
+    background-position: bottom;
+}
+p.save span {
+    font-size: 20px;
+}    
+.spaced.our-approach.tri_light h2 {
+    background-position: 60px 10px;
+    background-size: 60px;
+}
+.Clinically-Proven ul li {
+    padding-left: 70px;
+    position: relative;
+}
+.Clinically-Proven ul li span {
+    position: absolute;
+    left: 0;
+    top: 8px;
+}  
+section.section.spaced.our-approach.subscription_today .row.left:nth-of-type(2) .des-col {
+    width: 85%;
+    margin: 0 auto;
+}
+section.section.spaced.our-approach.subscription_today .row.left:nth-of-type(2) .content img {
+    margin: 10px auto 70px;
+}
+section.section.spaced.our-approach.subscription_today .row.left:nth-of-type(2) .content span i {
+    font-size: 18px;
+}  
+.spaced.our-approach.sabi-section h2 span {
+    display: block;
+    font-weight: normal;
+}
+.spaced.our-approach.sabi-section h2 {
+    font-size: 18px;
+    letter-spacing: 0 !important;
+}  
+.section.spaced.our-approach.Clinically-Proven {
+    background: url(https://cdn.shopify.com/s/files/1/0077/6162/5201/files/Subscription_Page_Main_Image-MobileREVISED.jpg?v=1648614864);
+} 
+  
+  
+  
+}
