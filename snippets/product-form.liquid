@@ -280,6 +280,10 @@ for size, we use it to display a size chart (if applicable)
   --------------------------------------------------------------------------------------------------------------------
   {%- endcomment -%}
 
+  {%- if product.handle == "sabi_subscription_program"  -%}
+	<a href="/pages/subscription" class="Button Button--primary Button--full active" style="margin-bottom:10px">subscribe </a> 
+  {% else %}
+
   <div class="row">
     <div class="col-4">
       {%- if section.settings.show_quantity_selector -%}
@@ -316,6 +320,9 @@ for size, we use it to display a size chart (if applicable)
       <!-- include 'wishlist-button-collection' with '{{ product.id }}' -->
     </div>
   </div>
+
+  {% endif %}
+	
 
   {%- if product.metafields.shipmentday != blank -%}
  <div class="shipment-info">{{ product.metafields.shipmentday.estimated_shipment }}</div>
