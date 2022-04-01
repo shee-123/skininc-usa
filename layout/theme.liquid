@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="no-js" lang="{{ shop.locale }}">
 <head>
+  {% if handle contains 'sabi_subscription_program' %}
+<meta name="robots" content="noindex">
+{% endif %}
   <!-- Tiktok Pixel -->
   <script>
 !function (w, d, t) {
