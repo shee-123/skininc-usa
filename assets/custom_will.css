@@ -594,7 +594,9 @@ select.rebuy-select {
 .powered-by-rebuy {
     display: none;
 }
-
+section.Product .Product__Gallery .Product__ActionList {
+    display: none;
+}
 
 
 /* rebundle css */
