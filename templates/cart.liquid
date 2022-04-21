@@ -26,6 +26,8 @@ item.price = {{ line_item.original_price | money_without_currency}}, // Item pri
   items.push(item) {% endfor %} console.log(items) {% if customer %} ttq.identify({ email: "{{ customer.email }}" }) {% endif %} ttq.track('AddToCart',{ contents: items, value: {{ cart.total_price | money_without_currency }}, currency: "{{ cart.currency }}" }) </script>
   <!-- Tiktok Pixel End -->
 
+<script> ttq.track('AddToCart',{ content_id: {{TikTok - Content ID}}, content_type: 'product', content_name: {{TikTok - Content Name}}, price: {{TikTok - Content Price}}, quantity: {{TikTok - Content Quantity}}, currency: {{TikTok - Currency}}, value: parseFloat({{TikTok - Price}}) }) </script>
+
 <!-- <script type="lazyloadscript">
 
           ttq.track('AddToCart',{
