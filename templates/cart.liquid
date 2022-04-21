@@ -38,13 +38,7 @@ items.push(item)
 
 {% endfor %} 
 
-
-
-
 console.log(items) 
-
-
-
 
 {% if customer %} 
 
@@ -54,10 +48,7 @@ email: "{{ customer.email }}"
 
 }) 
 
-{% endif %} 
-
-
-
+{% endif %}
 
 ttq.track('AddToCart',{ 
 
@@ -69,7 +60,7 @@ currency: "{{ cart.currency }}"
 
 }) 
 
-</script> 
+</script>
 <!-- <script type="lazyloadscript">
 
           ttq.track('AddToCart',{
