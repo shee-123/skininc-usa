@@ -11,7 +11,7 @@
   ttq.load('C8PBN1A3RRRFDD69OG0G');
   ttq.page();
   ttq.track('AddToCart',{
-              content_id: '{{ line_item.variant_id }}', 
+              content_id: "{{ line_item.variant_id }}"
               content_type: 'product', 
               content_name: '{{ line_item.product.title }}' 
               });
@@ -19,6 +19,57 @@
 </script>
   <!-- Tiktok Pixel End -->
 
+<script> 
+
+var items = [] 
+
+{% for line_item in cart.items %} 
+
+var item = {} 
+
+item.content_id = '{{ line_item.id }}',
+
+item.name = '{{ line_item.product.title }}',
+
+item.price = {{ line_item.original_price | money_without_currency}}, // Item price
+
+item.quantity= '{{ line_item.quantity }}' 
+items.push(item) 
+
+{% endfor %} 
+
+
+
+
+console.log(items) 
+
+
+
+
+{% if customer %} 
+
+ttq.identify({ 
+
+email: "{{ customer.email }}" 
+
+}) 
+
+{% endif %} 
+
+
+
+
+ttq.track('AddToCart',{ 
+
+contents: items, 
+
+value: {{ cart.total_price | money_without_currency }}, 
+
+currency: "{{ cart.currency }}" 
+
+}) 
+
+</script> 
 <!-- <script type="lazyloadscript">
 
           ttq.track('AddToCart',{
