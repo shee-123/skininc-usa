@@ -10,23 +10,14 @@
 
   ttq.load('C8PBN1A3RRRFDD69OG0G');
   ttq.page();
-//   ttq.track('AddToCart',{
-//               content_id: '{{ line_item.variant_id }}', 
-//               content_type: 'product', 
-//               content_name: '{{ line_item.product.title }}' 
-//               });
-// }(window, document, 'ttq');
+  ttq.track('AddToCart',{
+              content_id: '{{ line_item.variant_id }}', 
+              content_type: 'product', 
+              content_name: '{{ line_item.product.title }}' 
+              });
+}(window, document, 'ttq');
 </script>
-
-<script> 
-  var items = [] {% for line_item in cart.items %} var item = {} item.content_id = '{{ line_item.id }}', // Item ID 
-item.name = '{{ line_item.product.title }}', // Readable product name 
-item.price = {{ line_item.original_price | money_without_currency}}, // Item price 
-  item.quantity= '{{ line_item.quantity }}' // Item Quantity 
-  items.push(item) {% endfor %} console.log(items) {% if customer %} ttq.identify({ email: "{{ customer.email }}" }) {% endif %} ttq.track('AddToCart',{ contents: items, value: {{ cart.total_price | money_without_currency }}, currency: "{{ cart.currency }}" }) </script>
   <!-- Tiktok Pixel End -->
-
-<script> ttq.track('AddToCart',{ content_id: {{TikTok - Content ID}}, content_type: 'product', content_name: {{TikTok - Content Name}}, price: {{TikTok - Content Price}}, quantity: {{TikTok - Content Quantity}}, currency: {{TikTok - Currency}}, value: parseFloat({{TikTok - Price}}) }) </script>
 
 <!-- <script type="lazyloadscript">
 
