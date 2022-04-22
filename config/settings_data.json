@@ -110,9 +110,9 @@
           "c59454a8-accf-4fcb-904e-13a800fbec6e": {
             "type": "banner",
             "settings": {
-              "background": "#d7b4b5",
+              "background": "#c3d9de",
               "text_color": "#ffffff",
-              "content": "enjoy gifts worth up to $105! min. spend of $185",
+              "content": "enjoy gifts worth up to $105! min. spend of $280",
               "link_label": "shop now",
               "link_color": "#000000",
               "link": "shopify:\/\/collections\/best-sellers"
@@ -3303,9 +3303,73 @@
         ],
         "settings": {
         }
+      },
+      "16506020630b8624b8": {
+        "type": "embrace-slideshow",
+        "blocks": {
+          "16506020630b8624b8-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Mother_s_Day_Web_Banner_US_-_22-30Apr.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/Mother_s_Day_Mobile_Banner_US_-_22-30Apr.jpg",
+              "apply_overlay": true,
+              "content_position": "bottomLeft",
+              "subheading": "",
+              "title": "",
+              "button_1_text": "",
+              "button_1_link": "shopify:\/\/collections\/best-sellers",
+              "button_2_text": "",
+              "button_2_link": ""
+            }
+          },
+          "16506020630b8624b8-1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Wellness_Trilight_Web_Banner.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/Wellness_Trilight_Mobile_Banner.jpg",
+              "apply_overlay": true,
+              "content_position": "bottomLeft",
+              "subheading": "",
+              "title": "",
+              "button_1_text": "",
+              "button_1_link": "shopify:\/\/products\/tri-light-sabi",
+              "button_2_text": "",
+              "button_2_link": ""
+            }
+          },
+          "ee9eac3f-3ec5-4ad8-a4f5-63291e0ed181": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Wellness_Device_Banner.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/Wellness_Mobile_Banner.jpg",
+              "apply_overlay": true,
+              "content_position": "bottomLeft",
+              "subheading": "",
+              "title": "",
+              "button_1_text": "",
+              "button_1_link": "shopify:\/\/collections\/devices",
+              "button_2_text": "",
+              "button_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "16506020630b8624b8-0",
+          "16506020630b8624b8-1",
+          "ee9eac3f-3ec5-4ad8-a4f5-63291e0ed181"
+        ],
+        "settings": {
+          "show_fullscreen": true,
+          "show_arrow": false,
+          "autoplay": true,
+          "cycle_speed": 5,
+          "text_color": "#ffffff",
+          "button_color": "#363636"
+        }
       }
     },
     "content_for_index": [
+      "16506020630b8624b8",
       "1574915750213",
       "16481039893a204fe3",
       "1648105436884e0dc8",
