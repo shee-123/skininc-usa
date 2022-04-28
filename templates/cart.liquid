@@ -31,7 +31,7 @@ item.content_id = '{{ line_item.id }}',
 
 item.name = '{{ line_item.product.title }}',
 
-item.price = {{ line_item.original_price | money_without_currency}}, // Item price
+item.price = {{ line_item.original_price | money_without_trailing_zeros}}, // Item price
 
 item.quantity= '{{ line_item.quantity }}' 
 items.push(item) 
@@ -54,7 +54,7 @@ ttq.track('AddToCart',{
 
 contents: items, 
 
-value: {{ cart.total_price | money_without_currency }}, 
+value: {{ cart.total_price | money_without_trailing_zeros }}, 
 
 currency: "{{ cart.currency }}" 
 
