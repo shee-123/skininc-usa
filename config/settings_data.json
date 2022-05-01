@@ -3351,12 +3351,28 @@
               "button_2_text": "",
               "button_2_link": ""
             }
+          },
+          "0895635e-580a-4c0e-aed3-7969ad40225f": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Cryo-Ice_Sake_Roller_Blush_Web_Banner.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/Cryo-Ice_Sake_Roller_Blush_Mobile_Banner.jpg",
+              "apply_overlay": true,
+              "content_position": "bottomLeft",
+              "subheading": "",
+              "title": "",
+              "button_1_text": "",
+              "button_1_link": "shopify:\/\/products\/cryo-ice-sake-roller-blush-edition",
+              "button_2_text": "",
+              "button_2_link": "shopify:\/\/products\/cryo-ice-sake-roller-blush-edition"
+            }
           }
         },
         "block_order": [
           "16506020630b8624b8-0",
           "16506020630b8624b8-1",
-          "ee9eac3f-3ec5-4ad8-a4f5-63291e0ed181"
+          "ee9eac3f-3ec5-4ad8-a4f5-63291e0ed181",
+          "0895635e-580a-4c0e-aed3-7969ad40225f"
         ],
         "settings": {
           "show_fullscreen": true,
