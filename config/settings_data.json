@@ -1058,19 +1058,6 @@
               "personalized_message_text": "Add a personalized message"
             }
           },
-          "fefe7c43-8893-48c7-b174-8010f3c0215c": {
-            "type": "tierspend-x-get-y",
-            "settings": {
-              "product_handle": "april-gwp-mask-liner-nourish-hand-serum-worth-38",
-              "variant_id": "39465871835232",
-              "min_price": "18500",
-              "message": "Gift item",
-              "product_handle2": "mothers-day-campaign-gwp-2",
-              "variant_id2": "39469625475168",
-              "min_price2": "28000",
-              "message2": "Gift item"
-            }
-          },
           "208dfad5-b6bc-4893-9c21-f11aacba0d7e": {
             "type": "buy-x-get-y-gift",
             "disabled": true,
@@ -1080,12 +1067,21 @@
               "handle": "tri-light-sabi",
               "message": "Exclusive Gift item"
             }
+          },
+          "5c041117-d2bb-4d26-b943-d9fb08e2c96e": {
+            "type": "spend-x-get-y",
+            "settings": {
+              "product_handle": "may-2022-gwp",
+              "variant_id": "39479162929248",
+              "min_price": "18500",
+              "message": "Exclusive Gift item"
+            }
           }
         },
         "block_order": [
           "c36064d3-d27f-4b4e-bad6-5eb276169c92",
-          "fefe7c43-8893-48c7-b174-8010f3c0215c",
-          "208dfad5-b6bc-4893-9c21-f11aacba0d7e"
+          "208dfad5-b6bc-4893-9c21-f11aacba0d7e",
+          "5c041117-d2bb-4d26-b943-d9fb08e2c96e"
         ],
         "settings": {
           "show_shipping_estimator": false,
