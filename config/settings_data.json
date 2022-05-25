@@ -3321,6 +3321,21 @@
               "button_2_link": ""
             }
           },
+          "019d6297-20aa-4814-a6e5-5aacf350e874": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Memorial_Day_Sale_Web_Banner.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/Memorial_Day_Sale_Mobile_Banner.jpg",
+              "apply_overlay": true,
+              "content_position": "bottomLeft",
+              "subheading": "",
+              "title": "",
+              "button_1_text": "",
+              "button_1_link": "https:\/\/iloveskininc.us\/",
+              "button_2_text": "",
+              "button_2_link": "https:\/\/iloveskininc.us\/"
+            }
+          },
           "16506020630b8624b8-1": {
             "type": "image",
             "settings": {
@@ -3369,6 +3384,7 @@
         },
         "block_order": [
           "16506020630b8624b8-0",
+          "019d6297-20aa-4814-a6e5-5aacf350e874",
           "16506020630b8624b8-1",
           "ee9eac3f-3ec5-4ad8-a4f5-63291e0ed181",
           "0895635e-580a-4c0e-aed3-7969ad40225f"
