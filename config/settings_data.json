@@ -98,6 +98,7 @@
         "blocks": {
           "1599723865566": {
             "type": "banner",
+            "disabled": true,
             "settings": {
               "background": "#d7b4b5",
               "text_color": "#ffffff",
@@ -3321,6 +3322,7 @@
           },
           "019d6297-20aa-4814-a6e5-5aacf350e874": {
             "type": "image",
+            "disabled": true,
             "settings": {
               "image": "shopify:\/\/shop_images\/Memorial_Day_Sale_Web_Banner.jpg",
               "mobile_image": "shopify:\/\/shop_images\/Memorial_Day_Sale_Mobile_Banner.jpg",
