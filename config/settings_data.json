@@ -3322,6 +3322,7 @@
           },
           "019d6297-20aa-4814-a6e5-5aacf350e874": {
             "type": "image",
+            "disabled": true,
             "settings": {
               "image": "shopify:\/\/shop_images\/US---BJD-_-FPB-GWP-Web-Banner.jpg",
               "mobile_image": "shopify:\/\/shop_images\/US---BJD-_-FPB-GWP-Mobile-Banner.jpg",
