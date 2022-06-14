@@ -3303,22 +3303,6 @@
       "16506020630b8624b8": {
         "type": "embrace-slideshow",
         "blocks": {
-          "16506020630b8624b8-0": {
-            "type": "image",
-            "disabled": true,
-            "settings": {
-              "image": "shopify:\/\/shop_images\/US_Mother_s_Day_Web_Banner-_1-8May.jpg",
-              "mobile_image": "shopify:\/\/shop_images\/US_Mother_s_Day_Mobile_Banner_-_1-8May.jpg",
-              "apply_overlay": true,
-              "content_position": "bottomLeft",
-              "subheading": "",
-              "title": "",
-              "button_1_text": "",
-              "button_1_link": "shopify:\/\/collections\/best-sellers",
-              "button_2_text": "",
-              "button_2_link": ""
-            }
-          },
           "019d6297-20aa-4814-a6e5-5aacf350e874": {
             "type": "image",
             "settings": {
@@ -3332,6 +3316,22 @@
               "button_1_link": "https:\/\/iloveskininc.us\/",
               "button_2_text": "",
               "button_2_link": "https:\/\/iloveskininc.us\/"
+            }
+          },
+          "16506020630b8624b8-0": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Sustainability_Web_Banner.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/Sustainability_Mobile_Banner.jpg",
+              "apply_overlay": true,
+              "content_position": "bottomLeft",
+              "subheading": "",
+              "title": "",
+              "button_1_text": "",
+              "button_1_link": "shopify:\/\/collections\/best-sellers",
+              "button_2_text": "",
+              "button_2_link": ""
             }
           },
           "16506020630b8624b8-1": {
@@ -3381,8 +3381,8 @@
           }
         },
         "block_order": [
-          "16506020630b8624b8-0",
           "019d6297-20aa-4814-a6e5-5aacf350e874",
+          "16506020630b8624b8-0",
           "16506020630b8624b8-1",
           "ee9eac3f-3ec5-4ad8-a4f5-63291e0ed181",
           "0895635e-580a-4c0e-aed3-7969ad40225f"
