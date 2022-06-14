@@ -3320,7 +3320,6 @@
           },
           "16506020630b8624b8-0": {
             "type": "image",
-            "disabled": true,
             "settings": {
               "image": "shopify:\/\/shop_images\/Sustainability_Web_Banner.jpg",
               "mobile_image": "shopify:\/\/shop_images\/Sustainability_Mobile_Banner.jpg",
