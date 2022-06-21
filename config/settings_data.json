@@ -1673,7 +1673,6 @@
         "type": "instafeed",
         "disabled": true,
         "settings": {
-          "heading_font": "helvetica_n4",
           "heading_size": 26,
           "feed_width": 100,
           "html_area": ""
@@ -3302,6 +3301,7 @@
       },
       "16506020630b8624b8": {
         "type": "embrace-slideshow",
+        "disabled": true,
         "blocks": {
           "019d6297-20aa-4814-a6e5-5aacf350e874": {
             "type": "image",
